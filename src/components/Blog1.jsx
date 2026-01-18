@@ -79,7 +79,7 @@ export default function BlogSectionPremium() {
     const formData = new FormData();
     formData.append("email", email);
     // ⚠️ REPLACE WITH YOUR ACTUAL ACCESS KEY ⚠️
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); 
+    formData.append("access_key", "b01ff128-6e76-499a-be3f-5e88f30b2405"); 
     formData.append("subject", "New Newsletter Subscriber");
 
     try {
