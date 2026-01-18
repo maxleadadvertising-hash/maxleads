@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 /* --- MOCK DATA --- */
 const categories = ["All", "Marketing", "Growth", "Digital Ads", "Events"];
 
@@ -149,7 +150,7 @@ export default function BlogSectionPremium() {
 
         {/* --- FEATURED HERO CARD --- */}
         <div className="mb-20">
-            <Link to="/blog/1" className="block overflow-hidden rounded-[2.5rem] bg-white shadow-lg border border-gray-100 group">
+            <Link to="/blog" className="block overflow-hidden rounded-[2.5rem] bg-white shadow-lg border border-gray-100 group">
               <div className="grid lg:grid-cols-12 min-h-[500px]">
                 
                 {/* Image Side (7 cols) */}
@@ -207,7 +208,7 @@ export default function BlogSectionPremium() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {blogs.slice(1).map((blog, idx) => (
             <div key={idx}>
-              <Link to={`/blog/${blog.id}`} className="flex flex-col h-full bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+              <Link to={`/blog`} className="flex flex-col h-full bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
                 
                 {/* Image */}
                 <div className="h-64 overflow-hidden relative">

@@ -191,12 +191,7 @@ export default function IndustrySolutions() {
                       {item.description}
                     </p>
 
-                    <Link 
-  to="/contact"  // ✅ Changed to an existing route defined in App.js
-  className="block w-full px-6 py-3 rounded-full bg-green-600 text-white text-sm font-bold hover:bg-green-500 transition-colors shadow-lg shadow-green-900/20"
->
-  Explore Strategy
-</Link>
+              
                   </div>
                   
                   {/* Decorative faint icon bg */}
