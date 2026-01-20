@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
 
+    <!-- Favicon -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f97316" />
 
-    <!-- Primary SEO Meta Tags -->
-    <title>
-      Max Lead Advertising | Flyer Distribution, Printing & Digital Marketing in UAE
-    </title>
+    <!-- SEO Meta Tags -->
+    <title>Max Lead Advertising | Flyer Distribution, Printing & Digital Marketing in UAE</title>
 
     <meta
       name="title"
@@ -22,6 +22,8 @@
       name="description"
       content="Max Lead Advertising is a trusted advertising and distribution company in UAE offering door-to-door flyer distribution, printing services, SMS marketing, digital advertising, and outdoor promotions across Dubai, Abu Dhabi, Sharjah, and all Emirates."
     />
+
+    <meta name="robots" content="index, follow" />
 
     <link rel="canonical" href="https://www.maxleadadvertising.com/" />
 
@@ -36,52 +38,67 @@
       property="og:description"
       content="Reach the right audience with Max Lead Advertising. We specialize in flyer distribution, printing, SMS marketing, digital ads, and outdoor advertising across the UAE."
     />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta
+      property="og:image"
+      content="https://www.maxleadadvertising.com/og-image.png"
+    />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.maxleadadvertising.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.maxleadadvertising.com/" />
     <meta
-      property="twitter:title"
+      name="twitter:title"
       content="Max Lead Advertising | Advertising & Distribution Company in UAE"
     />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Professional flyer distribution, printing, SMS marketing, digital ads, and outdoor advertising services across UAE."
     />
-    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta
+      name="twitter:image"
+      content="https://www.maxleadadvertising.com/og-image.png"
+    />
 
-    <!-- Favicon & App Icons -->
+    <!-- App Icons -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Structured Data JSON-LD -->
+    <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "AdvertisingAgency",
         "name": "Max Lead Advertising",
-        "url": "https://www.maxleadadvertising.com",
-        "logo": "%PUBLIC_URL%/logo192.png",
+        "url": "https://www.maxleadadvertising.com/",
+        "logo": "https://www.maxleadadvertising.com/logo192.png",
         "description": "Advertising and distribution company in UAE offering flyer distribution, printing, SMS marketing, digital marketing, and outdoor advertising services.",
         "areaServed": {
           "@type": "Country",
           "name": "United Arab Emirates"
         },
-        "sameAs": [
-          "https://www.facebook.com/maxleadadvertising",
-          "https://www.instagram.com/maxleadadvertising",
-          "https://www.linkedin.com/company/maxleadadvertising"
-        ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+971-XXXXXXXXX",
+          "telephone": "+971522286401",
           "contactType": "Customer Service",
           "email": "maxleadadvertising@gmail.com",
           "areaServed": "AE",
           "availableLanguage": ["English", "Arabic"]
-        }
+        },
+        "sameAs": [
+          "https://www.facebook.com/maxleadadvertising",
+          "https://www.instagram.com/maxleadadvertising",
+          "https://www.linkedin.com/company/maxleadadvertising"
+        ]
       }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B19YLPR2Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1B19YLPR2Q');
     </script>
 
     <!-- Fonts -->
@@ -92,10 +109,8 @@
       rel="stylesheet"
     />
 
-    <!-- No Script Fallback -->
-    <noscript>
-      You need to enable JavaScript to run this application.
-    </noscript>
+    <!-- No Script -->
+    <noscript>You need to enable JavaScript to run this application.</noscript>
   </head>
 
   <body>

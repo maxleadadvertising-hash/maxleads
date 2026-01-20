@@ -11,25 +11,35 @@ import {
 
 // Import your assets here
 import HeroImage from "../assests/printing/printingService3.webp";
+import F1 from "../assests/Flyers/f1.webp";
+import F2 from "../assests/Flyers/f2.webp";
+import F3 from "../assests/Flyers/f3.webp";
+import D1 from "../assests/digitalmarketing/d1.webp"
 import Printingserv from "../assests/Outdoorads/od2.webp";
 import Flyerserv from "../assests/digitalmarketing/dm3.webp";
 import Flyerserv1 from "../assests/Flyers/flyerService2.webp";
 
+// UPDATED: Reordered so Flyer Distribution is first, then Digital Marketing
 const heroImages = [
-  HeroImage,
-  Printingserv,
-  Flyerserv,
+    // Flyer Distribution
+  F1,
+  F2,
+  F3,
+  D1,
   Flyerserv1,
+  Flyerserv,     // Digital Marketing
+  HeroImage,     // Printing Service
+  Printingserv,  // Outdoor Ads
 ];
 
 const carouselItems = [
-  { name: "Flyer Distribution", icon: MapPin },
-  { name: "Printing Services", icon: Printer },
+  { name: "Printing Service", icon: MapPin },
+  { name: "Flyer Distributions", icon: Printer },
   { name: "Digital Marketing", icon: Globe },
   { name: "Outdoor Ads", icon: Signpost },
   // Duplicate for infinite scroll
-  { name: "Flyer Distribution", icon: MapPin },
-  { name: "Printing Services", icon: Printer },
+  { name: "Printing Service", icon: MapPin },
+  { name: "Flyer Distribution", icon: Printer },
   { name: "Digital Marketing", icon: Globe },
   { name: "Outdoor Ads", icon: Signpost },
 ];
@@ -68,7 +78,6 @@ export default function Hero() {
       {/* =========================================
           MAIN CONTENT (Split Layout)
       ========================================== */}
-      {/* UPDATED: Increased width to max-w-screen-2xl */}
       <div className="relative z-20 w-full max-w-screen-2xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         
         {/* LEFT COLUMN: TEXT CONTENT */}
@@ -166,7 +175,7 @@ export default function Hero() {
       </div>
 
      {/* =========================================
-          BOTTOM INFINITE CAROUSEL 
+         BOTTOM INFINITE CAROUSEL 
       ========================================== */}
       <div className="relative z-20 mt-16 lg:mt-24 border-t border-white/50 bg-white/40 backdrop-blur-md py-8">
         <div className="flex overflow-hidden relative max-w-screen-2xl mx-auto">
