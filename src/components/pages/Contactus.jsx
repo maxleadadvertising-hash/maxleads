@@ -11,7 +11,7 @@ import {
   Loader2,
   ArrowRight,
   Smartphone,
-  AlertCircle // Added for error state
+  AlertCircle 
 } from 'lucide-react';
 import Navigation from "../Navigation";
 import Footer from "../Footer";
@@ -47,7 +47,6 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function Contact() {
-  // State for controlled inputs
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -57,23 +56,19 @@ export default function Contact() {
     message: '',
   });
 
-  // State for submission status: idle, sending, success, error
   const [formStatus, setFormStatus] = useState('idle');
-  const [result, setResult] = useState(""); // Stores API response message
+  const [result, setResult] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  /* --- WEB3FORMS SUBMISSION LOGIC --- */
   const onSubmit = async (event) => {
     event.preventDefault();
     setFormStatus('sending');
     setResult("Sending....");
 
     const formDataObj = new FormData(event.target);
-    
-    // ⚠️ REPLACE THIS WITH YOUR ACTUAL ACCESS KEY ⚠️
     formDataObj.append("access_key", "b01ff128-6e76-499a-be3f-5e88f30b2405"); 
 
     try {
@@ -87,23 +82,18 @@ export default function Contact() {
       if (data.success) {
         setResult("Form Submitted Successfully");
         setFormStatus('success');
-        
-        // Reset form visual state
         setFormData({ name: '', email: '', mobile: '', company: '', service: '', message: '' });
         event.target.reset();
 
-        // Reset button status after 5 seconds
         setTimeout(() => {
           setFormStatus('idle');
           setResult("");
         }, 5000);
       } else {
-        console.log("Error", data);
         setResult(data.message);
         setFormStatus('error');
       }
     } catch (error) {
-      console.error("Submission Error", error);
       setResult("Something went wrong. Please check your connection.");
       setFormStatus('error');
     }
@@ -136,23 +126,21 @@ export default function Contact() {
     }
   ];
 
+  const inputClasses = "w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 text-gray-900 font-medium placeholder:text-gray-400";
+
   return (
     <>
-     <Whatsapp />
-    <ScrollToTop />
+      <Whatsapp />
+      <ScrollToTop />
       <Navigation />
 
       <section id="contact" className="relative min-h-screen pt-32 pb-20 bg-gray-50 overflow-hidden mt-16">
-        
-        {/* --- DYNAMIC BACKGROUND --- */}
         <div className="absolute inset-0 w-full h-full pointer-events-none">
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-green-200/40 rounded-full blur-[120px] mix-blend-multiply animate-pulse" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow-200/40 rounded-full blur-[100px] mix-blend-multiply" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          
-          {/* --- HEADER --- */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <FadeIn>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-green-600 shadow-sm mb-6">
@@ -172,8 +160,6 @@ export default function Contact() {
           </div>
 
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            
-            {/* --- LEFT COLUMN: INFO CARDS --- */}
             <div className="lg:col-span-5 space-y-6">
                 <FadeIn delay={100}>
                     <div className="grid gap-6">
@@ -194,7 +180,6 @@ export default function Contact() {
                     </div>
                 </FadeIn>
 
-                {/* Map / Decorator Card */}
                 <FadeIn delay={200}>
                     <div className="relative h-64 w-full bg-gray-900 rounded-3xl overflow-hidden p-8 flex flex-col justify-end shadow-xl">
                         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
@@ -207,14 +192,12 @@ export default function Contact() {
                 </FadeIn>
             </div>
 
-            {/* --- RIGHT COLUMN: THE FORM --- */}
             <div className="lg:col-span-7">
                 <FadeIn delay={300}>
                     <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-500"></div>
 
                         <form onSubmit={onSubmit} className="space-y-6 relative z-10">
-                            
                             <div className="grid md:grid-cols-2 gap-6">
                                 {/* Name */}
                                 <div className="space-y-2 group">
@@ -228,7 +211,7 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="John Doe"
-                                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300"
+                                            className={inputClasses}
                                         />
                                     </div>
                                 </div>
@@ -245,7 +228,7 @@ export default function Contact() {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="john@example.com"
-                                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300"
+                                            className={inputClasses}
                                         />
                                     </div>
                                 </div>
@@ -264,7 +247,7 @@ export default function Contact() {
                                             value={formData.mobile}
                                             onChange={handleChange}
                                             placeholder="+971 50 123 4567"
-                                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300"
+                                            className={inputClasses}
                                         />
                                     </div>
                                 </div>
@@ -280,7 +263,7 @@ export default function Contact() {
                                             value={formData.company}
                                             onChange={handleChange}
                                             placeholder="Brand Inc."
-                                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300"
+                                            className={inputClasses}
                                         />
                                     </div>
                                 </div>
@@ -295,9 +278,9 @@ export default function Contact() {
                                         required
                                         value={formData.service}
                                         onChange={handleChange}
-                                        className="w-full pl-4 pr-10 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 appearance-none text-gray-600"
+                                        className="w-full pl-4 pr-10 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 appearance-none text-gray-900 font-medium"
                                     >
-                                        <option value="">Select a service...</option>
+                                        <option value="" className="text-gray-400">Select a service...</option>
                                         <option value="flyer">Flyer Distribution</option>
                                         <option value="printing">Printing Services</option>
                                         <option value="digital">Digital Ads</option>
@@ -321,7 +304,7 @@ export default function Contact() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         placeholder="Tell us about your project goals..."
-                                        className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 resize-none"
+                                        className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 resize-none text-gray-900 font-medium placeholder:text-gray-400"
                                     />
                                 </div>
                             </div>
@@ -352,7 +335,6 @@ export default function Contact() {
                                 )}
                             </button>
 
-                            {/* Result Text Feedback */}
                             {result && (
                                 <div className={`text-center text-sm font-medium mt-2 ${formStatus === 'error' ? 'text-red-600' : 'text-green-600'}`}>
                                     {result}
@@ -363,13 +345,10 @@ export default function Contact() {
                     </div>
                 </FadeIn>
             </div>
-
           </div>
         </div>
-        
       </section>
       <Footer />
-
     </>
   );
 }
