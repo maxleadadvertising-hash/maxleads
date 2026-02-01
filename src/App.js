@@ -14,12 +14,13 @@ import DigitalMarketing from './components/pages/Digitalmarketing';
 import Outdoorads from './components/pages/outdoorads';
 import Clients from './components/pages/client';
 import Industries from './components/pages/industries';
-
+import Scrollup from "./components/scrolluparrow";
 function App() {
   return (
     <Router>
       {/* Add ScrollToTop here so it listens to route changes */}
       <ScrollToTop />
+      <Scrollup />
       
       <Routes>
         <Route path="/" element={<Homepage />} />
