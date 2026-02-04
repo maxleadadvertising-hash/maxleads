@@ -15,25 +15,25 @@ import logo from "../assests/logo.png";
 const services = [
   { 
     name: "Door to Door Flyer Distribution", 
-    path: "/flyer", 
+    path: "/flyer-distribution-services/", 
     icon: Printer,
     desc: "High-quality offset & digital prints" 
   },
   { 
     name: "Printing Services", 
-    path: "/printing", 
+    path: "/digital-printing-services/", 
     icon: MapPin,
     desc: "Door-to-door targeted campaigns" 
   },
    { 
     name: "Digital Marketing", 
-    path: "/digital", 
+    path: "/digital-marketing-agency/", 
     icon: Globe,
     desc: "SEO, PPC & Social Media ads" 
   },
   { 
     name: "Outdoor Ads", 
-    path: "/outdoor", 
+    path: "/outdoor-advertising-company/", 
     icon: Signpost,
     desc: "Billboards & transit advertising" 
   },

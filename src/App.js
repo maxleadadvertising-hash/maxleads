@@ -29,10 +29,10 @@ function App() {
         <Route path="/contact" element={<Contactus />} />
         
         {/* Services */}
-        <Route path="/flyer" element={<FlyerDistribution/>} />
-        <Route path="/printing" element={<PrintingServices/>} />
-        <Route path="/digital" element={<DigitalMarketing/>} />
-        <Route path="/outdoor" element={<Outdoorads/>} />
+        <Route path="/flyer-distribution-services/" element={<FlyerDistribution/>} />
+        <Route path="/digital-printing-services/" element={<PrintingServices/>} />
+        <Route path="digital-marketing-agency/ " element={<DigitalMarketing/>} />
+        <Route path="/outdoor-advertising-company/" element={<Outdoorads/>} />
         
         {/* Other */}
         <Route path="/work" element={<Clients/>} />
