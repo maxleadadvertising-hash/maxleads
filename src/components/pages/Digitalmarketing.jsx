@@ -6,7 +6,6 @@ import {
   Target, 
   Smartphone, 
   TrendingUp, 
-  Users, 
   CheckCircle, 
   ArrowRight, 
   Phone, 
@@ -16,9 +15,7 @@ import {
   Video,
   Linkedin,
   MousePointerClick,
-  Monitor,
-  
-
+ 
 } from "lucide-react";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
@@ -58,11 +55,13 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function DigitalMarketing() {
+  const whatsappNumber = "971522286401";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Digital Marketing services.`;
   
   return (
     <>
-     <Whatsapp />
-    <ScrollToTop />
+      <Whatsapp />
+      <ScrollToTop />
       <Navigation />
 
       <main className="relative overflow-hidden bg-white">
@@ -82,7 +81,7 @@ export default function DigitalMarketing() {
           <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <FadeIn className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full shadow-sm">
+              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full shadow-sm mt-16">
                 <TrendingUp className="w-4 h-4 text-green-600" />
                 <span className="text-xs font-bold text-green-700 tracking-wide uppercase">Results-Driven Agency</span>
               </div>
@@ -100,10 +99,19 @@ export default function DigitalMarketing() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300">
+                {/* WHATSAPP REDIRECT */}
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                >
                   Get a Free Digital Marketing Strategy
-                </button>
-                <button className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300">
+                </a>
+                <button 
+                  onClick={() => window.location.href = '/contact'}
+                  className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300"
+                >
                   Request a Quick Quote
                 </button>
               </div>
@@ -221,10 +229,10 @@ export default function DigitalMarketing() {
           <div className="max-w-[1440px] mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <FadeIn>
-                 {/* Visual trigger for social media ecosystem */}
-                 
+                
 
 [Image of social media marketing ecosystem diagram]
+
 
                 <div className="relative rounded-[3rem] overflow-hidden shadow-2xl h-[650px] group mt-6">
                    <img src={marketingService1} alt="Social Media Marketing" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -376,8 +384,6 @@ export default function DigitalMarketing() {
             <FadeIn className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">How Our Digital Marketing System Works</h2>
               <p className="text-gray-600 text-lg">We follow a clear process to make sure every campaign delivers results.</p>
-              {/* Visual trigger for marketing process */}
-              
             </FadeIn>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -477,17 +483,25 @@ export default function DigitalMarketing() {
                   If you are looking for a best digital marketing agency in Dubai, Max Lead Advertising is here to help. Whether you need leads, sales, or brand visibility, our digital marketing services are designed to move your business forward.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <a href="/contact">
-                    <button className="px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all text-lg">
-                      <Monitor className="w-6 h-6" />
-                      Get Your Free Digital Marketing Strategy
-                    </button>
+                  {/* WHATSAPP REDIRECT */}
+                  <a 
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all text-lg"
+                  >
+                    <MessageCircle className="w-6 h-6" />
+                    Get Your Free Digital Marketing Strategy
                   </a>
-                  <a href="/contact">
-                    <button className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400">
-                      <Users className="w-6 h-6 text-green-600" />
-                      Talk to Our Digital Marketing Experts
-                    </button>
+                  {/* WHATSAPP REDIRECT */}
+                  <a 
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400"
+                  >
+                    <MessageCircle className="w-6 h-6 text-green-600" />
+                    Talk to Our Digital Marketing Experts
                   </a>
                 </div>
               </div>

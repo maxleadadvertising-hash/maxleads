@@ -55,18 +55,20 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function OutdoorAds() {
+  // Replace with your actual phone number (country code + number, no spaces)
+  const whatsappNumber = "971522286401"; 
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Outdoor Advertising services.`;
   
   return (
     <>
-     <Whatsapp />
-    <ScrollToTop />
+      <Whatsapp />
+      <ScrollToTop />
       <Navigation />
 
       <main className="relative overflow-hidden bg-white">
         
         {/* --- HERO SECTION --- */}
         <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-gradient-to-b from-green-50/40 to-white">
-          {/* Animated Background Blobs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div 
               className="absolute -top-[10%] -left-[10%] w-[50rem] h-[50rem] bg-green-200/30 blur-[120px] rounded-full mix-blend-multiply animate-blob"
@@ -77,9 +79,8 @@ export default function OutdoorAds() {
           </div>
 
           <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
             <FadeIn className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full shadow-sm">
+              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full shadow-sm mt-16">
                 <Signpost className="w-4 h-4 text-green-600" />
                 <span className="text-xs font-bold text-green-700 tracking-wide uppercase">Premier Outdoor Advertising UAE</span>
               </div>
@@ -96,16 +97,24 @@ export default function OutdoorAds() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300">
+                {/* WHATSAPP REDIRECT */}
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                >
                   Get a Free Outdoor Media Plan
-                </button>
-                <button className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300">
+                </a>
+                <button 
+                  onClick={() => window.location.href = '/contact'}
+                  className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300"
+                >
                   Request a Quote
                 </button>
               </div>
             </FadeIn>
 
-            {/* Right Image */}
             <FadeIn delay={200} className="relative lg:h-[600px] flex items-center justify-center">
               <div className="relative w-full aspect-[4/5] lg:aspect-auto h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-all duration-700 hover:shadow-green-200">
                 <img 
@@ -115,7 +124,6 @@ export default function OutdoorAds() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 
-                {/* Floating Badge */}
                 <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-[260px] animate-bounce-slow">
                   <div className="flex items-center gap-3 mb-2">
                     <Eye className="w-6 h-6 text-green-600" />
@@ -144,20 +152,7 @@ export default function OutdoorAds() {
                   In a fast-moving city like Dubai, people spend hours every day commuting, shopping, dining, and traveling. That means outdoor advertising gives your brand repeated exposure to thousands of potential customers every single day. Whether you want to launch a new product, promote a retail offer, advertise a real estate project, or build long-term brand awareness, our outdoor advertising solutions in UAE deliver consistent, high-visibility results.
                 </p>
                 <p>
-                  Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE, helping brands gain powerful visibility through high-impact OOH (Out of Home) advertising solutions.Heavy daily traffic,
-
-
-Busy business districts,
-
-
-Large residential communities,
-
-
-Shopping malls and entertainment hubs,
-
-
-Millions of tourists every year,
-
+                  Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE, helping brands gain powerful visibility through high-impact OOH (Out of Home) advertising solutions.Heavy daily traffic, Busy business districts, Large residential communities, Shopping malls and entertainment hubs, Millions of tourists every year,
                 </p>
               </div>
             </FadeIn>
@@ -194,16 +189,13 @@ Millions of tourists every year,
                 At Max Lead Advertising, we provide complete outdoor advertising and OOH media solutions in Dubai and across the UAE. From planning and printing to approvals and installation, we manage everything for you.
               </p>
             </FadeIn>
-            
-            {/* Visual trigger for outdoor formats */}
-            
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
               {[
-                { title: "Billboard & Hoarding Advertising", icon: Maximize, desc: "Our billboard advertising and hoarding services in UAE place your brand on high-visibility roads, highways, and busy commercial areas. These large-format displays are perfect for promoting:   High-visibility roads, highways, and busy commercial areas. Perfect for real estate projects, retail offers, events, and brand campaigns." },
-                { title: "LED Billboard Advertising", icon: Monitor, desc: "With LED screen advertising in Dubai, your ads become dynamic and eye-catching. LED billboards allow:  Dynamic, bright visuals with video and animation. Day and night visibility ideal for malls, main roads, and busy intersections." },
+                { title: "Billboard & Hoarding Advertising", icon: Maximize, desc: "Our billboard advertising and hoarding services in UAE place your brand on high-visibility roads, highways, and busy commercial areas. These large-format displays are perfect for promoting: High-visibility roads, highways, and busy commercial areas. Perfect for real estate projects, retail offers, events, and brand campaigns." },
+                { title: "LED Billboard Advertising", icon: Monitor, desc: "With LED screen advertising in Dubai, your ads become dynamic and eye-catching. LED billboards allow: Dynamic, bright visuals with video and animation. Day and night visibility ideal for malls, main roads, and busy intersections." },
                 { title: "Bridge Banner Advertising", icon: LayoutTemplate, desc: "Bridge banners and road banners are placed on flyovers and overhead bridges, capturing the attention of drivers and commuters. These ads are perfect for limited-time offers, events, and brand promotions." },
-                { title: "Lamp Post Advertising", icon: NavIcon, desc: "Lamp post advertising in Dubai is a great way to target specific neighborhoods, streets, and commercial zones. These ads are highly effective for:  Target specific neighborhoods, streets, and commercial zones. Highly effective for local retail, restaurants, and clinics." },
+                { title: "Lamp Post Advertising", icon: NavIcon, desc: "Lamp post advertising in Dubai is a great way to target specific neighborhoods, streets, and commercial zones. These ads are highly effective for: Target specific neighborhoods, streets, and commercial zones. Highly effective for local retail, restaurants, and clinics." },
                 { title: "Rooftop & Building-Top Advertising", icon: Building, desc: "Rooftop hoardings and building-top ads give your brand skyline visibility. These are especially powerful in areas with high-rise buildings, highways, and business districts." },
                 { title: "Glass Graphics & Window Branding", icon: Layers, desc: "We provide glass branding, window graphics, and shop-front advertising for malls, showrooms, offices, and retail outlets. This helps turn your physical location into a marketing tool." },
                 { title: "Taxi, Van & Truck Advertising", icon: Truck, desc: "With vehicle branding and mobile billboard advertising, your message moves across the city. Branded taxis, vans, and trucks create thousands of impressions daily across different locations in the UAE." },
@@ -228,12 +220,9 @@ Millions of tourists every year,
             <FadeIn className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Outdoor Advertising Process</h2>
               <p className="text-gray-600 text-lg">We follow a proven process to ensure your OOH advertising campaign in Dubai delivers results.</p>
-              {/* Visual trigger for workflow */}
-              
             </FadeIn>
 
             <div className="relative">
-               {/* Connecting Line (Desktop) */}
                <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0" />
 
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
@@ -286,7 +275,7 @@ Millions of tourists every year,
                     ))}
                  </div>
                  <p className="mt-6 text-green-700 font-medium italic">
-                    We don’t just place your ad – we help you get real visibility and real results.
+                   We don’t just place your ad – we help you get real visibility and real results.
                  </p>
               </FadeIn>
 
@@ -362,17 +351,24 @@ Millions of tourists every year,
                   Put your brand on billboards, LED screens, roads, taxis, malls, and buildings with Max Lead’s professional outdoor advertising services in UAE.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <a href="/contact">
-                    <button className="px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all text-lg">
-                      <MapPin className="w-6 h-6" />
-                      Get Your Free Media Plan
-                    </button>
+                  {/* WHATSAPP REDIRECT */}
+                  <a 
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all text-lg"
+                  >
+                    <MessageCircle className="w-6 h-6" />
+                    Talk to our experts on WhatsApp
                   </a>
-                  <a href="/contact">
-                    <button className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400">
-                      <MessageCircle className="w-6 h-6 text-green-600" />
-                      Book a Consultation Today
-                    </button>
+                  <a 
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400"
+                  >
+                    <MessageCircle className="w-6 h-6 text-green-600" />
+                    Book a Consultation Today
                   </a>
                 </div>
               </div>
@@ -383,7 +379,6 @@ Millions of tourists every year,
       </main>
       <Footer />
 
-      {/* --- GLOBAL CSS --- */}
       <style>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }

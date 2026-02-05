@@ -2,14 +2,12 @@ import { useEffect, useState, useRef } from "react";
 import ScrollToTop from "../ScrollToTop";
 import { 
   CheckCircle2, 
-  Trophy, 
+  MapPin, // Icon updated here
   Users, 
   ArrowRight,
   Handshake,
   Star,
-  
   Globe,
-  
 } from "lucide-react";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
@@ -78,7 +76,7 @@ const clients = [
 const stats = [
   { label: "Active Clients", value: "500+", icon: Users },
   { label: "Projects Completed", value: "1200+", icon: CheckCircle2 },
-  { label: "Industry Awards", value: "15", icon: Trophy },
+  { label: "Across the Emirates", value: "7", icon: MapPin }, // Icon updated here
   { label: "Years of Trust", value: "10+", icon: Handshake },
 ];
 
@@ -119,7 +117,7 @@ export default function Clients() {
                 <Users size={120} className="text-green-800" />
              </div>
              <div className="absolute bottom-1/4 right-10 opacity-10 animate-float" style={{ animationDelay: '2s' }}>
-                <Trophy size={140} className="text-emerald-800" />
+                <MapPin size={140} className="text-emerald-800" /> {/* Icon updated here */}
              </div>
              <div className="absolute top-1/3 right-1/3 opacity-5 animate-float" style={{ animationDelay: '4s' }}>
                 <Globe size={80} className="text-gray-900" />

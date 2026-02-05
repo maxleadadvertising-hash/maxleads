@@ -3,7 +3,6 @@ import {
   CheckCircle, 
   Printer, 
   Sparkles, 
-  Phone, 
   MessageCircle, 
   ArrowRight, 
   Layers, 
@@ -21,9 +20,13 @@ import Whatsapp from '../pages/whatsapp';
 
 /* IMAGES */
 import printingHero from "../../assests/printing/printingHero.gif";
-import printingService1 from "../../assests/printing/printingService1.webp";
-import printingService2 from "../../assests/printing/printingService2.webp";
+import printingService1 from "../../assests/printing/printingservice1.webp";
+import printingService2 from "../../assests/printing/printingservice2.webp";
 import printingService3 from "../../assests/printing/printingService3.webp";
+import printingService4 from "../../assests/printing/printingservice4.webp";
+import printingService5 from "../../assests/printing/printingservice5.webp";
+import printingService6 from "../../assests/printing/printingservice6.webp";
+
 
 /* --- ANIMATION COMPONENTS --- */
 
@@ -85,6 +88,9 @@ const ScaleIn = ({ children, delay = 0, className = "" }) => {
 
 export default function PrintingServices() {
   
+  const whatsappNumber = "971522286401";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Printing Services.`;
+
   // DATA
   const serviceCategories = [
     {
@@ -103,7 +109,7 @@ export default function PrintingServices() {
       icon: Box,
       color: "text-emerald-600",
       bg: "bg-emerald-50",
-      img: printingService2
+      img: printingService6
     },
     {
       title: "Large Format Printing",
@@ -121,7 +127,7 @@ export default function PrintingServices() {
       icon: Palette,
       color: "text-lime-600",
       bg: "bg-lime-50",
-      img: printingService1 
+      img: printingService4
     },
     {
       title: "Branding & Custom Prints",
@@ -130,7 +136,7 @@ export default function PrintingServices() {
       icon: Sparkles,
       color: "text-cyan-600",
       bg: "bg-cyan-50",
-      img: printingService2 
+      img: printingService5 
     },
     {
       title: "Specialty Printing",
@@ -139,14 +145,14 @@ export default function PrintingServices() {
       icon: Printer,
       color: "text-green-700",
       bg: "bg-green-100",
-      img: printingService3 
+      img: printingService2
     }
   ];
 
   return (
     <>
-     <Whatsapp />
-    <ScrollToTop />
+      <Whatsapp />
+      <ScrollToTop />
       <Navigation />
 
       <main className="relative overflow-hidden bg-white">
@@ -186,12 +192,15 @@ export default function PrintingServices() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <button 
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="px-8 py-4 bg-gray-900 text-white rounded-full font-semibold shadow-lg hover:shadow-green-500/20 hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 active:scale-95"
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-gray-900 text-white rounded-full font-semibold shadow-lg hover:shadow-green-500/20 hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 active:scale-95 flex items-center gap-2"
                 >
+                  <MessageCircle className="w-5 h-5" />
                   Get a Printing Consultation
-                </button>
+                </a>
                 <button 
                    onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
                    className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-semibold hover:border-green-200 hover:bg-green-50 transition-all duration-300 hover:scale-105 active:scale-95"
@@ -490,13 +499,13 @@ export default function PrintingServices() {
                   If you are looking for reliable digital printing services in Dubai, UAE, Max Lead Advertising is ready to support your business. As a trusted printing company in Dubai, we deliver quality prints that help your brand stand out and communicate effectively.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <a href="/contact">
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-teal-700 text-white rounded-full font-bold shadow-lg hover:shadow-green-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1 transition-all hover:scale-105 active:scale-95">
-                      <Phone className="w-5 h-5" />
+                      <MessageCircle className="w-5 h-5" />
                       Contact us today for a printing consultation
                     </button>
                   </a>
-                  <a href="https://wa.me/+971522286401" target="_blank" rel="noopener noreferrer">
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <button className="px-8 py-4 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-2 transition-all hover:border-gray-400 hover:scale-105 active:scale-95">
                       <MessageCircle className="w-5 h-5 text-green-600" />
                       WhatsApp us to get a quick quote

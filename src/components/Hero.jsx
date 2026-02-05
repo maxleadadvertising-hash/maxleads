@@ -10,14 +10,14 @@ import {
 } from "lucide-react";
 
 // Import your assets here
-import HeroImage from "../assests/printing/printingService3.webp";
+import HeroImage from "../assests/printing/printingservice5.webp";
 import F1 from "../assests/Flyers/f1.webp";
 import F2 from "../assests/Flyers/f2.webp";
 import F3 from "../assests/Flyers/f3.webp";
 import D1 from "../assests/digitalmarketing/d1.webp"
 import Printingserv from "../assests/Outdoorads/od2.webp";
 import Flyerserv from "../assests/digitalmarketing/dm3.webp";
-import Flyerserv1 from "../assests/Flyers/flyerService2.webp";
+import Flyerserv1 from "../assests/Flyers/flyerservice2.webp";
 
 // UPDATED: Reordered so Flyer Distribution is first, then Digital Marketing
 const heroImages = [

@@ -112,7 +112,7 @@ export default function Contact() {
       icon: Phone,
       title: "Call Us",
       value: "+971 522286401",
-      sub: "Mon-Fri from 9am to 6pm",
+      sub: "Mon-Sat from 9am to 6pm",
       color: "bg-green-500",
       bg: "bg-green-50"
     },

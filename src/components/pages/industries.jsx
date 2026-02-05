@@ -80,7 +80,7 @@ const industries = [
     icon: GraduationCap,
     title: "Education",
     description: "Help schools and training institutes reach parents and students effectively during key enrollment periods.",
-    background: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=500"
+    background: "https://images.pexels.com/photos/5212697/pexels-photo-5212697.jpeg"
   },
   {
     icon: Ticket,
@@ -104,7 +104,7 @@ const industries = [
     icon: FerrisWheel,
     title: "Entertainment",
     description: "Drive excitement and ticket sales for theme parks and leisure centers with engaging visual print media.",
-    background: "https://images.unsplash.com/photo-1605840275083-b1d8c66699b1?auto=format&fit=crop&q=80&w=500"
+    background: "https://images.pexels.com/photos/1416969/pexels-photo-1416969.jpeg"
   },
 ];
 
@@ -127,10 +127,7 @@ export default function Industries() {
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-32 overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white">
-          
-          {/* Interactive Floating Icons Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-             {/* Large Blobs */}
              <div 
                className="absolute -top-[10%] -left-[10%] w-[50rem] h-[50rem] bg-green-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob"
                style={{ transform: `translate(${cursor.x * 0.01}px, ${cursor.y * 0.01}px)` }}
@@ -139,8 +136,6 @@ export default function Industries() {
                className="absolute top-[20%] -right-[10%] w-[40rem] h-[40rem] bg-emerald-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-2000"
                style={{ transform: `translate(${cursor.x * -0.01}px, ${cursor.y * -0.01}px)` }}
              />
-
-             {/* Floating Icons */}
              <div className="absolute top-1/4 left-10 opacity-10 animate-float" style={{ animationDelay: '0s' }}>
                 <Layers size={120} className="text-green-900" />
              </div>
@@ -178,7 +173,6 @@ export default function Industries() {
 
         {/* --- INDUSTRIES GRID (3D FLIP CARDS) --- */}
         <section className="py-24 bg-gray-50 relative">
-          {/* Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
 
           <div className="max-w-[1440px] mx-auto px-6 relative z-10">
@@ -190,16 +184,14 @@ export default function Industries() {
                     <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-xl group-hover:shadow-2xl rounded-[2.5rem]">
                       
                       {/* --- FRONT SIDE --- */}
-                      <div className="absolute inset-0 h-full w-full bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden [backface-visibility:hidden] border border-gray-100">
-                        
-                        {/* Background Image */}
+                      {/* FIX: Added z-10 and group-hover:z-0 */}
+                      <div className="absolute inset-0 h-full w-full bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden [backface-visibility:hidden] border border-gray-100 z-10 group-hover:z-0">
                         <div className="absolute inset-0 w-full h-full">
                           <img 
                             src={item.background} 
                             alt={item.title} 
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
                           />
-                          {/* Gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent" />
                         </div>
 
@@ -216,17 +208,16 @@ export default function Industries() {
                           </div>
                         </div>
                         
-                        {/* Hover Hint */}
                         <div className="absolute bottom-10 right-10 z-10">
-                           <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-0 transition-transform">
+                            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-0 transition-transform">
                               <ArrowRight className="w-6 h-6 text-white" />
-                           </div>
+                            </div>
                         </div>
                       </div>
 
                       {/* --- BACK SIDE --- */}
-                      <div className="absolute inset-0 h-full w-full bg-gray-900 rounded-[2.5rem] p-12 flex flex-col justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden border border-gray-800">
-                        {/* Decoration */}
+                      {/* FIX: Added z-0 and group-hover:z-20 to ensure it is clickable when flipped */}
+                      <div className="absolute inset-0 h-full w-full bg-gray-900 rounded-[2.5rem] p-12 flex flex-col justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden border border-gray-800 z-0 group-hover:z-20">
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black" />
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500" />
                         
@@ -243,16 +234,17 @@ export default function Industries() {
                             {item.description}
                           </p>
 
+                          {/* FIX: relative z-30 ensures it's above all decorative elements */}
                           <Link 
                             to="/contact" 
-                            className="w-full py-4 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm font-bold hover:shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-1"
+                            className="relative z-30 block w-full py-4 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm font-bold hover:shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-1 text-center"
                           >
                             Get Strategy
                           </Link>
                         </div>
                         
-                        {/* Background Icon */}
-                        <item.icon className="absolute -bottom-12 -right-12 w-64 h-64 text-white/[0.03] rotate-12" />
+                        {/* FIX: Added pointer-events-none so the decorative icon doesn't block the link */}
+                        <item.icon className="absolute -bottom-12 -right-12 w-64 h-64 text-white/[0.03] rotate-12 pointer-events-none" />
                       </div>
 
                     </div>
@@ -263,7 +255,7 @@ export default function Industries() {
           </div>
         </section>
 
-        {/* --- WHY CHOOSE US FOR INDUSTRIES --- */}
+        {/* --- WHY CHOOSE US --- */}
         <section className="py-32 bg-white relative overflow-hidden">
            <div className="absolute top-0 right-0 w-1/3 h-full bg-green-50/50 -skew-x-12 translate-x-32 z-0 pointer-events-none" />
 
@@ -275,23 +267,23 @@ export default function Industries() {
                       <span className="text-green-600">Expertise Matters</span>
                     </h2>
                     <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-                      Understanding the nuances of your specific sector allows us to craft campaigns that don't just reach people, but resonate with them. We comply with industry regulations while maximizing impact.
+                      Understanding the nuances of your specific sector allows us to craft campaigns that don't just reach people, but resonate with them.
                     </p>
 
                     <div className="space-y-6">
-                       {[
+                        {[
                           "Tailored messaging for specific demographics",
                           "Compliance with UAE advertising regulations",
                           "Strategic location targeting for retail & events",
                           "Proven track record in high-competition sectors"
-                       ].map((item, i) => (
+                        ].map((item, i) => (
                           <div key={i} className="flex items-center gap-5 p-4 rounded-2xl bg-gray-50 hover:bg-green-50 transition-colors border border-transparent hover:border-green-100 group">
-                             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
+                              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
                                 <CheckCircle2 className="w-5 h-5" />
-                             </div>
-                             <span className="text-gray-800 font-bold text-lg">{item}</span>
+                              </div>
+                              <span className="text-gray-800 font-bold text-lg">{item}</span>
                           </div>
-                       ))}
+                        ))}
                     </div>
                  </div>
               </FadeIn>
@@ -299,15 +291,15 @@ export default function Industries() {
               <FadeIn delay={200}>
                  <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl group border-8 border-white bg-gray-100">
                     <img 
-                       src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" 
-                       alt="Business Growth" 
-                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Business Growth" 
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
                     
                     <div className="absolute bottom-12 left-12 right-12">
                         <div className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 shadow-lg">
-                           <div className="flex items-start gap-6 text-white">
+                            <div className="flex items-start gap-6 text-white">
                               <div className="p-4 bg-green-500 rounded-2xl shadow-lg shadow-green-500/40">
                                  <TrendingUp className="w-8 h-8 text-white" />
                               </div>
@@ -328,7 +320,6 @@ export default function Industries() {
           <div className="max-w-[1440px] mx-auto px-6">
             <FadeIn>
               <div className="bg-gray-900 rounded-[4rem] p-16 md:p-32 relative overflow-hidden text-center shadow-2xl shadow-gray-900/50">
-                {/* Animated Gradient Background */}
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-green-600/20 rounded-full blur-[150px] animate-pulse" />
                 <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-emerald-600/20 rounded-full blur-[150px] animate-pulse delay-700" />
 

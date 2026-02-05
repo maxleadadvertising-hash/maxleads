@@ -11,18 +11,19 @@ import {
   Lightbulb,
   MonitorSmartphone,
   Rocket,
-  TrendingUp,
+ 
   MapPin,
   Smile,
   CheckCircle2,
   Printer,
   Megaphone,
-  Globe
+  Globe,
+  MessageCircle
 } from "lucide-react";
 
 /* --- IMPORTED IMAGES --- */
-import image1 from "../../assests/Flyers/flyerService2.webp";
-import image2 from "../../assests/printing/printingService2.webp";
+import image1 from "../../assests/Flyers/eve1.webp";
+import image2 from "../../assests/printing/printingservice2.webp";
 import image3 from "../../assests/digitalmarketing/dm1.webp";
 import image4 from "../../assests/Outdoorads/od1.webp";
 
@@ -36,6 +37,10 @@ const stats = [
 
 export default function Aboutus() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
+  /* WhatsApp Redirect Details */
+  const whatsappNumber = "971522286401";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead Advertising, I'm interested in your services.`;
 
   /* Lenis smooth scroll */
   useEffect(() => {
@@ -92,7 +97,7 @@ export default function Aboutus() {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-8 leading-tight">
               A Leading Advertising & <br/>
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                 Distribution Company in UAE
+                  Distribution Company in UAE
               </span>
             </h1>
             
@@ -111,7 +116,6 @@ export default function Aboutus() {
                 <div key={idx} className={`relative overflow-hidden rounded-3xl shadow-lg group h-full ${idx % 2 !== 0 ? 'mt-8' : ''}`}>
                    <img 
                      src={img} 
-                     // FIXED: Removed words like "Image" to satisfy linter
                      alt={`Max Lead Advertising Service ${idx + 1}`} 
                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                    />
@@ -275,7 +279,7 @@ export default function Aboutus() {
              </div>
           </div>
 
-         {/* ==================== 
+          {/* ==================== 
               6. STRATEGIC APPROACH 
              ==================== */}
           <div className="mb-16 lg:mb-24 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
@@ -283,10 +287,10 @@ export default function Aboutus() {
              {/* Left Text Content */}
              <div className="lg:w-1/2 w-full">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8 text-center lg:text-left">
-                   Our Strategic Marketing Approach
+                    Our Strategic Marketing Approach
                 </h2>
                 <p className="text-gray-600 text-lg md:text-xl mb-8 md:mb-10 text-center lg:text-left">
-                   Most advertising companies simply deliver what the client asks for. We go one step further.
+                    Most advertising companies simply deliver what the client asks for. We go one step further.
                 </p>
                 
                 <div className="space-y-6 md:space-y-8">
@@ -305,7 +309,7 @@ export default function Aboutus() {
                 </div>
 
                 <p className="mt-8 md:mt-10 font-bold text-green-700 text-lg text-center lg:text-left">
-                   This approach is what separates Max Lead from ordinary flyer distribution or printing companies.
+                    This approach is what separates Max Lead from ordinary flyer distribution or printing companies.
                 </p>
              </div>
 
@@ -334,7 +338,7 @@ export default function Aboutus() {
           <div className="mb-24 text-center">
              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8">Why Businesses Choose <br/>Max Lead Advertising</h2>
              <p className="text-gray-600 mb-16 text-xl max-w-4xl mx-auto">
-               Businesses across UAE choose us because we provide more than just services — we provide results. We understand how people in Dubai and other Emirates respond to advertising, and we use that knowledge to help our clients grow.
+                Businesses across UAE choose us because we provide more than just services — we provide results. We understand how people in Dubai and other Emirates respond to advertising, and we use that knowledge to help our clients grow.
              </p>
              
              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -363,7 +367,7 @@ export default function Aboutus() {
              <Globe className="w-16 h-16 text-green-400 mx-auto mb-8" />
              <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Reach Across UAE</h2>
              <p className="text-gray-300 mb-12 text-xl max-w-4xl mx-auto leading-relaxed">
-               Max Lead Advertising proudly serves businesses across all Emirates. Our wide reach allows us to help brands target specific communities, neighborhoods, and commercial zones.
+                Max Lead Advertising proudly serves businesses across all Emirates. Our wide reach allows us to help brands target specific communities, neighborhoods, and commercial zones.
              </p>
              <div className="flex flex-wrap justify-center gap-6 mb-12">
                 {["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"].map((city, idx) => (
@@ -374,7 +378,6 @@ export default function Aboutus() {
              </div>
              <p className="text-lg text-gray-400">
                 We offer flyer distribution, SMS marketing, digital printing, and digital marketing solutions for companies that want to grow locally or regionally.Our wide reach allows us to help brands target specific communities, neighborhoods, and commercial zones.
-
              </p>
           </div>
 
@@ -391,18 +394,23 @@ export default function Aboutus() {
                   <br/><span className="text-green-700 font-semibold">Let’s build your brand, reach the right audience, and grow your business together.</span>
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                   {/* CONTACT BUTTON */}
                    <button
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() => window.location.href = "/contact"}
                     className="px-12 py-5 bg-gray-900 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-gray-800 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
                    >
-                    Get a Free Consultation
+                    Go to Contact Page
                    </button>
-                   <button
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                   {/* WHATSAPP BUTTON */}
+                   <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-12 py-5 bg-green-600 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-green-700 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
                    >
-                    Request a Custom Quote <TrendingUp className="w-6 h-6" />
-                   </button>
+                    <MessageCircle className="w-6 h-6" />
+                    Chat on WhatsApp
+                   </a>
                 </div>
             </div>
           </div>

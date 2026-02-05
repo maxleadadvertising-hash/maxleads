@@ -15,6 +15,7 @@ import Outdoorads from './components/pages/outdoorads';
 import Clients from './components/pages/client';
 import Industries from './components/pages/industries';
 import Scrollup from "./components/scrolluparrow";
+
 function App() {
   return (
     <Router>
@@ -31,12 +32,14 @@ function App() {
         {/* Services */}
         <Route path="/flyer-distribution-services/" element={<FlyerDistribution/>} />
         <Route path="/digital-printing-services/" element={<PrintingServices/>} />
-        <Route path="digital-marketing-agency/ " element={<DigitalMarketing/>} />
+        <Route path="digital-marketing-agency/" element={<DigitalMarketing/>} />
         <Route path="/outdoor-advertising-company/" element={<Outdoorads/>} />
         
         {/* Other */}
         <Route path="/work" element={<Clients/>} />
         <Route path="/industries" element={<Industries/>} />
+       
+         
       </Routes>
     </Router>
   );
