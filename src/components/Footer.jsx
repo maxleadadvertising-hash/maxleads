@@ -139,8 +139,8 @@ export default function Footer() {
               {[
                 { name: 'Home', link: '/' },
                 { name: 'About Us', link: '/about' },
-                { name: 'Services', link: '/flyer' }, // Generic services page anchor if exists
-                { name: 'Our Work', link: '/work' }, // Or whatever your portfolio route is
+                { name: 'Services', link: '/flyer-distribution-services/' }, // Generic services page anchor if exists
+                { name: 'Clients', link: '/work' }, // Or whatever your portfolio route is
                 { name: 'Contact', link: '/contact' }
               ].map((item, idx) => (
                 <li key={idx}>
@@ -157,16 +157,16 @@ export default function Footer() {
             <h4 className="font-bold mb-6 text-white">Services</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link to="/printing" className="hover:text-green-500 transition-colors">Printing Services</Link>
+                <Link to="/digital-printing-services/" className="hover:text-green-500 transition-colors">Printing Services</Link>
               </li>
               <li>
-                <Link to="/flyer" className="hover:text-green-500 transition-colors">Flyer Distribution</Link>
+                <Link to="/flyer-distribution-services/" className="hover:text-green-500 transition-colors">Flyer Distribution</Link>
               </li>
               <li>
-                <Link to="/digital" className="hover:text-green-500 transition-colors">Digital Ads</Link>
+                <Link to="/digital-marketing-agency/" className="hover:text-green-500 transition-colors">Digital Ads</Link>
               </li>
               <li>
-                <Link to="/outdoor" className="hover:text-green-500 transition-colors">Outdoor Media</Link>
+                <Link to="/outdoor-advertising-company/" className="hover:text-green-500 transition-colors">Outdoor Media</Link>
               </li>
             </ul>
           </div>
