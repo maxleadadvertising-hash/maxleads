@@ -58,6 +58,29 @@ export default function DigitalMarketing() {
   const whatsappNumber = "971522286401";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Digital Marketing services.`;
   
+  // ADDED: Meta Tags Logic
+  useEffect(() => {
+    document.title = "Digital Marketing Agency in Dubai, UAE | Max Lead";
+    
+    // Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising is a results-driven digital marketing agency in Dubai, UAE helping businesses generate leads, sales, and long-term growth.");
+
+    // Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/digital-marketing-agency");
+  }, []);
+
   return (
     <>
       <Whatsapp />
@@ -233,7 +256,10 @@ export default function DigitalMarketing() {
                 
 
 
+
+
 [Image of social media marketing ecosystem diagram]
+
 
 
                 <div className="relative rounded-[3rem] overflow-hidden shadow-2xl h-[650px] group mt-6">

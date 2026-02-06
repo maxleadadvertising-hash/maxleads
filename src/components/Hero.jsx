@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { 
-  ArrowRight,  
+  ArrowRight,   
   MapPin, 
   Printer, 
   Globe, 
@@ -46,6 +46,20 @@ const carouselItems = [
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+
+  // ADDED: Meta Title and Description Logic
+  useEffect(() => {
+    document.title = "Advertising & Distribution Company in UAE | Max Lead";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Max Lead Advertising is a trusted advertising and distribution company in UAE offering flyer distribution, printing, SMS and digital marketing solutions.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Max Lead Advertising is a trusted advertising and distribution company in UAE offering flyer distribution, printing, SMS and digital marketing solutions.";
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+  }, []);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -175,13 +189,13 @@ export default function Hero() {
       </div>
 
      {/* =========================================
-         BOTTOM INFINITE CAROUSEL 
+          BOTTOM INFINITE CAROUSEL 
       ========================================== */}
       <div className="relative z-20 mt-16 lg:mt-24 border-t border-white/50 bg-white/40 backdrop-blur-md py-8">
         <div className="flex overflow-hidden relative max-w-screen-2xl mx-auto">
-           {/* Side Fades */}
-           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/80 to-transparent z-10" />
-           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/80 to-transparent z-10" />
+            {/* Side Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/80 to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/80 to-transparent z-10" />
 
           {/* Scrolling Container */}
           <div className="flex animate-infinite-scroll gap-20 px-4 w-max">

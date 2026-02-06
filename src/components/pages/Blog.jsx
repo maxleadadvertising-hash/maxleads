@@ -2,75 +2,79 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
-import { ArrowUpRight, Clock, User, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Clock, User, Sparkles, TrendingUp, BookOpen, Target, MapPin } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../ScrollToTop";
 import Whatsapp from '../pages/whatsapp';
 
-/* --- DATA --- */
+/* --- STRATEGIC BLOG DATA --- */
 const blogs = [
+  // A. Authority-Building
   {
     id: 1,
-    title: "How Flyer Distribution Drives Local Business Growth",
-    description: "In an era of digital noise, tangible marketing stands out. Learn how targeted flyer distribution can increase local visibility, foot traffic, and customer inquiries by over 30%.",
-    author: "Sarah Jenkins",
-    date: "Oct 1, 2025",
-    readTime: "5 min read",
-    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Local Marketing", "Growth"],
+    title: "How Advertising and Distribution Work Together to Grow Businesses in UAE",
+    description: "Discover the powerful synergy between physical distribution and strategic advertising that creates a dominant brand presence in the Emirates.",
+    author: "MaxLead Team",
+    date: "Feb 5, 2026",
+    readTime: "7 min read",
+    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["Authority", "Strategy"],
     featured: true
   },
   {
     id: 2,
-    title: "Bulk SMS Marketing: Best Practices",
-    description: "Discover proven strategies to run effective bulk SMS campaigns that boost engagement.",
-    author: "David Lee",
-    date: "Sep 22, 2025",
-    readTime: "4 min read",
-    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["SMS Marketing", "Leads"],
+    title: "Why Businesses in UAE Still Rely on Flyer Distribution in the Digital Age",
+    description: "In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai.",
+    author: "MaxLead Team",
+    date: "Feb 1, 2026",
+    readTime: "5 min read",
+    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Flyer Distribution", "Insights"],
     featured: false
   },
+  // B. Service-Intent
   {
     id: 3,
-    title: "Print Advertising in the Digital Age",
-    description: "Why flyers, posters, and banners remain powerful tools for brand awareness.",
+    title: "How to Choose the Right Flyer Distribution Company in UAE",
+    description: "Avoid common pitfalls. Here is your ultimate checklist for selecting a distribution partner that guarantees delivery and transparency.",
     author: "MaxLead Team",
-    date: "Sep 15, 2025",
+    date: "Jan 28, 2026",
     readTime: "6 min read",
     image: "https://images.pexels.com/photos/6476587/pexels-photo-6476587.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["Offline Marketing"],
+    tags: ["Guide", "Leads"],
     featured: false
   },
   {
     id: 4,
-    title: "Generating Leads with Google & Meta Ads",
-    description: "A practical guide to running paid ad campaigns that deliver qualified leads.",
-    author: "Alex Rivera",
-    date: "Aug 30, 2025",
-    readTime: "8 min read",
+    title: "Why SMS Marketing Still Delivers High ROI in UAE",
+    description: "Direct, personal, and fast. Discover why SMS remains the king of conversion for UAE retail and service businesses.",
+    author: "MaxLead Team",
+    date: "Jan 20, 2026",
+    readTime: "4 min read",
     image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["Digital Ads", "PPC"],
+    tags: ["SMS Marketing", "ROI"],
     featured: false
   },
+  // C. Industry Specific
+  {
+    id: 5,
+    title: "Marketing Strategies for Retail & Supermarkets in UAE",
+    description: "How to drive footfall to your retail location using a mix of targeted leaflets and digital localized ads.",
+    author: "MaxLead Team",
+    date: "Jan 15, 2026",
+    readTime: "8 min read",
+    image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["Retail", "UAE"],
+    featured: false
+  }
 ];
 
-const popularNews = [
-  {
-    category: "FinTech",
-    title: "AI in FinTech: Revolutionizing Banking UX",
-    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    category: "E-Commerce",
-    title: "Top E-Commerce Trends 2025",
-    image: "https://images.pexels.com/photos/327533/pexels-photo-327533.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    category: "Branding",
-    title: "The Power of Branding in Startups",
-    image: "https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
+const categories = [
+  { name: "Authority-Building", icon: BookOpen, count: 4 },
+  { name: "Service-Intent", icon: Target, count: 4 },
+  { name: "Industry-Specific", icon: Sparkles, count: 4 },
+  { name: "Local SEO", icon: MapPin, count: 3 },
+  { name: "Conversion", icon: TrendingUp, count: 5 }
 ];
 
 /* --- ANIMATION HELPER --- */
@@ -84,7 +88,6 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
     });
     if (domRef.current) observer.observe(domRef.current);
     return () => observer.disconnect();
-    
   }, []);
 
   return (
@@ -121,34 +124,46 @@ export default function BlogSectionModern() {
         
         {/* --- HEADER SECTION --- */}
         <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-white">
-            {/* Background Decor - Changed to green/emerald */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-green-100/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
 
             <div className="max-w-7xl mx-auto relative z-10 text-center">
                 <FadeIn>
-                    {/* Badge - Changed to green */}
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                         <Sparkles className="w-4 h-4" />
-                        <span>The MaxLead Journal</span>
+                        <span>MaxLead Strategic Insights</span>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight mb-6">
-                        {/* Gradient Text - Changed to green gradient */}
-                        Insights for <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Growth</span>
+                        The Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Advertising</span>
                     </h1>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                        Expert strategies on marketing, flyer distribution, and digital transformation to scale your business.
+                        Data-driven insights and strategic guides to dominate the UAE market through offline and online channels.
                     </p>
                 </FadeIn>
             </div>
         </section>
 
+        {/* --- CATEGORY SELECTOR --- */}
+        <section className="py-12 px-6 max-w-7xl mx-auto overflow-x-auto">
+          <div className="flex gap-4 min-w-max pb-4">
+            {categories.map((cat, idx) => (
+              <FadeIn key={idx} delay={idx * 50}>
+                <button className="flex items-center gap-3 bg-white border border-gray-200 px-6 py-3 rounded-2xl hover:border-green-500 hover:bg-green-50 transition-all group">
+                  <cat.icon className="w-5 h-5 text-gray-400 group-hover:text-green-500" />
+                  <span className="font-bold text-gray-700">{cat.name}</span>
+                  <span className="text-xs bg-gray-100 text-gray-400 px-2 py-1 rounded-lg">{cat.count}</span>
+                </button>
+              </FadeIn>
+            ))}
+          </div>
+        </section>
+
         {/* --- BLOG GRID --- */}
         <section className="pb-24 px-6 max-w-7xl mx-auto">
             
-            {/* Featured Post (Index 0) */}
+            {/* Featured Post */}
             <FadeIn className="mb-12">
-                <Link to="/blog/1" className="group block">
+                <Link to={`/blog/${blogs[0].id}`} className="group block">
                     <div className="relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl hover:shadow-2xl transition-all duration-500 grid md:grid-cols-2 border border-gray-100">
                         <div className="h-full min-h-[400px] overflow-hidden relative">
                             <img 
@@ -156,7 +171,6 @@ export default function BlogSectionModern() {
                                 alt={blogs[0].title}
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:bg-none" />
                             <div className="absolute top-6 left-6 flex gap-2">
                                 {blogs[0].tags.map(tag => (
                                     <span key={tag} className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-gray-900 uppercase tracking-wide">
@@ -166,12 +180,10 @@ export default function BlogSectionModern() {
                             </div>
                         </div>
                         
-                        <div className="p-8 md:p-12 flex flex-col justify-center relative">
-                            {/* Featured Label - Changed to green */}
+                        <div className="p-8 md:p-12 flex flex-col justify-center">
                             <div className="flex items-center gap-2 text-sm font-medium text-green-500 mb-4">
-                                <Sparkles className="w-4 h-4" /> Featured Story
+                                <Sparkles className="w-4 h-4" /> Authority Piece
                             </div>
-                            {/* Title Hover - Changed to green */}
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight group-hover:text-green-600 transition-colors">
                                 {blogs[0].title}
                             </h2>
@@ -181,7 +193,7 @@ export default function BlogSectionModern() {
                             
                             <div className="flex items-center justify-between mt-auto border-t border-gray-100 pt-6">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
+                                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                                         <User className="w-5 h-5" />
                                     </div>
                                     <div className="text-sm">
@@ -189,7 +201,6 @@ export default function BlogSectionModern() {
                                         <p className="text-gray-500">{blogs[0].date} • {blogs[0].readTime}</p>
                                     </div>
                                 </div>
-                                {/* Arrow Button - Changed to green */}
                                 <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-500 transition-colors">
                                     <ArrowUpRight className="w-6 h-6 text-green-500 group-hover:text-white transition-colors" />
                                 </div>
@@ -221,16 +232,14 @@ export default function BlogSectionModern() {
                                 <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 mb-3">
                                     <Clock className="w-3 h-3" /> {blog.readTime}
                                 </div>
-                                {/* Title Hover - Changed to green */}
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug group-hover:text-green-500 transition-colors">
                                     {blog.title}
                                 </h3>
                                 <p className="text-gray-500 text-sm line-clamp-2 mb-6 flex-1">
                                     {blog.description}
                                 </p>
-                                
                                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                                    Read Article <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                    Read Strategy <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                 </div>
                             </div>
                         </Link>
@@ -239,55 +248,21 @@ export default function BlogSectionModern() {
             </div>
         </section>
 
-        {/* --- TRENDING / POPULAR SECTION (Dark Mode Bento) --- */}
-        <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-             {/* Abstract Lines */}
-             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-                <div className="absolute top-[20%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
-                <div className="absolute top-[80%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
-             </div>
-
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                    <FadeIn>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
-                            {/* Changed highlight to green */}
-                            Trending <span className="text-green-500">Now</span>
-                        </h2>
-                        <p className="text-gray-400">Most read articles across the advertising world.</p>
-                    </FadeIn>
-                    <FadeIn delay={100}>
-                         <button className="flex items-center gap-2 text-white border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all">
-                            <TrendingUp className="w-4 h-4" /> View All News
-                         </button>
-                    </FadeIn>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6">
-                    {popularNews.map((news, idx) => (
-                        <FadeIn key={idx} delay={idx * 150}>
-                            <div className="group relative h-80 rounded-[2rem] overflow-hidden cursor-pointer">
-                                <img 
-                                    src={news.image} 
-                                    alt={news.title}
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                                
-                                <div className="absolute bottom-0 left-0 p-8 w-full">
-                                    {/* Category Badge - Changed to green */}
-                                    <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-green-400 border border-green-500/30 bg-green-500/10 rounded-full uppercase">
-                                        {news.category}
-                                    </span>
-                                    <h3 className="text-2xl font-bold text-white leading-tight group-hover:translate-x-2 transition-transform duration-300">
-                                        {news.title}
-                                    </h3>
-                                </div>
-                            </div>
-                        </FadeIn>
-                    ))}
-                </div>
+        {/* --- NEWSLETTER CTA --- */}
+        <section className="py-24 px-6">
+          <FadeIn className="max-w-5xl mx-auto">
+            <div className="bg-gray-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/20 rounded-full blur-[80px]" />
+               <h2 className="text-3xl md:text-5xl font-bold mb-6">Stay Ahead of UAE Marketing Trends</h2>
+               <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+                  Get our monthly briefing on advertising strategies, distribution hacks, and local business growth tips.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <input type="email" placeholder="Your business email" className="bg-white/5 border border-white/10 rounded-2xl px-8 py-4 outline-none focus:border-green-500 transition-all w-full sm:w-80" />
+                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-2xl transition-all">Subscribe</button>
+               </div>
             </div>
+          </FadeIn>
         </section>
 
       </main>

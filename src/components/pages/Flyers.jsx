@@ -65,6 +65,27 @@ export default function FlyerDistribution() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    /* --- META TAGS LOGIC --- */
+    document.title = "Flyer Distribution Services in Dubai, UAE | Max Lead";
+    
+    // Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising offers professional flyer distribution services in Dubai, UAE including door to door flyer and leaflet distribution with targeted reach.");
+
+    // Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/flyer-distribution-services/");
+
     const move = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
@@ -198,7 +219,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
 
             <FadeIn delay={200}>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-green-500 to-teal-400 rounded-[2rem] transform rotate-3 opacity-20 blur-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-green-50 to-teal-400 rounded-[2rem] transform rotate-3 opacity-20 blur-lg"></div>
                 <img
                   src={flyerHero}
                   alt="Flyer distribution services in Dubai"

@@ -61,6 +61,29 @@ export default function OutdoorAds() {
   const whatsappNumber = "971522286401"; 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Outdoor Advertising services.`;
   
+  // ADDED: Meta Tags Logic
+  useEffect(() => {
+    document.title = "Outdoor Advertising Company in Dubai, UAE | Max Lead";
+    
+    // Meta Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE offering billboards, LED screens, vehicle branding and OOH media solutions.");
+
+    // Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/outdoor-advertising-company/");
+  }, []);
+
   return (
     <>
       <Whatsapp />

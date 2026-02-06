@@ -96,7 +96,7 @@ export default function Navigation() {
           <NavLink to="/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             Home
           </NavLink>
-          <NavLink to="/about" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
+          <NavLink to="/about-maxlead" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             About
           </NavLink>
            <NavLink to="/blog" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>

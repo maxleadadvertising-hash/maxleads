@@ -25,7 +25,7 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<Aboutus />} />
+        <Route path="/about-maxlead" element={<Aboutus />} />
         <Route path="/blog" element={<BlogSectionClassic />} />
         <Route path="/contact" element={<Contactus />} />
         

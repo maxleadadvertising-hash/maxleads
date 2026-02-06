@@ -6,7 +6,11 @@ import {
   MapPin, 
   Send,
   Loader2,
-  CheckCircle2
+  CheckCircle2,
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin
 } from "lucide-react";
 
 export default function Footer() {
@@ -124,12 +128,50 @@ export default function Footer() {
         {/* --- MAIN LINKS GRID --- */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           
-          {/* Company Info */}
-          <div className="col-span-2 md:col-span-1 space-y-4">
-            <h4 className="text-xl font-bold text-green-500">MaxLead.</h4>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Your premier partner for digital printing, flyer distribution, and integrated marketing solutions across the UAE.
-            </p>
+          {/* Company Info & Social Media */}
+          <div className="col-span-2 md:col-span-1 space-y-6">
+            <div>
+              <h4 className="text-xl font-bold text-green-500">MaxLead.</h4>
+              <p className="text-sm text-gray-400 leading-relaxed mt-2">
+                Your premier partner for digital printing, flyer distribution, and integrated marketing solutions across the UAE.
+              </p>
+            </div>
+            
+            {/* SOCIAL MEDIA ICONS */}
+            <div className="flex gap-4">
+              <a 
+                href="https://www.facebook.com/maxleadadvertising" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 group"
+              >
+                <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+              <a 
+                href="https://www.instagram.com/maxleadadvertising/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-all duration-300 group"
+              >
+                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@maxleadadvertising" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-600 hover:border-red-600 transition-all duration-300 group"
+              >
+                <Youtube className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/max-lead-advertising-distribution/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-700 hover:border-blue-700 transition-all duration-300 group"
+              >
+                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -138,9 +180,9 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               {[
                 { name: 'Home', link: '/' },
-                { name: 'About Us', link: '/about' },
-                { name: 'Services', link: '/flyer-distribution-services/' }, // Generic services page anchor if exists
-                { name: 'Clients', link: '/work' }, // Or whatever your portfolio route is
+                { name: 'About Us', link: '/about-maxlead' },
+                { name: 'Services', link: '/flyer-distribution-services/' },
+                { name: 'Clients', link: '/work' },
                 { name: 'Contact', link: '/contact' }
               ].map((item, idx) => (
                 <li key={idx}>

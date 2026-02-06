@@ -42,6 +42,27 @@ export default function Aboutus() {
   const whatsappNumber = "971522286401";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead Advertising, I'm interested in your services.`;
 
+  // ADDED: Meta Tags Logic
+  useEffect(() => {
+    document.title = "About Max Lead Advertising | Advertising Company in UAE";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Learn about Max Lead Advertising, a trusted advertising and distribution company in UAE delivering flyer distribution, printing, & digital marketing solutions.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/about-maxlead");
+  }, []);
+
   /* Lenis smooth scroll */
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1, wheelMultiplier: 1.2 });

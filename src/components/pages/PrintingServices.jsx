@@ -91,6 +91,27 @@ export default function PrintingServices() {
   const whatsappNumber = "971522286401";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Printing Services.`;
 
+  // ADDED: Meta Tags Logic
+  useEffect(() => {
+    document.title = "Digital Printing Services in Dubai, UAE | Max Lead";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising provides professional digital printing services in Dubai, UAE including flyers, banners, large format and corporate printing solutions.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/digital-printing-services/");
+  }, []);
+
   // DATA
   const serviceCategories = [
     {
@@ -352,19 +373,19 @@ export default function PrintingServices() {
                   <div>
                      <p className="text-gray-400 mb-4 font-semibold uppercase tracking-widest text-sm">Choosing us ensures:</p>
                      <div className="grid sm:grid-cols-1 gap-4">
-                        {[
-                          "Consistent color accuracy",
-                          "Durable materials",
-                          "Clean finishing",
-                          "Better brand perception",
-                          "Long-term usability"
-                        ].map((benefit, i) => (
-                          <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/20 hover:scale-[1.02] transition-all duration-300 cursor-default">
-                            <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                            <span className="font-medium text-lg">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
+                       {[
+                         "Consistent color accuracy",
+                         "Durable materials",
+                         "Clean finishing",
+                         "Better brand perception",
+                         "Long-term usability"
+                       ].map((benefit, i) => (
+                         <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/20 hover:scale-[1.02] transition-all duration-300 cursor-default">
+                           <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                           <span className="font-medium text-lg">{benefit}</span>
+                         </div>
+                       ))}
+                     </div>
                   </div>
                 </div>
               </div>
