@@ -15,8 +15,8 @@ import {
   Video,
   Linkedin,
   MousePointerClick,
- 
 } from "lucide-react";
+import { Link } from "react-router-dom"; // Added this import
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ScrollToTop from "../ScrollToTop";
@@ -108,12 +108,13 @@ export default function DigitalMarketing() {
                 >
                   Get a Free Digital Marketing Strategy
                 </a>
-                <button 
-                  onClick={() => window.location.href = '/contact'}
-                  className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300"
+                {/* Fixed "Request a Quick Quote" to use Link component */}
+                <Link 
+                  to="/contact"
+                  className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300 flex items-center justify-center"
                 >
                   Request a Quick Quote
-                </button>
+                </Link>
               </div>
             </FadeIn>
 
@@ -230,6 +231,7 @@ export default function DigitalMarketing() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <FadeIn>
                 
+
 
 [Image of social media marketing ecosystem diagram]
 
@@ -483,7 +485,6 @@ export default function DigitalMarketing() {
                   If you are looking for a best digital marketing agency in Dubai, Max Lead Advertising is here to help. Whether you need leads, sales, or brand visibility, our digital marketing services are designed to move your business forward.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  {/* WHATSAPP REDIRECT */}
                   <a 
                     href={whatsappLink}
                     target="_blank"
@@ -493,16 +494,15 @@ export default function DigitalMarketing() {
                     <MessageCircle className="w-6 h-6" />
                     Get Your Free Digital Marketing Strategy
                   </a>
-                  {/* WHATSAPP REDIRECT */}
-                  <a 
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+
+                  {/* Fixed CONTACT PAGE REDIRECT with proper Link component */}
+                  <Link 
+                    to="/contact"
                     className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400"
                   >
-                    <MessageCircle className="w-6 h-6 text-green-600" />
+                    <Mail className="w-6 h-6 text-green-600" />
                     Talk to Our Digital Marketing Experts
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

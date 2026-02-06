@@ -15,7 +15,7 @@ import Outdoorads from './components/pages/outdoorads';
 import Clients from './components/pages/client';
 import Industries from './components/pages/industries';
 import Scrollup from "./components/scrolluparrow";
-
+import ThankYou from './components/Thankyou';
 function App() {
   return (
     <Router>
@@ -39,7 +39,7 @@ function App() {
         <Route path="/work" element={<Clients/>} />
         <Route path="/industries" element={<Industries/>} />
        
-         
+         <Route path="/thank-you" element={<ThankYou />} /> {/* Add this */}
       </Routes>
     </Router>
   );

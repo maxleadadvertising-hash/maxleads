@@ -16,8 +16,10 @@ import {
   PenTool,
   FileCheck,
   Printer,
-  BarChart3
+  BarChart3,
+  Mail // Added for the contact icon
 } from "lucide-react";
+import { Link } from "react-router-dom"; // Added this import
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ScrollToTop from "../ScrollToTop";
@@ -106,12 +108,13 @@ export default function OutdoorAds() {
                 >
                   Get a Free Outdoor Media Plan
                 </a>
-                <button 
-                  onClick={() => window.location.href = '/contact'}
-                  className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300"
+                {/* CORRECTED TO LINK COMPONENT */}
+                <Link 
+                  to="/contact"
+                  className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300 flex items-center justify-center"
                 >
                   Request a Quote
-                </button>
+                </Link>
               </div>
             </FadeIn>
 
@@ -266,7 +269,7 @@ export default function OutdoorAds() {
                         "Transparent pricing",
                         "Local market knowledge",
                         "Fast turnaround times",
-                        "Integrated offline and digital marketing solutions"
+                        "Integrated offline and online marketing solutions"
                     ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
                             <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
@@ -361,15 +364,14 @@ export default function OutdoorAds() {
                     <MessageCircle className="w-6 h-6" />
                     Talk to our experts on WhatsApp
                   </a>
-                  <a 
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  {/* CORRECTED TO LINK COMPONENT */}
+                  <Link 
+                    to="/contact"
                     className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400"
                   >
-                    <MessageCircle className="w-6 h-6 text-green-600" />
+                    <Mail className="w-6 h-6 text-green-600" />
                     Book a Consultation Today
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

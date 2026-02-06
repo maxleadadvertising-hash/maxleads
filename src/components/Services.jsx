@@ -27,7 +27,7 @@ const services = [
       "Event & Promotion Distribution",
     ],
     cta: "Explore Flyer Distribution Services",
-    path: "/flyer" // 2. Add Path
+    path: "/flyer-distribution-services/" // 2. Add Path
   },
    {
     id: "digital",
@@ -47,7 +47,7 @@ const services = [
       "SMS Marketing Services",
     ],
     cta: "Explore Digital Marketing Services",
-    path: "/digital" // 2. Add Path
+    path: "/digital-marketing-agency/" // 2. Add Path
   },
    
   {
@@ -66,7 +66,7 @@ const services = [
       "Specialty Printing Solutions",
     ],
     cta: "Explore Printing Services",
-    path: "/printing" // 2. Add Path
+    path: "/digital-printing-services/" // 2. Add Path
   },
  
  
@@ -88,7 +88,7 @@ const services = [
       "Taxi, Truck & Van Advertising",
     ],
     cta: "Explore Outdoor Advertising Solutions",
-    path: "/outdoor" // 2. Add Path
+    path: "/outdoor-advertising-company/" // 2. Add Path
   },
   {
    

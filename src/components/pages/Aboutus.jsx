@@ -399,7 +399,7 @@ export default function Aboutus() {
                     onClick={() => window.location.href = "/contact"}
                     className="px-12 py-5 bg-gray-900 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-gray-800 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
                    >
-                    Go to Contact Page
+                    Get a free consultation
                    </button>
                    {/* WHATSAPP BUTTON */}
                    <a
@@ -409,7 +409,7 @@ export default function Aboutus() {
                     className="px-12 py-5 bg-green-600 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-green-700 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
                    >
                     <MessageCircle className="w-6 h-6" />
-                    Chat on WhatsApp
+                     Request a custom quote
                    </a>
                 </div>
             </div>

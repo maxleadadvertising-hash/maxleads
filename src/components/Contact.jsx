@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; // Added for redirection
 import { 
   Mail, 
   Phone, 
@@ -43,6 +44,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function Contact() {
+  const navigate = useNavigate(); // Initialize navigate hook
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -79,10 +81,12 @@ export default function Contact() {
         setResult("Form Submitted Successfully");
         setFormStatus('success');
         setFormData({ name: '', email: '', mobile: '', company: '', service: '', message: '' });
+        
+        // Redirect to Thank You page after successful submission
         setTimeout(() => {
-          setFormStatus('idle');
-          setResult("");
-        }, 5000);
+          navigate('/thank-you');
+        }, 1500);
+
       } else {
         setResult(data.message);
         setFormStatus('error');

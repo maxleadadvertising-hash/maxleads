@@ -16,6 +16,7 @@ import {
   Target,
   Calendar
 } from "lucide-react";
+import { Link } from "react-router-dom"; // Added this import
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ScrollToTop from "../ScrollToTop";
@@ -184,12 +185,13 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                       Get a Quote
                     </button>
                   </a>
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  {/* Corrected "View services" redirect to contact page */}
+                  <Link to="/contact">
                     <button className="px-8 py-3.5 rounded-full bg-black text-white font-bold shadow-lg hover:shadow-green-500/30 transition transform hover:-translate-y-1 flex items-center gap-2">
                       <MessageCircle className="w-5 h-5" />
-                      View services
+                      Contact Us
                     </button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </FadeIn>
@@ -465,13 +467,13 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
 
-                  {/* CONTACT US */}
-                  <a href="/contact">
-                    <button className="px-8 py-4 rounded-full bg-gradient-to-r from-green-600 to-teal-700 text-white font-bold text-lg hover:shadow-lg hover:shadow-green-500/40 transition flex items-center justify-center gap-2">
+                  {/* Corrected CONTACT US to use Link component */}
+                  <Link to="/contact">
+                    <button className="px-8 py-4 rounded-full bg-gradient-to-r from-green-600 to-teal-700 text-white font-bold text-lg hover:shadow-lg hover:shadow-green-500/40 transition flex items-center justify-center gap-2 w-full sm:w-auto">
                       <Phone className="w-5 h-5" />
                       Contact us today
                     </button>
-                  </a>
+                  </Link>
 
                   {/* WHATSAPP */}
                   <a
