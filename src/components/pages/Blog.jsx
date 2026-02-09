@@ -2,14 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
-import { ArrowUpRight, Clock, User, Sparkles, TrendingUp, BookOpen, Target, MapPin } from "lucide-react";
+import { ArrowUpRight, Clock, User, Sparkles, TrendingUp, BookOpen, Target, MapPin, FileText } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../ScrollToTop";
 import Whatsapp from '../pages/whatsapp';
 
 /* --- STRATEGIC BLOG DATA --- */
 const blogs = [
-  // A. Authority-Building
   {
     id: 1,
     title: "How Advertising and Distribution Work Together to Grow Businesses in UAE",
@@ -32,7 +31,6 @@ const blogs = [
     tags: ["Flyer Distribution", "Insights"],
     featured: false
   },
-  // B. Service-Intent
   {
     id: 3,
     title: "How to Choose the Right Flyer Distribution Company in UAE",
@@ -55,7 +53,6 @@ const blogs = [
     tags: ["SMS Marketing", "ROI"],
     featured: false
   },
-  // C. Industry Specific
   {
     id: 5,
     title: "Marketing Strategies for Retail & Supermarkets in UAE",
@@ -127,16 +124,17 @@ export default function BlogSectionModern() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-green-100/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
 
+            {/* INCREASED WIDTH TO 7XL */}
             <div className="max-w-7xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                         <Sparkles className="w-4 h-4" />
                         <span>MaxLead Strategic Insights</span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight mb-6">
+                    <h1 className="text-5xl md:text-8xl font-bold text-gray-900 tracking-tight mb-6">
                         The Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Advertising</span>
                     </h1>
-                    <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl md:text-2xl text-gray-500 max-w-4xl mx-auto leading-relaxed">
                         Data-driven insights and strategic guides to dominate the UAE market through offline and online channels.
                     </p>
                 </FadeIn>
@@ -158,51 +156,51 @@ export default function BlogSectionModern() {
           </div>
         </section>
 
-        {/* --- BLOG GRID --- */}
+        {/* --- BLOG GRID --- (7XL WIDTH) */}
         <section className="pb-24 px-6 max-w-7xl mx-auto">
             
             {/* Featured Post */}
             <FadeIn className="mb-12">
                 <Link to={`/blog/${blogs[0].id}`} className="group block">
-                    <div className="relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl hover:shadow-2xl transition-all duration-500 grid md:grid-cols-2 border border-gray-100">
-                        <div className="h-full min-h-[400px] overflow-hidden relative">
+                    <div className="relative overflow-hidden rounded-[3rem] bg-white shadow-xl hover:shadow-2xl transition-all duration-500 grid md:grid-cols-2 border border-gray-100">
+                        <div className="h-full min-h-[500px] overflow-hidden relative">
                             <img 
                                 src={blogs[0].image} 
                                 alt={blogs[0].title}
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute top-6 left-6 flex gap-2">
+                            <div className="absolute top-8 left-8 flex gap-2">
                                 {blogs[0].tags.map(tag => (
-                                    <span key={tag} className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-gray-900 uppercase tracking-wide">
+                                    <span key={tag} className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold text-gray-900 uppercase tracking-wide shadow-sm">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
                         </div>
                         
-                        <div className="p-8 md:p-12 flex flex-col justify-center">
-                            <div className="flex items-center gap-2 text-sm font-medium text-green-500 mb-4">
-                                <Sparkles className="w-4 h-4" /> Authority Piece
+                        <div className="p-10 md:p-16 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-green-500 mb-6 tracking-widest uppercase">
+                                <Sparkles className="w-5 h-5" /> Authority Piece
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight group-hover:text-green-600 transition-colors">
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight group-hover:text-green-600 transition-colors">
                                 {blogs[0].title}
                             </h2>
-                            <p className="text-gray-600 text-lg mb-8 line-clamp-3">
+                            <p className="text-gray-600 text-xl mb-10 line-clamp-3">
                                 {blogs[0].description}
                             </p>
                             
-                            <div className="flex items-center justify-between mt-auto border-t border-gray-100 pt-6">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                        <User className="w-5 h-5" />
+                            <div className="flex items-center justify-between mt-auto border-t border-gray-100 pt-8">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                        <User className="w-6 h-6" />
                                     </div>
-                                    <div className="text-sm">
+                                    <div className="text-base">
                                         <p className="font-bold text-gray-900">{blogs[0].author}</p>
                                         <p className="text-gray-500">{blogs[0].date} • {blogs[0].readTime}</p>
                                     </div>
                                 </div>
-                                <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-500 transition-colors">
-                                    <ArrowUpRight className="w-6 h-6 text-green-500 group-hover:text-white transition-colors" />
+                                <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                                    <ArrowUpRight className="w-7 h-7 text-green-500 group-hover:text-white transition-colors" />
                                 </div>
                             </div>
                         </div>
@@ -211,35 +209,35 @@ export default function BlogSectionModern() {
             </FadeIn>
 
             {/* Standard Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {blogs.slice(1).map((blog, idx) => (
                     <FadeIn key={blog.id} delay={idx * 100}>
-                        <Link to={`/blog/${blog.id}`} className="group flex flex-col h-full bg-white rounded-[2rem] border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                            <div className="h-64 overflow-hidden relative">
+                        <Link to={`/blog/${blog.id}`} className="group flex flex-col h-full bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                            <div className="h-72 overflow-hidden relative">
                                 <img 
                                     src={blog.image} 
                                     alt={blog.title} 
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute top-4 left-4">
-                                    <span className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm">
+                                <div className="absolute top-6 left-6">
+                                    <span className="bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-gray-900 shadow-sm">
                                         {blog.tags[0]}
                                     </span>
                                 </div>
                             </div>
                             
-                            <div className="p-8 flex flex-col flex-1">
-                                <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 mb-3">
-                                    <Clock className="w-3 h-3" /> {blog.readTime}
+                            <div className="p-10 flex flex-col flex-1">
+                                <div className="flex items-center gap-2 text-xs font-bold text-gray-400 mb-4 tracking-wider uppercase">
+                                    <Clock className="w-4 h-4" /> {blog.readTime}
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug group-hover:text-green-500 transition-colors">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-snug group-hover:text-green-500 transition-colors">
                                     {blog.title}
                                 </h3>
-                                <p className="text-gray-500 text-sm line-clamp-2 mb-6 flex-1">
+                                <p className="text-gray-500 text-base line-clamp-2 mb-8 flex-1">
                                     {blog.description}
                                 </p>
-                                <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                                    Read Strategy <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                <div className="flex items-center gap-2 text-base font-bold text-gray-900">
+                                    Read Strategy <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-green-500" />
                                 </div>
                             </div>
                         </Link>
@@ -248,18 +246,79 @@ export default function BlogSectionModern() {
             </div>
         </section>
 
+        {/* --- FULL BLOG CONTENT SECTION --- (INCREASED TO 6XL) */}
+        <section className="py-24 bg-white px-6">
+            <FadeIn className="max-w-6xl mx-auto">
+                <div className="prose prose-xl prose-green max-w-none text-gray-700 leading-relaxed">
+                    <div className="flex items-center gap-3 text-green-600 mb-8">
+                        <FileText className="w-8 h-8" />
+                        <span className="font-bold tracking-[0.2em] uppercase text-sm">Featured Industry Deep-Dive</span>
+                    </div>
+                    
+                    <h2 className="text-5xl font-black text-gray-900 mb-10 tracking-tight">Why Businesses in UAE Still Rely on Flyer Distribution in the Digital Age</h2>
+                    
+                    <div className="grid lg:grid-cols-1 gap-12 text-lg md:text-xl">
+                        <div className="space-y-8">
+                            <p className="text-2xl font-medium text-gray-900 leading-normal border-l-4 border-green-500 pl-6">In today’s world, almost everything has gone digital. Businesses are investing heavily in social media ads, Google ads, and online campaigns to reach customers. Yet, despite all this digital growth, flyer distribution services continue to play a powerful role in marketing across the UAE.</p>
+                            
+                            <p>From local retail stores and restaurants to real estate developers and service providers, many businesses still rely on door to door flyer distribution and leaflet distribution to create awareness, generate enquiries, and drive footfall. This is not because digital marketing doesn’t work — it’s because offline marketing still works exceptionally well when used the right way.</p>
+                            
+                            <p>So why do businesses in the UAE continue to trust flyer distribution even in the digital age? Let’s discuss it now.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">The UAE Market Is Built for Offline Visibility</h3>
+                            <p>The UAE is unique when it comes to consumer behavior. People here spend a significant amount of time outside their homes — commuting, shopping, dining, visiting malls, and attending events. Residential communities, commercial areas, and retail zones are always active.</p>
+                            <p>This environment makes flyer distribution in UAE extremely effective. Unlike online ads that disappear with one scroll, flyers stay physically present. They reach people: Inside their homes, At their workplaces, In shopping areas, During daily routines. For businesses that depend on local customers, physical visibility still matters.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Flyer Distribution Creates Direct Local Reach</h3>
+                            <p>One of the biggest advantages of door to door flyer distribution is local targeting. Digital ads often reach a broad audience, including people who may not be relevant to your business. Flyer distribution works differently. With proper planning, businesses can: Target specific residential communities, Focus on villas, apartments, or gated societies, Choose commercial zones or retail clusters, Reach customers based on location and lifestyle. This makes door to door leaflet distribution highly effective for local promotions, store openings, offers, and service-based businesses.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Physical Flyers Build Trust Faster</h3>
+                            <p>In a market filled with online ads, users have become cautious. Many people scroll past ads without reading them or block them entirely. Flyers feel different. A printed flyer: Feels more personal, Looks more intentional, Creates a sense of legitimacy, Stays with the customer longer. When people receive a flyer at their home or workplace, it often builds more trust than a random digital ad. This is one reason why flyer distribution services continue to deliver results in the UAE.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">High Visibility Without Digital Fatigue</h3>
+                            <p>Digital marketing is powerful, but it also comes with challenges: Ad fatigue, Rising ad costs, Ad blockers, Limited organic reach. Flyer distribution does not suffer from these problems. A flyer placed at the right location is: Always visible, Not skippable, Not affected by algorithms, Cost-effective for local reach. This makes flyer distribution a reliable option for businesses that want consistent visibility without depending entirely on digital platforms.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Flyer Distribution Supports Quick Promotions</h3>
+                            <p>Many UAE businesses run time-sensitive campaigns such as: Weekend offers, Festival discounts, Store launches, Event promotions. For such campaigns, flyer distribution services in Dubai, UAE deliver faster local awareness than most digital channels. A well-designed flyer distributed in the right areas can: Drive immediate footfall, Generate same-day enquiries, Support short-term promotions. This is especially useful for restaurants, retail stores, clinics, salons, and event organizers.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Door to Door Flyer Distribution Works Across Industries</h3>
+                            <p>One major reason flyer distribution remains relevant is its versatility. Almost every industry in the UAE benefits from it, including: Retail & supermarkets, Restaurants & cafes, Real estate, Healthcare & clinics, Education & training institutes, Events & exhibitions, Local service providers. Because flyers are customizable, businesses can tailor messaging, offers, and designs based on their target audience.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Flyer Distribution Is Cost-Effective Compared to Mass Media</h3>
+                            <p>Traditional advertising like TV, radio, and newspapers can be expensive and difficult to track. Flyer distribution offers a more affordable alternative with better local targeting. When executed professionally, flyer distribution services allow businesses to: Control distribution areas, Manage budget efficiently, Avoid unnecessary exposure, Focus on high-potential locations. This makes it ideal for small and medium-sized businesses in the UAE.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">The Power of Combining Flyer Distribution with Digital Marketing</h3>
+                            <p>Flyer distribution works best when it is part of a bigger marketing system. Many successful UAE businesses use flyers to: Create initial awareness, Drive people to WhatsApp, websites, or social media, Support digital campaigns with offline visibility. For example: A flyer includes a QR code linking to a website, A printed offer drives WhatsApp enquiries, Offline distribution increases recall for online ads. This offline + online combination increases overall campaign effectiveness.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Professional Execution Makes All the Difference</h3>
+                            <p>Not all flyer distribution delivers results. Random distribution without planning often leads to wasted effort. Professional flyer distribution companies in Dubai UAE focus on: Area selection, Audience relevance, Ethical distribution practices, Supervised execution, Campaign planning. This structured approach ensures flyers reach the right people, not just more people.</p>
+
+                            <h3 className="text-3xl font-bold text-gray-900 pt-8">Why Businesses Choose Professional Flyer Distribution Services</h3>
+                            <p>Businesses that rely on door to door flyer distribution usually understand one key point: Execution matters more than quantity. Professional flyer distribution services offer: Better targeting, Higher response rates, Brand-safe practices, Consistent coverage, Measurable impact. This is why many UAE businesses continue to invest in flyer distribution year after year.</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-900 p-12 md:p-16 rounded-[3.5rem] mt-20 text-white border border-white/5 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-[100px]" />
+                        <h3 className="text-3xl md:text-4xl font-bold mb-6 text-green-400">Conclusion: Flyer Distribution Is Still Relevant — When Done Right</h3>
+                        <p className="text-gray-300 text-xl leading-relaxed">Despite the rise of digital marketing, flyer distribution remains a powerful and reliable advertising method in the UAE. It delivers local reach, builds trust, supports quick promotions, and works across industries. In the digital age, flyer distribution is not outdated — it has simply evolved. When combined with strategic planning, quality printing, and professional execution, flyer distribution services in UAE continue to deliver real business results. For businesses that want visibility, response, and local impact, flyer distribution remains a smart marketing choice.</p>
+                    </div>
+                </div>
+            </FadeIn>
+        </section>
+
         {/* --- NEWSLETTER CTA --- */}
         <section className="py-24 px-6">
-          <FadeIn className="max-w-5xl mx-auto">
-            <div className="bg-gray-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/20 rounded-full blur-[80px]" />
-               <h2 className="text-3xl md:text-5xl font-bold mb-6">Stay Ahead of UAE Marketing Trends</h2>
-               <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-                  Get our monthly briefing on advertising strategies, distribution hacks, and local business growth tips.
+          <FadeIn className="max-w-7xl mx-auto">
+            <div className="bg-gray-900 rounded-[4rem] p-16 text-center text-white relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-80 h-80 bg-green-500/20 rounded-full blur-[100px]" />
+               <h2 className="text-4xl md:text-6xl font-bold mb-8">Stay Ahead of UAE Marketing Trends</h2>
+               <p className="text-gray-400 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+                 Get our monthly briefing on advertising strategies, distribution hacks, and local business growth tips.
                </p>
-               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <input type="email" placeholder="Your business email" className="bg-white/5 border border-white/10 rounded-2xl px-8 py-4 outline-none focus:border-green-500 transition-all w-full sm:w-80" />
-                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-2xl transition-all">Subscribe</button>
+               <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <input type="email" placeholder="Your business email" className="bg-white/5 border border-white/10 rounded-2xl px-10 py-5 outline-none focus:border-green-500 transition-all w-full sm:w-96 text-lg" />
+                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-12 py-5 rounded-2xl transition-all text-lg">Subscribe Now</button>
                </div>
             </div>
           </FadeIn>
