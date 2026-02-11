@@ -25,9 +25,9 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/about-maxlead" element={<Aboutus />} />
-        <Route path="/blog" element={<BlogSectionClassic />} />
-        <Route path="/contact" element={<Contactus />} />
+        <Route path="/about-maxlead/" element={<Aboutus />} />
+        <Route path="/blog/" element={<BlogSectionClassic />} />
+        <Route path="/contact/" element={<Contactus />} />
         
         {/* Services */}
         <Route path="/flyer-distribution-services/" element={<FlyerDistribution/>} />
@@ -36,10 +36,10 @@ function App() {
         <Route path="/outdoor-advertising-company/" element={<Outdoorads/>} />
         
         {/* Other */}
-        <Route path="/work" element={<Clients/>} />
-        <Route path="/industries" element={<Industries/>} />
+        <Route path="/work/" element={<Clients/>} />
+        <Route path="/industries/" element={<Industries/>} />
        
-         <Route path="/thank-you" element={<ThankYou />} /> {/* Add this */}
+         <Route path="/thank-you/" element={<ThankYou />} /> {/* Add this */}
       </Routes>
     </Router>
   );

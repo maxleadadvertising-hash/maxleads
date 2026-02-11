@@ -96,10 +96,10 @@ export default function Navigation() {
           <NavLink to="/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             Home
           </NavLink>
-          <NavLink to="/about-maxlead" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
+          <NavLink to="/about-maxlead/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             About
           </NavLink>
-           <NavLink to="/blog" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
+           <NavLink to="/blog/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
            Blog
           </NavLink>
 
@@ -151,10 +151,10 @@ export default function Navigation() {
             </div>
           </div>
 
-          <NavLink to="/industries" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
+          <NavLink to="/industries/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             Industries
           </NavLink>
-          <NavLink to="/work" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
+          <NavLink to="/work/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             Clients
           </NavLink>
         </div>
@@ -162,7 +162,7 @@ export default function Navigation() {
         {/* --- CTA BUTTON --- */}
         <div className="hidden md:block">
           <Link 
-            to="/contact" 
+            to="/contact/" 
             className="px-5 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-green-600 hover:text-white transition-all shadow-lg hover:shadow-green-500/25"
           >
             Get a Quote
@@ -188,8 +188,8 @@ export default function Navigation() {
       >
         <div className="p-6 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
           <NavLink to="/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Home</NavLink>
-          <NavLink to="/about" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">About Us</NavLink>
-          <NavLink to="/blog" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Blog</NavLink>
+          <NavLink to="/about-maxlead/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">About Us</NavLink>
+          <NavLink to="/blog/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Blog</NavLink>
           <div className="space-y-3">
             <div className="text-sm font-bold text-gray-500 uppercase tracking-wider">Services</div>
             <div className="grid grid-cols-1 gap-2">
@@ -207,11 +207,11 @@ export default function Navigation() {
             </div>
           </div>
 
-          <NavLink to="/industries" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Industries</NavLink>
-          <NavLink to="/work" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Clients</NavLink>
+          <NavLink to="/industries/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Industries</NavLink>
+          <NavLink to="/work/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Clients</NavLink>
           
           <Link 
-            to="/contact" 
+            to="/contact/" 
             onClick={() => setMenuOpen(false)}
             className="w-full py-4 bg-green-600 text-white font-bold rounded-xl text-center mt-2"
           >
