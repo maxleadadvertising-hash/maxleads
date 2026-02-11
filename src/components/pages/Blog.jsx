@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
-import { ArrowUpRight, Clock, User, Sparkles, TrendingUp, BookOpen, Target, MapPin, FileText } from "lucide-react";
+import {Clock, User, Sparkles, TrendingUp, BookOpen, Target, MapPin, FileText } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../ScrollToTop";
 import Whatsapp from '../pages/whatsapp';
@@ -124,7 +123,6 @@ export default function BlogSectionModern() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-green-100/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
 
-            {/* INCREASED WIDTH TO 7XL */}
             <div className="max-w-7xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -156,68 +154,63 @@ export default function BlogSectionModern() {
           </div>
         </section>
 
-        {/* --- BLOG GRID --- (7XL WIDTH) */}
+        {/* --- BLOG GRID --- */}
         <section className="pb-24 px-6 max-w-7xl mx-auto">
             
-            {/* Featured Post */}
+            {/* Featured Post (Link Removed) */}
             <FadeIn className="mb-12">
-                <Link to={`/blog/${blogs[0].id}`} className="group block">
-                    <div className="relative overflow-hidden rounded-[3rem] bg-white shadow-xl hover:shadow-2xl transition-all duration-500 grid md:grid-cols-2 border border-gray-100">
-                        <div className="h-full min-h-[500px] overflow-hidden relative">
-                            <img 
-                                src={blogs[0].image} 
-                                alt={blogs[0].title}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute top-8 left-8 flex gap-2">
-                                {blogs[0].tags.map(tag => (
-                                    <span key={tag} className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold text-gray-900 uppercase tracking-wide shadow-sm">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                <div className="relative overflow-hidden rounded-[3rem] bg-white shadow-xl grid md:grid-cols-2 border border-gray-100">
+                    <div className="h-full min-h-[500px] overflow-hidden relative">
+                        <img 
+                            src={blogs[0].image} 
+                            alt={blogs[0].title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute top-8 left-8 flex gap-2">
+                            {blogs[0].tags.map(tag => (
+                                <span key={tag} className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold text-gray-900 uppercase tracking-wide shadow-sm">
+                                    {tag}
+                                </span>
+                            ))}
                         </div>
+                    </div>
+                    
+                    <div className="p-10 md:p-16 flex flex-col justify-center">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-green-500 mb-6 tracking-widest uppercase">
+                            <Sparkles className="w-5 h-5" /> Authority Piece
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                            {blogs[0].title}
+                        </h2>
+                        <p className="text-gray-600 text-xl mb-10 line-clamp-3">
+                            {blogs[0].description}
+                        </p>
                         
-                        <div className="p-10 md:p-16 flex flex-col justify-center">
-                            <div className="flex items-center gap-2 text-sm font-semibold text-green-500 mb-6 tracking-widest uppercase">
-                                <Sparkles className="w-5 h-5" /> Authority Piece
-                            </div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight group-hover:text-green-600 transition-colors">
-                                {blogs[0].title}
-                            </h2>
-                            <p className="text-gray-600 text-xl mb-10 line-clamp-3">
-                                {blogs[0].description}
-                            </p>
-                            
-                            <div className="flex items-center justify-between mt-auto border-t border-gray-100 pt-8">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                        <User className="w-6 h-6" />
-                                    </div>
-                                    <div className="text-base">
-                                        <p className="font-bold text-gray-900">{blogs[0].author}</p>
-                                        <p className="text-gray-500">{blogs[0].date} • {blogs[0].readTime}</p>
-                                    </div>
+                        <div className="flex items-center justify-between mt-auto border-t border-gray-100 pt-8">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <User className="w-6 h-6" />
                                 </div>
-                                <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-500 transition-colors">
-                                    <ArrowUpRight className="w-7 h-7 text-green-500 group-hover:text-white transition-colors" />
+                                <div className="text-base">
+                                    <p className="font-bold text-gray-900">{blogs[0].author}</p>
+                                    <p className="text-gray-500">{blogs[0].date} • {blogs[0].readTime}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </Link>
+                </div>
             </FadeIn>
 
-            {/* Standard Grid */}
+            {/* Standard Grid (Links Removed) */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {blogs.slice(1).map((blog, idx) => (
                     <FadeIn key={blog.id} delay={idx * 100}>
-                        <Link to={`/blog/${blog.id}`} className="group flex flex-col h-full bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div className="flex flex-col h-full bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden shadow-sm">
                             <div className="h-72 overflow-hidden relative">
                                 <img 
                                     src={blog.image} 
                                     alt={blog.title} 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-cover"
                                 />
                                 <div className="absolute top-6 left-6">
                                     <span className="bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-gray-900 shadow-sm">
@@ -230,23 +223,20 @@ export default function BlogSectionModern() {
                                 <div className="flex items-center gap-2 text-xs font-bold text-gray-400 mb-4 tracking-wider uppercase">
                                     <Clock className="w-4 h-4" /> {blog.readTime}
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-snug group-hover:text-green-500 transition-colors">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-snug">
                                     {blog.title}
                                 </h3>
                                 <p className="text-gray-500 text-base line-clamp-2 mb-8 flex-1">
                                     {blog.description}
                                 </p>
-                                <div className="flex items-center gap-2 text-base font-bold text-gray-900">
-                                    Read Strategy <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-green-500" />
-                                </div>
                             </div>
-                        </Link>
+                        </div>
                     </FadeIn>
                 ))}
             </div>
         </section>
 
-        {/* --- FULL BLOG CONTENT SECTION --- (INCREASED TO 6XL) */}
+        {/* --- FULL BLOG CONTENT SECTION --- */}
         <section className="py-24 bg-white px-6">
             <FadeIn className="max-w-6xl mx-auto">
                 <div className="prose prose-xl prose-green max-w-none text-gray-700 leading-relaxed">
