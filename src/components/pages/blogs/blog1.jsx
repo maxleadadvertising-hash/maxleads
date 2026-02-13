@@ -35,8 +35,8 @@ const blogs = [
 /* --- UPDATED CATEGORIES WITH REDIRECTS --- */
 const categories = [
   { name: "All", icon: LayoutGrid, path: "/blog" },
-  { name: "Digital Marketing", icon: Target, path: "/digital-marketing/" },
-  { name: "Flyer Distribution", icon: MapPin, path: "/flyer-distribution/" },
+  { name: "Digital Marketing", icon: Target, path: "/blog/how-choose-best-digital-marketing-agency-uae" },
+  { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution" },
   { name: "Digital Printing", icon: Printer, path: "/blog3" },
   { name: "Outdoor Advertising", icon: Megaphone, path: "/blog4" }
 ];
