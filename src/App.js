@@ -7,7 +7,7 @@ import ScrollToTop from './components/ScrollToTop'; // Make sure this path match
 import Homepage from './components/pages/Homepage';
 import Aboutus from './components/pages/Aboutus';
 import Contactus from './components/pages/Contactus';
-import BlogSectionClassic from './components/pages/Blog';
+import BlogSectionClassic from './components/pages/blogs/Blogpage';
 import FlyerDistribution from './components/pages/Flyers';
 import PrintingServices from './components/pages/PrintingServices';
 import DigitalMarketing from './components/pages/Digitalmarketing';
@@ -16,6 +16,10 @@ import Clients from './components/pages/client';
 import Industries from './components/pages/industries';
 import Scrollup from "./components/scrolluparrow";
 import ThankYou from './components/Thankyou';
+import Blog1 from './components/pages/blogs/blog1';
+import Blog2 from './components/pages/blogs/blog2';
+import Blog3 from './components/pages/blogs/blog3';
+import Blog4 from './components/pages/blogs/blog4';
 function App() {
   return (
     <Router>
@@ -40,6 +44,18 @@ function App() {
         <Route path="/industries/" element={<Industries/>} />
        
          <Route path="/thank-you/" element={<ThankYou />} /> {/* Add this */}
+
+
+
+          {/* Other */}
+        <Route path="/digital-marketing/" element={<Blog1/>} />
+        <Route path="/flyer-distribution/" element={<Blog2/>} />
+        <Route path="/blog3" element={<Blog3/>} />
+        <Route path="/blog4" element={<Blog4/>} />
+
+
+
+
       </Routes>
     </Router>
   );

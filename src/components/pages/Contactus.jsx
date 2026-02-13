@@ -249,7 +249,7 @@ export default function Contact() {
                                             required
                                             value={formData.mobile}
                                             onChange={handleChange}
-                                            placeholder="+971 50 123 4567"
+                                            placeholder="+971501234567"
                                             className={inputClasses}
                                         />
                                     </div>
