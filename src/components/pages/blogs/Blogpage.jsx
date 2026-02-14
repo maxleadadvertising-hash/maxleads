@@ -18,7 +18,7 @@ const blogs = [
     image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["Authority", "Strategy"],
     featured: true,
-    link: "/blog/how-choose-best-digital-marketing-agency-uae"
+    link: "/blog/how-choose-best-digital-marketing-agency-uae/"
   },
   {
     id: 2,
@@ -30,17 +30,17 @@ const blogs = [
     image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Flyer Distribution", "Insights"],
     featured: false,
-    link: "/blog/why-uae-businesses-rely-on-flyer-distribution"
+    link: "/blog/why-uae-businesses-rely-on-flyer-distribution/"
   },
 ];
 
 /* --- UPDATED CATEGORIES WITH REDIRECTS --- */
 const categories = [
-  { name: "All", icon: LayoutGrid, count: 12, path: "/blog" },
-  { name: "Digital Marketing", icon: Target, count: 8, path: "/blog/how-choose-best-digital-marketing-agency-uae" },
-  { name: "Flyer Distribution", icon: MapPin, count: 15, path: "/blog/why-uae-businesses-rely-on-flyer-distribution" },
-  { name: "Digital Printing", icon: Printer, count: 6, path: "/blog3" },
-  { name: "Outdoor Advertising", icon: Megaphone, count: 4, path: "/blog4" }
+  { name: "All", icon: LayoutGrid, count: 12, path: "/blog/" },
+  { name: "Digital Marketing", icon: Target, count: 8, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
+  { name: "Flyer Distribution", icon: MapPin, count: 15, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
+  { name: "Digital Printing", icon: Printer, count: 6, path: "/blog3/" },
+  { name: "Outdoor Advertising", icon: Megaphone, count: 4, path: "/blog4/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
