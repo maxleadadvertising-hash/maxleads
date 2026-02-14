@@ -48,8 +48,8 @@ function App() {
 
 
           {/* Other */}
-        <Route path="/blog/how-choose-best-digital-marketing-agency-uae" element={<Blog1/>} />
-        <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution" element={<Blog2/>} />
+        <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution" element={<Blog1/>} />
+        <Route path="/blog/how-choose-best-digital-marketing-agency-uae" element={<Blog2/>} />
         <Route path="/blog3" element={<Blog3/>} />
         <Route path="/blog4" element={<Blog4/>} />
 

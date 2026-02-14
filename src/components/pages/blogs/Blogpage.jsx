@@ -135,19 +135,21 @@ export default function BlogSectionModern() {
           </div>
         </section>
 
-        {/* --- REDIRECTION / DEEP-DIVE SECTION --- */}
+        {/* --- REDIRECTION / STRATEGIC GROWTH INSIGHTS --- */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
           <FadeIn>
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
               <div className="max-w-2xl">
-                <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter mb-6">Featured Deep-Dives</h2>
-                <p className="text-xl text-gray-500 leading-relaxed">Select a strategic pillar below to explore our comprehensive analysis on UAE market growth and distribution ROI.</p>
+                <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter mb-6">
+                  Strategic Growth Insights
+                </h2>
+                <p className="text-xl text-gray-500 leading-relaxed"> Master the UAE market with our latest research on ROI-driven advertising and local consumer behavior. </p>
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Redirect Card 1 */}
-              <a href={blogs[0].link} className="group relative overflow-hidden rounded-[3rem] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+              <a href={blogs[1].link} className="group relative overflow-hidden rounded-[3rem] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                 <div className="h-80 overflow-hidden">
                   <img src={blogs[0].image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
@@ -163,7 +165,7 @@ export default function BlogSectionModern() {
               </a>
 
               {/* Redirect Card 2 */}
-              <a href={blogs[1].link} className="group relative overflow-hidden rounded-[3rem] bg-gray-900 text-white shadow-sm hover:shadow-2xl transition-all duration-500">
+              <a href={blogs[0].link} className="group relative overflow-hidden rounded-[3rem] bg-gray-900 text-white shadow-sm hover:shadow-2xl transition-all duration-500">
                 <div className="h-80 overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                   <img src={blogs[1].image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
@@ -173,7 +175,7 @@ export default function BlogSectionModern() {
                   </div>
                   <h3 className="text-3xl font-bold mb-6 group-hover:text-green-400 transition-colors">{blogs[1].title}</h3>
                   <div className="flex items-center gap-2 font-bold text-white">
-                    Explore ROI Insights <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    MaxLead Strategy Guide 2026 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </a>
