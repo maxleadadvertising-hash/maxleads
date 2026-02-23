@@ -16,6 +16,7 @@ import Clients from './components/pages/client';
 import Industries from './components/pages/industries';
 import Scrollup from "./components/scrolluparrow";
 import ThankYou from './components/Thankyou';
+import Serviceoverview from './components/seriveoverview';
 import Blog1 from './components/pages/blogs/blog1';
 import Blog2 from './components/pages/blogs/blog2';
 import Blog3 from './components/pages/blogs/blog3';
@@ -42,7 +43,7 @@ function App() {
         {/* Other */}
         <Route path="/work/" element={<Clients/>} />
         <Route path="/industries/" element={<Industries/>} />
-       
+       <Route path="/service-overview/" element={<Serviceoverview/>} />
          <Route path="/thank-you/" element={<ThankYou />} /> {/* Add this */}
 
 
