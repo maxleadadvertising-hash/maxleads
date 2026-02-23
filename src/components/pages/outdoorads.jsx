@@ -58,7 +58,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 export default function OutdoorAds() {
   // Replace with your actual phone number (country code + number, no spaces)
-  const whatsappNumber = "971522286401"; 
+  const whatsappNumber = "971557222605"; 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Outdoor Advertising services.`;
   
   // ADDED: Meta Tags Logic

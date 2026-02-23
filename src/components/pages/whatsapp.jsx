@@ -5,7 +5,7 @@ export default function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Replace with your actual numbers
-  const whatsappNumber = "971522286401";
+  const whatsappNumber = "+971557222605";
   const phoneNumber = "+971522286401";
   const whatsappMessage = "Hello MaxLead, I would like to inquire about your services.";
 

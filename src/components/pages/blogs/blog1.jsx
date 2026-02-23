@@ -86,7 +86,7 @@ export default function DigitalMarketingBlog() {
   };
 
   const openWhatsapp = () => {
-    window.open("https://wa.me/971522286401", "_blank");
+    window.open("https://wa.me/+97157222605", "_blank");
   };
 
   const goToContact = () => {
@@ -272,7 +272,7 @@ export default function DigitalMarketingBlog() {
                                     Go to Contact Page
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/30 backdrop-blur-md border border-white/20 text-white font-bold px-8 py-4 rounded-2xl hover:bg-blue-500/50 transition-all">
-                                    WhatsApp: +971 52 228 6401
+                                    WhatsApp:+971557222605 
                                 </button>
                             </div>
                         </div>

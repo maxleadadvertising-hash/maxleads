@@ -55,7 +55,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function DigitalMarketing() {
-  const whatsappNumber = "971522286401";
+  const whatsappNumber = "971557222605";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Digital Marketing services.`;
   
   // ADDED: Meta Tags Logic

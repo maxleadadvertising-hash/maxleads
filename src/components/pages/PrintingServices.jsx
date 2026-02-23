@@ -88,7 +88,7 @@ const ScaleIn = ({ children, delay = 0, className = "" }) => {
 
 export default function PrintingServices() {
   
-  const whatsappNumber = "971522286401";
+  const whatsappNumber = "971557222605";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Printing Services.`;
 
   // ADDED: Meta Tags Logic

@@ -5,6 +5,7 @@ import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clo
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
+import { Helmet } from "react-helmet"; // Added for Meta Tags management
 
 /* --- UPDATED STRATEGIC BLOG DATA --- */
 const blogs = [
@@ -86,7 +87,7 @@ export default function DigitalMarketingBlog() {
   };
 
   const openWhatsapp = () => {
-    window.open("https://wa.me/971522286401", "_blank");
+    window.open("https://wa.me/971557222605", "_blank");
   };
 
   const goToContact = () => {
@@ -95,6 +96,13 @@ export default function DigitalMarketingBlog() {
 
   return (
     <>
+      <Helmet>
+        {/* --- SEO METADATA UPDATE --- */}
+        <title>Hiring a Digital Marketing Agency in UAE? Read This 2026 Guide First</title>
+        <meta name="description" content="Before you hire a digital marketing agency in UAE, read this 2026 guide. Discover key factors, red flags, and how to choose an agency that delivers results. Contact us today!" />
+        <meta name="keywords" content="Best Digital Marketing Agency in UAE" />
+      </Helmet>
+
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -258,7 +266,7 @@ export default function DigitalMarketingBlog() {
                                   onClick={openWhatsapp}
                                   className="bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-5 rounded-2xl transition-all text-lg flex items-center justify-center gap-2"
                                 >
-                                    <MessageSquare className="w-5 h-5" /> WhatsApp: +971 52 228 6401
+                                    <MessageSquare className="w-5 h-5" /> WhatsApp: +971557222605 
                                 </button>
                             </div>
                         </div>

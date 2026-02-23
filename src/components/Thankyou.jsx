@@ -35,7 +35,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function ThankYou() {
-  const whatsappLink = "https://wa.me/971522286401?text=Hi Max Lead, I just submitted a form on your website.";
+  const whatsappLink = "https://wa.me/971557222605?text=Hi Max Lead, I just submitted a form on your website.";
 
   return (
     <>

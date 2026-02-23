@@ -101,7 +101,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      value: "maxleadadvertising@gmail.com",
+      value: "info@maxleadadvertising.com",
       sub: "We reply within 24 hours",
       color: "bg-blue-500",
       bg: "bg-blue-50"
@@ -109,7 +109,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      value: "+971 522286401",
+      value: "+971557222605",
       sub: "Mon-Sat from 9am to 6pm",
       color: "bg-green-500",
       bg: "bg-green-50"

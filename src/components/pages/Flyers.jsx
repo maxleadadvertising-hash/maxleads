@@ -92,7 +92,7 @@ export default function FlyerDistribution() {
   }, []);
 
   /* WhatsApp Link logic */
-  const whatsappNumber = "971522286401";
+  const whatsappNumber = "971557222605";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Flyer Distribution services.`;
 
   /* Service Data Mapping */

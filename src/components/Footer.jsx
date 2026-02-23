@@ -180,10 +180,10 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               {[
                 { name: 'Home', link: '/' },
-                { name: 'About Us', link: '/about-maxlead' },
+                { name: 'About Us', link: '/about-maxlead/' },
                 { name: 'Services', link: '/flyer-distribution-services/' },
-                { name: 'Clients', link: '/work' },
-                { name: 'Contact', link: '/contact' }
+                { name: 'Clients', link: '/work/' },
+                { name: 'Contact', link: '/contact/' }
               ].map((item, idx) => (
                 <li key={idx}>
                   <Link to={item.link} className="hover:text-green-500 flex items-center gap-1 transition-colors">
@@ -227,7 +227,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-green-500 shrink-0" />
-                <a href="tel:+971522286401" className="hover:text-white transition-colors">+971 52 228 6401</a>
+                <a href="tel:+971557222605" className="hover:text-white transition-colors">+971 52 228 6401</a>
               </li>
             </ul>
           </div>

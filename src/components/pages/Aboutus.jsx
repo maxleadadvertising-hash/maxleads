@@ -39,7 +39,7 @@ export default function Aboutus() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   /* WhatsApp Redirect Details */
-  const whatsappNumber = "971522286401";
+  const whatsappNumber = "971557222605";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead Advertising, I'm interested in your services.`;
 
   // ADDED: Meta Tags Logic
