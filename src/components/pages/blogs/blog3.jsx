@@ -1,51 +1,155 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import {  TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, Printer, Megaphone, LayoutGrid, FileText } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, Printer, Zap, LayoutGrid, FileText, ArrowRight, MessageSquare, XCircle, PhoneCall } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
+import { Helmet } from "react-helmet";
 
-/* --- UPDATED STRATEGIC BLOG DATA --- */
+/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
   {
     id: 1,
-    title: "The Future of Advertising",
-    description: "As ad costs rise, your business needs an ROI-focused plan. Discover how to identify a partner that converts clicks into revenue.",
-    author: "MaxLead Strategy Team",
-    date: "Feb 13, 2026",
-    readTime: "9 min read",
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Strategy", "ROI"],
-    featured: true
+    title: "Why UAE Businesses Rely on Flyer Distribution",
+    description: "In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai.",
+    author: "MaxLead Team",
+    date: "Feb 24, 2026",
+    readTime: "8 min read",
+    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Insights", "ROI"],
+    link: "/blog/why-uae-businesses-rely-on-flyer-distribution/"
   },
   {
     id: 2,
     title: "How to Choose the Best Digital Marketing Agency in UAE 2026",
-    description: "The ultimate showdown between organic growth and instant traffic. Learn which channel suits your 2026 budget.",
-    author: "MaxLead Team",
-    date: "Feb 10, 2026",
-    readTime: "6 min read",
-    image: "https://images.pexels.com/photos/6740101/pexels-photo-6740101.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["SEO", "Google Ads"],
-    featured: false
+    description: "A comprehensive guide to identifying a performance-focused partner that converts clicks into revenue in the competitive UAE landscape.",
+    author: "Strategy Team",
+    date: "Feb 24, 2026",
+    readTime: "9 min read",
+    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Agency", "Digital"],
+    link: "/blog/how-choose-best-digital-marketing-agency-uae/"
   },
+  {
+    id: 3,
+    title: "Dos and Don'ts of Flyer Distribution in UAE",
+    description: "Avoid common pitfalls. Learn the expert rules for successful door to door flyer distribution in Dubai and the wider Emirates.",
+    author: "Operations Lead",
+    date: "Feb 24, 2026",
+    readTime: "12 min read",
+    image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Expert Tips", "Compliance"],
+    link: "/dos-and-donts-of-flyer-distribution-in-uae/"
+  },
+  {
+    id: 4,
+    title: "Ultimate Guide to Flyer Distribution Strategies in Dubai",
+    description: "Discover 10 proven ways to get results. Learn how hyper-local targeting and multi-touch strategies build brand dominance.",
+    author: "MaxLead Team",
+    date: "Feb 24, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/7682345/pexels-photo-7682345.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Strategy", "Dominance"],
+    link: "/ultimate-guide-to-flyer-distribution-strategies-in-dubai/"
+  },
+  {
+    id: 5,
+    title: "Future Trends in Flyer Distribution in UAE",
+    description: "How technology and AI are shaping the future of offline marketing. See what’s coming next in the 2026 UAE market.",
+    author: "Innovation Team",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Future", "AI"],
+    link: "/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/"
+  },
+  {
+    id: 6,
+    title: "Best Locations for Flyer Distribution in the UAE",
+    description: "Identify high-ROI zones from villa communities like Arabian Ranches to high-density apartment clusters in Dubai Marina.",
+    author: "Market Researcher",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/3767172/pexels-photo-3767172.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Locations", "Demographics"],
+    link: "/best-locations-for-flyer-distribution-in-the-uae/"
+  },
+  {
+    id: 7,
+    title: "Marketing with Max Lead Advertising",
+    description: "Our story of transformation: combining the reliability of offline marketing with modern data precision since 2015.",
+    author: "CEO Office",
+    date: "Feb 24, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["MaxLead", "History"],
+    link: "/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/"
+  },
+  {
+    id: 8,
+    title: "What is the Role of a Flyer Distributor?",
+    description: "More than just a simple job. Learn how professional distributors act as brand ambassadors and the final bridge to your customer.",
+    author: "HR Director",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/4344441/pexels-photo-4344441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Operations", "Brand"],
+    link: "/what-is-the-role-of-a-flyer-distributor/"
+  },
+  {
+    id: 9,
+    title: "How to Increase Sales with Flyer Distribution",
+    description: "Unlock growth with these 10 proven tips. Learn how to craft irresistible offers and use timing to drive immediate revenue.",
+    author: "Sales Head",
+    date: "Feb 24, 2026",
+    readTime: "12 min read",
+    image: "https://images.pexels.com/photos/5849581/pexels-photo-5849581.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Sales", "Growth"],
+    link: "/how-to-increase-sales-with-flyer-distribution/"
+  },
+  {
+    id: 10,
+    title: "Online and Offline Strategies for Flyer Success",
+    description: "Learn how integrating flyers with QR codes and social media targeting can double your conversion rates.",
+    author: "Marketing Strategist",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Integration", "QR Codes"],
+    link: "/integrating-online-and-offline-strategies-for-flyer-distribution/"
+  },
+  {
+    id: 11,
+    title: "Local Advertising with Door Hangers",
+    description: "The 100% attention tool. Discover why door hangers are the most powerful local marketing weapon for neighborhood businesses.",
+    author: "MaxLead Team",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/4342493/pexels-photo-4342493.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Local Ads", "Neighborhood"],
+    link: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
+  }
 ];
 
-/* --- UPDATED CATEGORIES --- */
 const categories = [
-  { name: "All", icon: LayoutGrid, path: "/blog/" },
-  { name: "Digital Marketing", icon: Target, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
-  { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Digital Printing", icon: Printer, path: "/blog4/" },
-  { name: "Outdoor Advertising", icon: Megaphone, path: "/blog3/" }
+  { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
+  { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
+  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
+  { name: "Dos and Don'ts", icon: CheckCircle2, path: "/dos-and-donts-of-flyer-distribution-in-uae/" },
+  { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
+  { name: "Future Trends", icon: Zap, path: "/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
+  { name: "Best UAE Locations", icon: MapPin, path: "/best-locations-for-flyer-distribution-in-the-uae/" },
+  { name: "MaxLead Transformation", icon: TrendingUp, path: "/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" },
+  { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
+  { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
+  { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
+  { name: "Door Hanger Marketing", icon: Printer, path: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" }
 ];
 
-/* --- ANIMATION HELPER --- */
 const FadeIn = ({ children, delay = 0, className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setIsVisible(entry.isIntersecting));
@@ -53,12 +157,11 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
     if (domRef.current) observer.observe(domRef.current);
     return () => observer.disconnect();
   }, []);
-
   return (
     <div
       ref={domRef}
       className={`transition-all duration-1000 ease-out transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -67,72 +170,66 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-export default function DigitalMarketingBlog() {
-  const activePost = blogs[0];
+export default function FlyerDistributionBlog() {
+  const activePost = blogs[2]; // Dos and Don'ts
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
 
-  /* --- NAVIGATION HANDLERS --- */
-  const handleCategoryClick = (path) => {
-    window.location.href = path;
-  };
-
-  const openWhatsapp = () => {
-    window.open("https://wa.me/971522286401", "_blank");
-  };
-
-  const goToContact = () => {
-    window.location.href = "/contact";
-  };
+  const handleCategoryClick = (path) => { window.location.href = path; };
+  const openWhatsapp = () => { window.open("https://wa.me/971557222605", "_blank"); };
+  const goToContact = () => { window.location.href = "/contact"; };
 
   return (
     <>
+      <Helmet>
+        <title>Dos and Don'ts of Flyer Distribution in UAE | Max Lead Advertising</title>
+        <meta name="description" content="Learn the dos and don'ts of flyer distribution in UAE. Expert tips on door to door flyer distribution in Dubai to get better results and avoid common mistakes." />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/dos-and-donts-of-flyer-distribution-in-uae/" />
+      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
 
-      <main className="bg-gray-50 min-h-screen">
+      <main className="bg-white min-h-screen">
         
         {/* --- HERO SECTION --- */}
-        <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-white">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+        <section className="relative pt-28 pb-12 px-6 bg-[#f9fafb] border-b border-gray-100">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
             
-            <div className="max-w-7xl mx-auto relative z-10 text-center">
+            <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
-                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-                        <TrendingUp className="w-4 h-4" />
-                        <span>Best Digital Marketing Agency in UAE</span>
+                    <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
+                        <MapPin className="w-3 h-3" />
+                        <span>Flyer Distribution Services in Dubai</span>
                     </div>
-                    <h1 className="text-4xl md:text-7xl font-bold text-gray-900 tracking-tight mb-6">
-                        Hiring a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Agency</span> in UAE? Read This 2026 Guide First
+                    <h1 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
+                        Dos and Don'ts of Flyer Distribution in UAE: A Complete Guide for Business Owners
                     </h1>
-                    <div className="flex items-center justify-center gap-6 text-gray-500 mb-8">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
+                    <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
+                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User className="w-3 h-3" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
         </section>
 
-        {/* --- CATEGORY SELECTOR --- */}
-        <section className="py-8 px-6 max-w-7xl mx-auto overflow-x-auto">
-          <div className="flex gap-4 min-w-max pb-4">
+        {/* --- CATEGORY SELECTOR (WRAPPED / NO SCROLL) --- */}
+        <section className="py-6 px-6 bg-white border-b border-gray-50">
+          <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
-              <FadeIn key={idx} delay={idx * 50}>
+              <FadeIn key={idx} delay={idx * 30}>
                 <button 
                   onClick={() => handleCategoryClick(cat.path)}
-                  className="flex items-center gap-3 bg-white border border-gray-200 px-6 py-3 rounded-2xl hover:border-blue-500 hover:bg-blue-50 transition-all group"
+                  className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-green-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-5 h-5 text-gray-400 group-hover:text-blue-500" />
-                  <span className="font-bold text-gray-700">{cat.name}</span>
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
             ))}
@@ -141,130 +238,152 @@ export default function DigitalMarketingBlog() {
 
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
-            <FadeIn className="max-w-5xl mx-auto">
-                <div className="prose prose-xl prose-blue max-w-none text-gray-700 leading-relaxed">
+            <FadeIn className="max-w-4xl mx-auto">
+                <div className="prose prose-lg prose-green max-w-none text-gray-700 leading-relaxed">
                     
-                    <div className="mb-16">
-                        <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
-                            How to Choose the Best Digital Marketing Agency in UAE 2026
-                        </h2>
-                        <p className="text-xl text-gray-600 mb-6">
-                            Best Digital Marketing Agency in UAE has become a high-demand search in 2026 as competition rises across every industry. As ad costs increase and consumer behavior shifts rapidly, companies can no longer rely on random campaigns — they need a clear, ROI-focused plan.
+                    <div className="mb-12">
+                        <p className="text-lg text-gray-600 mb-6 font-medium">
+                            Flyer distribution is one of the oldest and most trusted marketing methods in the world. In the UAE, it continues to deliver strong results for businesses of all sizes. But here's the truth — not all flyer campaigns succeed. Some businesses get great response. Others waste money and see no results.
                         </p>
-                        <p>
-                            The right digital marketing agency doesn’t just run ads or post content — it builds a strategy that attracts the right audience, generates qualified leads, and converts them into paying customers. A strong agency will also help you stay ahead of trends like AI-driven campaigns, performance tracking, short-form video growth, and local search updates that directly impact visibility in Dubai, Abu Dhabi, and across the UAE.
+                        <p className="text-base">
+                            The difference? It's not about luck. It's about knowing the dos and don'ts of flyer distribution in UAE. When done right, flyer distribution services in Dubai can bring you loyal local customers. When done wrong, your beautifully printed flyers end up in the trash — unread and ignored.
                         </p>
-                        <p>
-                            Choosing the wrong agency can lead to wasted budgets, low-quality leads, poor brand positioning, and slow growth. But choosing the right one can deliver consistent traffic, stronger conversions, and measurable ROI — making it one of the most important business decisions for 2026.
+                        <p className="text-base">
+                            In this guide, we will walk you through everything you need to know. Whether you are planning door to door flyer distribution in Dubai for the first time or looking to improve your existing campaigns, these tips will help you get better results.
                         </p>
                     </div>
 
-                    {/* Funnel Visual Support */}
-                    <div className="my-12 p-8 bg-blue-50 rounded-[2rem] border border-blue-100">
-                        <h4 className="text-blue-900 font-bold mb-4 flex items-center gap-2">
-                            <BarChart3 className="w-5 h-5" /> The Modern UAE Digital Funnel
-                        </h4>
-                        
-                        <p className="text-sm text-blue-800 mt-4 italic">The right agency manages this entire journey, ensuring no lead falls through the cracks.</p>
+                    <h3 className="text-2xl font-bold text-gray-900 pt-6">Why Following the Dos and Don'ts Matters</h3>
+                    <p className="text-base">
+                        The UAE market is unique. People live in specific communities. They have busy lifestyles. They receive many offers every day. If your flyer does not stand out, it will be forgotten. If your distribution is not targeted, it will reach the wrong people. If your timing is wrong, it will be ignored.
+                    </p>
+                    <p className="text-base">
+                        That is why understanding the dos and don'ts of flyer distribution in UAE is essential for success. It helps you save money by avoiding waste, reach the right audience, get more enquiries and footfall, and build a strong local presence.
+                    </p>
+
+                    <h3 className="text-3xl font-black text-gray-900 pt-10 mb-6">The Dos of Flyer Distribution in UAE</h3>
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">1. DO Define Your Target Audience Clearly</h4>
+                        <p className="text-base">Before you print a single flyer, ask yourself: Who do I want to reach? Where do they live? What do they care about?</p>
+                        <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-green-500 my-4 text-sm font-medium">
+                            <ul className="list-disc pl-5 space-y-1">
+                                <li>A nursery in Dubai should target families with young children in residential areas like Jumeirah or The Springs.</li>
+                                <li>A restaurant in Deira should target offices and shops nearby for lunch offers.</li>
+                                <li>A real estate agent should target specific villa communities where people can afford luxury properties.</li>
+                            </ul>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">2. DO Choose the Right Locations</h4>
+                        <p className="text-base">Location is everything in door to door flyer distribution in Dubai. Different areas have different types of residents. What works in Dubai Marina may not work in International City.</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">3. DO Design Your Flyer for Attention</h4>
+                        <p className="text-base">Your flyer design matters as much as your message. A good flyer should have a clear headline, use high-quality images, include your offer prominently, show contact details clearly, and have a call to action.</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">4. DO Include a Strong Offer</h4>
+                        <p className="text-base">Why should someone care about your flyer? Good offers include discounts on first purchase, BOGO, free consultations, or limited-time promotions. A strong offer increases the response rate of your door to door leaflet distribution campaign significantly.</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">5. DO Combine Flyers with Digital</h4>
+                        <p className="text-base">Add QR codes linking to your website or WhatsApp and social media handles. This way, your flyer becomes a bridge between physical and digital marketing.</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">6. DO Track Your Results</h4>
+                        <p className="text-base">Track your campaign via unique phone numbers, offer codes, or QR code scans. Tracking helps you improve your next campaign and proves the value of flyer distribution services in Dubai.</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">7. DO Work with Professional Distributors</h4>
+                        <p className="text-base">A trained distributor delivers flyers properly and follows building rules. This is why businesses trust Max Lead Advertising for reliable flyer distribution across UAE.</p>
+                      </div>
                     </div>
 
-                    <h3 className="text-3xl font-bold text-gray-900 pt-8">Why the right agency saves time + increases (Return on Investment)</h3>
-                    <p>
-                        Choosing the right digital marketing agency saves time because you avoid trial-and-error campaigns, wasted ad spend, and repeated strategy changes. A professional agency already has the tools, team, and experience to plan, launch, and optimize campaigns faster — so your business can focus on operations while marketing runs smoothly.
-                    </p>
-                    <p>
-                        It also increases your Return on Investment (ROI) by targeting the right audience, improving lead quality, and tracking what actually converts. Instead of spending money on random clicks or low-quality inquiries, the right agency focuses on measurable results like qualified leads, sales, bookings, and revenue growth.
-                    </p>
-
-                    <h3 className="text-3xl font-bold text-gray-900 pt-8">Key Factors to Check Before Hiring a Digital Marketing Agency in UAE (2026)</h3>
-                    <div className="grid md:grid-cols-2 gap-6 mt-8">
+                    <h3 className="text-3xl font-black text-gray-900 pt-16 mb-6">The Don'ts of Flyer Distribution in UAE</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
                         {[
-                          { title: "Experience in the UAE Market", desc: "A UAE-based agency understands local customer behavior, competition, and platforms that work best in Dubai and Abu Dhabi." },
-                          { title: "Proven Results & Case Studies", desc: "Always ask for real case studies with clear performance results like leads, traffic growth, or ROAS improvements." },
-                          { title: "Industry Expertise", desc: "An agency with experience in your industry will already know what strategies, creatives, and funnels convert faster." },
-                          { title: "Transparency in Reporting", desc: "A reliable agency provides clear pricing, deliverables, and monthly reports so you know where your budget is going." },
-                          { title: "Team Strength", desc: "Strong agencies have specialists for each service (SEO, Ads, Web), not one person handling everything." },
-                          { title: "Response Time", desc: "Quick communication matters. Choose an agency that responds fast and keeps you involved in decisions." }
+                          { title: "DON'T Distribute Without a Plan", desc: "Random distribution is the biggest mistake. You waste money on people who will never become customers." },
+                          { title: "DON'T Use Poor Quality Printing", desc: "If it looks cheap, people will think your business is cheap. Always use good quality paper and professional design." },
+                          { title: "DON'T Overload with Text", desc: "People don't read long paragraphs on flyers. Keep your message short, simple, and benefit-focused." },
+                          { title: "DON'T Ignore Local Culture", desc: "Be respectful. Avoid images that may offend or cultural insensitivity." },
+                          { title: "DON'T Forget a Call to Action", desc: "Tell the reader what to do next: Call now, visit our showroom, or WhatsApp for a free estimate." },
+                          { title: "DON'T Distribute at Wrong Times", desc: "Timing affects response. Avoid delivery during sleeping hours and match commercial delivery to office hours." }
                         ].map((item, i) => (
-                            <div key={i} className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                                <CheckCircle2 className="w-6 h-6 text-blue-500 mb-3" />
-                                <h4 className="font-bold text-gray-900">{item.title}</h4>
-                                <p className="text-sm text-gray-500">{item.desc}</p>
+                            <div key={i} className="p-5 bg-red-50 rounded-xl border border-red-100">
+                                <XCircle className="w-5 h-5 text-red-500 mb-2" />
+                                <h5 className="font-bold text-gray-900 text-sm mb-1">{item.title}</h5>
+                                <p className="text-xs text-gray-600 m-0">{item.desc}</p>
                             </div>
                         ))}
                     </div>
 
-                    <div className="my-16 p-10 bg-gray-900 rounded-[3rem] text-white">
-                        <h3 className="text-2xl font-bold mb-6 text-blue-400">Questions to Ask Before Signing a Digital Marketing Contract in UAE</h3>
-                        <p className="mb-6 text-gray-300 italic">Before choosing an agency, ask the right questions to avoid confusion later and ensure you’re investing in measurable growth.</p>
-                        <ul className="space-y-4 text-gray-300">
-                            <li className="flex gap-3"><MessageSquare className="w-6 h-6 text-blue-400 shrink-0" /> What KPIs will you track? (Leads, sales, ROAS, traffic, conversions)</li>
-                            <li className="flex gap-3"><MessageSquare className="w-6 h-6 text-blue-400 shrink-0" /> What results can you realistically deliver? (Based on your industry + budget)</li>
-                            <li className="flex gap-3"><MessageSquare className="w-6 h-6 text-blue-400 shrink-0" /> Who will manage my account? (Dedicated manager or rotating team?)</li>
-                            <li className="flex gap-3"><MessageSquare className="w-6 h-6 text-blue-400 shrink-0" /> What tools do you use for reporting? (Google Analytics, Search Console, CRM)</li>
-                            <li className="flex gap-3"><MessageSquare className="w-6 h-6 text-blue-400 shrink-0" /> Do you offer monthly contracts or long-term only? (Flexibility matters)</li>
-                        </ul>
-                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 pt-12">How Professional Flyer Distribution Services in Dubai Help</h3>
+                    <p className="text-base">When you work with experts like Max Lead Advertising, you get strategic planning, quality distribution, proof of delivery, cost efficiency, and better results.</p>
 
-                    <h3 className="text-3xl font-bold text-gray-900 pt-8 mb-8">FAQs: Choosing the Best Digital Marketing Agency in UAE (2026)</h3>
-                    <div className="overflow-x-auto mb-12">
-                        <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr className="bg-gray-50">
-                                    <th className="p-4 border-b font-bold text-gray-900">Question</th>
-                                    <th className="p-4 border-b font-bold text-gray-900">Expert Answer</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td className="p-4 border-b font-semibold">How long does SEO take in UAE?</td>
-                                    <td className="p-4 border-b text-gray-600">3-6 months to show strong results, depending on competition and content quality.</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-4 border-b font-semibold">Which is better: SEO or Google Ads?</td>
-                                    <td className="p-4 border-b text-gray-600">Both work best together. Ads for fast leads, SEO for long-term growth and lower cost-per-lead.</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-4 border-b font-semibold">What is the best marketing strategy in 2026?</td>
-                                    <td className="p-4 border-b text-gray-600">A combination of SEO, Google Ads, Meta Ads, short-form video, and AI-driven retargeting.</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-4 border-b font-semibold">How to measure ROI?</td>
-                                    <td className="p-4 border-b text-gray-600">Track lead quality, cost per lead, ROAS, and conversion rate using automation tools.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 pt-6">Why Door to Door Flyer Distribution in Dubai Still Works</h3>
+                    <p className="text-base">Flyers reach people at home where they have time to read. Physical materials create more trust than digital ads, and local targeting ensures relevant reach with measurable results.</p>
 
-                    <h3 className="text-3xl font-bold text-gray-900 pt-8">Conclusion: Choose the Right Digital Marketing Agency in UAE for 2026 Growth</h3>
-                    <p className="mb-10">
-                        Choosing the right digital marketing agency in UAE in 2026 can make a major difference in your traffic, lead quality, and overall ROI. Focus on agencies with proven results, industry expertise, transparent reporting, and a strong team that understands SEO, Google Ads, Meta Ads, AI marketing, and automation.
+                    <h3 className="text-2xl font-bold text-gray-900 pt-6">Final Thoughts</h3>
+                    <p className="text-base mb-10">
+                        Flyer distribution is not outdated. It has simply evolved. Today, successful businesses use door to door leaflet distribution as part of a complete marketing strategy. By following the dos and don'ts of flyer distribution in UAE, you can avoid common mistakes and get better results from every campaign.
                     </p>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-12 md:p-16 rounded-[3.5rem] mt-20 text-white relative overflow-hidden text-center">
+                    <div className="bg-gradient-to-br from-green-600 to-emerald-700 p-10 md:p-12 rounded-[2rem] mt-10 text-white relative overflow-hidden text-center">
                         <div className="relative z-10">
-                            <h3 className="text-3xl md:text-5xl font-bold mb-6">Want to grow faster with a clear strategy?</h3>
-                            <p className="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">
-                                Get a Free Consultation + Marketing Audit and discover what’s holding your business back and how to improve conversions.
+                            <h3 className="text-2xl md:text-4xl font-bold mb-4">Ready to start your next campaign?</h3>
+                            <p className="text-green-50 text-base mb-8 max-w-2xl mx-auto">
+                                Contact Max Lead Advertising today. Let our team help you reach the right audience, in the right places, at the right time.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                                <button 
-                                  onClick={goToContact}
-                                  className="bg-white text-blue-600 font-bold px-10 py-5 rounded-2xl hover:bg-blue-50 transition-all text-lg flex items-center justify-center gap-2"
-                                >
-                                   <FileText className="w-5 h-5" /> Request a Free Audit
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center gap-2">
+                                   <PhoneCall className="w-4 h-4" /> Get a Free Consultation
                                 </button>
-                                <button 
-                                  onClick={openWhatsapp}
-                                  className="bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-5 rounded-2xl transition-all text-lg flex items-center justify-center gap-2"
-                                >
-                                    <MessageSquare className="w-5 h-5" /> WhatsApp: +971 52 228 6401
+                                <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center gap-2">
+                                    <MessageSquare className="w-4 h-4" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </FadeIn>
+        </section>
+
+        {/* --- RELATED BLOGS GRID --- */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
+            <div className="max-w-7xl mx-auto">
+                <FadeIn>
+                    <h2 className="text-2xl font-black text-gray-900 mb-8">Strategic Intelligence Hub</h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
+                            <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
+                                <div className="h-48 overflow-hidden relative">
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <div className="absolute top-3 left-3 flex flex-wrap gap-1">
+                                        {blog.tags.map(tag => (
+                                            <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-green-600">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors leading-tight">{blog.title}</h4>
+                                    <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
+                                    <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
+                                        <ArrowRight size={14} className="text-green-600" />
+                                    </div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </FadeIn>
+            </div>
         </section>
 
       </main>

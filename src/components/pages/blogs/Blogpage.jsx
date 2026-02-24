@@ -1,52 +1,155 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Sparkles, TrendingUp, Target, MapPin, ArrowRight, ExternalLink, Printer, Megaphone, LayoutGrid } from "lucide-react";
+import {Target, MapPin,  Clock, User, Printer, CheckCircle2, LayoutGrid,  MessageSquare, ArrowRight,Zap,BarChart3,FileText,TrendingUp,Sparkles} from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 
-/* --- STRATEGIC BLOG DATA --- */
+
+/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
   {
     id: 1,
-    title: "The Future of Advertising",
-    description: "Discover the powerful synergy between physical distribution and strategic advertising that creates a dominant brand presence in the Emirates.",
+    title: "Why UAE Businesses Rely on Flyer Distribution",
+    description: "In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai.",
     author: "MaxLead Team",
-    date: "Feb 5, 2026",
-    readTime: "7 min read",
-    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["Authority", "Strategy"],
-    featured: true,
-    link: "/blog/how-choose-best-digital-marketing-agency-uae/"
+    date: "Feb 24, 2026",
+    readTime: "8 min read",
+    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Insights", "ROI"],
+    link: "/blog/why-uae-businesses-rely-on-flyer-distribution/"
   },
   {
     id: 2,
     title: "How to Choose the Best Digital Marketing Agency in UAE 2026",
-    description: "In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai.",
-    author: "MaxLead Team",
-    date: "Feb 1, 2026",
-    readTime: "5 min read",
-    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Flyer Distribution", "Insights"],
-    featured: false,
-    link: "/blog/why-uae-businesses-rely-on-flyer-distribution/"
+    description: "A comprehensive guide to identifying a performance-focused partner that converts clicks into revenue in the competitive UAE landscape.",
+    author: "Strategy Team",
+    date: "Feb 24, 2026",
+    readTime: "9 min read",
+    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Agency", "Digital"],
+    link: "/blog/how-choose-best-digital-marketing-agency-uae/"
   },
+  {
+    id: 3,
+    title: "Dos and Don'ts of Flyer Distribution in UAE",
+    description: "Avoid common pitfalls. Learn the expert rules for successful door to door flyer distribution in Dubai and the wider Emirates.",
+    author: "Operations Lead",
+    date: "Feb 24, 2026",
+    readTime: "12 min read",
+    image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Expert Tips", "Compliance"],
+    link: "/dos-and-donts-of-flyer-distribution-in-uae/"
+  },
+  {
+    id: 4,
+    title: "Ultimate Guide to Flyer Distribution Strategies in Dubai",
+    description: "Discover 10 proven ways to get results. Learn how hyper-local targeting and multi-touch strategies build brand dominance.",
+    author: "MaxLead Team",
+    date: "Feb 24, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/7682345/pexels-photo-7682345.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Strategy", "Dominance"],
+    link: "/ultimate-guide-to-flyer-distribution-strategies-in-dubai/"
+  },
+  {
+    id: 5,
+    title: "Future Trends in Flyer Distribution in UAE",
+    description: "How technology and AI are shaping the future of offline marketing. See what’s coming next in the 2026 UAE market.",
+    author: "Innovation Team",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Future", "AI"],
+    link: "/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/"
+  },
+  {
+    id: 6,
+    title: "Best Locations for Flyer Distribution in the UAE",
+    description: "Identify high-ROI zones from villa communities like Arabian Ranches to high-density apartment clusters in Dubai Marina.",
+    author: "Market Researcher",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/3767172/pexels-photo-3767172.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Locations", "Demographics"],
+    link: "/best-locations-for-flyer-distribution-in-the-uae/"
+  },
+  {
+    id: 7,
+    title: "Marketing with Max Lead Advertising",
+    description: "Our story of transformation: combining the reliability of offline marketing with modern data precision since 2015.",
+    author: "CEO Office",
+    date: "Feb 24, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["MaxLead", "History"],
+    link: "/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/"
+  },
+  {
+    id: 8,
+    title: "What is the Role of a Flyer Distributor?",
+    description: "More than just a simple job. Learn how professional distributors act as brand ambassadors and the final bridge to your customer.",
+    author: "HR Director",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/4344441/pexels-photo-4344441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Operations", "Brand"],
+    link: "/what-is-the-role-of-a-flyer-distributor/"
+  },
+  {
+    id: 9,
+    title: "How to Increase Sales with Flyer Distribution",
+    description: "Unlock growth with these 10 proven tips. Learn how to craft irresistible offers and use timing to drive immediate revenue.",
+    author: "Sales Head",
+    date: "Feb 24, 2026",
+    readTime: "12 min read",
+    image: "https://images.pexels.com/photos/5849581/pexels-photo-5849581.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Sales", "Growth"],
+    link: "/how-to-increase-sales-with-flyer-distribution/"
+  },
+  {
+    id: 10,
+    title: "Online and Offline Strategies for Flyer Success",
+    description: "Learn how integrating flyers with QR codes and social media targeting can double your conversion rates.",
+    author: "Marketing Strategist",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Integration", "QR Codes"],
+    link: "/integrating-online-and-offline-strategies-for-flyer-distribution/"
+  },
+  {
+    id: 11,
+    title: "Local Advertising with Door Hangers",
+    description: "The 100% attention tool. Discover why door hangers are the most powerful local marketing weapon for neighborhood businesses.",
+    author: "MaxLead Team",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/4342493/pexels-photo-4342493.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Local Ads", "Neighborhood"],
+    link: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
+  }
 ];
 
-/* --- UPDATED CATEGORIES WITH REDIRECTS --- */
 const categories = [
-  { name: "All", icon: LayoutGrid, count: 12, path: "/blog/" },
-  { name: "Digital Marketing", icon: Target, count: 8, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
-  { name: "Flyer Distribution", icon: MapPin, count: 15, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Digital Printing", icon: Printer, count: 6, path: "/blog3/" },
-  { name: "Outdoor Advertising", icon: Megaphone, count: 4, path: "/blog4/" }
+  { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
+  { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
+  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
+  { name: "Dos and Don'ts", icon: CheckCircle2, path: "/dos-and-donts-of-flyer-distribution-in-uae/" },
+  { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
+  { name: "Future Marketing Trends", icon: Zap, path: "/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
+  { name: "Best UAE Locations", icon: MapPin, path: "/best-locations-for-flyer-distribution-in-the-uae/" },
+  { name: "MaxLead Transformation", icon: TrendingUp, path: "/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" },
+  { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
+  { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
+  { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
+  { name: "Door Hanger Marketing", icon: Printer, path: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setIsVisible(entry.isIntersecting));
@@ -54,13 +157,10 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
     if (domRef.current) observer.observe(domRef.current);
     return () => observer.disconnect();
   }, []);
-
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-1000 ease-out transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      } ${className}`}
+      className={`transition-all duration-1000 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -71,21 +171,13 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 export default function BlogSectionModern() {
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
 
-  /* --- REDIRECT HANDLER --- */
   const handleCategoryClick = (path) => {
-    if (path.startsWith('http')) {
-      window.open(path, "_blank");
-    } else {
-      window.location.href = path; 
-    }
+    window.location.href = path; 
   };
 
   return (
@@ -94,107 +186,94 @@ export default function BlogSectionModern() {
       <ScrollToTop />
       <Navigation />
 
-      <main className="bg-gray-50 min-h-screen py-10">
+      <main className="bg-white min-h-screen">
         
-        {/* --- HEADER SECTION --- */}
-        <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-white">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-green-100/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
-
-            <div className="max-w-7xl mx-auto relative z-10 text-center">
+        {/* --- HERO HEADER --- */}
+        <section className="relative pt-32 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
-                    <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-                        <Sparkles className="w-4 h-4" />
-                        <span>MaxLead Strategic Insights</span>
+                    <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4">
+                        <Sparkles className="w-3 h-3" />
+                        <span>MaxLead Strategic Insights 2026</span>
                     </div>
-                    <h1 className="text-5xl md:text-8xl font-bold text-gray-900 tracking-tight mb-6">
-                        The Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Advertising</span>
+                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
+                        The Future of <span className="text-blue-600">Advertising</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-500 max-w-4xl mx-auto leading-relaxed">
-                        Data-driven insights and strategic guides to dominate the UAE market.
+                    <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                        Data-driven insights and 11 strategic guides to dominate the UAE market through integrated marketing solutions.
                     </p>
                 </FadeIn>
             </div>
         </section>
 
-        {/* --- CATEGORY SELECTOR WITH REDIRECTS --- */}
-        <section className="py-12 px-6 max-w-7xl mx-auto overflow-x-auto">
-          <div className="flex gap-4 min-w-max pb-4">
+        {/* --- CATEGORY GRID (NO SCROLL) --- */}
+        <section className="py-8 px-6 bg-white border-b border-gray-50">
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
-              <FadeIn key={idx} delay={idx * 50}>
+              <FadeIn key={idx} delay={idx * 30}>
                 <button 
-                  onClick={() => handleCategoryClick(cat.path)}
-                  className="flex items-center gap-3 bg-white border border-gray-200 px-6 py-3 rounded-2xl hover:border-green-500 hover:bg-green-50 transition-all group"
+                  onClick={() => handleCategoryClick(cat.path)} 
+                  className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-5 h-5 text-gray-400 group-hover:text-green-500" />
-                  <span className="font-bold text-gray-700">{cat.name}</span>
-                  <span className="text-xs bg-gray-100 text-gray-400 px-2 py-1 rounded-lg">{cat.count}</span>
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
             ))}
           </div>
         </section>
 
-        {/* --- REDIRECTION / STRATEGIC GROWTH INSIGHTS --- */}
-        <section className="py-24 px-6 max-w-7xl mx-auto">
+        {/* --- BLOG GRID --- */}
+        <section className="py-16 px-6 max-w-7xl mx-auto">
           <FadeIn>
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-              <div className="max-w-2xl">
-                <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter mb-6">
-                  Strategic Growth Insights
+            <div className="mb-12">
+                <h2 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight mb-2">
+                  Latest Research
                 </h2>
-                <p className="text-xl text-gray-500 leading-relaxed"> Master the UAE market with our latest research on ROI-driven advertising and local consumer behavior. </p>
-              </div>
+                <p className="text-sm text-gray-500">Master the UAE market with our 11 core strategy guides.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Redirect Card 1 */}
-              <a href={blogs[1].link} className="group relative overflow-hidden rounded-[3rem] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500">
-                <div className="h-80 overflow-hidden">
-                  <img src={blogs[0].image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="p-10">
-                  <div className="flex items-center gap-3 text-green-600 font-bold text-sm mb-4 tracking-widest uppercase">
-                    <TrendingUp className="w-5 h-5" /> Most Popular
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {blogs.map((blog) => (
+                <a key={blog.id} href={blog.link} className="group flex flex-col bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute top-3 left-3 flex gap-1">
+                        {blog.tags.map((tag, i) => (
+                            <span key={i} className="bg-white/90 backdrop-blur px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider text-gray-900">{tag}</span>
+                        ))}
+                    </div>
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-green-600 transition-colors">{blogs[0].title}</h3>
-                  <div className="flex items-center gap-2 font-bold text-gray-900">
-                    Read Analysis <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex items-center gap-3 text-gray-400 text-[10px] mb-3 font-bold uppercase tracking-widest">
+                        <span className="flex items-center gap-1"><Clock size={12} /> {blog.readTime}</span>
+                        <span className="flex items-center gap-1"><User size={12} /> {blog.author}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h3>
+                    <p className="text-gray-500 text-xs mb-6 line-clamp-2 leading-relaxed">{blog.description}</p>
+                    <div className="mt-auto flex items-center gap-1 font-bold text-blue-600 text-[11px] uppercase tracking-wider">
+                      Read Full Article <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                </div>
-              </a>
-
-              {/* Redirect Card 2 */}
-              <a href={blogs[0].link} className="group relative overflow-hidden rounded-[3rem] bg-gray-900 text-white shadow-sm hover:shadow-2xl transition-all duration-500">
-                <div className="h-80 overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
-                  <img src={blogs[1].image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="p-10">
-                  <div className="flex items-center gap-3 text-green-400 font-bold text-sm mb-4 tracking-widest uppercase">
-                    <ExternalLink className="w-5 h-5" /> Strategy Guide
-                  </div>
-                  <h3 className="text-3xl font-bold mb-6 group-hover:text-green-400 transition-colors">{blogs[1].title}</h3>
-                  <div className="flex items-center gap-2 font-bold text-white">
-                    MaxLead Strategy Guide 2026 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                  </div>
-                </div>
-              </a>
+                </a>
+              ))}
             </div>
           </FadeIn>
         </section>
 
-        {/* --- NEWSLETTER CTA --- */}
-        <section className="py-24 px-6">
-          <FadeIn className="max-w-7xl mx-auto">
-            <div className="bg-gray-900 rounded-[4rem] p-16 text-center text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-green-500/20 rounded-full blur-[100px]" />
-                <h2 className="text-4xl md:text-6xl font-bold mb-8">Stay Ahead of UAE Marketing Trends</h2>
-                <p className="text-gray-400 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
-                  Get our monthly briefing on advertising strategies and local business growth tips.
+        {/* --- NEWSLETTER --- */}
+        <section className="py-16 px-6">
+          <FadeIn className="max-w-5xl mx-auto">
+            <div className="bg-gray-900 rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]" />
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 tracking-tight">Stay Ahead of UAE Marketing Trends</h2>
+                <p className="text-gray-400 text-sm mb-10 max-w-xl mx-auto leading-relaxed">
+                  Join 5,000+ business owners getting monthly advertising strategies.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <input type="email" placeholder="Your business email" className="bg-white/5 border border-white/10 rounded-2xl px-10 py-5 outline-none focus:border-green-500 transition-all w-full sm:w-96 text-lg" />
-                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-12 py-5 rounded-2xl transition-all text-lg">Subscribe Now</button>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                  <input type="email" placeholder="Your business email" className="bg-white/5 border border-white/10 rounded-xl px-6 py-3.5 outline-none focus:border-blue-500 transition-all w-full sm:w-80 text-sm" />
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl transition-all text-sm w-full sm:w-auto">Subscribe Now</button>
                 </div>
             </div>
           </FadeIn>

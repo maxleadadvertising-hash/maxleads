@@ -21,6 +21,14 @@ import Blog1 from './components/pages/blogs/blog1';
 import Blog2 from './components/pages/blogs/blog2';
 import Blog3 from './components/pages/blogs/blog3';
 import Blog4 from './components/pages/blogs/blog4';
+import Blog5 from './components/pages/blogs/blog5';
+import Blog6 from './components/pages/blogs/blog6';
+import Blog7 from './components/pages/blogs/blog7';
+import Blog8 from './components/pages/blogs/blog8';
+import Blog9 from './components/pages/blogs/blog9';
+import Blog10 from './components/pages/blogs/blog10';
+import Blog11 from './components/pages/blogs/blog11';
+
 function App() {
   return (
     <Router>
@@ -47,12 +55,17 @@ function App() {
          <Route path="/thank-you/" element={<ThankYou />} /> {/* Add this */}
 
 
-
-          {/* Other */}
-        <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution/" element={<Blog1/>} />
-        <Route path="/blog/how-choose-best-digital-marketing-agency-uae/" element={<Blog2/>} />
-        <Route path="/blog3/" element={<Blog3/>} />
-        <Route path="/blog4/" element={<Blog4/>} />
+<Route path="/blog/why-uae-businesses-rely-on-flyer-distribution/" element={<Blog1 />} />
+<Route path="/blog/how-choose-best-digital-marketing-agency-uae/" element={<Blog2 />} />
+<Route path="/dos-and-donts-of-flyer-distribution-in-uae/" element={<Blog3 />} />
+<Route path="/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" element={<Blog4 />} />
+<Route path="/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" element={<Blog5 />} />
+<Route path="/best-locations-for-flyer-distribution-in-the-uae/" element={<Blog6 />} />
+<Route path="/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" element={<Blog7 />} />
+<Route path="/what-is-the-role-of-a-flyer-distributor/" element={<Blog8 />} />
+<Route path="/how-to-increase-sales-with-flyer-distribution/" element={<Blog9 />} />
+<Route path="/integrating-online-and-offline-strategies-for-flyer-distribution/" element={<Blog10 />} />
+<Route path="/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" element={<Blog11 />} />
 
 
 
