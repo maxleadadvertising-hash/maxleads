@@ -51,7 +51,7 @@ function App() {
         {/* Other */}
         <Route path="/work/" element={<Clients/>} />
         <Route path="/industries/" element={<Industries/>} />
-       <Route path="/service-overview/" element={<Serviceoverview/>} />
+       <Route path="/services/" element={<Serviceoverview/>} />
          <Route path="/thank-you/" element={<ThankYou />} /> {/* Add this */}
 
 

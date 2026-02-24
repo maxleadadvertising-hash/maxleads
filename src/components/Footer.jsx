@@ -181,7 +181,7 @@ export default function Footer() {
               {[
                 { name: 'Home', link: '/' },
                 { name: 'About Us', link: '/about-maxlead/' },
-                { name: 'Services', link: '/service-overview/' },
+                { name: 'Services', link: '/services/' },
                 { name: 'Clients', link: '/work/' },
                 { name: 'Contact', link: '/contact/' }
               ].map((item, idx) => (
