@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User,BarChart3, FileText, TrendingUp, LayoutGrid, Zap, ArrowRight, PhoneCall,DollarSign } from "lucide-react";
+import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, BarChart3, FileText, TrendingUp, LayoutGrid, Zap, ArrowRight, PhoneCall,DollarSign } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -128,7 +128,7 @@ const blogs = [
     readTime: "10 min read",
     image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Pricing", "Digital Marketing"],
-    link: "/blog/social-media-marketing-services-cost-uae/"
+    link: "/socialmediamarketingservicescost/"
   }
 ];
 
@@ -144,7 +144,7 @@ const categories = [
   { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
   { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
   { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
-  { name: "SMM Cost Guide", icon: DollarSign, path: "/blog/social-media-marketing-services-cost-uae/" }
+  { name: "SMM Cost Guide", icon: DollarSign, path: "/socialmediamarketingservicescost/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {

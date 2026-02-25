@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import {Target, MapPin,  Clock, User, Printer, CheckCircle2, LayoutGrid,  MessageSquare, ArrowRight,Zap,BarChart3,FileText,TrendingUp,Sparkles} from "lucide-react";
+import {Target, MapPin,  Clock, User,CheckCircle2, LayoutGrid,  MessageSquare, ArrowRight,Zap,BarChart3,FileText,TrendingUp,Sparkles} from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 
-
-/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
+/* --- FULL STRATEGIC BLOG DATA (12 POSTS) --- */
 const blogs = [
   {
     id: 1,
@@ -129,6 +128,17 @@ const blogs = [
     image: "https://images.pexels.com/photos/4342493/pexels-photo-4342493.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Local Ads", "Neighborhood"],
     link: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
+  },
+  {
+    id: 12,
+    title: "Social Media Marketing Services Cost",
+    description: "Understanding the pricing factors and investment required for social media growth in the UAE market for 2026.",
+    author: "MaxLead Team",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Pricing", "Digital"],
+    link: "/socialmediamarketingservicescost/"
   }
 ];
 
@@ -144,7 +154,7 @@ const categories = [
   { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
   { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
   { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
-  { name: "Door Hanger Marketing", icon: Printer, path: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" }
+  { name: "Social Media Cost", icon: Zap, path: "/socialmediamarketingservicescost/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -201,13 +211,13 @@ export default function BlogSectionModern() {
                         The Future of <span className="text-blue-600">Advertising</span>
                     </h1>
                     <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                        Data-driven insights and 11 strategic guides to dominate the UAE market through integrated marketing solutions.
+                        Data-driven insights and 12 strategic guides to dominate the UAE market through integrated marketing solutions.
                     </p>
                 </FadeIn>
             </div>
         </section>
 
-        {/* --- CATEGORY GRID (NO SCROLL) --- */}
+        {/* --- CATEGORY GRID (WRAPPED / NO SCROLL) --- */}
         <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
@@ -231,7 +241,7 @@ export default function BlogSectionModern() {
                 <h2 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight mb-2">
                   Latest Research
                 </h2>
-                <p className="text-sm text-gray-500">Master the UAE market with our 11 core strategy guides.</p>
+                <p className="text-sm text-gray-500">Master the UAE market with our 12 core strategy guides.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
