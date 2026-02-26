@@ -128,7 +128,7 @@ const blogs = [
     readTime: "10 min read",
     image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Pricing", "Digital Marketing"],
-    link: "/blog/social-media-marketing-services-cost-uae/"
+    link: "/social-media-marketing-services-cost-uae/"
   }
 ];
 

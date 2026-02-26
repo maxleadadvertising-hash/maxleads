@@ -138,7 +138,7 @@ const blogs = [
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Pricing", "Digital"],
-    link: "/socialmediamarketingservicescost/"
+    link: "/social-media-marketing-services-cost-uae/"
   }
 ];
 
@@ -154,7 +154,7 @@ const categories = [
   { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
   { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
   { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
-  { name: "Social Media Cost", icon: Zap, path: "/socialmediamarketingservicescost/" }
+  { name: "Social Media Cost", icon: Zap, path: "/social-media-marketing-services-cost-uae/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
