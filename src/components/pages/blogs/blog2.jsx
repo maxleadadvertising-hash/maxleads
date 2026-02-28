@@ -5,6 +5,8 @@ import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, Print
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
+import { Helmet } from "react-helmet"; // Added Helmet
+
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS MAPPED) --- */
 const blogs = [
@@ -199,6 +201,7 @@ export default function DigitalMarketingBlog() {
 
   return (
     <>
+    <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/blog/how-choose-best-digital-marketing-agency-uae/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

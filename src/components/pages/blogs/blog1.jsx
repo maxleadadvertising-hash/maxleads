@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User,PhoneCall, LayoutGrid, Zap, FileText, MessageSquare } from "lucide-react";
@@ -181,6 +182,7 @@ export default function DigitalMarketingBlog() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -286,8 +288,8 @@ export default function DigitalMarketingBlog() {
                         <h4 className="text-blue-900 font-bold mb-3 flex items-center gap-2 text-lg">
                             <BarChart3 className="w-5 h-5" /> The Modern UAE Marketing Funnel
                         </h4>
-                        <p className="text-sm text-blue-800 italic">The right agency manages this entire journey, ensuring no lead falls through the cracks from offline touchpoints to digital conversion.</p>
                         
+                        <p className="text-sm text-blue-800 italic">The right agency manages this entire journey, ensuring no lead falls through the cracks from offline touchpoints to digital conversion.</p>
                     </div>
 
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">Flyer Distribution Supports Quick Promotions</h3>
@@ -356,7 +358,7 @@ export default function DigitalMarketingBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                                   <PhoneCall className="w-4 h-4" /> Go to Contact Page
+                                    <PhoneCall className="w-4 h-4" /> Go to Contact Page
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm">
                                     WhatsApp: +971 55 722 2605 
