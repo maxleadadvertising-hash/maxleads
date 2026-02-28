@@ -29,6 +29,9 @@ import Blog9 from './components/pages/blogs/blog9';
 import Blog10 from './components/pages/blogs/blog10';
 import Blog11 from './components/pages/blogs/blog11';
 import Blog12 from './components/pages/blogs/blog12';
+import Blog13 from './components/pages/blogs/blog13';
+
+
 
 function App() {
   return (
@@ -68,6 +71,7 @@ function App() {
 <Route path="/integrating-online-and-offline-strategies-for-flyer-distribution/" element={<Blog10 />} />
 <Route path="/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" element={<Blog11 />} />
 <Route path="/social-media-marketing-services-cost-uae/" element={<Blog12 />} />
+<Route path="/affordable-digital-marketing-packages-uae/" element={<Blog13 />} />
 
 
 

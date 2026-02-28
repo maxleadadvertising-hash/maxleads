@@ -129,7 +129,7 @@ const blogs = [
     tags: ["Local Ads", "Neighborhood"],
     link: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
   },
-  {
+{
     id: 12,
     title: "Social Media Marketing Services Cost",
     description: "Understanding the pricing factors and investment required for social media growth in the UAE market for 2026.",
@@ -139,8 +139,21 @@ const blogs = [
     image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Pricing", "Digital"],
     link: "/social-media-marketing-services-cost-uae/"
+  }, // <--- MAKE SURE THIS COMMA IS HERE
+  {
+    id: 13,
+    title: "Affordable Digital Marketing Packages for Startups",
+    description: "Discover cost-effective marketing bundles designed to help UAE startups scale visibility and leads without overextending their budget.",
+    author: "Growth Strategy Team",
+    date: "Feb 28, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/5900226/pexels-photo-5900226.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Startups", "Packages"],
+    link: "/affordable-digital-marketing-packages-uae/"
   }
-];
+]; // <--- END OF ARRAY
+
+
 
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
@@ -154,7 +167,9 @@ const categories = [
   { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
   { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
   { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
-  { name: "Social Media Cost", icon: Zap, path: "/social-media-marketing-services-cost-uae/" }
+  { name: "Social Media Cost", icon: Zap, path: "/social-media-marketing-services-cost-uae/" },
+  { name: "Startup Packages", icon: Zap, path: "/affordable-digital-marketing-packages-uae/" }
+  
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
