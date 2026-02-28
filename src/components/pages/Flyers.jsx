@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import { 
   MapPin, 
   Users, 
@@ -157,6 +158,7 @@ export default function FlyerDistribution() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/flyer-distribution-services/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -312,7 +314,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
 
           {/* 4. WHY IT WORKS (Grid) */}
           <div className="bg-gray-900 rounded-[3rem] p-10 md:p-20 text-white relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-green-500 rounded-full blur-[100px] opacity-20"></div>
+             <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-[100px] opacity-20"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500 rounded-full blur-[100px] opacity-20"></div>
 
              <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">

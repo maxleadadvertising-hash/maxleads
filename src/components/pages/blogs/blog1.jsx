@@ -6,6 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 
+
 /* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
   {

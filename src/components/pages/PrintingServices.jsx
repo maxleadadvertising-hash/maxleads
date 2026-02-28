@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import { 
   CheckCircle, 
   Printer, 
@@ -102,14 +103,6 @@ export default function PrintingServices() {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute("content", "Max Lead Advertising provides professional digital printing services in Dubai, UAE including flyers, banners, large format and corporate printing solutions.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/digital-printing-services/");
   }, []);
 
   // DATA
@@ -172,6 +165,7 @@ export default function PrintingServices() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/digital-printing-services/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -209,7 +203,7 @@ export default function PrintingServices() {
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                As a trusted digital printing company in UAE, we work with businesses of all sizes to deliver high-impact printed materials that reflect brand identity and create a lasting impression.
+                At Max Lead Advertising, we work with businesses of all sizes to deliver high-impact printed materials that reflect brand identity and create a lasting impression.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -238,6 +232,7 @@ export default function PrintingServices() {
                     "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64",
                     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64",
                     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64",
+                    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64",
                   ].map((src, i) => (
                     <img
                       key={i}
@@ -371,21 +366,21 @@ export default function PrintingServices() {
                   </div>
 
                   <div>
-                     <p className="text-gray-400 mb-4 font-semibold uppercase tracking-widest text-sm">Choosing us ensures:</p>
-                     <div className="grid sm:grid-cols-1 gap-4">
-                       {[
-                         "Consistent color accuracy",
-                         "Durable materials",
-                         "Clean finishing",
-                         "Better brand perception",
-                         "Long-term usability"
-                       ].map((benefit, i) => (
-                         <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/20 hover:scale-[1.02] transition-all duration-300 cursor-default">
-                           <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                           <span className="font-medium text-lg">{benefit}</span>
-                         </div>
-                       ))}
-                     </div>
+                      <p className="text-gray-400 mb-4 font-semibold uppercase tracking-widest text-sm">Choosing us ensures:</p>
+                      <div className="grid sm:grid-cols-1 gap-4">
+                        {[
+                          "Consistent color accuracy",
+                          "Durable materials",
+                          "Clean finishing",
+                          "Better brand perception",
+                          "Long-term usability"
+                        ].map((benefit, i) => (
+                          <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/20 hover:scale-[1.02] transition-all duration-300 cursor-default">
+                            <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                            <span className="font-medium text-lg">{benefit}</span>
+                          </div>
+                        ))}
+                      </div>
                   </div>
                 </div>
               </div>

@@ -97,11 +97,7 @@ export default function Services() {
 
   return (
     <>
-      <Helmet>
-        <title>Marketing, Advertising & Distribution Services in UAE</title>
-        <meta name="description" content="Max Lead Advertising is a full-service advertising and distribution company in UAE offer flyer distribution, digital marketing, printing, & outdoor advertising." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/services/" />
-      </Helmet>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/services/" /></Helmet>
 
       <ScrollToTop />
       <Navigation />

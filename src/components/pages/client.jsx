@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import ScrollToTop from "../ScrollToTop";
 import { 
   CheckCircle2, 
@@ -91,6 +92,7 @@ export default function Clients() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/work/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

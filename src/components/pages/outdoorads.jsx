@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import { 
   Signpost, 
   Truck, 
@@ -86,6 +87,7 @@ export default function OutdoorAds() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/outdoor-advertising-company/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

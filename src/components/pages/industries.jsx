@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet"; // Added Helmet
 import { 
   ShoppingBag, 
   Utensils, 
@@ -119,6 +120,7 @@ export default function Industries() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/industries/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -129,11 +131,11 @@ export default function Industries() {
         <section className="relative pt-32 pb-32 overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white">
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
              <div 
-               className="absolute -top-[10%] -left-[10%] w-[50rem] h-[50rem] bg-green-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob"
+               className="absolute -top-[10%] -left-[10%] w-[50rem] h-[50rem] bg-green-200/30 blur-[120px] rounded-full mix-blend-multiply animate-blob"
                style={{ transform: `translate(${cursor.x * 0.01}px, ${cursor.y * 0.01}px)` }}
              />
              <div 
-               className="absolute top-[20%] -right-[10%] w-[40rem] h-[40rem] bg-emerald-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-2000"
+               className="absolute top-[20%] -right-[10%] w-[40rem] h-[40rem] bg-emerald-200/30 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-2000"
                style={{ transform: `translate(${cursor.x * -0.01}px, ${cursor.y * -0.01}px)` }}
              />
              <div className="absolute top-1/4 left-10 opacity-10 animate-float" style={{ animationDelay: '0s' }}>
@@ -184,7 +186,6 @@ export default function Industries() {
                     <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-xl group-hover:shadow-2xl rounded-[2.5rem]">
                       
                       {/* --- FRONT SIDE --- */}
-                      {/* FIX: Added z-10 and group-hover:z-0 */}
                       <div className="absolute inset-0 h-full w-full bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden [backface-visibility:hidden] border border-gray-100 z-10 group-hover:z-0">
                         <div className="absolute inset-0 w-full h-full">
                           <img 
@@ -216,7 +217,6 @@ export default function Industries() {
                       </div>
 
                       {/* --- BACK SIDE --- */}
-                      {/* FIX: Added z-0 and group-hover:z-20 to ensure it is clickable when flipped */}
                       <div className="absolute inset-0 h-full w-full bg-gray-900 rounded-[2.5rem] p-12 flex flex-col justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden border border-gray-800 z-0 group-hover:z-20">
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black" />
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500" />
@@ -234,7 +234,6 @@ export default function Industries() {
                             {item.description}
                           </p>
 
-                          {/* FIX: relative z-30 ensures it's above all decorative elements */}
                           <Link 
                             to="/contact/" 
                             className="relative z-30 block w-full py-4 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm font-bold hover:shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-1 text-center"
@@ -243,7 +242,6 @@ export default function Industries() {
                           </Link>
                         </div>
                         
-                        {/* FIX: Added pointer-events-none so the decorative icon doesn't block the link */}
                         <item.icon className="absolute -bottom-12 -right-12 w-64 h-64 text-white/[0.03] rotate-12 pointer-events-none" />
                       </div>
 

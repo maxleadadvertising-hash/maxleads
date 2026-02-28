@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import { 
   Search, 
   Mail, 
@@ -83,6 +84,7 @@ export default function DigitalMarketing() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/digital-marketing-agency" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -256,10 +258,7 @@ export default function DigitalMarketing() {
                 
 
 
-
-
 [Image of social media marketing ecosystem diagram]
-
 
 
                 <div className="relative rounded-[3rem] overflow-hidden shadow-2xl h-[650px] group mt-6">
@@ -354,10 +353,10 @@ export default function DigitalMarketing() {
                         <h3 className="text-3xl font-bold text-gray-900">Search Engine Optimization (SEO)</h3>
                     </div>
                     <p className="text-gray-600 text-lg leading-relaxed">
-                      When people search for your products or services on Google, you want your business to appear at the top. Our search engine optimization services help you rank higher for important keywords in Dubai and across the UAE.
+                       When people search for your products or services on Google, you want your business to appear at the top. Our search engine optimization services help you rank higher for important keywords in Dubai and across the UAE.
                     </p>
                     <p className="text-gray-600 text-lg mt-4">
-                      We optimize your website, content, and structure so that Google understands your business and sends you qualified traffic. SEO is not about tricks. It is about building long-term visibility that keeps bringing customers even when you are not running ads.
+                       We optimize your website, content, and structure so that Google understands your business and sends you qualified traffic. SEO is not about tricks. It is about building long-term visibility that keeps bringing customers even when you are not running ads.
                     </p>
                   </div>
 
@@ -367,10 +366,10 @@ export default function DigitalMarketing() {
                         <h3 className="text-3xl font-bold text-gray-900">Search Engine Marketing (Google Ads)</h3>
                     </div>
                     <p className="text-gray-600 text-lg leading-relaxed">
-                      If you need instant leads, Google Ads is one of the fastest ways to get them. As a professional digital marketing company, we create and manage Google Ads campaigns that target people who are already searching for what you offer.
+                       If you need instant leads, Google Ads is one of the fastest ways to get them. As a professional digital marketing company, we create and manage Google Ads campaigns that target people who are already searching for what you offer.
                     </p>
                     <p className="text-gray-600 text-lg mt-4 mb-4">
-                      We focus on ensuring you get the best return on your ad spend.
+                       We focus on ensuring you get the best return on your ad spend.
                     </p>
                     <div className="grid grid-cols-2 gap-4">
                         {["Keyword Targeting", "Ad Copywriting", "Landing Page Optimization", "Conversion Tracking"].map((item, i) => (

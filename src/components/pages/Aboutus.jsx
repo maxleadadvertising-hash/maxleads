@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet"; // Added Helmet
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import Tilt from "react-parallax-tilt";
@@ -11,7 +12,6 @@ import {
   Lightbulb,
   MonitorSmartphone,
   Rocket,
- 
   MapPin,
   Smile,
   CheckCircle2,
@@ -53,14 +53,6 @@ export default function Aboutus() {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute("content", "Learn about Max Lead Advertising, a trusted advertising and distribution company in UAE delivering flyer distribution, printing, & digital marketing solutions.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/about-maxlead");
   }, []);
 
   /* Lenis smooth scroll */
@@ -84,6 +76,7 @@ export default function Aboutus() {
 
   return (
     <>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -133,7 +126,7 @@ export default function Aboutus() {
               1.5 IMAGE GALLERY SECTION 
              ==================== */}
           <div className="mb-24 grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80">
-             {[image1, image2, image3, image4].map((img, idx) => (
+              {[image1, image2, image3, image4].map((img, idx) => (
                 <div key={idx} className={`relative overflow-hidden rounded-3xl shadow-lg group h-full ${idx % 2 !== 0 ? 'mt-8' : ''}`}>
                    <img 
                      src={img} 
@@ -142,7 +135,7 @@ export default function Aboutus() {
                    />
                    <div className="absolute inset-0 bg-green-900/20 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
-             ))}
+              ))}
           </div>
 
           {/* ==================== 
@@ -318,13 +311,13 @@ export default function Aboutus() {
                    <div className="bg-white border-l-8 border-green-500 pl-6 md:pl-8 py-4 shadow-sm rounded-r-xl">
                       <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Before We Start</h4>
                       <p className="text-gray-600 text-base md:text-lg">
-                         We focus on your target audience, business location, competition, budget, and marketing goal. This ensures every campaign is designed to bring real results.
+                          We focus on your target audience, business location, competition, budget, and marketing goal. This ensures every campaign is designed to bring real results.
                       </p>
                    </div>
                    <div className="bg-white border-l-8 border-gray-800 pl-6 md:pl-8 py-4 shadow-sm rounded-r-xl">
                       <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Data-Driven Execution</h4>
                       <p className="text-gray-600 text-base md:text-lg">
-                         We use data, experience, and local market knowledge to decide where to distribute, who to target, what message to use, and how often your brand should be seen.
+                          We use data, experience, and local market knowledge to decide where to distribute, who to target, what message to use, and how often your brand should be seen.
                       </p>
                    </div>
                 </div>
