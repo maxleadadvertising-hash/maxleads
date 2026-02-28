@@ -417,7 +417,7 @@ export default function Aboutus() {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                    {/* CONTACT BUTTON */}
                    <button
-                    onClick={() => window.location.href = "/contact"}
+                    onClick={() => window.location.href = "/contact/"}
                     className="px-12 py-5 bg-gray-900 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-gray-800 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
                    >
                     Get a free consultation

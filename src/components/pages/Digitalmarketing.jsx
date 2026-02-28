@@ -133,7 +133,7 @@ export default function DigitalMarketing() {
                 </a>
                 {/* Fixed "Request a Quick Quote" to use Link component */}
                 <Link 
-                  to="/contact"
+                  to="/contact/"
                   className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300 flex items-center justify-center"
                 >
                   Request a Quick Quote

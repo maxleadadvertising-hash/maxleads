@@ -272,23 +272,7 @@ export default function BlogSectionModern() {
           </FadeIn>
         </section>
 
-        {/* --- NEWSLETTER --- */}
-        <section className="py-16 px-6">
-          <FadeIn className="max-w-5xl mx-auto">
-            <div className="bg-gray-900 rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]" />
-                <h2 className="text-2xl md:text-4xl font-bold mb-4 tracking-tight">Stay Ahead of UAE Marketing Trends</h2>
-                <p className="text-gray-400 text-sm mb-10 max-w-xl mx-auto leading-relaxed">
-                  Join 5,000+ business owners getting monthly advertising strategies.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                  <input type="email" placeholder="Your business email" className="bg-white/5 border border-white/10 rounded-xl px-6 py-3.5 outline-none focus:border-blue-500 transition-all w-full sm:w-80 text-sm" />
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl transition-all text-sm w-full sm:w-auto">Subscribe Now</button>
-                </div>
-            </div>
-          </FadeIn>
-        </section>
-
+      
       </main>
       <Footer />
     </>

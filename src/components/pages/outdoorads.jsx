@@ -133,7 +133,7 @@ export default function OutdoorAds() {
                 </a>
                 {/* CORRECTED TO LINK COMPONENT */}
                 <Link 
-                  to="/contact"
+                  to="/contact/"
                   className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300 flex items-center justify-center"
                 >
                   Request a Quote
@@ -389,7 +389,7 @@ export default function OutdoorAds() {
                   </a>
                   {/* CORRECTED TO LINK COMPONENT */}
                   <Link 
-                    to="/contact"
+                    to="/contact/"
                     className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400"
                   >
                     <Mail className="w-6 h-6 text-green-600" />

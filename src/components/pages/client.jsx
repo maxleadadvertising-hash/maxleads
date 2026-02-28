@@ -227,7 +227,7 @@ export default function Clients() {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-                    <a href="/contact">
+                    <a href="/contact/">
                       <button className="px-12 py-6 bg-green-600 hover:bg-green-500 text-white rounded-full font-bold shadow-xl shadow-green-900/30 flex items-center justify-center gap-4 transform hover:-translate-y-2 transition-all text-xl group">
                         Become a Client
                         <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />

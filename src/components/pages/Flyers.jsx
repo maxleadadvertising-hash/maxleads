@@ -207,7 +207,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                     </button>
                   </a>
                   {/* Corrected "View services" redirect to contact page */}
-                  <Link to="/contact">
+                  <Link to="/contact/">
                     <button className="px-8 py-3.5 rounded-full bg-black text-white font-bold shadow-lg hover:shadow-green-500/30 transition transform hover:-translate-y-1 flex items-center gap-2">
                       <MessageCircle className="w-5 h-5" />
                       Contact Us
@@ -489,7 +489,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
 
                   {/* Corrected CONTACT US to use Link component */}
-                  <Link to="/contact">
+                  <Link to="/contact/">
                     <button className="px-8 py-4 rounded-full bg-gradient-to-r from-green-600 to-teal-700 text-white font-bold text-lg hover:shadow-lg hover:shadow-green-500/40 transition flex items-center justify-center gap-2 w-full sm:w-auto">
                       <Phone className="w-5 h-5" />
                       Contact us today

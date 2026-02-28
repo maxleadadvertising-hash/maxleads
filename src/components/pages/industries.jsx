@@ -236,7 +236,7 @@ export default function Industries() {
 
                           {/* FIX: relative z-30 ensures it's above all decorative elements */}
                           <Link 
-                            to="/contact" 
+                            to="/contact/" 
                             className="relative z-30 block w-full py-4 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm font-bold hover:shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-1 text-center"
                           >
                             Get Strategy
@@ -332,7 +332,7 @@ export default function Industries() {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-                    <Link to="/contact">
+                    <Link to="/contact/">
                       <button className="px-12 py-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold shadow-xl shadow-green-500/30 hover:shadow-green-500/50 flex items-center justify-center gap-4 transform hover:-translate-y-2 transition-all text-xl group">
                         Talk to an Expert
                         <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
