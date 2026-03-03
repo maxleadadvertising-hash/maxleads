@@ -70,7 +70,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -161,13 +161,17 @@ export default function Hero() {
                   index === currentImage ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               >
-                <img 
-                  src={img} 
-                  alt={`Service ${index}`} 
-                  className={`w-full h-full object-cover transition-transform duration-[4000ms] ease-linear ${
-                    index === currentImage ? "scale-110" : "scale-100"
-                  }`}
-                />
+                <img
+  src={img}
+  alt={`Service ${index}`}
+  loading={index === 0 ? "eager" : "lazy"}
+  fetchpriority={index === 0 ? "high" : "auto"}
+  decoding="async"
+  className={`w-full h-full object-cover transition-transform duration-[4000ms] ease-linear ${
+    index === currentImage ? "scale-110" : "scale-100"
+  }`}
+/>
+             
                 {/* Subtle Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
               </div>
