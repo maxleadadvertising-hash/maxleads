@@ -40,7 +40,7 @@ const blogs = [
     readTime: "12 min read",
     image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Expert Tips", "Compliance"],
-    link: "/dos-and-donts-of-flyer-distribution-in-uae/"
+    link: "/blog/dos-and-donts-of-flyer-distribution-in-uae/"
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const blogs = [
     readTime: "10 min read",
     image: "https://images.pexels.com/photos/7682345/pexels-photo-7682345.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Strategy", "Dominance"],
-    link: "/ultimate-guide-to-flyer-distribution-strategies-in-dubai/"
+    link: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/"
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const blogs = [
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Future", "AI"],
-    link: "/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/"
+    link: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/"
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const blogs = [
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/3767172/pexels-photo-3767172.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Locations", "Demographics"],
-    link: "/best-locations-for-flyer-distribution-in-the-uae/"
+    link: "/blog/best-locations-for-flyer-distribution-in-the-uae/"
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ const blogs = [
     readTime: "10 min read",
     image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["MaxLead", "History"],
-    link: "/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/"
+    link: "/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/"
   },
   {
     id: 8,
@@ -95,7 +95,7 @@ const blogs = [
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/4344441/pexels-photo-4344441.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Operations", "Brand"],
-    link: "/what-is-the-role-of-a-flyer-distributor/"
+    link: "/blog/what-is-the-role-of-a-flyer-distributor/"
   },
   {
     id: 9,
@@ -106,7 +106,7 @@ const blogs = [
     readTime: "12 min read",
     image: "https://images.pexels.com/photos/5849581/pexels-photo-5849581.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Sales", "Growth"],
-    link: "/how-to-increase-sales-with-flyer-distribution/"
+    link: "/blog/how-to-increase-sales-with-flyer-distribution/"
   },
   {
     id: 10,
@@ -117,7 +117,7 @@ const blogs = [
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Integration", "QR Codes"],
-    link: "/integrating-online-and-offline-strategies-for-flyer-distribution/"
+    link: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/"
   },
   {
     id: 11,
@@ -128,7 +128,7 @@ const blogs = [
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/4342493/pexels-photo-4342493.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Local Ads", "Neighborhood"],
-    link: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
+    link: "/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
   }
 ];
 
@@ -137,15 +137,15 @@ const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
   { name: "Best Digital Agency Guide", icon: Target, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
-  { name: "Dos and Don'ts", icon: CheckCircle2, path: "/dos-and-donts-of-flyer-distribution-in-uae/" },
-  { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
-  { name: "Future Marketing Trends", icon: Zap, path: "/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
-  { name: "Best UAE Locations", icon: MapPin, path: "/best-locations-for-flyer-distribution-in-the-uae/" },
-  { name: "MaxLead Transformation", icon: TrendingUp, path: "/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" },
-  { name: "Distributor Role Guide", icon: User, path: "/what-is-the-role-of-a-flyer-distributor/" },
-  { name: "How to Increase Sales", icon: FileText, path: "/how-to-increase-sales-with-flyer-distribution/" },
-  { name: "Online & Offline Success", icon: MessageSquare, path: "/integrating-online-and-offline-strategies-for-flyer-distribution/" },
-  { name: "Door Hanger Marketing", icon: Printer, path: "/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" }
+  { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
+  { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
+  { name: "Future Marketing Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
+  { name: "Best UAE Locations", icon: MapPin, path: "/blog/best-locations-for-flyer-distribution-in-the-uae/" },
+  { name: "MaxLead Transformation", icon: TrendingUp, path: "/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" },
+  { name: "Distributor Role Guide", icon: User, path: "/blog/what-is-the-role-of-a-flyer-distributor/" },
+  { name: "How to Increase Sales", icon: FileText, path: "/blog/how-to-increase-sales-with-flyer-distribution/" },
+  { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" },
+  { name: "Door Hanger Marketing", icon: Printer, path: "/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {

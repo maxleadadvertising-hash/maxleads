@@ -84,7 +84,7 @@ export default function DigitalMarketing() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/digital-marketing-agency" /></Helmet>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/digital-marketing-agency/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

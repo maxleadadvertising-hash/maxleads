@@ -61,17 +61,17 @@ function App() {
 
 <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution/" element={<Blog1 />} />
 <Route path="/blog/how-choose-best-digital-marketing-agency-uae/" element={<Blog2 />} />
-<Route path="/dos-and-donts-of-flyer-distribution-in-uae/" element={<Blog3 />} />
-<Route path="/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" element={<Blog4 />} />
-<Route path="/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" element={<Blog5 />} />
-<Route path="/best-locations-for-flyer-distribution-in-the-uae/" element={<Blog6 />} />
-<Route path="/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" element={<Blog7 />} />
-<Route path="/what-is-the-role-of-a-flyer-distributor/" element={<Blog8 />} />
-<Route path="/how-to-increase-sales-with-flyer-distribution/" element={<Blog9 />} />
-<Route path="/integrating-online-and-offline-strategies-for-flyer-distribution/" element={<Blog10 />} />
-<Route path="/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" element={<Blog11 />} />
-<Route path="/social-media-marketing-services-cost-uae/" element={<Blog12 />} />
-<Route path="/affordable-digital-marketing-packages-uae/" element={<Blog13 />} />
+<Route path="/blog/dos-and-donts-of-flyer-distribution-in-uae/" element={<Blog3 />} />
+<Route path="/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" element={<Blog4 />} />
+<Route path="/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" element={<Blog5 />} />
+<Route path="/blog/best-locations-for-flyer-distribution-in-the-uae/" element={<Blog6 />} />
+<Route path="/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" element={<Blog7 />} />
+<Route path="/blog/what-is-the-role-of-a-flyer-distributor/" element={<Blog8 />} />
+<Route path="/blog/how-to-increase-sales-with-flyer-distribution/" element={<Blog9 />} />
+<Route path="/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" element={<Blog10 />} />
+<Route path="/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" element={<Blog11 />} />
+<Route path="/blog/social-media-marketing-services-cost-uae/" element={<Blog12 />} />
+<Route path="/blog/affordable-digital-marketing-packages-uae/" element={<Blog13 />} />
 
 
 

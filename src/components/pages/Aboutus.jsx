@@ -76,7 +76,7 @@ export default function Aboutus() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead" /></Helmet>
+      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

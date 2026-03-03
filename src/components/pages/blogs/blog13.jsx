@@ -40,7 +40,7 @@ const blogs = [
     readTime: "12 min read",
     image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Expert Tips", "Compliance"],
-    link: "/dos-and-donts-of-flyer-distribution-in-uae/"
+    link: "/blog/dos-and-donts-of-flyer-distribution-in-uae/"
   },
   {
     id: 11,
@@ -51,7 +51,7 @@ const blogs = [
     readTime: "10 min read",
     image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Pricing", "Startups"],
-    link: "/affordable-digital-marketing-packages-uae/"
+    link: "/blog/affordable-digital-marketing-packages-uae/"
   }
 ];
 
@@ -59,7 +59,7 @@ const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
   { name: "Digital Marketing", icon: Target, path: "/blog/how-choose-best-digital-marketing-agency-uae/" },
-  { name: "Startup Packages", icon: Zap, path: "/affordable-digital-marketing-packages-uae/" }
+  { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -99,7 +99,8 @@ export default function AffordableMarketingBlog() {
 
   return (
     <>
-      <Helmet><title>Affordable Digital Marketing Packages for Startups in UAE | ROI-Focused Agency</title><meta name="description" content="Affordable digital marketing packages in the UAE. We offer cost-effective SEO, social media, ads, and content services to help startups grow with measurable results." /><link rel="canonical" href="https://www.maxleadadvertising.com/affordable-digital-marketing-packages-uae/" /></Helmet>
+      <Helmet><title>Affordable Digital Marketing Packages for Startups in UAE | ROI-Focused Agency</title><meta name="description" content="Affordable digital marketing packages in the UAE. We offer cost-effective SEO, social media, ads, and content services to help startups grow with measurable results." />
+      <link rel="canonical" href="https://www.maxleadadvertising.com/affordable-digital-marketing-packages-uae/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
