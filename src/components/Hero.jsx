@@ -19,17 +19,17 @@ import Printingserv from "../assests/Outdoorads/od2.webp";
 import Flyerserv from "../assests/digitalmarketing/dm3.webp";
 import Flyerserv1 from "../assests/Flyers/flyerservice2.webp";
 
-// UPDATED: Reordered so Flyer Distribution is first, then Digital Marketing
+
 const heroImages = [
-    // Flyer Distribution
+  
   F1,
   F2,
   F3,
   D1,
   Flyerserv1,
-  Flyerserv,     // Digital Marketing
-  HeroImage,     // Printing Service
-  Printingserv,  // Outdoor Ads
+  Flyerserv,    
+  HeroImage,    
+  Printingserv,  
 ];
 
 const carouselItems = [

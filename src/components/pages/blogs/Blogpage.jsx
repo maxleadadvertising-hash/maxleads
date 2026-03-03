@@ -150,6 +150,17 @@ const blogs = [
     image: "https://images.pexels.com/photos/5900226/pexels-photo-5900226.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Startups", "Packages"],
     link: "/blog/affordable-digital-marketing-packages-uae/"
+  },
+   {
+    id: 14,
+    title: "Best flyer-distribution",
+    description: "Discover cost-effective marketing bundles designed to help UAE startups scale visibility and leads without overextending their budget.",
+    author: "Growth Strategy Team",
+    date: "Feb 28, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/5900226/pexels-photo-5900226.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Startups", "Packages"],
+    link: "/blog/best-flyer-distribution-services-uae/"
   }
 ]; // <--- END OF ARRAY
 
@@ -168,7 +179,8 @@ const categories = [
   { name: "How to Increase Sales", icon: FileText, path: "/blog/how-to-increase-sales-with-flyer-distribution/" },
   { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" },
   { name: "Social Media Cost", icon: Zap, path: "/blog/social-media-marketing-services-cost-uae/" },
-  { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" }
+  { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" },
+  { name: "flyer distribution", icon: Zap, path: "/blog/best-flyer-distribution-services-uae/" }
   
 ];
 
