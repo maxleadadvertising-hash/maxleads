@@ -100,7 +100,7 @@ export default function AffordableMarketingBlog() {
   return (
     <>
       <Helmet><title>Affordable Digital Marketing Packages for Startups in UAE | ROI-Focused Agency</title><meta name="description" content="Affordable digital marketing packages in the UAE. We offer cost-effective SEO, social media, ads, and content services to help startups grow with measurable results." />
-      <link rel="canonical" href="https://www.maxleadadvertising.com/affordable-digital-marketing-packages-uae/" /></Helmet>
+      <link rel="canonical" href="https://www.maxleadadvertising.com/blog/affordable-digital-marketing-packages-uae/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

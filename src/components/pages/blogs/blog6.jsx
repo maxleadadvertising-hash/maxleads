@@ -190,7 +190,7 @@ export default function BestLocationsBlog() {
       <Helmet>
         <title>UAE Flyer Distribution: Best Locations 2026</title>
         <meta name="description" content="Discover the best UAE locations for flyer distribution. From villa communities to high-traffic zones, see where door-to-door distribution in Dubai works best" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/best-locations-for-flyer-distribution-in-the-uae/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-locations-for-flyer-distribution-in-the-uae/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

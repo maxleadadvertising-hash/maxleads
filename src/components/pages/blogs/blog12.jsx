@@ -191,7 +191,7 @@ export default function SocialMediaCostBlog() {
         <title>Social Media Marketing Services Cost in UAE | Complete 2026 Guide</title>
         <meta name="description" content="Explore social media marketing services cost in the UAE, from Dubai to Sharjah and Ajman, and learn what factors influence pricing and growth strategy. Contact Us Today!" />
         <meta name="keywords" content="social media marketing services cost" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/social-media-marketing-services-cost-uae/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/social-media-marketing-services-cost-uae/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

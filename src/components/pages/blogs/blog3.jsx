@@ -189,7 +189,7 @@ export default function FlyerDistributionBlog() {
       <Helmet>
         <title>Dos and Don'ts of Flyer Distribution in UAE | Max Lead Advertising</title>
         <meta name="description" content="Learn the dos and don'ts of flyer distribution in UAE. Expert tips on door to door flyer distribution in Dubai to get better results and avoid common mistakes." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/dos-and-donts-of-flyer-distribution-in-uae/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/dos-and-donts-of-flyer-distribution-in-uae/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

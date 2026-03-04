@@ -185,7 +185,7 @@ export default function SalesGrowthBlog() {
       <Helmet>
         <title>How to Increase Sales with Flyer Distribution: 10 Tips</title>
         <meta name="description" content="Learn how to increase sales with flyer distribution. Expert tips for door to door flyer distribution in Dubai that bring real customers and grow revenue." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/how-to-increase-sales-with-flyer-distribution/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/how-to-increase-sales-with-flyer-distribution/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

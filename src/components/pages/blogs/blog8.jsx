@@ -184,7 +184,7 @@ export default function DistributorRoleBlog() {
       <Helmet>
         <title>What is the Role of a Flyer Distributor? Full Guide</title>
         <meta name="description" content="Learn what is the role of a flyer distributor and how they help businesses grow. Expert door to door flyer distribution in Dubai by Max Lead Advertising." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/what-is-the-role-of-a-flyer-distributor/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/what-is-the-role-of-a-flyer-distributor/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

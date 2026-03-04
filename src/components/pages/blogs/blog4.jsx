@@ -187,7 +187,7 @@ export default function FlyerStrategyBlog() {
       <Helmet>
         <title>Ultimate Guide to Flyer Distribution Strategies in Dubai | Max Lead</title>
         <meta name="description" content="Discover the ultimate guide to flyer distribution strategies in Dubai. Learn proven door to door flyer distribution in Dubai techniques that bring real results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" />
       </Helmet>
       
       <Whatsapp />

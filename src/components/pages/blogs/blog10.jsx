@@ -183,7 +183,7 @@ export default function IntegratedStrategyBlog() {
       <Helmet>
         <title>Integrating Online and Offline Strategies for Flyer Success</title>
         <meta name="description" content="Learn how integrating online and offline strategies for flyer distribution doubles your results. Expert door to door flyer distribution in Dubai with digital power." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/integrating-online-and-offline-strategies-for-flyer-distribution/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

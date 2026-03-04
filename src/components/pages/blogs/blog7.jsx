@@ -184,7 +184,7 @@ export default function MarketingTransformationBlog() {
       <Helmet>
         <title>Transforming Marketing with Max Lead Advertising</title>
         <meta name="description" content="Discover how Max Lead Advertising is transforming marketing in UAE. Trusted flyer distribution services in Dubai for real results. Call us today." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

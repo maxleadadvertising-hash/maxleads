@@ -189,7 +189,7 @@ export default function FutureTrendsBlog() {
       <Helmet>
         <title>Future Trends in Flyer Distribution: that Expect in UAE</title>
         <meta name="description" content="Discover future trends in flyer distribution in UAE. See how technology and innovation are shaping door to door flyer distribution in Dubai for better results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />
