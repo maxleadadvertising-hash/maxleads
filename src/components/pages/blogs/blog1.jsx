@@ -182,7 +182,11 @@ export default function DigitalMarketingBlog() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/" /></Helmet>
+     <Helmet>
+  <title>Why UAE Businesses Rely on Flyer Distribution | Max Lead Blog</title>
+  <meta name="description" content="In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai." />
+  <link rel="canonical" href="https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/" />
+</Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
