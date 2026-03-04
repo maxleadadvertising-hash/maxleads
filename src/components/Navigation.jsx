@@ -45,18 +45,19 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const servicesRef = useRef(null);
 
-  // CORRECTED: Optimized Scroll Effect using requestAnimationFrame to prevent Forced Reflow
+  // FIXED: Optimized Scroll for Mobile View to prevent Forced Reflow
   useEffect(() => {
     let requestRef;
     const handleScroll = () => {
-      // requestAnimationFrame batches the read/write to prevent layout thrashing
+      // requestAnimationFrame ensures the read/write doesn't block the mobile UI thread
       requestRef = requestAnimationFrame(() => {
         const isScrolled = window.scrollY > 20;
-        // Only update state if it actually changes to prevent unnecessary re-renders
+        // Only trigger a state update if the scroll threshold is actually crossed
         setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
       });
     };
 
+    // passive: true is essential for mobile scroll performance
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -182,7 +183,7 @@ export default function Navigation() {
         <button 
           className="md:hidden p-2 text-gray-300 hover:text-white"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"} // ADDED: Accessible Name
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
