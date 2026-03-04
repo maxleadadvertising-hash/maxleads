@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // 1. Import Link
+import { Link } from "react-router-dom";
 import {
   Layers,
   Megaphone,
   Printer,
   MapPin,
-  
   ArrowRight,
+  Truck, 
 } from "lucide-react";
 
 const services = [
@@ -27,9 +27,9 @@ const services = [
       "Event & Promotion Distribution",
     ],
     cta: "Explore Flyer Distribution Services",
-    path: "/flyer-distribution-services/" // 2. Add Path
+    path: "/flyer-distribution-services/"
   },
-   {
+  {
     id: "digital",
     label: "Digital Marketing Services",
     icon: Megaphone,
@@ -47,9 +47,8 @@ const services = [
       "SMS Marketing Services",
     ],
     cta: "Explore Digital Marketing Services",
-    path: "/digital-marketing-agency/" // 2. Add Path
+    path: "/digital-marketing-agency/"
   },
-   
   {
     id: "print",
     label: "Printing Services",
@@ -66,10 +65,8 @@ const services = [
       "Specialty Printing Solutions",
     ],
     cta: "Explore Printing Services",
-    path: "/digital-printing-services/" // 2. Add Path
+    path: "/digital-printing-services/"
   },
- 
- 
   {
     id: "outdoor",
     label: "Outdoor Advertising",
@@ -88,22 +85,24 @@ const services = [
       "Taxi, Truck & Van Advertising",
     ],
     cta: "Explore Outdoor Advertising Solutions",
-    path: "/outdoor-advertising-company/" // 2. Add Path
+    path: "/outdoor-advertising-company/"
   },
   {
-   
+    id: "delivery", // Fixed: Added ID
     label: "Delivery Services",
-    icon: Printer,
+    icon: Truck, // Improved Icon
     gradient: "from-green-400 to-emerald-400",
     description:
       "Max Lead Advertising offers reliable gift delivery and corporate delivery services in UAE, helping businesses deliver promotional items, corporate gifts, and marketing materials safely and on time.",
     features: [
       "Corporate Gift Delivery",
-      " Promotional Item Delivery",
-      "Office-to-Office Delivery"
+      "Promotional Item Delivery",
+      "Office-to-Office Delivery",
+      "Timed Document Delivery",
+      "Bulk Item Logistics"
     ],
     cta: "Explore Delivery Services",
-   
+    path: "/delivery-services/" // Fixed: Added Path
   },
 ];
 
@@ -115,31 +114,29 @@ export default function Services() {
       id="services"
       className="relative py-40 min-h-[110vh] bg-gradient-to-b from-white to-gray-100"
     >
-
-      {/* Header */}
+      {/* Header 1 */}
       <div className="max-w-screen-xl mx-auto px-4 mb-24 text-center">
         <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-          {" "}
           <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
-            Your One-Stop Advertising, Distribution & Digital Marketing Company 
+            Your One-Stop Advertising, Distribution & Digital Marketing Company
           </span>
         </h2>
-        <p className="text-xl text-gray-600 max-w-7xl mx-auto">
-          Max Lead Advertising was built with one clear mission — to help businesses reach real customers, not just impressions.
-We understand that even the best product or service cannot succeed if people don’t know about it. That’s why our solutions focus on visibility, reach, and response. From physical flyer distribution to digital platforms, we create marketing systems that work together.
-As a full-service digital marketing company and digital printing company, we combine strategy, execution, and tracking to help brands grow efficiently.
-
+        <p className="text-xl text-gray-600 max-w-7xl mx-auto leading-relaxed">
+          Max Lead Advertising was built with one clear mission — to help businesses reach real customers, not just impressions. 
+          We understand that even the best product or service cannot succeed if people don’t know about it. From physical flyer distribution 
+          to digital platforms, we create marketing systems that work together as a full-service digital marketing and printing company.
         </p>
       </div>
-       <div className="max-w-screen-xl mx-auto px-4 mb-24 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-          {" "}
+
+      {/* Header 2 */}
+      <div className="max-w-screen-xl mx-auto px-4 mb-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
           <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
-            Our Advertising, Distribution & Marketing Services 
+            Our Core Strategic Solutions
           </span>
         </h2>
-        <p className="text-xl text-gray-600 max-w-7xl mx-auto">
-      We offer complete advertising and promotional solutions under one roof. Click on any service to explore detailed solutions.
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          We offer complete advertising and promotional solutions under one roof. Click on any service to explore detailed solutions.
         </p>
       </div>
 
@@ -153,53 +150,53 @@ As a full-service digital marketing company and digital printing company, we com
               <button
                 key={item.id}
                 onClick={() => setActive(item)}
-                className={`w-full flex items-center gap-3 px-6 py-4 rounded-xl font-semibold transition-all
+                className={`w-full flex items-center gap-3 px-6 py-4 rounded-xl font-semibold transition-all text-left
                 ${
                   active.id === item.id
-                    ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg"
+                    ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg scale-[1.02]"
                     : "bg-white text-gray-700 border border-gray-200 hover:bg-green-50"
                 }`}
               >
-                <Icon className="w-5 h-5" />
-                {item.label}
+                <Icon className="w-5 h-5 shrink-0" />
+                <span className="truncate">{item.label}</span>
               </button>
             );
           })}
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="lg:col-span-3 bg-white rounded-3xl p-14 shadow-xl border border-gray-200">
+        <div className="lg:col-span-3 bg-white rounded-3xl p-8 md:p-14 shadow-xl border border-gray-200">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
             {active.label}
           </h3>
-          <p className="text-gray-600 mb-12 max-w-4xl leading-relaxed">
+          <p className="text-gray-600 mb-12 max-w-4xl leading-relaxed text-lg">
             {active.description}
           </p>
 
           {/* FEATURES */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
             {active.features.map((feature, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-xl px-6 py-6 hover:shadow-md transition"
+                className="flex items-center gap-4 bg-gray-50 border border-gray-100 rounded-xl p-5 hover:shadow-md transition group"
               >
                 <div
-                  className={`w-3 h-3 rounded-full bg-gradient-to-r ${active.gradient}`}
+                  className={`w-2 h-2 shrink-0 rounded-full bg-gradient-to-r ${active.gradient} group-hover:scale-150 transition-transform`}
                 ></div>
-                <span className="text-gray-700 text-sm font-medium">
+                <span className="text-gray-700 text-sm font-semibold">
                   {feature}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* CTA - Changed from <button> to <Link> */}
+          {/* CTA Link */}
           <Link 
-            to={active.path}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl"
+            to={active.path || "/contact/"}
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-2xl active:scale-95"
           >
             {active.cta}
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-6 h-6" />
           </Link>
         </div>
       </div>

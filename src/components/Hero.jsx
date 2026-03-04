@@ -106,7 +106,7 @@ export default function Hero() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.1] mb-8 drop-shadow-sm">
+          <h1 className="text-5xl sm:text-6xl lg:text6xl font-black text-gray-900 leading-[1.1] mb-8 drop-shadow-sm">
             Advertising and Distribution <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-800">
               Experts in UAE.

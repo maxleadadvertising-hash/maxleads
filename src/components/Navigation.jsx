@@ -10,7 +10,7 @@ import {
   Signpost, 
   ArrowRight
 } from "lucide-react";
-import logo from "../assests/logo.png"; 
+import logo from "../assests/logo12.svg"; 
 
 const services = [
   { 
@@ -45,11 +45,23 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const servicesRef = useRef(null);
 
-  // Handle Scroll Effect
+  // CORRECTED: Optimized Scroll Effect using requestAnimationFrame to prevent Forced Reflow
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    let requestRef;
+    const handleScroll = () => {
+      // requestAnimationFrame batches the read/write to prevent layout thrashing
+      requestRef = requestAnimationFrame(() => {
+        const isScrolled = window.scrollY > 20;
+        // Only update state if it actually changes to prevent unnecessary re-renders
+        setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(requestRef);
+    };
   }, []);
 
   // Close dropdown on outside click
@@ -79,7 +91,6 @@ export default function Navigation() {
         {/* --- LOGO --- */}
         <Link to="/" className="flex items-center gap-3 group" onClick={() => setMenuOpen(false)}>
           <div className="relative">
-             {/* Changed bg-orange-500 to bg-green-500 */}
              <div className="absolute inset-0 bg-green-500 rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
              <img 
                src={logo} 
@@ -87,13 +98,12 @@ export default function Navigation() {
                className="relative h-12 w-12 md:h-20 md:w-20 rounded-full object-cover border border-white/10" 
              />
           </div>
-          {/* Changed text-orange-500 to text-green-500 */}
           <span className="font-bold text-xl tracking-tight">MaxLead<span className="text-green-500">.</span></span>
         </Link>
 
         {/* --- DESKTOP MENU --- */}
         <div className="hidden md:flex items-center gap-8">
-          <NavLink to="/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
+          <NavLink end to="/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
             Home
           </NavLink>
           <NavLink to="/about-maxlead/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
@@ -131,7 +141,6 @@ export default function Navigation() {
                       onClick={() => setServicesOpen(false)}
                       className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group"
                     >
-                      {/* Updated hover colors to green */}
                       <div className="p-2 bg-gray-900 rounded-lg group-hover:bg-green-500/10 group-hover:text-green-500 transition-colors text-gray-400">
                         <item.icon className="w-5 h-5" />
                       </div>
@@ -173,6 +182,7 @@ export default function Navigation() {
         <button 
           className="md:hidden p-2 text-gray-300 hover:text-white"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"} // ADDED: Accessible Name
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

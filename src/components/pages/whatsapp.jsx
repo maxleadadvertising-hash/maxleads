@@ -25,6 +25,7 @@ export default function FloatingContact() {
           href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Chat with MaxLead on WhatsApp" // Added accessible name
           className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-lg group"
         >
           <span className="text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity absolute right-16 bg-white text-gray-800 px-2 py-1 rounded shadow-sm whitespace-nowrap">
@@ -36,6 +37,7 @@ export default function FloatingContact() {
         {/* Phone Button */}
         <a
           href={`tel:${phoneNumber}`}
+          aria-label="Call MaxLead support" // Added accessible name
           className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full shadow-lg group"
         >
           <span className="text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity absolute right-16 bg-white text-gray-800 px-2 py-1 rounded shadow-sm whitespace-nowrap">
@@ -48,6 +50,8 @@ export default function FloatingContact() {
       {/* --- MAIN TOGGLE BUTTON --- */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close contact options" : "Open contact options"} // Added dynamic accessible name
+        aria-expanded={isOpen} // Tells screen readers if menu is open
         className={`relative w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform duration-300 ${
           isOpen ? "bg-gray-800 rotate-90" : "bg-gradient-to-r from-green-500 to-emerald-600"
         }`}
