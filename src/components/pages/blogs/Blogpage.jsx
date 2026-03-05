@@ -180,7 +180,7 @@ const categories = [
   { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" },
   { name: "Social Media Cost", icon: Zap, path: "/blog/social-media-marketing-services-cost-uae/" },
   { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" },
-  { name: "flyer distribution", icon: Zap, path: "/blog/best-flyer-distribution-services-uae/" }
+  { name: "flyer distribution", icon: Zap, path: "blog/best-digital-marketing-agency-uae/" }
   
 ];
 

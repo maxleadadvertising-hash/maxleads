@@ -111,7 +111,7 @@ export default function Navigation() {
             About
           </NavLink>
            <NavLink to="/blog/" className={({isActive}) => `text-sm font-medium hover:text-green-500 transition-colors ${isActive ? 'text-green-500' : 'text-gray-300'}`}>
-           Blog
+            Blog
           </NavLink>
 
 
@@ -202,7 +202,14 @@ export default function Navigation() {
           <NavLink to="/about-maxlead/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">About Us</NavLink>
           <NavLink to="/blog/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-300 hover:text-white">Blog</NavLink>
           <div className="space-y-3">
-            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider">Services</div>
+            {/* ADDED: Link direction to main services page for mobile view */}
+            <Link 
+              to="/services/" 
+              onClick={() => setMenuOpen(false)} 
+              className="text-sm font-bold text-gray-500 uppercase tracking-wider flex items-center justify-between hover:text-green-500 transition-colors"
+            >
+              Services <ArrowRight className="w-3 h-3" />
+            </Link>
             <div className="grid grid-cols-1 gap-2">
               {services.map((item, idx) => (
                 <Link 

@@ -268,7 +268,7 @@ export default function Services() {
               <Link to="/contact/" className="px-10 py-5 bg-white text-green-700 rounded-full font-bold text-xl hover:bg-green-50 transition-all flex items-center justify-center gap-2">
                 <PhoneCall className="w-6 h-6" /> Get a free consultation
               </Link>
-              <a href="https://wa.me/971522286401" target="_blank" rel="noreferrer" className="px-10 py-5 bg-emerald-900 text-white rounded-full font-bold text-xl hover:bg-emerald-950 transition-all flex items-center justify-center gap-2">
+              <a href="https://wa.me/+971557222605" target="_blank" rel="noreferrer" className="px-10 py-5 bg-emerald-900 text-white rounded-full font-bold text-xl hover:bg-emerald-950 transition-all flex items-center justify-center gap-2">
                 Request a custom quote today
               </a>
             </div>
