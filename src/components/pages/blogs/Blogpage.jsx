@@ -158,7 +158,7 @@ const blogs = [
     author: "Growth Strategy Team",
     date: "Feb 28, 2026",
     readTime: "10 min read",
-    image: "https://images.pexels.com/photos/5900226/pexels-photo-5900226.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.pexels.com/photos/6565761/pexels-photo-6565761.jpeg",
     tags: ["Startups", "Packages"],
     link: "/blog/best-flyer-distribution-services-uae/"
   }
