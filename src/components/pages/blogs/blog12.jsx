@@ -29,7 +29,7 @@ const blogs = [
     readTime: "9 min read",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Agency", "Digital"],
-    link: "/blog/why-area-selection-matters-in-flyer-distribution/"
+    link: "/blog/best-digital-marketing-agency-uae/"
   },
   {
     id: 3,
@@ -135,7 +135,7 @@ const blogs = [
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/why-area-selection-matters-in-flyer-distribution/" },
+  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
   { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
   { name: "Future Marketing Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },

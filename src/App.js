@@ -63,7 +63,7 @@ function App() {
 
           {/* Blogs */}
           <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution/" element={<Blog1 />} />
-          <Route path="/blog/why-area-selection-matters-in-flyer-distribution/" element={<Blog2 />} />
+          <Route path="/blog/best-digital-marketing-agency-uae/" element={<Blog2 />} />
           <Route path="/blog/dos-and-donts-of-flyer-distribution-in-uae/" element={<Blog3 />} />
           <Route path="/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" element={<Blog4 />} />
           <Route path="/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" element={<Blog5 />} />

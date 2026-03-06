@@ -29,7 +29,7 @@ const blogs = [
     readTime: "9 min read",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Agency", "Digital"],
-    link: "/blog/why-area-selection-matters-in-flyer-distribution/"
+    link: "/blog/best-digital-marketing-agency-uae/"
   },
   {
     id: 3,
@@ -135,7 +135,7 @@ const blogs = [
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/why-area-selection-matters-in-flyer-distribution/" },
+  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
   { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
   { name: "Future Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
@@ -246,7 +246,7 @@ export default function FlyerDistributionBlog() {
                             Flyer distribution is one of the oldest and most trusted marketing methods in the world. In the UAE, it continues to deliver strong results for businesses of all sizes. But here's the truth — not all flyer campaigns succeed. Some businesses get great response. Others waste money and see no results.
                         </p>
                         <p className="text-base">
-                            The difference? It's not about luck. It's about knowing the dos and don'ts of flyer distribution in UAE. When done right, flyer distribution services in Dubai can bring you loyal local customers. When done wrong, your beautifully printed flyers end up in the trash — unread and ignored.
+                            The difference? It's not about luck. It's about knowing the dos and don'ts of flyer distribution in UAE. When done right, <a href="/flyer-distribution-services/" className="text-green-600 font-bold hover:underline">flyer distribution services in Dubai</a> can bring you loyal local customers. When done wrong, your beautifully printed flyers end up in the trash — unread and ignored.
                         </p>
                         <p className="text-base">
                             In this guide, we will walk you through everything you need to know. Whether you are planning door to door flyer distribution in Dubai for the first time or looking to improve your existing campaigns, these tips will help you get better results.
@@ -343,7 +343,7 @@ export default function FlyerDistributionBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center gap-2">
-                                   <PhoneCall className="w-4 h-4" /> Get a Free Consultation
+                                    <PhoneCall className="w-4 h-4" /> Get a Free Consultation
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center gap-2">
                                     <MessageSquare className="w-4 h-4" /> WhatsApp Now

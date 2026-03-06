@@ -29,7 +29,7 @@ const blogs = [
     readTime: "9 min read",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Agency", "Digital"],
-    link: "/blog/why-area-selection-matters-in-flyer-distribution/"
+    link: "/blog/best-digital-marketing-agency-uae/"
   },
   {
     id: 3,
@@ -136,7 +136,7 @@ const blogs = [
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Digital Agency Guide", icon: Target, path: "/blog/why-area-selection-matters-in-flyer-distribution/" },
+  { name: "Digital Agency Guide", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
   { name: "Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
   { name: "Future Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
@@ -185,7 +185,7 @@ export default function SalesGrowthBlog() {
       <Helmet>
         <title>Social Media Marketing Services Cost in UAE | Complete 2026 Guide</title>
         <meta name="description" content="Explore social media marketing services cost in the UAE, from Dubai to Sharjah and Ajman, and learn what factors influence pricing and growth strategy. Contact Us Today!" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/why-area-selection-matters-in-flyer-distribution/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />

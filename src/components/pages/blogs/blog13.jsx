@@ -29,7 +29,7 @@ const blogs = [
     readTime: "9 min read",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Agency", "Digital"],
-    link: "/blog/why-area-selection-matters-in-flyer-distribution/"
+    link: "/blog/best-digital-marketing-agency-uae/"
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ const blogs = [
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Digital Marketing", icon: Target, path: "/blog/why-area-selection-matters-in-flyer-distribution/" },
+  { name: "Digital Marketing", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" }
 ];
 
