@@ -1,16 +1,27 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User,BarChart3, FileText, TrendingUp, LayoutGrid, Zap, ArrowRight, PhoneCall,DollarSign } from "lucide-react";
+import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, TrendingUp, LayoutGrid,ArrowRight, PhoneCall, DollarSign, MousePointer2, BrainCircuit } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 import { Helmet } from "react-helmet";
 
-/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
+/* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
   {
     id: 1,
+    title: "Unlock the Power of Local Advertising with Door Hangers",
+    description: "Door hangers are different. They hang alone. They demand attention. Learn why they are the most powerful weapon for local businesses.",
+    author: "MaxLead Strategy Team",
+    date: "Feb 24, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/4342493/pexels-photo-4342493.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Local Ads", "Neighborhood"],
+    link: "/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
+  },
+  {
+    id: 2,
     title: "Why UAE Businesses Rely on Flyer Distribution",
     description: "In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai.",
     author: "MaxLead Team",
@@ -21,107 +32,8 @@ const blogs = [
     link: "/blog/why-uae-businesses-rely-on-flyer-distribution/"
   },
   {
-    id: 2,
-    title: "How to Choose the Best Digital Marketing Agency in UAE 2026",
-    description: "A comprehensive guide to identifying a performance-focused partner that converts clicks into revenue in the competitive UAE landscape.",
-    author: "Strategy Team",
-    date: "Feb 24, 2026",
-    readTime: "9 min read",
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Agency", "Digital"],
-    link: "/blog/best-digital-marketing-agency-uae/"
-  },
-  {
     id: 3,
-    title: "Dos and Don'ts of Flyer Distribution in UAE",
-    description: "Avoid common pitfalls. Learn the expert rules for successful door to door flyer distribution in Dubai and the wider Emirates.",
-    author: "Operations Lead",
-    date: "Feb 24, 2026",
-    readTime: "12 min read",
-    image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Expert Tips", "Compliance"],
-    link: "/blog/dos-and-donts-of-flyer-distribution-in-uae/"
-  },
-  {
-    id: 4,
-    title: "Ultimate Guide to Flyer Distribution Strategies in Dubai",
-    description: "Discover 10 proven ways to get results. Learn how hyper-local targeting and multi-touch strategies build brand dominance.",
-    author: "MaxLead Team",
-    date: "Feb 24, 2026",
-    readTime: "10 min read",
-    image: "https://images.pexels.com/photos/7682345/pexels-photo-7682345.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Strategy", "Dominance"],
-    link: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/"
-  },
-  {
-    id: 5,
-    title: "Future Trends in Flyer Distribution in UAE",
-    description: "How technology and AI are shaping the future of offline marketing. See what’s coming next in the 2026 UAE market.",
-    author: "Innovation Team",
-    date: "Feb 24, 2026",
-    readTime: "11 min read",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Future", "AI"],
-    link: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/"
-  },
-  {
-    id: 6,
-    title: "Best Locations for Flyer Distribution in the UAE",
-    description: "Identify high-ROI zones from villa communities like Arabian Ranches to high-density apartment clusters in Dubai Marina.",
-    author: "Market Researcher",
-    date: "Feb 24, 2026",
-    readTime: "11 min read",
-    image: "https://images.pexels.com/photos/3767172/pexels-photo-3767172.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Locations", "Demographics"],
-    link: "/blog/best-locations-for-flyer-distribution-in-the-uae/"
-  },
-  {
-    id: 7,
-    title: "Marketing with Max Lead Advertising",
-    description: "Our story of transformation: combining the reliability of offline marketing with modern data precision since 2015.",
-    author: "CEO Office",
-    date: "Feb 24, 2026",
-    readTime: "10 min read",
-    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["MaxLead", "History"],
-    link: "/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/"
-  },
-  {
-    id: 8,
-    title: "What is the Role of a Flyer Distributor?",
-    description: "More than just a simple job. Learn how professional distributors act as brand ambassadors and the final bridge to your customer.",
-    author: "HR Director",
-    date: "Feb 24, 2026",
-    readTime: "11 min read",
-    image: "https://images.pexels.com/photos/4344441/pexels-photo-4344441.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Operations", "Brand"],
-    link: "/blog/what-is-the-role-of-a-flyer-distributor/"
-  },
-  {
-    id: 9,
-    title: "How to Increase Sales with Flyer Distribution: 10 Proven Tips",
-    description: "Unlock growth with these 10 proven tips. Learn how to craft irresistible offers and use timing to drive immediate revenue.",
-    author: "Sales Head",
-    date: "Feb 24, 2026",
-    readTime: "12 min read",
-    image: "https://images.pexels.com/photos/5849581/pexels-photo-5849581.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Sales", "Growth"],
-    link: "/blog/how-to-increase-sales-with-flyer-distribution/"
-  },
-  {
-    id: 10,
-    title: "Online and Offline Strategies for Flyer Success",
-    description: "Learn how integrating flyers with QR codes and social media targeting can double your conversion rates.",
-    author: "Marketing Strategist",
-    date: "Feb 24, 2026",
-    readTime: "11 min read",
-    image: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Integration", "QR Codes"],
-    link: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/"
-  },
-  {
-    id: 11,
-    title: "Social Media Marketing Services Cost in UAE",
+    title: "How much do social media marketing services cost in the UAE?",
     description: "Explore social media marketing services cost in the UAE and learn what factors influence pricing and growth strategy.",
     author: "MaxLead Strategy Team",
     date: "Feb 24, 2026",
@@ -134,17 +46,10 @@ const blogs = [
 
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
-  { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "Best Digital Agency Guide", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
-  { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
-  { name: "Ultimate Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
-  { name: "Future Marketing Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
-  { name: "Best UAE Locations", icon: MapPin, path: "/blog/best-locations-for-flyer-distribution-in-the-uae/" },
-  { name: "MaxLead Transformation", icon: TrendingUp, path: "/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" },
-  { name: "Distributor Role Guide", icon: User, path: "/blog/what-is-the-role-of-a-flyer-distributor/" },
-  { name: "How to Increase Sales", icon: FileText, path: "/blog/how-to-increase-sales-with-flyer-distribution/" },
-  { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" },
-  { name: "SMM Cost Guide", icon: DollarSign, path: "/blog/social-media-marketing-services-cost-uae/" }
+  { name: "Door Hangers", icon: MapPin, path: "/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" },
+  { name: "Flyer Distribution", icon: FileText, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
+  { name: "SMM Cost Guide", icon: DollarSign, path: "/blog/social-media-marketing-services-cost-uae/" },
+  { name: "Digital Strategy", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -168,15 +73,12 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-export default function SocialMediaCostBlog() {
-  const activePost = blogs[10];
+export default function DoorHangerBlog() {
+  const activePost = blogs[0];
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
@@ -188,9 +90,8 @@ export default function SocialMediaCostBlog() {
   return (
     <>
       <Helmet>
-        <title>Social Media Marketing Services Cost in UAE | Complete 2026 Guide</title>
-        <meta name="description" content="Explore social media marketing services cost in the UAE, from Dubai to Sharjah and Ajman, and learn what factors influence pricing and growth strategy. Contact Us Today!" />
-        <meta name="keywords" content="social media marketing services cost" />
+        <title>Unlock the Power of Local Advertising with Door Hangers | MaxLead</title>
+        <meta name="description" content="Unlock the power of local advertising with door hanger marketing. Expert door to door flyer distribution in Dubai that reaches customers at home." />
         <link rel="canonical" href="https://www.maxleadadvertising.com/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" />
       </Helmet>
       <Whatsapp />
@@ -199,16 +100,16 @@ export default function SocialMediaCostBlog() {
 
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
-        <section className="relative pt-32 pb-12 px-6 bg-[#f8fafc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+        <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
-                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
+                    <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
                         <TrendingUp className="w-3 h-3" />
-                        <span>SMM Pricing Guide 2026</span>
+                        <span>MaxLead Hyper-Local Strategy</span>
                     </div>
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
-                        How much do social media marketing services cost in the UAE?
+                        Unlock the Power of <span className="text-green-600">Local Advertising</span> with Door Hanger Marketing
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
                         <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
@@ -219,12 +120,12 @@ export default function SocialMediaCostBlog() {
             </div>
         </section>
 
-        {/* --- CATEGORY SELECTOR (WRAPPED NO SCROLL) --- */}
+        {/* --- CATEGORY SELECTOR --- */}
         <section className="py-6 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
-                <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-blue-600 hover:text-white transition-all group">
+                <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-green-600 hover:text-white transition-all group">
                   <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
@@ -236,144 +137,179 @@ export default function SocialMediaCostBlog() {
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
             <FadeIn className="max-w-4xl mx-auto">
-                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed">
+                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed pt-12">
                     
                     <div className="mb-12">
-                        <p className="text-base text-gray-600">
-                            Social media marketing has become one of the most important growth channels for businesses across the UAE. From startups in Dubai to established companies in Abu Dhabi, and growing businesses in Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain, brands rely heavily on platforms like Instagram, Facebook, TikTok, and LinkedIn to attract customers and generate leads.
+                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-green-500 pl-6 mb-8">
+                            Think about the last time you checked your mailbox. What did you find? Bills. Magazines. Maybe a package slip. And probably some flyers. Now think about the last time you opened your front door and found something hanging right there. A door hanger. Waiting for you. Impossible to miss.
                         </p>
                         <p className="text-base text-gray-600">
-                            As competition increases across all emirates, understanding social media marketing services cost becomes a key step in planning your marketing budget. Whether you’re a small business in Ajman or an expanding brand in Dubai, knowing what affects social media marketing services cost helps you make smarter investment decisions.
+                            There is a difference between these two moments. Mailbox flyers compete with other mail. They get sorted, stacked, and sometimes thrown away without a glance. Door hangers are different. They hang alone. They demand attention. They say, "This is for you. Right here. Right now."
                         </p>
                         <p className="text-base text-gray-600">
-                            If you're considering hiring a social media marketing agency, one of the first questions you’ll ask is: How much does it cost? The answer depends on several factors — and understanding what influences social media marketing services cost will help you choose the right strategy for sustainable growth anywhere in the UAE.
+                            This is the power of door hanger marketing. And in this blog, we will show you how to unlock it for your business.
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-gray-900 pt-6">Why Social Media Marketing Services Cost Varies Across the UAE</h2>
-                    <p className="text-base text-gray-600">
-                        Instead of a fixed price, social media marketing services are usually customized based on your business needs. Here are the main factors that influence the cost:
-                    </p>
-
-                    <div className="space-y-8 mt-8">
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900">1. Scope of Work</h3>
-                            <p className="text-base text-gray-600">The more services included, the higher the investment. Some businesses only need content posting, while others require full-scale strategy, lead generation campaigns, and performance tracking.</p>
-                        </div>
-
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900">2. Number of Platforms</h3>
-                            <p className="text-base text-gray-600">Managing one platform is very different from managing multiple platforms such as Instagram, Facebook, LinkedIn, YouTube, Snapchat and TikTok simultaneously. Each platform requires unique content and optimization strategies.</p>
-                        </div>
-
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900">3. Content Creation Level</h3>
-                            <p className="text-base text-gray-600">Basic graphic posts require less effort compared to:</p>
-                            <ul className="list-disc pl-10 space-y-1 text-sm text-gray-600 font-medium">
-                                <li>Professional photography</li>
-                                <li>High-quality video production</li>
-                                <li>Reels and short-form video content</li>
-                                <li>On-site content shoots</li>
-                            </ul>
-                            <p className="text-base text-gray-600 mt-2">The complexity of content directly impacts overall service cost.</p>
-                        </div>
-
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900">4. Paid Advertising Management</h3>
-                            <p className="text-base text-gray-600">Running paid ads on Meta (Facebook & Instagram) or TikTok requires strategy, testing, and ongoing optimization. Businesses focusing on lead generation and sales typically invest more in ad management services.</p>
-                        </div>
-
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900">5. Community Management</h3>
-                            <p className="text-base text-gray-600">Responding to messages, comments, inquiries, and customer feedback requires daily monitoring. Active engagement improves brand reputation but also increases service involvement.</p>
-                        </div>
-
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900">6. Agency Experience & Expertise</h3>
-                            <p className="text-base text-gray-600">Established agencies with proven results, case studies, and experienced teams typically charge more than freelancers. However, they often deliver stronger strategies and measurable ROI.</p>
-                        </div>
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-gray-900 pt-10">Types of Social Media Marketing Services in the UAE</h3>
-                    <p className="text-base text-gray-600">Most agencies offer different service levels depending on your goals:</p>
+                    <h2 className="text-2xl font-bold text-gray-900 pt-6">What Makes Door Hanger Marketing So Powerful?</h2>
+                    <p className="text-base text-gray-600">Door hangers are not new. But they remain one of the most effective local advertising tools available. Here is why:</p>
                     
-                    <div className="grid md:grid-cols-3 gap-4 my-8">
-                        <div className="p-5 bg-gray-50 border border-gray-100 rounded-xl shadow-sm">
-                            <h4 className="font-bold text-blue-600 text-sm mb-2 uppercase tracking-wide">Basic Management</h4>
-                            <p className="text-xs text-gray-600 m-0">Designed for businesses that want to maintain an active online presence with regular posts and simple engagement.</p>
-                        </div>
-                        <div className="p-5 bg-gray-50 border border-gray-100 rounded-xl shadow-sm">
-                            <h4 className="font-bold text-blue-600 text-sm mb-2 uppercase tracking-wide">Growth-Focused</h4>
-                            <p className="text-xs text-gray-600 m-0">Includes strategic planning, optimized content, performance tracking, and audience targeting to increase engagement and reach.</p>
-                        </div>
-                        <div className="p-5 bg-gray-50 border border-gray-100 rounded-xl shadow-sm">
-                            <h4 className="font-bold text-blue-600 text-sm mb-2 uppercase tracking-wide">Performance & Leads</h4>
-                            <p className="text-xs text-gray-600 m-0">Focused on conversions, sales, and measurable business results through paid advertising, funnel strategies, and continuous optimization.</p>
-                        </div>
-                    </div>
-
-                    <h2 className="text-2xl font-bold text-gray-900 pt-6">Freelancers vs Agencies: What’s the Difference?</h2>
-                    <div className="grid md:grid-cols-2 gap-6 my-8">
-                        <div className="p-6 bg-white border border-gray-100 rounded-2xl">
-                            <h4 className="font-bold text-gray-900 mb-3">Freelancers</h4>
-                            <ul className="list-none p-0 space-y-2 text-sm text-gray-600">
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" /> Suitable for small businesses</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" /> Lower operational structure</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" /> Limited scalability</li>
-                            </ul>
-                        </div>
-                        <div className="p-6 bg-white border border-gray-100 rounded-2xl">
-                            <h4 className="font-bold text-gray-900 mb-3">Agencies</h4>
-                            <ul className="list-none p-0 space-y-2 text-sm text-gray-600">
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" /> Full team (strategist, designer, etc)</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" /> Advanced tools and reporting systems</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" /> Long-term growth strategies</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p className="text-base text-gray-600">Your choice depends on your business goals and growth expectations.</p>
-
-                    <h2 className="text-2xl font-bold text-gray-900 pt-6">Is Your Business Missing Out on Social Media Growth in the UAE?</h2>
-                    <p className="text-base text-gray-600">
-                        Absolutely. The UAE has one of the highest social media usage rates in the world. Consumers actively research brands online before making purchasing decisions. A strong social media presence builds trust, credibility, and visibility.
-                    </p>
-                    <p className="text-base text-gray-600 font-medium">When done correctly, social media marketing can:</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
+                    <div className="grid md:grid-cols-2 gap-4 mt-6">
                         {[
-                          "Increase brand awareness", "Generate consistent leads", 
-                          "Improve customer engagement", "Strengthen brand authority", 
-                          "Drive measurable revenue growth"
+                            { t: "100% Attention", d: "When someone opens their door, your message is the first thing they see. Not mixed with other ads. Not buried in a pile." },
+                            { t: "Physical Presence", d: "In a digital world, physical things stand out. A door hanger is real. This physical connection builds trust." },
+                            { t: "Targeted Reach", d: "You choose exactly where your door hangers go. Specific buildings. Specific communities. Specific neighborhoods." },
+                            { t: "High Retention", d: "People keep door hangers. They put them on the fridge. They leave them on the counter." },
+                            { t: "No Competition", d: "When your door hanger hangs alone, there is no competing ad next to it. No scrolling past. Just your message." }
                         ].map((item, idx) => (
-                          <div key={idx} className="flex items-center gap-3 p-4 bg-blue-50/50 rounded-xl">
-                            <Zap size={16} className="text-blue-600 shrink-0" />
-                            <span className="text-sm font-bold text-gray-800">{item}</span>
-                          </div>
+                            <div key={idx} className="p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                                <h4 className="font-bold text-gray-900 mb-2">{item.t}</h4>
+                                <p className="text-sm text-gray-600">{item.d}</p>
+                            </div>
                         ))}
                     </div>
 
-                    <h2 className="text-2xl font-bold text-gray-900 pt-6">Conclusion</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Types of Businesses That Benefit Most</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                        {[
+                            "Restaurants and Cafes", "Home Services (Plumbers/Cleaners)", "Pizza and Food Delivery", 
+                            "Salons and Spas", "Gyms and Fitness Centers", "Healthcare Providers", 
+                            "Schools and Nurseries", "Car Wash and Auto Services"
+                        ].map((item, idx) => (
+                            <div key={idx} className="flex items-center gap-3 p-4 bg-green-50/50 rounded-xl">
+                                <CheckCircle2 size={16} className="text-green-600 shrink-0" />
+                                <span className="text-sm font-bold text-gray-800">{item}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Designing Door Hangers That Get Results</h2>
+                    <ul className="space-y-4 list-none p-0 text-gray-600">
+                        <li><strong>Shape and Size:</strong> Standard door hangers are often shaped to fit over door handles. The hook shape is important.</li>
+                        <li><strong>Paper Quality:</strong> Thicker paper feels more professional. It lasts longer and doesn't get damaged by weather.</li>
+                        <li><strong>Colors:</strong> Use your brand colors. Make the design clean and avoid clutter.</li>
+                        <li><strong>Headline:</strong> Your headline must grab attention in seconds. "Hungry?" or "Special offer for neighbors."</li>
+                        <li><strong>Offer:</strong> Include a clear, attractive offer. First time discount. Free consultation. BOGO.</li>
+                        <li><strong>Call to Action:</strong> Tell people exactly what to do. Call now. Scan the QR code.</li>
+                        <li><strong>Contact Information:</strong> Phone number. Website. QR code. Social media.</li>
+                        <li><strong>Map or Location:</strong> If you have a physical location nearby, include a simple map.</li>
+                    </ul>
+
+                    <div className="bg-gray-950 text-white rounded-[2rem] p-10 my-16 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl rounded-full" />
+                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3"><BrainCircuit className="text-green-500" /> The Psychology Behind Door Hanger Success</h2>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 className="text-green-500 font-bold mb-2">Territoriality</h4>
+                                <p className="text-sm text-gray-400">Your front door is personal. When something hangs there, it feels important and specifically placed for you.</p>
+                            </div>
+                            <div>
+                                <h4 className="text-green-500 font-bold mb-2">Curiosity</h4>
+                                <p className="text-sm text-gray-400">Finding something on your door creates curiosity. What is it? Who left it? People want to know.</p>
+                            </div>
+                            <div>
+                                <h4 className="text-green-500 font-bold mb-2">Convenience</h4>
+                                <p className="text-sm text-gray-400">The message arrives exactly where and when it matters—like a pizza menu when you're hungry.</p>
+                            </div>
+                            <div>
+                                <h4 className="text-green-500 font-bold mb-2">Obligation</h4>
+                                <p className="text-sm text-gray-400">Some feel a slight sense of obligation because someone took the time to hang this on their door.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900">Timing Your Door Hanger Campaigns</h2>
+                    <ul className="space-y-3 mt-4 text-gray-600">
+                        <li><strong>Evenings and Weekends:</strong> Best for residential areas. People are home to see the hanger soon after placement.</li>
+                        <li><strong>Before Weekends:</strong> Distribute on Thursday or Friday for weekend offers when people plan their time.</li>
+                        <li><strong>Seasonal Timing:</strong> AC companies before summer, gyms in January, schools before enrollment.</li>
+                        <li><strong>Event-Based:</strong> Before a community holiday or long weekend. Match your timing to customer needs.</li>
+                    </ul>
+
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Integrating Door Hangers with Digital Marketing</h2>
+                    <p className="text-base text-gray-600">Door hangers are offline tools that work beautifully with digital strategies:</p>
+                    <div className="flex flex-wrap gap-2 my-6">
+                        {["QR Codes for Tracking", "Social Media Handles", "Hanger-Only Offers", "Neighborhood Retargeting", "Google Review QR"].map(tag => (
+                            <span key={tag} className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100">{tag}</span>
+                        ))}
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Measuring Door Hanger Success</h2>
+                    <p className="text-base text-gray-600">How do you know if your campaign worked?</p>
+                    <ul className="space-y-2 list-none p-0 text-gray-600">
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Trackable Offers (unique discount codes)</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Dedicated Phone Numbers for the campaign</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> QR Code Scan counts</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Ask Customers: "How did you hear about us?"</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Compare sales periods (before vs after)</li>
+                    </ul>
+
+                    <div className="my-12 p-8 border-2 border-red-50 rounded-3xl bg-red-50/20">
+                        <h3 className="text-xl font-bold text-red-600 mb-6 uppercase tracking-wider">Common Door Hanger Mistakes to Avoid</h3>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                                "Poor Design (Cluttered/Ugly)", "Weak Offer (No reason to act)", "Wrong Locations", 
+                                "Bad Timing (Hangers sitting out too long)", "No Tracking", "Unprofessional Distribution"
+                            ].map((m, i) => (
+                                <div key={i} className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-red-400" /> {m}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900">Why Professional Distribution Matters</h2>
+                    <p className="text-base text-gray-600">Professional distribution makes a huge difference in ROI:</p>
+                    <div className="space-y-4 my-8">
+                        <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div>
+                                <h4 className="font-bold text-sm">Proper Placement & Complete Coverage</h4>
+                                <p className="text-xs text-gray-500">Trained professionals ensure hangers stay on handles and cover every single door in the target area without skipping.</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div>
+                                <h4 className="font-bold text-sm">Legal Compliance & Proof</h4>
+                                <p className="text-xs text-gray-500">We follow community rules and provide full delivery reports with photos and GPS data.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10 mb-8">Door Hanger Success Stories</h2>
+                    <div className="grid md:grid-cols-3 gap-6 mb-16">
+                        <div className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                            <h4 className="font-black text-xs text-blue-600 uppercase mb-2">The Pizza Place</h4>
+                            <p className="text-xs text-gray-500">Distributed 5,000 hangers in nearby buildings with a BOGO offer. Result: 187 online orders in the first week. Revenue increased by 40%.</p>
+                        </div>
+                        <div className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                            <h4 className="font-black text-xs text-blue-600 uppercase mb-2">Home Cleaning</h4>
+                            <p className="text-xs text-gray-500">Targeted a villa community with 20% off. Result: 32 enquiries in two weeks. 18 became regular monthly customers.</p>
+                        </div>
+                        <div className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                            <h4 className="font-black text-xs text-blue-600 uppercase mb-2">Dental Clinic</h4>
+                            <p className="text-xs text-gray-500">Free first consultation offer with QR code booking. Result: 45 booked consultations in the first month.</p>
+                        </div>
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900">Unlock Your Local Market with Door Hangers</h2>
                     <p className="text-base text-gray-600">
-                        Understanding social media marketing services cost in the UAE is not about finding the cheapest option — it’s about finding the right strategy for your business goals. Whether you operate in Dubai, Abu Dhabi, Sharjah, Ajman, or any other emirate, your investment should align with your growth objectives, competition level, and target audience. Max Lead Advertising helps businesses align their strategy with clear performance goals.
-                    </p>
-                    <p className="text-base text-gray-600">
-                        The cost varies because every business is different. Factors like content quality, number of platforms, advertising strategy, and agency expertise all play a role in determining the final investment. What matters most is choosing a results-driven approach that focuses on real engagement, qualified leads, and measurable returns.
-                    </p>
-                    <p className="text-base text-gray-600 mb-10">
-                        In a highly competitive digital market like the UAE, a strong social media presence is no longer optional — it’s essential. When done strategically, social media marketing becomes a powerful engine for brand visibility, customer trust, and long-term revenue growth with the support of Max Lead Advertising.
+                        Door hanger marketing is powerful because it is personal. It reaches people in their homes. It gets attention. It drives action. At Max Lead Advertising, we handle design, printing, and distribution with professional reports and proof of delivery.
                     </p>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-3xl mt-12 text-white relative overflow-hidden text-center shadow-xl">
+                    <div className="bg-gradient-to-br from-green-600 to-indigo-800 p-10 rounded-[3rem] mt-12 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
-                            <h3 className="text-2xl md:text-3xl font-bold mb-4">Start Your Growth Strategy</h3>
-                            <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto">
-                                Max Lead Advertising helps businesses align their social media investment with clear performance goals and measurable ROI.
+                            <h3 className="text-2xl md:text-4xl font-bold mb-4">Ready to start?</h3>
+                            <p className="text-green-100 text-base mb-8 max-w-2xl mx-auto">
+                                Whether you are a restaurant, home service provider, or any local business, door hangers can grow your revenue.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2">
-                                   <PhoneCall size={16} /> Consultation
+                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center justify-center gap-2">
+                                    <PhoneCall size={16} /> Free Consultation
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp
+                                    <MessageSquare size={16} /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -382,7 +318,7 @@ export default function SocialMediaCostBlog() {
             </FadeIn>
         </section>
 
-        {/* --- DYNAMIC RELATED BLOGS GRID --- */}
+        {/* --- RELATED BLOGS --- */}
         <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
@@ -399,11 +335,11 @@ export default function SocialMediaCostBlog() {
                                     </div>
                                 </div>
                                 <div className="p-5 flex flex-col flex-grow">
-                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
+                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-blue-600" />
+                                        <span className="text-green-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
                                     </div>
                                 </div>
                             </a>
