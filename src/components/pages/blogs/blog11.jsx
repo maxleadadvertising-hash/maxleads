@@ -84,8 +84,8 @@ export default function DoorHangerBlog() {
   }, []);
 
   const handleCategoryClick = (path) => { window.location.href = path; };
-  const openWhatsapp = () => { window.open("https://wa.me/971522286401", "_blank"); };
-  const goToContact = () => { window.location.href = "/contact"; };
+  const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
+  const goToContact = () => { window.location.href = "/contact/"; };
 
   return (
     <>

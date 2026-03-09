@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet"; // Added Helmet
+import { Helmet } from "react-helmet"; 
 import { 
   MapPin, 
   Users, 
@@ -17,7 +17,7 @@ import {
   Target,
   Calendar
 } from "lucide-react";
-import { Link } from "react-router-dom"; // Added this import
+import { Link } from "react-router-dom"; 
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ScrollToTop from "../ScrollToTop";
@@ -26,13 +26,11 @@ import Whatsapp from '../pages/whatsapp';
 /* IMAGES */
 import flyerHero from "../../assests/Flyers/flyerhero.gif";
 import flyerService1 from "../../assests/Flyers/flyerservice1.webp";
-// import flyerService2 from "../../assests/Flyers/flyerService2.webp";
 import flyerService3 from "../../assests/Flyers/ddf2.webp";
 import flyerCTA from "../../assests/Flyers/flyerservice3.webp"; 
 import Flyer1 from "../../assests/Flyers/ddf3.webp";
 import Retail1 from "../../assests/Flyers/retail1.webp";
 import Res1 from "../../assests/Flyers/res1.webp";
-// import Com1 from "../../assests/Flyers/com1.webp";
 import Eve1 from "../../assests/Flyers/eve1.webp";
 import Tar1 from "../../assests/Flyers/Tar1.webp";
 
@@ -66,37 +64,14 @@ export default function FlyerDistribution() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    /* --- META TAGS LOGIC --- */
-    document.title = "Flyer Distribution Services in Dubai, UAE | Max Lead";
-    
-    // Description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Max Lead Advertising offers professional flyer distribution services in Dubai, UAE including door to door flyer and leaflet distribution with targeted reach.");
-
-    // Canonical URL
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/flyer-distribution-services/");
-
     const move = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
-  /* WhatsApp Link logic */
   const whatsappNumber = "971557222605";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Flyer Distribution services.`;
 
-  /* Service Data Mapping */
   const services = [
     {
       title: "Door-to-Door Flyer Distribution",
@@ -158,19 +133,24 @@ export default function FlyerDistribution() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/flyer-distribution-services/" /></Helmet>
+      <Helmet>
+        <title>Flyer Distribution Services in Dubai, UAE | Max Lead</title>
+        <meta name="description" content="Max Lead Advertising offers professional flyer distribution services in Dubai, UAE including door to door flyer and leaflet distribution with targeted reach." />
+        <meta name="keywords" content="Flyer distribution companies in Dubai, Flyer Distribution Services in Dubai, Door to door flyer distribution in Dubai, Flyer distribution company, Flyer distribution Dubai, Flyer distribution service, Leaflet distribution company, Leaflet distribution dubai, Leaflets abu dhabi" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/flyer-distribution-services/" />
+      </Helmet>
+      
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
 
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#f0fdf4] via-white to-[#f0fdf4] overflow-hidden">
-        {/* BACKGROUND BLOBS (Green Theme) */}
         <div
-          className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-400/20 rounded-full blur-[120px] mix-blend-multiply filter"
+          className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-400/20 rounded-full blur-[120px] mix-blend-multiply filter pointer-events-none"
           style={{ transform: `translate(${cursorPos.x * 0.03}px, ${cursorPos.y * 0.03}px)` }}
         />
         <div
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-400/20 rounded-full blur-[120px] mix-blend-multiply filter"
+          className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-400/20 rounded-full blur-[120px] mix-blend-multiply filter pointer-events-none"
           style={{ transform: `translate(${cursorPos.x * -0.03}px, ${cursorPos.y * -0.03}px)` }}
         />
 
@@ -181,7 +161,7 @@ export default function FlyerDistribution() {
             <FadeIn>
               <div className="space-y-8 text-center lg:text-left">
                  <div className="inline-flex items-center gap-2 bg-green-100 border border-green-200 px-4 py-1.5 rounded-full">
-                    <Megaphone className="w-4 h-4 text-green-600" />
+                    <Megaphone className="w-4 h-4 text-green-600" aria-hidden="true" />
                     <span className="text-sm font-bold text-green-800 tracking-wide uppercase">#1 Flyer Distribution UAE</span>
                 </div>
 
@@ -197,19 +177,18 @@ export default function FlyerDistribution() {
                     In a competitive market like the UAE, visibility plays a major role in business growth. At Max Lead Advertising, we provide professional flyer distribution services in Dubai, UAE that help businesses connect directly with their target audience. From residential communities to commercial hubs, our structured and strategic distribution approach ensures your message reaches the right people at the right location.
                   </p>
                   <p>
-As one of the trusted flyer distribution companies in Dubai UAE, we specialize in door to door flyer distribution, leaflet distribution, and targeted offline marketing campaigns designed to create real awareness and response.
+                    As one of the trusted flyer distribution companies in Dubai UAE, we specialize in door to door flyer distribution, leaflet distribution, and targeted offline marketing campaigns designed to create real awareness and response.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Get a quote on WhatsApp">
                     <button className="px-8 py-3.5 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold shadow-lg hover:shadow-green-500/30 transition transform hover:-translate-y-1 flex items-center gap-2">
                       <MessageCircle className="w-5 h-5" />
                       Get a Quote
                     </button>
                   </a>
-                  {/* Corrected "View services" redirect to contact page */}
-                  <Link to="/contact/">
+                  <Link to="/contact/" aria-label="Contact Max Lead today">
                     <button className="px-8 py-3.5 rounded-full bg-black text-white font-bold shadow-lg hover:shadow-green-500/30 transition transform hover:-translate-y-1 flex items-center gap-2">
                       <MessageCircle className="w-5 h-5" />
                       Contact Us
@@ -221,11 +200,15 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
 
             <FadeIn delay={200}>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-green-50 to-teal-400 rounded-[2rem] transform rotate-3 opacity-20 blur-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-green-50 to-teal-400 rounded-[2rem] transform rotate-3 opacity-20 blur-lg pointer-events-none"></div>
                 <img
                   src={flyerHero}
-                  alt="Flyer distribution services in Dubai"
+                  alt="Professional flyer distribution services in Dubai UAE"
                   className="relative w-full rounded-[2rem] shadow-2xl border-4 border-white"
+                  width="600"
+                  height="450"
+                  loading="eager"
+                  fetchpriority="high"
                 />
               </div>
             </FadeIn>
@@ -250,7 +233,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
             <FadeIn delay={200}>
               <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <span className="bg-green-100 p-2 rounded-lg"><Layers className="w-5 h-5 text-green-600"/></span>
+                  <span className="bg-green-100 p-2 rounded-lg"><Layers className="w-5 h-5 text-green-600" aria-hidden="true"/></span>
                   We help businesses promote:
                 </h3>
                 <ul className="grid grid-cols-1 gap-3">
@@ -262,7 +245,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                     "Brand awareness campaigns"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" aria-hidden="true" />
                       {item}
                     </li>
                   ))}
@@ -271,13 +254,16 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
             </FadeIn>
           </div>
 
-          {/* --- NEW BOTTOM IMAGE SECTION --- */}
+          {/* --- BOTTOM IMAGE SECTION --- */}
           <FadeIn delay={400}>
             <div className="mt-16 relative w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
               <img 
                 src={flyerService3} 
-                alt="Door to Door Distribution Service" 
+                alt="Door to Door Distribution Service by Max Lead Advertising" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                width="1200"
+                height="500"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             </div>
@@ -297,11 +283,11 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                     <FadeIn key={index} delay={index * 100}>
                         <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
                             <div className="h-48 overflow-hidden">
-                                <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                                <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
                                 <div className={`w-12 h-12 ${service.bg} rounded-xl flex items-center justify-center mb-6 ${service.color}`}>
-                                    <service.icon className="w-6 h-6" />
+                                    <service.icon className="w-6 h-6" aria-hidden="true" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
                                 <p className="text-gray-600 flex-1">{service.desc}</p>
@@ -314,8 +300,8 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
 
           {/* 4. WHY IT WORKS (Grid) */}
           <div className="bg-gray-900 rounded-[3rem] p-10 md:p-20 text-white relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-[100px] opacity-20"></div>
-             <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500 rounded-full blur-[100px] opacity-20"></div>
+             <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
+             <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500 rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
 
              <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
                 <FadeIn>
@@ -332,7 +318,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                             "It is cost-effective compared to mass media"
                         ].map((item, i) => (
                             <li key={i} className="flex items-center gap-3">
-                                <span className="bg-green-500/20 p-1 rounded-full"><CheckCircle className="w-5 h-5 text-green-400"/></span>
+                                <span className="bg-green-500/20 p-1 rounded-full"><CheckCircle className="w-5 h-5 text-green-400" aria-hidden="true"/></span>
                                 <span className="text-gray-200">{item}</span>
                             </li>
                         ))}
@@ -353,7 +339,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                                 "Supports quick promotions and launches"
                              ].map((benefit, i) => (
                                 <div key={i} className="flex items-start gap-3">
-                                    <div className="mt-1"><Clock className="w-4 h-4 text-green-400" /></div>
+                                    <div className="mt-1"><Clock className="w-4 h-4 text-green-400" aria-hidden="true" /></div>
                                     <span className="text-sm font-medium text-gray-200">{benefit}</span>
                                 </div>
                              ))}
@@ -403,7 +389,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                            "Integrated offline and online marketing support"
                        ].map((point, i) => (
                            <li key={i} className="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
-                               <CheckCircle className="w-5 h-5 text-green-500 mt-0.5" />
+                               <CheckCircle className="w-5 h-5 text-green-500 mt-0.5" aria-hidden="true" />
                                <span className="text-gray-700 font-medium">{point}</span>
                            </li>
                        ))}
@@ -413,7 +399,7 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                <div className="flex flex-col justify-center">
                    <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full">
                         <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                             <MapPin className="text-green-600"/> Areas We Cover Across UAE
+                             <MapPin className="text-green-600" aria-hidden="true"/> Areas We Cover Across UAE
                         </h3>
                         <p className="mb-6 text-gray-600">Our flyer and leaflet distribution services are available across major locations in UAE. Whether you want local distribution or wider coverage, we can plan accordingly.</p>
                         <div className="flex flex-wrap gap-3">
@@ -469,14 +455,16 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
           {/* 8. CTA SECTION */}
           <FadeIn>
             <div id="contact" className="relative rounded-[2.5rem] overflow-hidden bg-gray-900 text-white text-center p-12 md:p-24">
-              
               <div className="absolute inset-0 opacity-40">
                 <img
                   src={flyerCTA}
-                  alt="Background"
+                  alt="Max Lead Advertising flyer distribution campaign background"
                   className="w-full h-full object-cover blur-sm"
+                  width="1200"
+                  height="600"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
               </div>
 
               <div className="relative z-10 max-w-3xl mx-auto space-y-8">
@@ -489,27 +477,24 @@ As one of the trusted flyer distribution companies in Dubai UAE, we specialize i
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-
-                  {/* Corrected CONTACT US to use Link component */}
-                  <Link to="/contact/">
+                  <Link to="/contact/" aria-label="Contact Max Lead today">
                     <button className="px-8 py-4 rounded-full bg-gradient-to-r from-green-600 to-teal-700 text-white font-bold text-lg hover:shadow-lg hover:shadow-green-500/40 transition flex items-center justify-center gap-2 w-full sm:w-auto">
                       <Phone className="w-5 h-5" />
                       Contact us today
                     </button>
                   </Link>
 
-                  {/* WHATSAPP */}
                   <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Chat with Max Lead on WhatsApp"
                   >
                     <button className="px-8 py-4 rounded-full bg-white text-gray-900 font-bold text-lg hover:bg-gray-100 transition flex items-center justify-center gap-2 w-full">
                       <MessageCircle className="w-5 h-5 text-green-600" />
                       WhatsApp us
                     </button>
                   </a>
-
                 </div>
               </div>
             </div>

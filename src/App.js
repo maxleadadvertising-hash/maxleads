@@ -1,12 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// 1. Keep non-page components and the Homepage as regular imports for instant FCP
 import ScrollToTop from './components/ScrollToTop';
 import Scrollup from "./components/scrolluparrow";
 import Homepage from './components/pages/Homepage';
 
-// 2. Lazy load all other pages (Main Thread improvement)
+
 const Aboutus = lazy(() => import('./components/pages/Aboutus'));
 const Contactus = lazy(() => import('./components/pages/Contactus'));
 const BlogSectionClassic = lazy(() => import('./components/pages/blogs/Blogpage'));
@@ -19,7 +17,6 @@ const Industries = lazy(() => import('./components/pages/industries'));
 const ThankYou = lazy(() => import('./components/Thankyou'));
 const Serviceoverview = lazy(() => import('./components/seriveoverview'));
 
-// 3. Lazy load individual blogs (This removes 80% of the initial JS bloat)
 const Blog1 = lazy(() => import('./components/pages/blogs/blog1'));
 const Blog2 = lazy(() => import('./components/pages/blogs/blog2'));
 const Blog3 = lazy(() => import('./components/pages/blogs/blog3'));
@@ -35,14 +32,20 @@ const Blog12 = lazy(() => import('./components/pages/blogs/blog12'));
 const Blog13 = lazy(() => import('./components/pages/blogs/blog13'));
 const Blog14 = lazy(() => import('./components/pages/blogs/blog14'));
 
+/**
+ * LOADING FALLBACK: 
+ * Using a simple div instead of a heavy spinner reduces initial TBT.
+ */
+const PageLoader = () => <div className="min-h-screen bg-[#FAF9F6]" />;
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <Scrollup />
       
-      {/* 4. Wrap Routes in Suspense to handle loading states */}
-      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      {/* 4. Suspense handles the "Wait" while a new page chunk is downloaded */}
+      <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about-maxlead/" element={<Aboutus />} />
@@ -55,13 +58,13 @@ function App() {
           <Route path="/digital-marketing-agency/" element={<DigitalMarketing/>} />
           <Route path="/outdoor-advertising-company/" element={<Outdoorads/>} />
           
-          {/* Other */}
+          {/* Company Info */}
           <Route path="/work/" element={<Clients/>} />
           <Route path="/industries/" element={<Industries/>} />
           <Route path="/services/" element={<Serviceoverview/>} />
           <Route path="/thank-you/" element={<ThankYou />} />
 
-          {/* Blogs */}
+          {/* Individual Blog Routes */}
           <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution/" element={<Blog1 />} />
           <Route path="/blog/best-digital-marketing-agency-uae/" element={<Blog2 />} />
           <Route path="/blog/dos-and-donts-of-flyer-distribution-in-uae/" element={<Blog3 />} />

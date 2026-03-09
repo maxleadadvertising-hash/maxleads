@@ -165,7 +165,10 @@ export default function PrintingServices() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/digital-printing-services/" /></Helmet>
+      <Helmet>
+        
+        <meta name="keywords" content="Digital Printing Services in Dubai, Digital printing company dubai, Digital printing Sharjah, Digital View Printing Services, Digital printing price, Digital visiting card printing services, Digital printing services in dubai" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/digital-printing-services/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

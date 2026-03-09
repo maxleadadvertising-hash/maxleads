@@ -38,7 +38,7 @@ const blogs = [
     author: "Strategy Team",
     date: "March 4, 2026",
     readTime: "9 min read",
-    image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.pexels.com/photos/6565757/pexels-photo-6565757.jpeg",
     tags: ["Agency Guide"],
     link: "/blog/best-digital-marketing-agency-uae/"
   }
@@ -85,7 +85,7 @@ export default function FlyerPsychologyBlog() {
 
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
-  const goToContact = () => { window.location.href = "/contact"; };
+  const goToContact = () => { window.location.href = "/contact/"; };
 
   return (
     <>

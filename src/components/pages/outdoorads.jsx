@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet"; // Added Helmet
+import { Helmet } from "react-helmet"; 
 import { 
   Signpost, 
   Truck, 
@@ -18,16 +18,15 @@ import {
   FileCheck,
   Printer,
   BarChart3,
-  Mail // Added for the contact icon
+  Mail 
 } from "lucide-react";
-import { Link } from "react-router-dom"; // Added this import
+import { Link } from "react-router-dom"; 
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ScrollToTop from "../ScrollToTop";
 import Whatsapp from '../pages/whatsapp';
 
-/* IMAGES - Replace with your actual assets */
-import outdoorHero from "../../assests/Outdoorads/od1.webp"; // Placeholder
+import outdoorHero from "../../assests/Outdoorads/od1.webp"; 
 
 /* --- ANIMATION COMPONENT --- */
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -58,36 +57,18 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function OutdoorAds() {
-  // Replace with your actual phone number (country code + number, no spaces)
   const whatsappNumber = "971557222605"; 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Outdoor Advertising services.`;
   
-  // ADDED: Meta Tags Logic
-  useEffect(() => {
-    document.title = "Outdoor Advertising Company in Dubai, UAE | Max Lead";
-    
-    // Meta Description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE offering billboards, LED screens, vehicle branding and OOH media solutions.");
-
-    // Canonical URL
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/outdoor-advertising-company/");
-  }, []);
-
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/outdoor-advertising-company/" /></Helmet>
+      <Helmet>
+        <title>Outdoor Advertising Company in Dubai, UAE | Max Lead</title>
+        <meta name="description" content="Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE offering billboards, LED screens, vehicle branding and OOH media solutions." />
+        <meta name="keywords" content="Outdoor advertising agency in dubai, Outdoor advertising companies in dubai, Outdoor advertising services in UAE, Billboard advertising Dubai, OOH UAE" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/outdoor-advertising-company/" />
+      </Helmet>
+
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -106,9 +87,10 @@ export default function OutdoorAds() {
           </div>
 
           <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
             <FadeIn className="space-y-8">
               <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full shadow-sm mt-16">
-                <Signpost className="w-4 h-4 text-green-600" />
+                <Signpost className="w-4 h-4 text-green-600" aria-hidden="true" />
                 <span className="text-xs font-bold text-green-700 tracking-wide uppercase">Premier Outdoor Advertising UAE</span>
               </div>
 
@@ -124,37 +106,43 @@ export default function OutdoorAds() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                {/* WHATSAPP REDIRECT */}
                 <a 
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                  aria-label="Get a free outdoor media plan via WhatsApp"
                 >
                   Get a Free Outdoor Media Plan
                 </a>
-                {/* CORRECTED TO LINK COMPONENT */}
                 <Link 
                   to="/contact/"
                   className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:border-green-200 hover:bg-green-50 transition-all duration-300 flex items-center justify-center"
+                  aria-label="Request a quote for outdoor advertising services"
                 >
                   Request a Quote
                 </Link>
               </div>
             </FadeIn>
 
+            {/* Right Image */}
             <FadeIn delay={200} className="relative lg:h-[600px] flex items-center justify-center">
               <div className="relative w-full aspect-[4/5] lg:aspect-auto h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-all duration-700 hover:shadow-green-200">
+                {/* PERFORMANCE FIX: Fetchpriority high and explicit aspect ratio */}
                 <img 
                   src={outdoorHero} 
-                  alt="Outdoor Advertising Dubai" 
+                  alt="Outdoor Advertising in Dubai UAE" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  width="800"
+                  height="1000"
+                  loading="eager"
+                  fetchpriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                 
                 <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-[260px] animate-bounce-slow">
                   <div className="flex items-center gap-3 mb-2">
-                    <Eye className="w-6 h-6 text-green-600" />
+                    <Eye className="w-6 h-6 text-green-600" aria-hidden="true" />
                     <span className="font-bold text-gray-900 text-lg">Mass Visibility</span>
                   </div>
                   <p className="text-sm text-gray-600">Your message seen by thousands every single day.</p>
@@ -180,7 +168,7 @@ export default function OutdoorAds() {
                   In a fast-moving city like Dubai, people spend hours every day commuting, shopping, dining, and traveling. That means outdoor advertising gives your brand repeated exposure to thousands of potential customers every single day. Whether you want to launch a new product, promote a retail offer, advertise a real estate project, or build long-term brand awareness, our outdoor advertising solutions in UAE deliver consistent, high-visibility results.
                 </p>
                 <p>
-                  Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE, helping brands gain powerful visibility through high-impact OOH (Out of Home) advertising solutions.Heavy daily traffic, Busy business districts, Large residential communities, Shopping malls and entertainment hubs, Millions of tourists every year,
+                  Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE, helping brands gain powerful visibility through high-impact OOH (Out of Home) advertising solutions. Heavy daily traffic, Busy business districts, Large residential communities, Shopping malls and entertainment hubs, Millions of tourists every year.
                 </p>
               </div>
             </FadeIn>
@@ -198,7 +186,7 @@ export default function OutdoorAds() {
                     "Long-Term Impact – Your ad stays visible day and night"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="text-gray-700 font-medium text-lg">{item}</span>
                     </li>
                   ))}
@@ -231,7 +219,7 @@ export default function OutdoorAds() {
                 <FadeIn key={idx} delay={idx * 100}>
                   <div className="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 h-full">
                     <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform">
-                      <service.icon className="w-7 h-7" />
+                      <service.icon className="w-7 h-7" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
@@ -266,7 +254,7 @@ export default function OutdoorAds() {
                   <FadeIn key={i} delay={i * 100}>
                     <div className="bg-white p-6 rounded-3xl border border-gray-100 hover:border-green-300 transition-all duration-300 hover:-translate-y-2 h-full text-center group">
                       <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white mb-6 shadow-lg ring-4 ring-white mx-auto relative z-10">
-                        <item.icon className="w-6 h-6" />
+                        <item.icon className="w-6 h-6" aria-hidden="true" />
                         <div className="absolute -top-2 -right-2 w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center text-xs font-bold border-2 border-white">{i + 1}</div>
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -297,7 +285,7 @@ export default function OutdoorAds() {
                         "Integrated offline and online marketing solutions"
                     ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" aria-hidden="true" />
                             <span className="font-medium text-gray-700">{item}</span>
                         </div>
                     ))}
@@ -316,7 +304,7 @@ export default function OutdoorAds() {
                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                                <Signpost className="w-6 h-6" />
+                                <Signpost className="w-6 h-6" aria-hidden="true" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Strong Offline Presence</h4>
@@ -325,7 +313,7 @@ export default function OutdoorAds() {
                         </div>
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                                <Monitor className="w-6 h-6" />
+                                <Monitor className="w-6 h-6" aria-hidden="true" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Online Engagement</h4>
@@ -354,7 +342,7 @@ export default function OutdoorAds() {
                     <summary className="flex items-center justify-between font-bold text-lg text-gray-900">
                       {faq.q}
                       <span className="ml-4 flex-shrink-0 transition duration-300 group-open:-rotate-180 bg-green-50 rounded-full p-1">
-                        <ArrowRight className="w-5 h-5 text-green-500 rotate-90" />
+                        <ArrowRight className="w-5 h-5 text-green-500 rotate-90" aria-hidden="true" />
                       </span>
                     </summary>
                     <p className="mt-4 text-gray-600 leading-relaxed border-t pt-4 border-gray-100">
@@ -379,22 +367,22 @@ export default function OutdoorAds() {
                   Put your brand on billboards, LED screens, roads, taxis, malls, and buildings with Max Lead’s professional outdoor advertising services in UAE.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  {/* WHATSAPP REDIRECT */}
                   <a 
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-10 py-5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-bold shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all text-lg"
+                    aria-label="Contact Max Lead experts on WhatsApp"
                   >
-                    <MessageCircle className="w-6 h-6" />
+                    <MessageCircle className="w-6 h-6" aria-hidden="true" />
                     Talk to our experts on WhatsApp
                   </a>
-                  {/* CORRECTED TO LINK COMPONENT */}
                   <Link 
                     to="/contact/"
                     className="px-10 py-5 bg-white border border-gray-300 text-gray-800 rounded-full font-bold hover:bg-gray-50 flex items-center justify-center gap-3 transition-all text-lg hover:border-gray-400"
+                    aria-label="Book a consultation for outdoor advertising"
                   >
-                    <Mail className="w-6 h-6 text-green-600" />
+                    <Mail className="w-6 h-6 text-green-600" aria-hidden="true" />
                     Book a Consultation Today
                   </Link>
                 </div>

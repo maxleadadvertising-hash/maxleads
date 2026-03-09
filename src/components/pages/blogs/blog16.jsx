@@ -85,7 +85,7 @@ export default function EcommerceSMMBlog() {
 
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
-  const goToContact = () => { window.location.href = "/contact"; };
+  const goToContact = () => { window.location.href = "/contact/"; };
 
   return (
     <>

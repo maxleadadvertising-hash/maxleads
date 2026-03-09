@@ -38,7 +38,7 @@ const blogs = [
     author: "Operations Lead",
     date: "Feb 24, 2026",
     readTime: "12 min read",
-    image: "https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.pexels.com/photos/6565757/pexels-photo-6565757.jpeg",
     tags: ["Expert Tips", "Compliance"],
     link: "/blog/dos-and-donts-of-flyer-distribution-in-uae/"
   },
@@ -93,7 +93,7 @@ const blogs = [
     author: "HR Director",
     date: "Feb 24, 2026",
     readTime: "11 min read",
-    image: "https://images.pexels.com/photos/4344441/pexels-photo-4344441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.pexels.com/photos/7787200/pexels-photo-7787200.jpeg",
     tags: ["Operations", "Brand"],
     link: "/blog/what-is-the-role-of-a-flyer-distributor/"
   },
@@ -176,8 +176,8 @@ export default function MarketingTransformationBlog() {
   }, []);
 
   const handleCategoryClick = (path) => { window.location.href = path; };
-  const openWhatsapp = () => { window.open("https://wa.me/971522286401", "_blank"); };
-  const goToContact = () => { window.location.href = "/contact"; };
+  const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
+  const goToContact = () => { window.location.href = "/contact/"; };
 
   return (
     <>
