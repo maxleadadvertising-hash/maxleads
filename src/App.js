@@ -31,7 +31,10 @@ const Blog11 = lazy(() => import('./components/pages/blogs/blog11'));
 const Blog12 = lazy(() => import('./components/pages/blogs/blog12'));
 const Blog13 = lazy(() => import('./components/pages/blogs/blog13'));
 const Blog14 = lazy(() => import('./components/pages/blogs/blog14'));
-
+const Blog15 = lazy(() => import('./components/pages/blogs/blog15'));
+const Blog16 = lazy(() => import('./components/pages/blogs/blog16'));
+const Blog17 = lazy(() => import('./components/pages/blogs/blog17'));
+const Blog18 = lazy(() => import('./components/pages/blogs/blog18'));
 /**
  * LOADING FALLBACK: 
  * Using a simple div instead of a heavy spinner reduces initial TBT.
@@ -79,6 +82,10 @@ function App() {
           <Route path="/blog/social-media-marketing-services-cost-uae/" element={<Blog12 />} />
           <Route path="/blog/affordable-digital-marketing-packages-uae/" element={<Blog13 />} />
           <Route path="/blog/best-flyer-distribution-services-uae/" element={<Blog14 />} />
+          <Route path="/blog/best-leaflet-distribution-companies-in-uae/" element={<Blog15 />} />
+          <Route path="/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" element={<Blog16 />} />
+          <Route path="/blog/creative-flyer-distribution-ideas-that-work-in-dubai/" element={<Blog17 />} />
+          <Route path="/blog/measuring-roi-on-physical-marketing-campaigns/" element={<Blog18 />} />
         </Routes>
       </Suspense>
     </Router>

@@ -161,7 +161,52 @@ const blogs = [
     image: "https://images.pexels.com/photos/6565761/pexels-photo-6565761.jpeg",
     tags: ["Startups", "Packages"],
     link: "/blog/best-flyer-distribution-services-uae/"
+  },
+  {
+    id: 15,
+    title: "Best Leaflet Distribution Companies in UAE",
+    description: "A 2026 guide to finding reliable leaflet partners that guarantee GPS-tracked delivery and high-impact area coverage across Dubai.",
+    author: "MaxLead Strategy Team",
+    date: "March 7, 2026",
+    readTime: "11 min read",
+    image: "https://images.pexels.com/photos/5849559/pexels-photo-5849559.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Leaflet Distribution", "Dubai 2026"],
+    link: "/blog/best-leaflet-distribution-companies-in-uae/"
+  },
+  {
+    id: 16,
+    title: "The Psychology Behind Flyers: Why Physical Marketing Still Works",
+    description: "Explore the neuro-marketing aspect of touch and physical presence. Learn why tangible ads trigger stronger emotional responses in Dubai consumers.",
+    author: "MaxLead Team",
+    date: "March 6, 2026",
+    readTime: "12 min read",
+    image: "https://images.pexels.com/photos/6937946/pexels-photo-6937946.jpeg",
+    tags: ["Psychology", "Insights"],
+    link: "/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/"
+  },
+  {
+    id: 17,
+    title: "7 Creative Flyer Distribution Ideas That Actually Work in Dubai",
+    description: "Stop being ignored. Discover innovative ways to distribute flyers, from mystery door drops to QR code treasure hunts in residential hubs.",
+    author: "Creative Team",
+    date: "March 6, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Creative Strategy", "ROI"],
+    link: "/blog/creative-flyer-distribution-ideas-that-work-in-dubai/"
+  },
+  {
+    id: 18,
+    title: "Measuring ROI on Physical Marketing Campaigns",
+    description: "Learn how to accurately track the performance of your offline campaigns using promo codes, dedicated landing pages, and call-tracking.",
+    author: "Data Analytics Lead",
+    date: "March 8, 2026",
+    readTime: "9 min read",
+    image: "https://images.pexels.com/photos/7970812/pexels-photo-7970812.jpeg",
+    tags: ["Data", "ROI Tracking"],
+    link: "/blog/measuring-roi-on-physical-marketing-campaigns/"
   }
+
 ]; // <--- END OF ARRAY
 
 
