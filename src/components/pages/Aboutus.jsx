@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet"; // Added Helmet
+import { Helmet } from "react-helmet"; 
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import Tilt from "react-parallax-tilt";
@@ -42,19 +42,6 @@ export default function Aboutus() {
   const whatsappNumber = "971557222605";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead Advertising, I'm interested in your services.`;
 
-  // ADDED: Meta Tags Logic
-  useEffect(() => {
-    document.title = "About Max Lead Advertising | Advertising Company in UAE";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Learn about Max Lead Advertising, a trusted advertising and distribution company in UAE delivering flyer distribution, printing, & digital marketing solutions.");
-  }, []);
-
   /* Lenis smooth scroll */
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1, wheelMultiplier: 1.2 });
@@ -76,7 +63,12 @@ export default function Aboutus() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead/" /></Helmet>
+      <Helmet>
+        <title>About Max Lead Advertising | Advertising Company in UAE</title>
+        <meta name="description" content="Learn about Max Lead Advertising, a trusted advertising and distribution company in UAE delivering flyer distribution, printing, & digital marketing solutions." />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead/" />
+      </Helmet>
+      
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -123,15 +115,19 @@ export default function Aboutus() {
           </div>
 
           {/* ==================== 
-              1.5 IMAGE GALLERY SECTION 
+              1.5 IMAGE GALLERY SECTION (Optimized for LCP)
              ==================== */}
           <div className="mb-24 grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80">
               {[image1, image2, image3, image4].map((img, idx) => (
                 <div key={idx} className={`relative overflow-hidden rounded-3xl shadow-lg group h-full ${idx % 2 !== 0 ? 'mt-8' : ''}`}>
                    <img 
                      src={img} 
-                     alt={`Max Lead Advertising Service ${idx + 1}`} 
+                     alt={`Max Lead Advertising strategic service display ${idx + 1}`} 
                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                     width="400"
+                     height="320"
+                     loading="eager"
+                     fetchpriority={idx === 0 ? "high" : "auto"}
                    />
                    <div className="absolute inset-0 bg-green-900/20 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
@@ -151,11 +147,11 @@ export default function Aboutus() {
                   <h4 className="font-bold text-gray-800 mb-4 text-lg">Our core strength lies in combining:</h4>
                   <ul className="space-y-4 mb-6">
                     <li className="flex items-start gap-3">
-                      <div className="bg-green-100 p-2 rounded-full mt-1"><MapPin className="w-5 h-5 text-green-600"/></div>
+                      <div className="bg-green-100 p-2 rounded-full mt-1" aria-hidden="true"><MapPin className="w-5 h-5 text-green-600"/></div>
                       <span className="text-gray-700 text-lg">Physical advertising like door-to-door leaflet distribution, outdoor advertising, and printed marketing materials.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="bg-green-100 p-2 rounded-full mt-1"><Globe className="w-5 h-5 text-green-600"/></div>
+                      <div className="bg-green-100 p-2 rounded-full mt-1" aria-hidden="true"><Globe className="w-5 h-5 text-green-600"/></div>
                       <span className="text-gray-700 text-lg">Digital marketing such as Whatsapp marketing, social media promotion, lead generation, and online advertising.</span>
                     </li>
                   </ul>
@@ -167,11 +163,11 @@ export default function Aboutus() {
             <div className="xl:w-1/2 relative w-full">
                <div className="grid grid-cols-2 gap-6">
                   <div className="bg-gray-900 text-white p-10 rounded-[2rem] h-80 flex flex-col justify-between hover:scale-[1.02] transition-transform">
-                     <Megaphone className="w-12 h-12 text-green-400" />
+                     <Megaphone className="w-12 h-12 text-green-400" aria-hidden="true" />
                      <span className="text-3xl font-bold">Offline <br/>Impact</span>
                   </div>
                   <div className="bg-green-600 text-white p-10 rounded-[2rem] h-80 mt-16 flex flex-col justify-between hover:scale-[1.02] transition-transform">
-                     <MonitorSmartphone className="w-12 h-12 text-white" />
+                     <MonitorSmartphone className="w-12 h-12 text-white" aria-hidden="true" />
                      <span className="text-3xl font-bold">Online <br/>Reach</span>
                   </div>
                </div>
@@ -184,7 +180,7 @@ export default function Aboutus() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
              <Tilt glareEnable={true} glareMaxOpacity={0.1} scale={1.01} className="h-full">
                 <div className="bg-white p-12 rounded-[2.5rem] border border-gray-200 shadow-xl h-full flex flex-col">
-                   <div className="inline-flex p-5 rounded-2xl bg-green-100 mb-8 w-fit">
+                   <div className="inline-flex p-5 rounded-2xl bg-green-100 mb-8 w-fit" aria-hidden="true">
                       <Target className="w-10 h-10 text-green-600" />
                    </div>
                    <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
@@ -196,7 +192,7 @@ export default function Aboutus() {
 
              <Tilt glareEnable={true} glareMaxOpacity={0.1} scale={1.01} className="h-full">
                 <div className="bg-gray-900 p-12 rounded-[2.5rem] border border-gray-800 shadow-xl h-full flex flex-col">
-                   <div className="inline-flex p-5 rounded-2xl bg-gray-800 mb-8 w-fit">
+                   <div className="inline-flex p-5 rounded-2xl bg-gray-800 mb-8 w-fit" aria-hidden="true">
                       <Lightbulb className="w-10 h-10 text-green-400" />
                    </div>
                    <h3 className="text-3xl font-bold text-white mb-6">Our Vision</h3>
@@ -252,41 +248,41 @@ export default function Aboutus() {
              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {/* Card 1 */}
                 <div className="bg-white p-10 rounded-3xl shadow-lg border-t-8 border-green-500 hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                   <MapPin className="w-12 h-12 text-green-600 mb-8" />
+                   <MapPin className="w-12 h-12 text-green-600 mb-8" aria-hidden="true" />
                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Offline Advertising & Distribution</h3>
                    <ul className="space-y-4 text-gray-600 mb-auto">
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Door-to-door flyer distribution in Dubai and UAE</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Door-to-door leaflet distribution</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Residential and commercial area distribution</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Event and promotion distribution</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Outdoor advertising (billboards, banners, vehicle branding)</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Door-to-door flyer distribution in Dubai and UAE</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Door-to-door leaflet distribution</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Residential and commercial area distribution</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Event and promotion distribution</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Outdoor advertising (billboards, banners, vehicle branding)</li>
                    </ul>
                    <p className="mt-8 text-sm text-gray-500 italic">Reaching people directly in their homes, workplaces, and public spaces.</p>
                 </div>
 
                 {/* Card 2 */}
                 <div className="bg-white p-10 rounded-3xl shadow-lg border-t-8 border-gray-800 hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                   <Printer className="w-12 h-12 text-gray-800 mb-8" />
+                   <Printer className="w-12 h-12 text-gray-800 mb-8" aria-hidden="true" />
                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Digital Printing Services</h3>
                    <ul className="space-y-4 text-gray-600 mb-auto">
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0"/> Flyers and leaflets</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0"/> Posters and banners</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0"/> Business cards and corporate stationery</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0"/> Event and exhibition prints</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0"/> Vehicle branding and signage</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0" aria-hidden="true"/> Flyers and leaflets</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0" aria-hidden="true"/> Posters and banners</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0" aria-hidden="true"/> Business cards and corporate stationery</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0" aria-hidden="true"/> Event and exhibition prints</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-gray-800 shrink-0" aria-hidden="true"/> Vehicle branding and signage</li>
                    </ul>
                    <p className="mt-8 text-sm text-gray-500 italic">High-quality printing ensures your brand looks professional.</p>
                 </div>
 
                 {/* Card 3 */}
                 <div className="bg-white p-10 rounded-3xl shadow-lg border-t-8 border-green-500 hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                   <MonitorSmartphone className="w-12 h-12 text-green-600 mb-8" />
+                   <MonitorSmartphone className="w-12 h-12 text-green-600 mb-8" aria-hidden="true" />
                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Digital & SMS Marketing</h3>
                    <ul className="space-y-4 text-gray-600 mb-auto">
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Bulk and targeted SMS marketing in UAE</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Social media marketing</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Lead generation campaigns</li>
-                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0"/> Digital advertising</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Bulk and targeted SMS marketing in UAE</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Social media marketing</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Lead generation campaigns</li>
+                      <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" aria-hidden="true"/> Digital advertising</li>
                    </ul>
                    <p className="mt-8 text-sm text-gray-500 italic">Reach your audience both offline and online for maximum impact.</p>
                 </div>
@@ -331,13 +327,13 @@ export default function Aboutus() {
              <div className="lg:w-1/2 w-full">
                 <div className="bg-gray-900 rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 text-white relative overflow-hidden w-full shadow-2xl">
                    {/* Background Glow */}
-                   <div className="absolute top-0 right-0 w-60 h-60 md:w-80 md:h-80 bg-green-500/20 rounded-full blur-[60px] md:blur-[80px]"></div>
+                   <div className="absolute top-0 right-0 w-60 h-60 md:w-80 md:h-80 bg-green-500/20 rounded-full blur-[60px] md:blur-[80px]" aria-hidden="true"></div>
                    
                    {/* Grid */}
                    <div className="grid grid-cols-2 gap-6 md:gap-10 relative z-10">
                       {stats.map((stat, i) => (
                          <div key={i} className="text-center p-4 md:p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors">
-                            <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-green-400 mx-auto mb-3 md:mb-4" />
+                            <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-green-400 mx-auto mb-3 md:mb-4" aria-hidden="true" />
                             <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2">{stat.value}</div>
                             <div className="text-xs md:text-sm text-gray-400 uppercase tracking-widest">{stat.label}</div>
                          </div>
@@ -367,7 +363,7 @@ export default function Aboutus() {
                    "Result-oriented strategies"
                 ].map((item, idx) => (
                    <div key={idx} className="flex items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                      <div className="bg-green-100 p-2 rounded-full shrink-0"><CheckCircle2 className="w-6 h-6 text-green-600" /></div>
+                      <div className="bg-green-100 p-2 rounded-full shrink-0" aria-hidden="true"><CheckCircle2 className="w-6 h-6 text-green-600" /></div>
                       <span className="text-gray-800 font-semibold text-left text-lg">{item}</span>
                    </div>
                 ))}
@@ -378,7 +374,7 @@ export default function Aboutus() {
               8. OUR REACH 
              ==================== */}
           <div className="mb-24 bg-gradient-to-r from-gray-900 to-gray-800 rounded-[3rem] p-12 lg:p-20 text-white text-center">
-             <Globe className="w-16 h-16 text-green-400 mx-auto mb-8" />
+             <Globe className="w-16 h-16 text-green-400 mx-auto mb-8" aria-hidden="true" />
              <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Reach Across UAE</h2>
              <p className="text-gray-300 mb-12 text-xl max-w-4xl mx-auto leading-relaxed">
                 Max Lead Advertising proudly serves businesses across all Emirates. Our wide reach allows us to help brands target specific communities, neighborhoods, and commercial zones.
@@ -391,7 +387,7 @@ export default function Aboutus() {
                 ))}
              </div>
              <p className="text-lg text-gray-400">
-                We offer flyer distribution, SMS marketing, digital printing, and digital marketing solutions for companies that want to grow locally or regionally.Our wide reach allows us to help brands target specific communities, neighborhoods, and commercial zones.
+                We offer flyer distribution, SMS marketing, digital printing, and digital marketing solutions for companies that want to grow locally or regionally. Our wide reach allows us to help brands target specific communities, neighborhoods, and commercial zones.
              </p>
           </div>
 
@@ -412,6 +408,7 @@ export default function Aboutus() {
                    <button
                     onClick={() => window.location.href = "/contact/"}
                     className="px-12 py-5 bg-gray-900 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-gray-800 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
+                    aria-label="Get a free consultation from Max Lead Advertising"
                    >
                     Get a free consultation
                    </button>
@@ -421,8 +418,9 @@ export default function Aboutus() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-12 py-5 bg-green-600 text-white rounded-full font-bold text-xl transition-all duration-300 hover:bg-green-700 hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1"
+                    aria-label="Request a custom quote via WhatsApp"
                    >
-                    <MessageCircle className="w-6 h-6" />
+                    <MessageCircle className="w-6 h-6" aria-hidden="true" />
                      Request a custom quote
                    </a>
                 </div>

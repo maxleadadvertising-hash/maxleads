@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Navigation from '../Navigation';
 import Hero from '../Hero';
 import Services from '../Services';
@@ -14,23 +15,27 @@ import Whatsapp from '../pages/whatsapp';
 import WhyChooseUs from '../whyus';
 import ScrollToTop from "../ScrollToTop";
 import Clientlogo from "../pages/clientlogo";
+
 export default function Home() {
   return (
     <div className="bg-slate-900 text-white">
+      <Helmet><title>Max Lead Advertising | Flyer Distribution, Printing & Digital Marketing UAE</title><meta name="description" content="Max Lead Advertising is a leading advertising and distribution company in UAE offering door-to-door flyer distribution, digital printing, and marketing solutions." /><link rel="canonical" href="https://www.maxleadadvertising.com/" /></Helmet>
       <ScrollToTop />
       <Navigation />
-      <Hero />
-      <Clientlogo />
-      <Whatsapp />
-      <Services />
-      <About />
-      <Work />
-      <Process />
-      <Blogsec />
-      <WhyChooseUs />
-      <FAQ />
-      <Testimonials />
-      <Contact />
+      <main>
+        <Hero />
+        <Clientlogo />
+        <Whatsapp />
+        <Services />
+        <About />
+        <Work />
+        <Process />
+        <Blogsec />
+        <WhyChooseUs />
+        <FAQ />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

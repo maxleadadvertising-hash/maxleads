@@ -1,9 +1,21 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Scrollup from "./components/scrolluparrow";
 import Homepage from './components/pages/Homepage';
+import { Helmet } from 'react-helmet'; // Import Helmet
+// ... (your other imports)
 
+const CanonicalHelper = () => {
+  const location = useLocation();
+  // This ensures your canonical link always matches the current URL
+  const url = `https://www.maxleadadvertising.com${location.pathname}`;
+  return (
+    <Helmet>
+      <link rel="canonical" href={url} />
+    </Helmet>
+  );
+};
 
 const Aboutus = lazy(() => import('./components/pages/Aboutus'));
 const Contactus = lazy(() => import('./components/pages/Contactus'));
@@ -44,8 +56,10 @@ const PageLoader = () => <div className="min-h-screen bg-[#FAF9F6]" />;
 function App() {
   return (
     <Router>
+       <CanonicalHelper />
       <ScrollToTop />
       <Scrollup />
+     
       
       {/* 4. Suspense handles the "Wait" while a new page chunk is downloaded */}
       <Suspense fallback={<PageLoader />}>
