@@ -195,7 +195,7 @@ const blogs = [
     tags: ["Creative Strategy", "ROI"],
     link: "/blog/creative-flyer-distribution-ideas-that-work-in-dubai/"
   },
-  {
+ {
     id: 18,
     title: "Measuring ROI on Physical Marketing Campaigns",
     description: "Learn how to accurately track the performance of your offline campaigns using promo codes, dedicated landing pages, and call-tracking.",
@@ -205,9 +205,30 @@ const blogs = [
     image: "https://images.pexels.com/photos/7970812/pexels-photo-7970812.jpeg",
     tags: ["Data", "ROI Tracking"],
     link: "/blog/measuring-roi-on-physical-marketing-campaigns/"
+  },
+  {
+    id: 19,
+    title: "How to Choose the Right Digital Marketing Agency for Your Business",
+    description: "How to choose a reliable digital marketing agency for small businesses.",
+    author: "Production Specialist",
+    date: "March 12, 2026",
+    readTime: "7 min read",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Printing", "Branding"],
+    link: "/blog/best-digital-marketing-agency-uae/"
+  },
+  {
+    id: 20,
+    title: "Best Flyer Distribution Company Near You | Max Lead UAE",
+    description: ":How to choose a flyer distribution company near me.",
+    author: "Creative Director",
+    date: "March 15, 2026",
+    readTime: "12 min read",
+    image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+    tags: ["Design", "Conversion"],
+    link: "/blog/flyer-distribution-company-near-me/"
   }
-
-]; // <--- END OF ARRAY
+];
 
 
 
@@ -225,8 +246,9 @@ const categories = [
   { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" },
   { name: "Social Media Cost", icon: Zap, path: "/blog/social-media-marketing-services-cost-uae/" },
   { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" },
-  { name: "flyer distribution", icon: Zap, path: "blog/best-digital-marketing-agency-uae/" }
-  
+  { name: "flyer distribution", icon: Zap, path: "/blog/best-digital-marketing-agency-uae/" },
+  { name: "Flyer Distribution UAE", icon: MapPin, path: "/blog/flyer-distribution-services-uae/" },
+  { name: "Door to Door Distribution", icon: Target, path: "/blog/door-to-door-leaflet-distribution/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
