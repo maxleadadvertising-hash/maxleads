@@ -227,7 +227,18 @@ const blogs = [
     image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
     tags: ["Design", "Conversion"],
     link: "/blog/flyer-distribution-company-near-me/"
-  }
+  },
+  {
+    id: 21,
+    title: "Flyer Distribution vs Digital Marketing in UAE | Max Lead",
+    description: "Flyers or digital marketing? Find the best strategy for your UAE business and boost results today with expert solutions from Max Lead Advertising.",
+    author: "Creative Director",
+    date: "March 23, 2026",
+    readTime: "13 min read",
+    image: "https://www.pexels.com/photo/people-in-the-office-discussing-a-project-7688336/",
+    tags: ["Design", "Conversion"],
+    link: "/blog/flyer-distribution-vs-digital-marketing-in-uae/"
+  },
 ];
 
 
