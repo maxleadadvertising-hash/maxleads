@@ -2,15 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, BarChart3, CheckCircle2 } from "lucide-react";
+import { MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, Globe, BarChart3, CheckCircle2, TrendingUp,Zap, PhoneCall} from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 
-/* Keywords: 
-  Flyer distribution company near me, Flyer distribution services UAE, 
-  Door to door leaflet distribution 
-*/
+
 
 const blogs = [
   {
@@ -34,6 +31,17 @@ const blogs = [
     image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Flyer Distribution", "Local Marketing"],
     link: "/blog/flyer-distribution-company-near-me/"
+  },
+  {
+    id: 1,
+    title: "Best Flyer Distribution Services in UAE 2026",
+    description: "Looking for top flyer distribution services in UAE 2026? Reach the right audience with strategic area targeting and professional delivery solutions.",
+    author: "MaxLead Team",
+    date: "March 8, 2026",
+    readTime: "10 min read",
+    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    tags: ["Flyer Distribution", "UAE Strategy"],
+    link: "/blog/best-flyer-distribution-services-uae/"
   }
 ];
 
@@ -42,7 +50,8 @@ const categories = [
   { name: "Flyer vs Pamphlet", icon: BarChart3, path: "/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" },
   { name: "Flyer Distribution", icon: FileText, path: "/blog/flyer-distribution-company-near-me/" },
   { name: "Digital Strategy", icon: Globe, path: "/blog/best-digital-marketing-agency-uae/" },
-  { name: "Local SEO", icon: MapPin, path: "/blog/local-marketing-tips/" }
+  { name: "Local SEO", icon: MapPin, path: "/blog/local-marketing-tips/" },
+  { name: "Psychology", icon: Zap, path: "/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -50,7 +59,12 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   const domRef = useRef();
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setIsVisible(entry.isIntersecting));
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
     });
     if (domRef.current) observer.observe(domRef.current);
     return () => observer.disconnect();
@@ -94,16 +108,16 @@ export default function FlyerVsPamphletBlog() {
       <main className="bg-white min-h-screen overflow-x-hidden">
         
         {/* --- HERO SECTION --- */}
-        <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-6 bg-[#fcfcfc] border-b border-gray-100">
+        <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-6 bg-[#fcfcfc] border-b border-gray-100 text-center">
             <div className="absolute top-0 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-blue-50/50 rounded-full blur-[60px] md:blur-[100px] -translate-y-1/2 translate-x-1/4" />
-            <div className="max-w-6xl mx-auto relative z-10 text-center">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold mb-4 md:mb-6 mt-8 md:mt-16">
-                        <BarChart3 className="w-3 h-3" />
-                        <span>UAE Strategy Comparison 2026</span>
+                        <TrendingUp className="w-3 h-3" />
+                        <span>MaxLead Performance Marketing 2026</span>
                     </div>
                     <h1 className="text-2xl md:text-4xl lg:text-6xl font-black text-gray-900 tracking-tight mb-4 md:mb-6 leading-tight px-2">
-                        Flyer vs Pamphlet Marketing in UAE: <span className="text-blue-600 text-balance">Which Strategy Brings More Customers?</span>
+                        Flyer vs Pamphlet Marketing in UAE: <span className="text-blue-600">Which Strategy Brings More Customers?</span>
                     </h1>
                     <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-gray-400 text-xs md:text-sm mb-4">
                         <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
@@ -114,7 +128,7 @@ export default function FlyerVsPamphletBlog() {
             </div>
         </section>
 
-        {/* --- CATEGORY SELECTOR (Responsive Scroll) --- */}
+        {/* --- CATEGORY SELECTOR --- */}
         <section className="py-4 md:py-8 px-4 md:px-6 bg-white border-b border-gray-50 overflow-x-auto no-scrollbar">
           <div className="max-w-5xl mx-auto flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 min-w-max md:min-w-0">
             {categories.map((cat, idx) => (
@@ -205,25 +219,20 @@ export default function FlyerVsPamphletBlog() {
                     <p className="text-sm md:text-base text-gray-600 mt-6 md:mt-8">Flyers are a cost-effective way to promote your business and reach a large number of people in a short time. They are designed to deliver a clear message quickly and encourage customers to take action, such as visiting your website, calling your business, or attending an event. While flyers are usually used for short-term promotions, they are very powerful when you need fast results.</p>
 
                     <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-10 md:pt-12">Flyers vs Pamphlets: What’s the Main Difference?</h2>
-                    <p className="text-sm md:text-base text-gray-600">Flyers and pamphlets are both popular tools used to promote a business and increase brand awareness. However, they are different in how they are designed and used. Understanding these differences helps businesses choose the right option based on their goals, budget, and target audience. By selecting the right format, you can run more effective marketing campaigns and get better results.</p>
-
                     <div className="space-y-4 md:space-y-8 mt-6 md:mt-8">
                         <div className="p-5 md:p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
                             <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">1. Content Size: Detailed vs Quick Message</h4>
-                            <p className="text-xs md:text-sm text-gray-600">One of the main differences between pamphlets and flyers is how much information they contain. Pamphlets usually have multiple pages, allowing businesses to explain their products or services in detail. On the other hand, flyers are single-page materials designed to grab attention quickly. They include only the most important details, making it easy for people to understand the message in just a few seconds. Flyers are perfect for short and direct promotions, while pamphlets are better for detailed explanations.</p>
+                            <p className="text-xs md:text-sm text-gray-600">One of the main differences between pamphlets and flyers is how much information they contain. Pamphlets usually have multiple pages, allowing businesses to explain their products or services in detail. Flyers are single-page materials designed to grab attention quickly. They include only the most important details, making it easy for people to understand the message in just a few seconds.</p>
                         </div>
                         <div className="p-5 md:p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
                             <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">2. Distribution Method: Targeted Reach vs Wide Coverage</h4>
-                            <p className="text-xs md:text-sm text-gray-600">Pamphlets are usually shared with a specific group of people who are more likely to be interested in detailed information. This helps businesses reach the right audience who will spend time reading and understanding the offer. Flyers, on the other hand, are used for large-scale distribution. They are handed out in busy areas, placed in mailboxes, or shared in public locations to reach as many people as possible in a short time.</p>
+                            <p className="text-xs md:text-sm text-gray-600">Pamphlets are usually shared with a specific group of people who are more likely to be interested in detailed information. Flyers, on the other hand, are used for large-scale distribution. They are handed out in busy areas, placed in mailboxes, or shared in public locations to reach as many people as possible in a short time.</p>
                         </div>
                         <div className="p-5 md:p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
                             <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">3. Usage Duration: Long-Term Value vs Short-Term Promotion</h4>
-                            <p className="text-xs md:text-sm text-gray-600">Pamphlets are usually kept for a longer time because they contain detailed and useful information. Customers often save them to read later or refer back when needed, making them suitable for long-term marketing. Flyers are mostly used for short-term promotions. People usually read them quickly and discard them after getting the main message. This makes flyers ideal for time-sensitive offers like events, discounts, or limited-time deals.</p>
+                            <p className="text-xs md:text-sm text-gray-600">Pamphlets are usually kept for a longer time because they contain detailed and useful information. Flyers are mostly used for short-term promotions. People usually read them quickly and discard them after getting the main message. This makes flyers ideal for time-sensitive offers like events, discounts, or limited-time deals.</p>
                         </div>
                     </div>
-
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-10 md:pt-12">Pamphlets or Flyers: Which is the Right Choice for UAE Marketing?</h2>
-                    <p className="text-sm md:text-base text-gray-600">To run a successful marketing campaign in the UAE, businesses need to choose the right approach between pamphlets and flyers based on their goals. If your customers need detailed information about your products or services, pamphlets are the better option. They help explain your business clearly, build trust, and support long-term relationships with potential clients. On the other hand, flyers are the right choice when your goal is to reach more people quickly and create instant attention. They are cost-effective, easy to print in large quantities, and ideal for promotions that need a fast response.</p>
 
                     <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-10 md:pt-12">Flyers or Pamphlets: How to Choose the Best Option for Your Business</h2>
                     <div className="bg-gray-50 p-6 md:p-8 rounded-3xl border border-gray-100 mt-6">
@@ -246,16 +255,19 @@ export default function FlyerVsPamphletBlog() {
                     <p className="text-sm md:text-base text-gray-600">
                     Both pamphlet marketing and flyer distribution in the UAE play an important role in promoting your business. Pamphlets are ideal when you want to share detailed information and build trust, while flyers are perfect for creating quick awareness and reaching a larger audience. The right choice depends on your business goals, budget, and the type of customers you want to target.
                     </p>
+                    <p className="text-sm md:text-base text-gray-600 mt-4">
+                    Contact Us Today – Max Lead Advertising to get professional flyer distribution and pamphlet marketing services across the UAE. We help your business reach the right audience and generate real results.
+                    </p>
 
                     <div className="bg-gradient-to-br from-blue-700 to-blue-900 p-8 md:p-12 rounded-[2.5rem] mt-10 md:mt-12 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
                             <h3 className="text-xl md:text-3xl lg:text-4xl font-black mb-4 uppercase tracking-tighter">Ready to attract more customers?</h3>
                             <p className="text-blue-100 text-xs md:text-base mb-6 md:mb-8 max-w-2xl mx-auto font-medium">
-                            Contact Us Today – Max Lead Advertising to get professional flyer distribution and pamphlet marketing services across the UAE. We help your business reach the right audience and generate real results.
+                            Contact Max Lead Advertising today and reach the right audience at the right place!
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
                                 <button onClick={goToContact} className="bg-white text-blue-900 font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-xs md:text-sm flex items-center justify-center gap-2">
-                                    <MousePointer2 size={16} /> Contact Max Lead
+                                    <PhoneCall size={16} /> +971 55 722 2605
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-xs md:text-sm flex items-center justify-center gap-2">
                                     <MessageSquare size={16} /> WhatsApp Strategy
@@ -271,7 +283,7 @@ export default function FlyerVsPamphletBlog() {
         <section className="py-12 md:py-20 bg-gray-50 border-t border-gray-100 px-4 md:px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
-                    <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-6 md:mb-8 text-center uppercase tracking-tight">Intelligence Hub</h2>
+                    <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-6 md:mb-8 text-center uppercase tracking-tight">Strategy Intelligence Hub</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-[2rem] overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
@@ -288,7 +300,7 @@ export default function FlyerVsPamphletBlog() {
                                     <p className="text-gray-500 text-[11px] md:text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read More <ArrowRight size={12}/></span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
                                     </div>
                                 </div>
                             </a>
