@@ -79,7 +79,7 @@
         linkCanonical.rel = "canonical";
         document.head.appendChild(linkCanonical);
       }
-      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/digital-marketing-agency");
+      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/digital-marketing-agency/");
     }, []);
 
     return (

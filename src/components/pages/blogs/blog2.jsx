@@ -92,7 +92,7 @@ export default function BestAgencyBlog() {
       <Helmet>
         <title>Hiring a Digital Marketing Agency in UAE? Read This 2026 Guide First</title>
         <meta name="description" content="Before you hire a digital marketing agency in UAE, read this 2026 guide. Discover key factors, red flags, and how to choose an agency that delivers results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />
