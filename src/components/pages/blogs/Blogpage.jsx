@@ -46,11 +46,17 @@ const categories = [
   { name: "Distributor Role Guide", icon: User, path: "/blog/what-is-the-role-of-a-flyer-distributor/" },
   { name: "How to Increase Sales", icon: FileText, path: "/blog/how-to-increase-sales-with-flyer-distribution/" },
   { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" },
+  { name: "Online & Offline Success", icon: MessageSquare, path: "/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" },
   { name: "Social Media Cost", icon: Zap, path: "/blog/social-media-marketing-services-cost-uae/" },
   { name: "Startup Packages", icon: Zap, path: "/blog/affordable-digital-marketing-packages-uae/" },
-  { name: "flyer distribution", icon: Zap, path: "/blog/best-digital-marketing-agency-uae/" },
-  { name: "Flyer Distribution UAE", icon: MapPin, path: "/blog/flyer-distribution-services-uae/" },
-  { name: "Door to Door Distribution", icon: Target, path: "/blog/door-to-door-leaflet-distribution/" }
+  { name: "Startup Packages", icon: Zap, path: "/blog/best-flyer-distribution-services-uae/" },
+  { name: "Startup Packages", icon: Zap, path: "/blog/best-leaflet-distribution-companies-in-uae/" },
+  { name: "Startup Packages", icon: Zap, path: "/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" },
+  { name: "Startup Packages", icon: Zap, path: "/blog/creative-flyer-distribution-ideas-that-work-in-dubai/" },
+  { name: "Startup Packages", icon: Zap, path: "/blog/measuring-roi-on-physical-marketing-campaigns/" },
+  { name: "Startup Packages", icon: Zap, path: "/blog/best-digital-marketing-agency-uae/" },
+  { name: "Startup Packages", icon: Zap, path: "/blog/flyer-distribution-company-near-me/" },
+  { name: "Flyer Distribution UAE", icon: MapPin, path: "/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
