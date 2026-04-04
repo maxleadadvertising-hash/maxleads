@@ -31,6 +31,7 @@ const blogs = [
   { id: 20, title: "Best Flyer Distribution Company Near You | Max Lead UAE", description: "How to choose a flyer distribution company near me.", author: "Creative Director", date: "March 15, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800", tags: ["Design", "Conversion"], link: "/blog/flyer-distribution-company-near-me/" },
   { id: 21, title: "Pamphlets vs Flyers UAE: Which One Brings More Customers?", description: "Did you know that over 80% of consumers are more likely to respond to a well-designed printed advertisement.", author: "Creative Director", date: "March 15, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/5900226/pexels-photo-5900226.jpeg?auto=compress&cs=tinysrgb&w=800", tags: ["Design", "Conversion"], link: "/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" },
   { id: 22, title: "Affordable Flyer Distribution – Boost Sales with Cost-Effective Marketing", description: "Drive more traffic & sales with affordable flyer distribution services. Targeted door-to-door delivery, competitive pricing & proven results. Get started with a free quote!", author: "Marketing Team", date: "April 02, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/20257683/pexels-photo-20257683.jpeg", tags: ["Design", "Conversion"], link: "/blog/7-tips-affordable-flyer-distribution-company/" }, 
+  { id: 22, title: "Flyer Distribution vs Digital Marketing in UAE 2026 | Max Lead Advertising", description: "Flyers Distribution vs Digital Marketing? Find the best strategy for your UAE business and boost results today with expert solutions from Max Lead Advertising.", author: "Marketing Team", date: "April 02, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/6476258/pexels-photo-6476258.jpeg", tags: ["Design", "Conversion"], link: "/blog/flyer-distribution-vs-digital-marketing-in-the-uae/" }, 
 
 ];
 
@@ -57,6 +58,7 @@ const categories = [
   { name: "Startup Packages", icon: Zap, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Startup Packages", icon: Zap, path: "/blog/flyer-distribution-company-near-me/" },
   { name: "Flyer Distribution UAE", icon: MapPin, path: "/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" },
+  { name: "Flyers Distribution vs Digital Marketing?", icon: MapPin, path: "/blog/flyer-distribution-vs-digital-marketing-in-the-uae/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
