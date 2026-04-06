@@ -109,7 +109,7 @@ function App() {
           <Route path="/blog/flyer-distribution-company-near-me/" element={<Blog20 />} />
           <Route path="/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" element={<Blog21 />} />
           <Route path="/blog/7-tips-affordable-flyer-distribution-company/" element={<Blog22 />} />
-          <Route path="/blog/flyer-distribution-vs-digital-marketing-in-the-uae/" element={<Blog22 />} />
+          <Route path="/blog/flyer-distribution-vs-digital-marketing-in-the-uae/" element={<Blog23 />} />
         </Routes>
       </Suspense>
     </Router>
