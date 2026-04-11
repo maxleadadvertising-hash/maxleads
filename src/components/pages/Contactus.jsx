@@ -133,7 +133,11 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet><title>Contact Us | Max Lead Advertising UAE</title><link rel="canonical" href="https://www.maxleadadvertising.com/contact/" /></Helmet>
+      <Helmet>
+      <title>Contact MaxLead | Advertising & Distribution Agency in UAE</title>
+      <meta name="description" content="Looking for effective advertising solutions? Get in touch with MaxLead Advertising for flyer distribution, digital marketing, and outdoor advertising across the UAE." />
+      <link rel="canonical" href="https://www.maxleadadvertising.com/contact/" />
+      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

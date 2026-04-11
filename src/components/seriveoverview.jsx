@@ -97,7 +97,11 @@ export default function Services() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/services/" /></Helmet>
+      <Helmet>
+      <title>Leaflet Distribution Company, Digital Marketing Company | MaxLead</title>
+      <meta name="description" content="Grow your brand with Max Lead Advertising — the UAE’s trusted partner for flyer and leaflet distribution, digital marketing, high-quality printing, and impactful outdoor advertising." />
+      <link rel="canonical" href="https://www.maxleadadvertising.com/services/" />
+      </Helmet>
 
       <ScrollToTop />
       <Navigation />

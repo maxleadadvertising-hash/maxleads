@@ -92,7 +92,11 @@ export default function Clients() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/work/" /></Helmet>
+      <Helmet>
+      <title>MaxLead Advertising | Trusted by 500+ Companies in the UAE</title>
+      <meta name="description" content="MaxLead serves 500+ UAE businesses in healthcare, jewelry, food, hospitality & education with expert digital advertising & distribution solutions." />
+      <link rel="canonical" href="https://www.maxleadadvertising.com/work/" />
+      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

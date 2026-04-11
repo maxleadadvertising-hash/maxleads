@@ -64,8 +64,8 @@ export default function Aboutus() {
   return (
     <>
       <Helmet>
-        <title>About Max Lead Advertising | Advertising Company in UAE</title>
-        <meta name="description" content="Learn about Max Lead Advertising, a trusted advertising and distribution company in UAE delivering flyer distribution, printing, & digital marketing solutions." />
+        <title>About MaxLead | Top Digital Advertising & Distribution Agency in UAE</title>
+        <meta name="description" content="Partner with MaxLead Advertising for effective flyer and leaflet distribution, innovative digital marketing, and impactful outdoor advertising across UAE, Dubai." />
         <link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead/" />
       </Helmet>
       

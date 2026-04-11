@@ -120,7 +120,11 @@ export default function Industries() {
 
   return (
     <>
-      <Helmet><link rel="canonical" href="https://www.maxleadadvertising.com/industries/" /></Helmet>
+      <Helmet>
+      <title>Industries We Serve | MaxLead Advertising UAE</title>
+      <meta name="description" content="Explore industries served by MaxLead Advertising in the UAE, offering flyer & leaflet distribution, digital marketing, and outdoor advertising solutions." />
+      <link rel="canonical" href="https://www.maxleadadvertising.com/industries/" />
+      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
