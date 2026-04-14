@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, MessageSquare, Clock, User, Printer, CheckCircle2, LayoutGrid, PhoneCall, Zap, ArrowRight,BarChart3,TrendingUp,FileText } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, Printer, LayoutGrid, Zap, FileText, ArrowRight, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import { Helmet } from "react-helmet";
@@ -183,6 +183,7 @@ export default function FutureTrendsBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -199,7 +200,7 @@ export default function FutureTrendsBlog() {
         
         {/* --- HERO SECTION (REDUCED SIZES) --- */}
         <section className="relative pt-28 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
@@ -211,9 +212,11 @@ export default function FutureTrendsBlog() {
                         Future Trends in Flyer Distribution: What to Expect in the UAE Market
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-3 h-3" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User className="w-3 h-3" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn"><Linkedin className="w-3 h-3" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-3 h-3" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -228,7 +231,7 @@ export default function FutureTrendsBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-xl hover:bg-indigo-600 hover:text-white transition-all group"
                 >
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -290,18 +293,23 @@ export default function FutureTrendsBlog() {
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">Why Max Lead Advertising Stays Ahead</h3>
                     <p className="text-base mb-10">At Max Lead Advertising, we already use data-driven area selection, QR code integration, and GPS proof of delivery. We are preparing for the future with AI-powered timing and eco-friendly materials.</p>
 
-                    <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 p-10 rounded-3xl mt-12 text-white text-center shadow-xl">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready for the Future?</h3>
-                        <p className="text-indigo-100 text-base mb-8 max-w-2xl mx-auto">
-                            The future is coming fast. Let Max Lead Advertising help you stay ahead with a strategy that works today and prepares you for tomorrow.
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <button onClick={goToContact} className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                               <PhoneCall size={16}/> Consultation
-                            </button>
-                            <button onClick={openWhatsapp} className="bg-indigo-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-400 transition-all text-sm flex items-center gap-2">
-                                <MessageSquare size={16}/> WhatsApp
-                            </button>
+                    <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 p-10 rounded-3xl mt-12 text-white text-center shadow-xl relative overflow-hidden">
+                        <div className="relative z-10">
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready for the Future?</h3>
+                            <p className="text-indigo-100 text-base mb-8 max-w-2xl mx-auto">
+                                The future is coming fast. Let Max Lead Advertising help you stay ahead with a strategy that works today and prepares you for tomorrow.
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <button onClick={goToContact} className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
+                                </button>
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-indigo-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-400 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,7 +325,7 @@ export default function FutureTrendsBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 6).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-indigo-600">{tag}</span>
@@ -327,9 +335,9 @@ export default function FutureTrendsBlog() {
                                 <div className="p-5 flex flex-col flex-grow">
                                     <h4 className="text-base font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors leading-snug">{blog.title}</h4>
                                     <p className="text-gray-500 text-[11px] line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
-                                    <div className="mt-auto flex items-center justify-between text-[9px] font-black uppercase text-gray-400">
+                                    <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase text-gray-400">
                                         <span>{blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-indigo-600" />
+                                        <ArrowRight size={14} className="text-indigo-600 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>

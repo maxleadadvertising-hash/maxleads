@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, Clock, User, LayoutGrid, FileText, MessageSquare, Lightbulb, Map, Gift, Search, Repeat, Users, Calendar } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, Clock, User, LayoutGrid, FileText, MessageSquare, Lightbulb, Map, Gift, Search, Repeat, Users, Calendar, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -86,6 +86,7 @@ export default function CreativeFlyerDistributionBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -102,7 +103,7 @@ export default function CreativeFlyerDistributionBlog() {
         
         {/* --- HERO SECTION (H1) --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
@@ -114,16 +115,18 @@ export default function CreativeFlyerDistributionBlog() {
                         7 Creative <span className="text-blue-600">Flyer Distribution Ideas</span> That Actually Work in Dubai
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin} aria-label="Visit our LinkedIn Profile"><Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
         </section>
 
         {/* --- CATEGORY SELECTOR --- */}
-        <section className="py-8 px-6 bg-white">
+        <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
@@ -131,7 +134,7 @@ export default function CreativeFlyerDistributionBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -145,7 +148,7 @@ export default function CreativeFlyerDistributionBlog() {
                 <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed">
                     
                     <div className="mb-12">
-                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-blue-500 pl-6 mb-8">
+                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-blue-500 pl-6 mb-8 pt-12">
                             Let me ask you something. When was the last time you received a flyer that made you stop and actually pay attention? If you're like most people in Dubai, probably not recently.
                         </p>
                         <p className="text-base text-gray-600">
@@ -160,7 +163,7 @@ export default function CreativeFlyerDistributionBlog() {
 
                     {/* Idea 1 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <Map className="text-blue-600" /> Idea 1: The Useful Item Strategy
+                        <Map className="text-blue-600" aria-hidden="true" /> Idea 1: The Useful Item Strategy
                     </h2>
                     <p className="text-base">
                         People throw away advertising; they keep useful things. What if your flyer was also useful? I know a restaurant in JLT that printed their menu on one side and a <strong>metro map</strong> on the other. Tourists and residents kept it in their wallets for weeks.
@@ -171,7 +174,7 @@ export default function CreativeFlyerDistributionBlog() {
 
                     {/* Idea 2 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <Gift className="text-blue-600" /> Idea 2: The Mystery Door Drop
+                        <Gift className="text-blue-600" aria-hidden="true" /> Idea 2: The Mystery Door Drop
                     </h2>
                     <p className="text-base">
                         Instead of a full offer, use a teaser to spark curiosity: <i>"We left something special at your neighbor's door. Check with them to find out what."</i> Curiosity makes people talk. A salon in Jumeirah left "golden tickets" in random apartments during a door to door flyer distribution in Dubai campaign, creating massive local buzz.
@@ -179,7 +182,7 @@ export default function CreativeFlyerDistributionBlog() {
 
                     {/* Idea 3 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <Search className="text-blue-600" /> Idea 3: The QR Code Treasure Hunt
+                        <Search className="text-blue-600" aria-hidden="true" /> Idea 3: The QR Code Treasure Hunt
                     </h2>
                     <p className="text-base">
                         Hide QR codes across a neighborhood. Each code gives a clue or discount. This works incredibly well in communities like <strong>The Springs, Arabian Ranches, or Dubai Silicon Oasis</strong>. A tutoring center in Al Warqa used professional door to door leaflet distribution to hide codes in 10 buildings, resulting in 50+ new enquiries in one weekend.
@@ -187,20 +190,20 @@ export default function CreativeFlyerDistributionBlog() {
 
                     {/* Idea 4 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <User className="text-blue-600" /> Idea 4: The Personalized Flyer
+                        <User className="text-blue-600" aria-hidden="true" /> Idea 4: The Personalized Flyer
                     </h2>
                     <p className="text-base">
-                        Generic flyers say "we don't know you." Personalized flyers say "we see you." Print different versions:
+                        Generic flyers are daily noise. Personalized flyers say "we see you." Print different versions:
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm font-semibold text-gray-800 list-none p-0">
-                        <li className="bg-gray-50 p-3 rounded-lg flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-blue-600" /> Families in villas get family packages</li>
-                        <li className="bg-gray-50 p-3 rounded-lg flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-blue-600" /> Young professionals get quick services</li>
-                        <li className="bg-gray-50 p-3 rounded-lg flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-blue-600" /> Offices get lunch delivery offers</li>
+                        <li className="bg-gray-50 p-3 rounded-lg flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-blue-600" aria-hidden="true" /> Families in villas get family packages</li>
+                        <li className="bg-gray-50 p-3 rounded-lg flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-blue-600" aria-hidden="true" /> Young professionals get quick services</li>
+                        <li className="bg-gray-50 p-3 rounded-lg flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-blue-600" aria-hidden="true" /> Offices get lunch delivery offers</li>
                     </ul>
 
                     {/* Idea 5 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <Repeat className="text-blue-600" /> Idea 5: The Follow-Up Flyer
+                        <Repeat className="text-blue-600" aria-hidden="true" /> Idea 5: The Follow-Up Flyer
                     </h2>
                     <p className="text-base">
                         People need to see your message multiple times. Try this sequence:
@@ -222,7 +225,7 @@ export default function CreativeFlyerDistributionBlog() {
 
                     {/* Idea 6 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <Users className="text-blue-600" /> Idea 6: The Partnership Flyer
+                        <Users className="text-blue-600" aria-hidden="true" /> Idea 6: The Partnership Flyer
                     </h2>
                     <p className="text-base">
                         Two businesses, one flyer, shared cost. Partner with a non-competitor: Pizza + Movie rental, Salon + Ladies gym, or Real Estate + Furniture store. This adds more value for the customer and splits your distribution costs in half.
@@ -230,7 +233,7 @@ export default function CreativeFlyerDistributionBlog() {
 
                     {/* Idea 7 */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10 flex items-center gap-3">
-                        <Calendar className="text-blue-600" /> Idea 7: The Event-Based Flyer
+                        <Calendar className="text-blue-600" aria-hidden="true" /> Idea 7: The Event-Based Flyer
                     </h2>
                     <p className="text-base">
                         Time your distribution around <strong>Ramadan, Dubai Shopping Festival, or National Day</strong>. But go deeper: distribute restaurant flyers specifically during lunch hours near offices. Timing turns an ignored flyer into an immediate action.
@@ -253,11 +256,14 @@ export default function CreativeFlyerDistributionBlog() {
                                 Contact Max Lead today for a free consultation. Let's design a distribution strategy that actually gets noticed.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                                    <FileText className="w-4 h-4" /> Request Free Consultation
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <FileText className="w-4 h-4" aria-hidden="true" /> Request Free Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2">
-                                    <MessageSquare className="w-4 h-4" /> WhatsApp Specialist
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <Linkedin className="w-4 h-4" aria-hidden="true" /> Max Lead LinkedIn
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare className="w-4 h-4" aria-hidden="true" /> WhatsApp Specialist
                                 </button>
                             </div>
                         </div>
@@ -270,24 +276,24 @@ export default function CreativeFlyerDistributionBlog() {
         <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
-                    <h2 className="text-3xl font-black text-gray-900 mb-10 text-center">Strategic Intelligence Hub</h2>
+                    <h2 className="text-3xl font-black text-gray-900 mb-10 text-center uppercase tracking-tight">Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
-                                <div className="p-6 flex flex-col flex-grow">
+                                <div className="p-6 flex flex-col flex-grow text-left">
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>

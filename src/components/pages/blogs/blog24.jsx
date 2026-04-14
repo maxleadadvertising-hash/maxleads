@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, TrendingUp, LayoutGrid,ArrowRight, PhoneCall, DollarSign, MousePointer2, BrainCircuit } from "lucide-react";
+import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, TrendingUp, LayoutGrid,PhoneCall, DollarSign, Linkedin } from "lucide-react"; // Added Linkedin, kept ArrowRight
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -86,6 +86,7 @@ export default function DoorHangerBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -101,7 +102,7 @@ export default function DoorHangerBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
@@ -109,12 +110,14 @@ export default function DoorHangerBlog() {
                         <span>MaxLead Digital Printing Strategy</span>
                     </div>
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
-                        The Ultimate Guide to Choosing the <span className="text-green-600">Best Digital Printing Company in Dubai (2026)</span>
+                        The Ultimate Guide to Choosing the <span className="text-blue-600">Best Digital Printing Company in Dubai (2026)</span>
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-1 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -140,7 +143,7 @@ export default function DoorHangerBlog() {
                 <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed pt-12">
                     
                     <div className="mb-12">
-                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-green-500 pl-6 mb-8">
+                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-blue-500 pl-6 mb-8">
                             In Dubai, business moves fast, so timing and presentation really matter. Deadlines can be tight, and first impressions make a big difference. Things like brochures, flyers, leaflet distribution, commercial area distribution and banners are often the first thing people notice about your business. Poor quality or late delivery can harm your brand and make your business look unprofessional.
                         </p>
                         <p className="text-base text-gray-600">
@@ -161,7 +164,6 @@ export default function DoorHangerBlog() {
                             { d: "Are you looking for eco-friendly printing options?" },
                         ].map((item, idx) => (
                             <div key={idx} className="p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                                <h4 className="font-bold text-gray-900 mb-2">{item.t}</h4>
                                 <p className="text-sm text-gray-600">{item.d}</p>
                             </div>
                         ))}
@@ -171,10 +173,10 @@ export default function DoorHangerBlog() {
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">Why Choosing the Right Printing Partner Matters in 2026</h3>
                                         <p className="text-base">Dubai is a competitive market, and the same goes for other emirates. Your printed materials are often the first impression of your brand compared to your competitors.</p>
                                         <ul className="space-y-2 text-base text-gray-600">
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Consistent quality across all printing materials, ensuring a uniform and professional brand image, Maintains high standards across every print run, regardless of volume or format.</li>
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Fast delivery to meet tight deadlines, helping you stay on schedule, Supports time-sensitive campaigns and last-minute business requirements.</li>
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Professional finishing that enhances brand perception and visual appeal, Adds a polished look that strengthens credibility and customer trust.</li>
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Cost efficiency through optimized production, reducing unnecessary expenses, Maximizes value while maintaining quality and minimizing waste.</li>
+                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Consistent quality across all printing materials, ensuring a uniform and professional brand image, Maintains high standards across every print run, regardless of volume or format.</li>
+                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Fast delivery to meet tight deadlines, helping you stay on schedule, Supports time-sensitive campaigns and last-minute business requirements.</li>
+                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Professional finishing that enhances brand perception and visual appeal, Adds a polished look that strengthens credibility and customer trust.</li>
+                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Cost efficiency through optimized production, reducing unnecessary expenses, Maximizes value while maintaining quality and minimizing waste.</li>
                                         </ul>
                                         <p className="text-base">In 2026, businesses are focusing more on personalization and premium finishes. A reliable printing company doesn’t just print—they contribute to your branding and marketing success.</p>
                     
@@ -193,35 +195,35 @@ export default function DoorHangerBlog() {
                     <p className="text-base text-gray-600">With so many options available, making the right choice can feel overwhelming. Here’s a simple process to follow to narrow down your options and make a confident decision. By focusing on key factors like quality, turnaround time, and reliability, you can select a printing partner that aligns with your business goals and delivers consistent results.</p>
                     <div className="space-y-4 my-8">
                         <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Compare Quality</h4>
                                 <p className="text-xs text-gray-500">Request samples to check print quality, color accuracy, and consistency, ensuring professional results that enhance your brand image.</p>
                             </div>
                         </div>
                         <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Check Pricing Transparency</h4>
                                 <p className="text-xs text-gray-500">Avoid hidden charges with clear, detailed quotations outlining all costs upfront, ensuring better budgeting and no unexpected expenses.</p>
                             </div>
                         </div>
                          <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Evaluate Customer Support</h4>
                                 <p className="text-xs text-gray-500">Responsive communication ensures quick support for urgent or custom orders, enabling smooth coordination and faster issue resolution when needed.</p>
                             </div>
                         </div>
                          <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Assess Turnaround Time</h4>
                                 <p className="text-xs text-gray-500"> Ensure they meet deadlines, handle urgent requests efficiently, and maintain reliable production capacity to keep campaigns and operations on track.</p>
                             </div>
                         </div>
                          <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Look for Added Value</h4>
                                 <p className="text-xs text-gray-500">  Some companies provide design, installation, or delivery services, making your process easier and more efficient by reducing the need for multiple vendors.</p>
@@ -237,15 +239,18 @@ export default function DoorHangerBlog() {
                     <div className="bg-gradient-to-br from-green-600 to-indigo-800 p-10 rounded-[3rem] mt-12 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
                             <h3 className="text-2xl md:text-4xl font-bold mb-4">Ready to start?</h3>
-                            <p className="text-green-100 text-base mb-8 max-w-2xl mx-auto">
+                            <p className="text-green-100 text-base mb-8 max-w-2xl mx-auto font-medium">
                                 Choose the Right Digital Printing Partner in Dubai Today.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center justify-center gap-2">
-                                    <PhoneCall size={16} /> Free Consultation
+                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <PhoneCall size={16} aria-hidden="true" /> Free Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -258,24 +263,24 @@ export default function DoorHangerBlog() {
         <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
-                    <h2 className="text-2xl font-black text-gray-900 mb-8">Related Strategy Hub</h2>
+                    <h2 className="text-2xl font-black text-gray-900 mb-8 text-center uppercase tracking-tight">Related Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
-                                            <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
+                                            <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
-                                <div className="p-5 flex flex-col flex-grow">
-                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors leading-tight">{blog.title}</h4>
+                                <div className="p-5 flex flex-col flex-grow text-left">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-green-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all font-bold text-[10px]">Read Story <ArrowRightIcon size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -289,3 +294,7 @@ export default function DoorHangerBlog() {
     </>
   );
 }
+
+const ArrowRightIcon = ({ size }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+);

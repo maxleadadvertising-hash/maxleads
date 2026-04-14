@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, Zap, FileText, MessageSquare, MousePointer2, Leaf, Globe,} from "lucide-react";
+import { TrendingUp, Target, MapPin, Clock, User, LayoutGrid,FileText, MessageSquare, MousePointer2, Leaf, Globe, Search, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -12,12 +12,12 @@ const blogs = [
   {
     id: 1,
     title: "2026 Guide to Leaflet Distribution Companies in Dubai",
-    description: "Find the best leaflet distribution companies in Dubai for 2026. Reach your target audience, increase brand awareness, and grow your business.",
+    description: "Find the best leaflet distribution companies in Dubai for 2026. Reach your target audience, increase brand awareness, and grow your business with targeted flyer campaigns.",
     author: "MaxLead Strategy Team",
-    date: "March 7, 2026",
+    date: "March 9, 2026",
     readTime: "11 min read",
     image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["Leaflet Distribution", "Dubai 2026"],
+    tags: ["Leaflet Distribution", "Dubai Marketing"],
     link: "/blog/best-leaflet-distribution-companies-in-uae/"
   },
   {
@@ -47,8 +47,8 @@ const blogs = [
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Leaflet Distribution", icon: FileText, path: "/blog/best-leaflet-distribution-companies-in-uae/" },
-  { name: "Psychology", icon: Target, path: "/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" },
-  { name: "Digital Strategy", icon: Globe, path: "/blog/best-digital-marketing-agency-uae/" }
+  { name: "Digital Strategy", icon: Globe, path: "/blog/best-digital-marketing-agency-uae/" },
+  { name: "Psychology", icon: Target, path: "/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -85,13 +85,14 @@ export default function LeafletDistributionBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
       <Helmet>
         <title>Best Digital Printing Company in Dubai (2026) | Ultimate Guide</title>
         <meta name="description" content="Stand out in Dubai’s competitive market in 2026. Find the best digital printing company with expert tips, high-quality solutions, and reliable printing partners." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-printing-company-dubai-2026/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-leaflet-distribution-companies-in-uae/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />
@@ -101,27 +102,29 @@ export default function LeafletDistributionBlog() {
         
         {/* --- HERO SECTION (H1) --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
                         <TrendingUp className="w-3 h-3" />
-                        <span>MaxLead Industry Analysis 2026</span>
+                        <span>MaxLead UAE Marketing Guide 2026</span>
                     </div>
-                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-6 leading-tight text-center">
-                        The Ultimate Guide to Choosing the <span className="text-blue-600"> Best Digital Printing Company in Dubai (2026) </span>
+                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-6 leading-tight">
+                        Best leaflet distribution companies in <span className="text-blue-600">Dubai for 2026</span>
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit our LinkedIn Profile"><Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
         </section>
 
         {/* --- CATEGORY SELECTOR --- */}
-        <section className="py-8 px-6 bg-white">
+        <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
@@ -129,7 +132,7 @@ export default function LeafletDistributionBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -144,101 +147,132 @@ export default function LeafletDistributionBlog() {
                     
                     <div className="mb-12">
                         <p className="text-base text-gray-600">
-                            In Dubai, business moves fast, so timing and presentation really matter. Deadlines can be tight, and first impressions make a big difference. Things like brochures, flyers, leaflet distribution, commercial area distribution, and banners are often the first thing people notice about your business. Poor quality or late delivery can harm your brand and make your business look unprofessional.
+                            Dubai is a fast-growing and highly competitive market where businesses are always exploring new ways to attract potential customers. One of the most reliable and affordable marketing methods is working with a <strong>leaflet distribution company in Dubai</strong>. Leaflets and flyers allow businesses to promote their services directly to their target audience and increase local visibility.
+                        </p>
+                       
+                        <p className="text-base text-gray-600">
+                            In 2026, leaflet distribution in Dubai has become more strategic and organized. Many companies now use data-driven planning, targeted locations, and responsible distribution practices to ensure better reach and measurable results.
                         </p>
                         <p className="text-base text-gray-600">
-                            There is also growing demand for highly specialized services such as packaging, large-format printing, 3D solutions, and other customized offerings for a wide range of industries: healthcare, retail & FMCG, food & hospitality, real estate, and corporate firms.
-                        </p>
-                        <p className="text-base text-gray-600">
-                            Whether you're a startup creating your first marketing kit or an experienced company expanding your print operations, this 2026 guide explains precisely what to look for so you can make an informed decision and locate a printer in Dubai that you can truly rely on.
+                            In this blog, we’ll explore how leaflet distribution works and highlight some of the trusted leaflet distribution companies in Dubai that can help promote your business and connect you with the right customers.
                         </p>
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Understanding Your Printing Requirements in 2026</h2>
-                    <p className="text-base text-gray-600">Before choosing the best printing company across the UAE, you need to be clear about your business goals and requirements. Digital printing services in Dubai, Abu Dhabi, and Sharjah have improved a lot in 2026, offering faster turnaround times, eco-friendly materials, and better customization options.</p>
+
+                    <h2 className="text-2xl font-bold text-gray-900 pt-6">Why Leaflet Distribution in Dubai Is Still Important in 2026</h2>
+                    <p className="text-base text-gray-600">Even with the growth of digital marketing, leaflet distribution services in Abu Dhabi are still a useful way for businesses to reach local customers. Here are some reasons why:</p>
                     
-                    <div className="space-y-6 mt-8">
-                        <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><MapPin className="text-blue-600" size={18} /> 1. What type of materials do you need for your goal?</h4>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Leaf className="text-green-600" size={18} /> 2. What quantity and turnaround time are required?</h4>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Globe className="text-blue-600" size={18} /> 3. Do you need design support or only printing?</h4>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Zap className="text-blue-600" size={18} /> 4. Are you looking for eco-friendly printing options?</h4>
-                        </div>
-                    <p className="text-base text-gray-600">Having clear answers helps you narrow down companies that specialize in exactly what you need—saving both time and cost.</p>    
-                    </div>
-                    <h2 className="text-2xl font-bold text-gray-900 pt-6">Why Choosing the Right Printing Partner Matters in 2026</h2>
-                    <p className="text-base text-gray-600">Dubai is a competitive market, and the same goes for other emirates. Your printed materials are often the first impression of your brand compared to your competitors.</p>
-                    
-                    <div className="grid md:grid-cols-2 gap-4 mt-6">
+                    <div className="grid md:grid-cols-2 gap-6 mt-8">
                         {[
-                            { d: "Consistent quality across all printing materials, ensuring a uniform and professional brand image, Maintains high standards across every print run, regardless of volume or format." },
-                            { d: "Fast delivery to meet tight deadlines, helping you stay on schedule, Supports time-sensitive campaigns and last-minute business requirements." },
-                            { d: "Professional finishing that enhances brand perception and visual appeal, Adds a polished look that strengthens credibility and customer trust." },
-                            { d: "Cost efficiency through optimized production, reducing unnecessary expenses, Maximizes value while maintaining quality and minimizing waste." }
+                            { t: "1. Commercial Impact", d: "Leaflet distribution helps businesses promote their products and services directly to potential customers. It increases brand awareness and can bring more customers to your store or business." },
+                            { t: "2. Targeted Reach", d: "Leaflets can be distributed in specific areas where your potential customers live or work. This helps businesses reach the right audience instead of promoting to everyone." },
+                            { t: "3. Return on Investment", d: "Leaflet marketing is cost-effective compared to many other advertising methods. With a small budget, businesses can reach thousands of people and generate good results." },
+                            { t: "4. Localised Marketing", d: "Leaflet distribution is perfect for promoting businesses in a specific area. It helps local companies connect with nearby customers and build a stronger presence in the community." }
                         ].map((item, idx) => (
-                            <div key={idx} className="p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                            <div key={idx} className="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col">
                                 <h4 className="font-bold text-gray-900 mb-2">{item.t}</h4>
                                 <p className="text-sm text-gray-600">{item.d}</p>
                             </div>
                         ))}
                     </div>
 
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Best Leaflet Distribution Dubai – Key Features to Look For</h2>
+                    <p className="text-base text-gray-600">If you are planning to promote your business through leaflet distribution in Dubai, choosing the right company is very important. A professional distribution company can help your flyers reach the right audience and deliver better results.</p>
                     
-
-                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Key Features of the Best Digital Printing Companies in Dubai</h2>
-                    <p className="text-base text-gray-600">Not all printing companies are the same. The best digital printing services in Dubai in 2026 stand out through the following features, combining advanced technology, skilled expertise, and a strong commitment to quality. These factors ensure businesses receive reliable, high-impact printing solutions that meet both creative and operational needs.</p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                    <div className="space-y-6 mt-8">
                         {[
-                            { t: "Advanced Printing Technology", d: "Top companies use high-resolution digital printers that deliver sharp colors, precise details, and consistent results." },
-                            { t: "Wide Range of Services", d: "From large-format printing to customized promotional materials, a good company should offer diverse solutions under one roof." },
-                            { t: "Customization & Flexibility", d: "Whether it’s unique sizes, materials, or finishes, flexibility is essential for modern businesses." },
-                            { t: "Eco-Friendly Printing Options", d: "Sustainability is a growing priority in 2026. Look for companies offering recyclable materials and environmentally friendly inks." },
-                            { t: "Fast Turnaround Times", d: "Speed matters in Dubai’s business environment. The best providers offer same-day or next-day services without compromising quality." },
-                            { t: "Strong Portfolio & Client Reviews", d: "Reputation speaks volumes. Always check previous work and customer feedback." }
-                        ].map((trend, i) => (
-                            <div key={i} className="flex items-center gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
-                                <CheckCircle2 className="text-blue-600 shrink-0" size={18} />
+                            { t: "1. Advanced Targeting Techniques", icon: Target, d: "A good leaflet distribution company focuses on delivering flyers to the right audience. They select specific locations, communities, and customer groups to make sure your marketing reaches people who are more likely to be interested in your business." },
+                            { t: "2. Eco-Friendly Practices", icon: Leaf, d: "Many modern distribution companies now focus on eco-friendly practices. They use recycled paper and responsible printing materials to reduce waste and protect the environment, while still promoting your business effectively." },
+                            { t: "3. Wide Area Coverage", icon: MapPin, d: "A professional leaflet distribution company can distribute flyers across different areas, including residential communities, business districts, shopping areas, and busy public locations. This helps businesses reach more potential customers." },
+                            { t: "4. Real-Time Tracking", icon: Search, d: "Some companies provide tracking and reports during the campaign. This allows businesses to see where their flyers are being distributed and understand the performance of their marketing campaign." },
+                            { t: "5. Customised Distribution Plans", icon: FileText, d: "Every business has different goals. A reliable leaflet distribution company offers flexible distribution plans, whether you need a short campaign for a promotion or long-term marketing support." }
+                        ].map((feature, i) => (
+                            <div key={i} className="flex gap-4 items-start p-4 hover:bg-blue-50/50 rounded-xl transition-colors">
+                                <div className="p-2 bg-blue-50 rounded-lg text-blue-600 shrink-0">
+                                    <feature.icon size={20} aria-hidden="true" />
+                                </div>
                                 <div>
-                                    <p className="text-sm font-bold text-gray-900 mb-0">{trend.t}</p>
-                                    <p className="text-xs text-gray-600 mb-0">{trend.d}</p>
+                                    <h4 className="font-bold text-gray-900 mb-1">{feature.t}</h4>
+                                    <p className="text-sm text-gray-600">{feature.d}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    <h2 className="text-2xl font-bold text-gray-900 pt-10">How to Choose the Right Digital Printing Company in Dubai</h2>
-                    <p className="text-base text-gray-600">With so many options available, making the right choice can feel overwhelming. Here’s a simple process to follow to narrow down your options and make a confident decision. By focusing on key factors like quality, turnaround time, and reliability, you can select a printing partner that aligns with your business goals and delivers consistent results:</p>
-                    <ul className="space-y-4 list-none p-0 text-gray-600">
-                        <li><strong className="text-gray-900">1. Compare Quality:</strong> Request samples to check print quality, color accuracy, and consistency, ensuring professional results that enhance your brand image.</li>
-                        <li><strong className="text-gray-900">2. Check Pricing Transparency:</strong> Avoid hidden charges with clear, detailed quotations outlining all costs upfront, ensuring better budgeting and no unexpected expenses.</li>
-                        <li><strong className="text-gray-900">3. Evaluate Customer Support:</strong>  Responsive communication ensures quick support for urgent or custom orders, enabling smooth coordination and faster issue resolution when needed.</li>
-                        <li><strong className="text-gray-900">4. Assess Turnaround Time:</strong>  Ensure they meet deadlines, handle urgent requests efficiently, and maintain reliable production capacity to keep campaigns and operations on track.</li>
-                        <li><strong className="text-gray-900">5. Look for Added Value:</strong>   Some companies provide design, installation, or delivery services, making your process easier and more efficient by reducing the need for multiple vendors.</li>
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">How Leaflet Distribution Dubai Is Changing in 2026</h2>
+                    <p className="text-base text-gray-600">The leaflet distribution Dubai industry is growing and changing. Here are some important trends shaping leaflet distribution in Dubai in 2026:</p>
+                    
+                    <ul className="space-y-6 mt-8 list-none p-0">
+                        <li className="flex gap-4 items-start">
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">1</div>
+                            <div>
+                                <h4 className="font-bold text-gray-900">Smart Area Targeting</h4>
+                                <p className="text-sm text-gray-600">Today, leaflet distribution in Dubai campaigns focus on specific areas such as streets, buildings, or communities. This helps businesses deliver flyers directly to people who are more likely to be interested.</p>
+                            </div>
+                        </li>
+                        <li className="flex gap-4 items-start">
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">2</div>
+                            <div>
+                                <h4 className="font-bold text-gray-900">Interactive Flyers</h4>
+                                <p className="text-sm text-gray-600">Modern flyers are becoming more engaging. Many businesses now add QR codes so customers can scan and visit a website, view offers, or contact the business instantly.</p>
+                            </div>
+                        </li>
+                        <li className="flex gap-4 items-start">
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">3</div>
+                            <div>
+                                <h4 className="font-bold text-gray-900">Eco-Friendly Distribution</h4>
+                                <p className="text-sm text-gray-600">Many companies now use eco-friendly materials and responsible distribution methods to reduce waste and support a cleaner environment.</p>
+                            </div>
+                        </li>
+                        <li className="flex gap-4 items-start">
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">4</div>
+                            <div>
+                                <h4 className="font-bold text-gray-900">Connecting with Digital Campaigns</h4>
+                                <p className="text-sm text-gray-600">Many businesses now combine leaflet distribution with digital marketing to get better results. Flyers guide customers to online platforms, connecting offline marketing with digital campaigns.</p>
+                            </div>
+                        </li>
                     </ul>
 
-                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Final Thoughts</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Ways to Get Better Returns from Leaflet Distribution in Dubai</h2>
+                    <p className="text-base text-gray-600">To get the best results from leaflet distribution in Dubai, businesses need a clear marketing plan. Before starting, businesses should define clear goals—increasing store visits, building brand awareness, or generating new leads. Setting clear KPIs helps you measure the success of your campaign.</p>
+
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Measuring Your Leaflet Marketing Campaign Performance</h2>
+                    <p className="text-base text-gray-600">To get the best results, businesses should always track the performance of their campaign when working with a leaflet distribution company in Dubai. Some simple ways to track performance include:</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4 my-8">
+                        <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 text-center">
+                            <h5 className="font-bold text-blue-900 mb-2 text-sm">Unique Codes</h5>
+                            <p className="text-[10px] text-blue-800">Print special discount codes to track specific sales from the campaign.</p>
+                        </div>
+                        <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 text-center">
+                            <h5 className="font-bold text-blue-900 mb-2 text-sm">Landing Pages</h5>
+                            <p className="text-[10px] text-blue-800">Use specific website links or landing pages to monitor visitor traffic.</p>
+                        </div>
+                        <div className="p-4 bg-blue-50/50 rounded-xl border border-blue-100 text-center">
+                            <h5 className="font-bold text-blue-900 mb-2 text-sm">Feedback</h5>
+                            <p className="text-[10px] text-blue-800">Ask customers how they heard about you through simple surveys or forms.</p>
+                        </div>
+                    </div>
+
+                    <h2 className="text-2xl font-bold text-gray-900">Conclusion</h2>
                     <p className="text-base text-gray-600">
-                        Choosing the best digital printing company in Dubai in 2026 is not just about price—it’s about quality, reliability, and building a long-term partnership. Whether you need Flyer printing in Dubai or large-scale marketing materials, selecting the right partner ensures your brand stands out with consistency and professionalism.
+                        Even today, leaflet distribution companies in Dubai continue to play an important role in helping businesses reach local customers. With the right strategy and a reliable distribution partner, leaflet marketing can help increase brand awareness, attract new customers, and improve sales. No matter the size of your business, working with professional leaflet distribution companies in Dubai can make your marketing campaigns more effective in a competitive market.
                     </p>
 
                     <div className="bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-[3rem] mt-12 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
-                            <h3 className="text-2xl md:text-4xl font-black mb-4 uppercase">Looking for the Best Digital Printing Company in Dubai?</h3>
+                            <h3 className="text-2xl md:text-4xl font-black mb-4 uppercase text-white">Ready to Grow Your Business?</h3>
                             <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto font-medium">
-                                Get premium digital printing with fast turnaround, competitive pricing, and sharp results you can trust.
+                                If you want to grow your business with targeted leaflet marketing, contact our experts to discuss your campaign. Our team can help you plan and execute an effective strategy.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                                    <MousePointer2 size={16} /> Free Consultation
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MousePointer2 size={16} aria-hidden="true" /> Contact Our Experts
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -256,10 +290,10 @@ export default function LeafletDistributionBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-[2rem] overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-4 left-4 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
-                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/95 px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
+                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -267,8 +301,8 @@ export default function LeafletDistributionBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all font-bold text-[10px]">Read Story <ArrowRightIcon size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -283,6 +317,6 @@ export default function LeafletDistributionBlog() {
   );
 }
 
-const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+const ArrowRightIcon = ({ size }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

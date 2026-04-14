@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet"; // Added Helmet
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User,PhoneCall, LayoutGrid, Zap, FileText, MessageSquare } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User,PhoneCall, LayoutGrid, Zap, FileText, MessageSquare, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -179,6 +179,7 @@ export default function DigitalMarketingBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -195,7 +196,7 @@ export default function DigitalMarketingBlog() {
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
@@ -207,16 +208,18 @@ export default function DigitalMarketingBlog() {
                         7 Tips for Choosing an <span className="text-blue-600">Affordable Flyer Distribution Company</span> 
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
         </section>
 
         {/* --- CATEGORY SELECTOR (WRAPPED NO SCROLL) --- */}
-        <section className="py-8 px-6 bg-white">
+        <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
@@ -224,7 +227,7 @@ export default function DigitalMarketingBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -238,7 +241,7 @@ export default function DigitalMarketingBlog() {
                 <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed">
                     
                     <div className="mb-12">
-                        <div className="flex items-center gap-3 text-blue-600 mb-6">
+                        <div className="flex items-center gap-3 text-blue-600 mb-6 pt-12">
                             <FileText className="w-5 h-5" />
                             <span className="font-black tracking-[0.2em] uppercase text-[10px]">Industry Deep-Dive</span>
                         </div>
@@ -263,11 +266,11 @@ export default function DigitalMarketingBlog() {
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">Get a Transparent All-Inclusive Quote</h3>
                     <p className="text-base">Hidden fees can quickly turn an “affordable” service into an expensive one. Always request a detailed, all-inclusive quote that breaks down every cost, including:</p>
                     <ul className="space-y-2 text-base text-gray-600">
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Cost per flyer</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Fuel surcharges or administrative fees</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Printing or design add-ons</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> Proof of delivery</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" /> VAT/Tax and any charges</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Cost per flyer</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Fuel surcharges or administrative fees</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Printing or design add-ons</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Proof of delivery</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> VAT/Tax and any charges</li>
                     </ul>
                     <p className="text-base">A trustworthy company will be upfront about pricing and won’t surprise you with extra charges later. Transparency is a strong indicator of professionalism—and long-term affordability.</p>
 
@@ -277,7 +280,7 @@ export default function DigitalMarketingBlog() {
                         <li className="border border-gray-100 p-4 rounded-xl"> Deliver to specific neighborhoods, postal codes, or housing types?</li>
                         <li className="border border-gray-100 p-4 rounded-xl"> Focus on residential areas, villas, business districts, or both?</li>
                         <li className="border border-gray-100 p-4 rounded-xl"> Customize routes based on your audience (e.g., families, young professionals)?</li>
-                   </ul>
+                    </ul>
                     <p className="text-base">Smarter targeting often beats bigger volume, making your campaign more affordable overall.</p>
 
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">Verify Their Distribution Methods and Reliability</h3>
@@ -290,7 +293,7 @@ export default function DigitalMarketingBlog() {
 
                     <div className="my-10 p-6 bg-blue-50 rounded-2xl border border-blue-100">
                         <h4 className="text-blue-900 font-bold mb-3 flex items-center gap-2 text-lg">
-                            <BarChart3 className="w-5 h-5" /> A reliable service may cost slightly more upfront
+                            <BarChart3 className="w-5 h-5" aria-hidden="true" /> A reliable service may cost slightly more upfront
                         </h4>
                         
                         <p className="text-sm text-blue-800 italic">But it prevents wasted flyers and missed opportunities—keeping your overall costs down also protects your brand.</p>
@@ -324,18 +327,21 @@ export default function DigitalMarketingBlog() {
                     <p className="text-base mb-10">Start with a clear plan, do your research, and don’t hesitate to ask questions. With the right company on your side, your flyers can reach the right audience—without stretching your budget.</p>
                     <p className="text-base mb-10">Contact our experts at Max Lead Advertising and get started today. Ready to launch your next flyer campaign? Share your biggest challenge in the comments below!</p>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-10 md:p-12 rounded-3xl mt-10 text-white relative overflow-hidden text-center">
+                    <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-10 md:p-12 rounded-3xl mt-10 text-white relative overflow-hidden text-center shadow-xl">
                         <div className="relative z-10">
                             <h3 className="text-2xl md:text-4xl font-bold mb-4">Dominate the UAE Market in 2026</h3>
                             <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto">
                                 Combine offline distribution with data-driven digital strategies. Contact our team to start your ROI-focused campaign today.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
                                     <PhoneCall className="w-4 h-4" /> Go to Contact Page
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm">
-                                    WhatsApp: +971 55 722 2605 
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Connect with Max Lead on LinkedIn">
+                                    <Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare className="w-4 h-4" aria-hidden="true" /> WhatsApp Specialist
                                 </button>
                             </div>
                         </div>
@@ -353,7 +359,7 @@ export default function DigitalMarketingBlog() {
                         {blogs.map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -365,7 +371,7 @@ export default function DigitalMarketingBlog() {
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -381,6 +387,6 @@ export default function DigitalMarketingBlog() {
   );
 }
 
-const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+const ArrowRight = ({ size, className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

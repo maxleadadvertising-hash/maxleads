@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User,LayoutGrid, Zap, ArrowRight, PhoneCall} from "lucide-react";
+import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User,LayoutGrid, Zap, ArrowRight, PhoneCall, Linkedin} from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -96,6 +96,7 @@ export default function AffordableMarketingBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -108,7 +109,7 @@ export default function AffordableMarketingBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#f8fafc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
@@ -119,9 +120,11 @@ export default function AffordableMarketingBlog() {
                         Affordable digital marketing packages for startups in UAE
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit our LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -133,7 +136,7 @@ export default function AffordableMarketingBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-green-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -165,29 +168,29 @@ export default function AffordableMarketingBlog() {
                     
                     <div className="space-y-8 mt-6">
                         <div>
-                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"/> 1. Search Engine Optimization (SEO)</h4>
+                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full" aria-hidden="true"/> 1. Search Engine Optimization (SEO)</h4>
                             <p className="text-base text-gray-600">SEO ensures your business appears in search results when potential customers type keywords like “best accounting firm in Dubai.” It builds credibility, trust, and sustainable growth without paying for every click.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"/> 2. Social Media Marketing</h4>
+                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full" aria-hidden="true"/> 2. Social Media Marketing</h4>
                             <p className="text-base text-gray-600">In the UAE, social media strongly influences buying decisions. A good package should include content planning, graphic design, and a consistent posting schedule to build trust and turn followers into customers.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"/> 3. Paid Advertising (Google & Meta Ads)</h4>
+                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full" aria-hidden="true"/> 3. Paid Advertising (Google & Meta Ads)</h4>
                             <p className="text-base text-gray-600">The fastest way to gain visibility. A reliable affordable digital marketing agency will set up campaigns correctly, target the right audience, and optimize your ad budget to deliver measurable growth.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"/> 4. Content Marketing</h4>
+                            <h4 className="font-bold text-gray-900 flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full" aria-hidden="true"/> 4. Content Marketing</h4>
                             <p className="text-base text-gray-600">Helps your business build authority and long-term visibility through blog posts and website copy that educate your audience and position your brand as an industry expert.</p>
                         </div>
                     </div>
 
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Benefits of Choosing an Affordable Digital Marketing Agency in UAE</h2>
                     <ul className="space-y-3 text-base text-gray-600">
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" /> <strong>Saves Time:</strong> Focus on operations while experts manage ad dashboards.</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" /> <strong>Access to Specialists:</strong> Get SEO experts, designers, and content writers in one package.</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" /> <strong>Data-Driven Decisions:</strong> Agencies analyze metrics to improve performance monthly.</li>
-                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" /> <strong>Local Expertise:</strong> Leverage knowledge of unique UAE consumer behavior.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" aria-hidden="true" /> <strong>Saves Time:</strong> Focus on operations while experts manage ad dashboards.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" aria-hidden="true" /> <strong>Access to Specialists:</strong> Get SEO experts, designers, and content writers in one package.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" aria-hidden="true" /> <strong>Data-Driven Decisions:</strong> Agencies analyze metrics to improve performance monthly.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" aria-hidden="true" /> <strong>Local Expertise:</strong> Leverage knowledge of unique UAE consumer behavior.</li>
                     </ul>
 
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">How Much Do Affordable Digital Marketing Packages Cost?</h2>
@@ -197,7 +200,7 @@ export default function AffordableMarketingBlog() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
                         {["Choosing based only on price", "Not defining marketing goals", "Expecting instant results", "Ignoring SEO", "Running ads without tracking", "Stopping marketing too early"].map((error, idx) => (
                           <div key={idx} className="flex items-center gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
-                            <span className="text-red-500 text-lg">❌</span>
+                            <span className="text-red-500 text-lg" aria-hidden="true">❌</span>
                             <span className="text-sm font-bold text-gray-800">{error}</span>
                           </div>
                         ))}
@@ -210,11 +213,14 @@ export default function AffordableMarketingBlog() {
                                 Contact us today to build a smart marketing strategy that delivers real, measurable growth for your business in the UAE.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-green-700 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center justify-center gap-2">
-                                    <PhoneCall size={16} /> Get Consultation
+                                <button onClick={goToContact} className="bg-white text-green-700 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <PhoneCall size={16} aria-hidden="true" /> Get Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-gray-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-black transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Us
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-gray-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-black transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Us
                                 </button>
                             </div>
                         </div>
@@ -232,14 +238,14 @@ export default function AffordableMarketingBlog() {
                         {blogs.slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                 </div>
                                 <div className="p-5 flex flex-col flex-grow">
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase text-gray-400">
-                                        <span>{blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-green-600" />
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <ArrowRight size={14} className="text-green-600" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>

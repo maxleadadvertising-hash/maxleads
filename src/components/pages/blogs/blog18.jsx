@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, Clock, User, LayoutGrid,FileText, MessageSquare, MousePointer2, Leaf, Globe, Search } from "lucide-react";
+import { TrendingUp, Target, MapPin, Search, Clock, User, LayoutGrid,FileText, MessageSquare, MousePointer2, Leaf, Globe, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -85,6 +85,7 @@ export default function LeafletDistributionBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -101,7 +102,7 @@ export default function LeafletDistributionBlog() {
         
         {/* --- HERO SECTION (H1) --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
@@ -112,16 +113,18 @@ export default function LeafletDistributionBlog() {
                         Best leaflet distribution companies in <span className="text-blue-600">Dubai for 2026</span>
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
         </section>
 
         {/* --- CATEGORY SELECTOR --- */}
-        <section className="py-8 px-6 bg-white">
+        <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
@@ -129,7 +132,7 @@ export default function LeafletDistributionBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -185,7 +188,7 @@ export default function LeafletDistributionBlog() {
                         ].map((feature, i) => (
                             <div key={i} className="flex gap-4 items-start p-4 hover:bg-blue-50/50 rounded-xl transition-colors">
                                 <div className="p-2 bg-blue-50 rounded-lg text-blue-600 shrink-0">
-                                    <feature.icon size={20} />
+                                    <feature.icon size={20} aria-hidden="true" />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{feature.t}</h4>
@@ -200,28 +203,28 @@ export default function LeafletDistributionBlog() {
                     
                     <ul className="space-y-6 mt-8 list-none p-0">
                         <li className="flex gap-4 items-start">
-                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs">1</div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">1</div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Smart Area Targeting</h4>
                                 <p className="text-sm text-gray-600">Today, leaflet distribution in Dubai campaigns focus on specific areas such as streets, buildings, or communities. This helps businesses deliver flyers directly to people who are more likely to be interested.</p>
                             </div>
                         </li>
                         <li className="flex gap-4 items-start">
-                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs">2</div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">2</div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Interactive Flyers</h4>
                                 <p className="text-sm text-gray-600">Modern flyers are becoming more engaging. Many businesses now add QR codes so customers can scan and visit a website, view offers, or contact the business instantly.</p>
                             </div>
                         </li>
                         <li className="flex gap-4 items-start">
-                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs">3</div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">3</div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Eco-Friendly Distribution</h4>
                                 <p className="text-sm text-gray-600">Many companies now use eco-friendly materials and responsible distribution methods to reduce waste and support a cleaner environment.</p>
                             </div>
                         </li>
                         <li className="flex gap-4 items-start">
-                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs">4</div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold text-xs" aria-hidden="true">4</div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Connecting with Digital Campaigns</h4>
                                 <p className="text-sm text-gray-600">Many businesses now combine leaflet distribution with digital marketing to get better results. Flyers guide customers to online platforms, connecting offline marketing with digital campaigns.</p>
@@ -230,7 +233,7 @@ export default function LeafletDistributionBlog() {
                     </ul>
 
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Ways to Get Better Returns from Leaflet Distribution in Dubai</h2>
-                    <p className="text-base text-gray-600">To get the best results from leaflet distribution in Dubai, businesses need a clear marketing plan. Before starting, businesses should define clear goals. The objective could be increasing store visits, building brand awareness, or generating new leads. Setting clear KPIs helps you measure the success of your campaign.</p>
+                    <p className="text-base text-gray-600">To get the best results from leaflet distribution in Dubai, businesses need a clear marketing plan. Before starting, businesses should define clear goals—increasing store visits, building brand awareness, or generating new leads. Setting clear KPIs helps you measure the success of your campaign.</p>
 
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Measuring Your Leaflet Marketing Campaign Performance</h2>
                     <p className="text-base text-gray-600">To get the best results, businesses should always track the performance of their campaign when working with a leaflet distribution company in Dubai. Some simple ways to track performance include:</p>
@@ -257,16 +260,19 @@ export default function LeafletDistributionBlog() {
 
                     <div className="bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-[3rem] mt-12 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
-                            <h3 className="text-2xl md:text-4xl font-black mb-4 uppercase">Ready to Grow Your Business?</h3>
+                            <h3 className="text-2xl md:text-4xl font-black mb-4 uppercase text-white">Ready to Grow Your Business?</h3>
                             <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto font-medium">
                                 If you want to grow your business with targeted leaflet marketing, contact our experts to discuss your campaign. Our team can help you plan and execute an effective strategy.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                                    <MousePointer2 size={16} /> Contact Our Experts
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MousePointer2 size={16} aria-hidden="true" /> Contact Our Experts
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -284,10 +290,10 @@ export default function LeafletDistributionBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-[2rem] overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-4 left-4 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
-                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/95 px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
+                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -295,8 +301,8 @@ export default function LeafletDistributionBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -312,5 +318,5 @@ export default function LeafletDistributionBlog() {
 }
 
 const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

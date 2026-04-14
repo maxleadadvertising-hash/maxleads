@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, BarChart3, FileText, TrendingUp, LayoutGrid, Zap, ArrowRight, PhoneCall,DollarSign } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User,FileText, LayoutGrid, Zap, ArrowRight, PhoneCall, DollarSign, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -173,10 +173,7 @@ export default function SocialMediaCostBlog() {
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
@@ -184,6 +181,7 @@ export default function SocialMediaCostBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -200,20 +198,22 @@ export default function SocialMediaCostBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#f8fafc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
-                        <TrendingUp className="w-3 h-3" />
+                        <TrendingUp className="w-3 h-3" aria-hidden="true" />
                         <span>SMM Pricing Guide 2026</span>
                     </div>
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
                         How much do social media marketing services cost in the UAE?
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn Profile</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -225,7 +225,7 @@ export default function SocialMediaCostBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-blue-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -317,17 +317,17 @@ export default function SocialMediaCostBlog() {
                         <div className="p-6 bg-white border border-gray-100 rounded-2xl">
                             <h4 className="font-bold text-gray-900 mb-3">Freelancers</h4>
                             <ul className="list-none p-0 space-y-2 text-sm text-gray-600">
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" /> Suitable for small businesses</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" /> Lower operational structure</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" /> Limited scalability</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" aria-hidden="true" /> Suitable for small businesses</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" aria-hidden="true" /> Lower operational structure</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-green-500" aria-hidden="true" /> Limited scalability</li>
                             </ul>
                         </div>
                         <div className="p-6 bg-white border border-gray-100 rounded-2xl">
                             <h4 className="font-bold text-gray-900 mb-3">Agencies</h4>
                             <ul className="list-none p-0 space-y-2 text-sm text-gray-600">
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" /> Full team (strategist, designer, etc)</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" /> Advanced tools and reporting systems</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" /> Long-term growth strategies</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" aria-hidden="true" /> Full team (strategist, designer, etc)</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" aria-hidden="true" /> Advanced tools and reporting systems</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-blue-500" aria-hidden="true" /> Long-term growth strategies</li>
                             </ul>
                         </div>
                     </div>
@@ -345,7 +345,7 @@ export default function SocialMediaCostBlog() {
                           "Drive measurable revenue growth"
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center gap-3 p-4 bg-blue-50/50 rounded-xl">
-                            <Zap size={16} className="text-blue-600 shrink-0" />
+                            <Zap size={16} className="text-blue-600 shrink-0" aria-hidden="true" />
                             <span className="text-sm font-bold text-gray-800">{item}</span>
                           </div>
                         ))}
@@ -369,11 +369,14 @@ export default function SocialMediaCostBlog() {
                                 Max Lead Advertising helps businesses align their social media investment with clear performance goals and measurable ROI.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2">
-                                   <PhoneCall size={16} /> Consultation
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp
                                 </button>
                             </div>
                         </div>
@@ -391,19 +394,19 @@ export default function SocialMediaCostBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
-                                <div className="p-5 flex flex-col flex-grow">
+                                <div className="p-6 flex flex-col flex-grow">
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-blue-600" />
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <ArrowRight size={14} className="text-blue-600" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>

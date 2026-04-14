@@ -2,12 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, Globe, BarChart3, CheckCircle2, TrendingUp,Zap, PhoneCall} from "lucide-react";
+import { MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, Globe, BarChart3, CheckCircle2, TrendingUp, Zap, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-
-
 
 const blogs = [
   {
@@ -93,6 +91,7 @@ export default function FlyerVsPamphletBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -109,7 +108,7 @@ export default function FlyerVsPamphletBlog() {
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-6 bg-[#fcfcfc] border-b border-gray-100 text-center">
-            <div className="absolute top-0 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-blue-50/50 rounded-full blur-[60px] md:blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-blue-50/50 rounded-full blur-[60px] md:blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold mb-4 md:mb-6 mt-8 md:mt-16">
@@ -120,9 +119,11 @@ export default function FlyerVsPamphletBlog() {
                         Flyer vs Pamphlet Marketing in UAE: <span className="text-blue-600">Which Strategy Brings More Customers?</span>
                     </h1>
                     <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-gray-400 text-xs md:text-sm mb-4">
-                        <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1.5"><User className="w-4 h-4" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit our LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1.5"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -137,7 +138,7 @@ export default function FlyerVsPamphletBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 md:px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group whitespace-nowrap"
                 >
-                  <cat.icon className="w-3.5 h-3.5 text-gray-400 group-hover:text-white" />
+                  <cat.icon className="w-3.5 h-3.5 text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -244,7 +245,7 @@ export default function FlyerVsPamphletBlog() {
                               { g: "Target Customers", d: "Pamphlets are ideal for professional or high-value clients, while flyers are better for general customers who prefer quick and simple information." }
                             ].map((row, i) => (
                               <li key={i} className="flex gap-3 md:gap-4">
-                                  <CheckCircle2 className="text-blue-600 shrink-0 mt-1" size={18} />
+                                  <CheckCircle2 className="text-blue-600 shrink-0 mt-1" size={18} aria-hidden="true" />
                                   <div className="text-xs md:text-base"><strong className="text-gray-900">{row.g}:</strong> {row.d}</div>
                               </li>
                             ))}
@@ -267,10 +268,13 @@ export default function FlyerVsPamphletBlog() {
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
                                 <button onClick={goToContact} className="bg-white text-blue-900 font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-xs md:text-sm flex items-center justify-center gap-2">
-                                    <PhoneCall size={16} /> +971 55 722 2605
+                                    <PhoneCall size={16} aria-hidden="true" /> +971 55 722 2605
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-xs md:text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Strategy
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-xs md:text-sm flex items-center justify-center gap-2">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Strategy
                                 </button>
                             </div>
                         </div>
@@ -288,7 +292,7 @@ export default function FlyerVsPamphletBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-[2rem] overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-4 left-4 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/95 px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
@@ -299,8 +303,8 @@ export default function FlyerVsPamphletBlog() {
                                     <h4 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-[11px] md:text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all font-bold text-[10px]">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>

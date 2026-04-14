@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet"; // Added Helmet
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User,PhoneCall, LayoutGrid, Zap, FileText, MessageSquare } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, PhoneCall, LayoutGrid, Zap, FileText, MessageSquare, Linkedin } from "lucide-react"; // Added Linkedin icon
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -179,6 +179,7 @@ export default function DigitalMarketingBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -208,6 +209,8 @@ export default function DigitalMarketingBlog() {
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
                         <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin}><Linkedin className="w-4 h-4" /> Connect on LinkedIn</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
                     </div>
@@ -364,6 +367,9 @@ export default function DigitalMarketingBlog() {
                                 <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
                                     <PhoneCall className="w-4 h-4" /> Go to Contact Page
                                 </button>
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <Linkedin className="w-4 h-4" /> Max Lead LinkedIn
+                                </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm">
                                     WhatsApp: +971 55 722 2605 
                                 </button>
@@ -383,7 +389,7 @@ export default function DigitalMarketingBlog() {
                         {blogs.map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>

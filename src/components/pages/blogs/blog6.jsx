@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, MessageSquare, Clock, User, CheckCircle2, LayoutGrid, PhoneCall, Zap, ArrowRight, BarChart3, TrendingUp, FileText } from "lucide-react";
+import { Target, MapPin, MessageSquare, Clock, User, CheckCircle2, LayoutGrid, PhoneCall, Zap, ArrowRight,BarChart3,TrendingUp,FileText, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
-import Whatsapp from '../whatsapp';
 import { Helmet } from "react-helmet";
+import Whatsapp from '../whatsapp';
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
@@ -135,7 +135,7 @@ const blogs = [
 /* --- UPDATED CATEGORIES (All 11 Blogs) --- */
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
-  { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
+  { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
   { name: "Digital Agency Guide", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
   { name: "Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
@@ -173,10 +173,7 @@ export default function BestLocationsBlog() {
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
@@ -184,6 +181,7 @@ export default function BestLocationsBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -199,7 +197,7 @@ export default function BestLocationsBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION (REDUCED SIZES) --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#f8fafc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
@@ -211,6 +209,8 @@ export default function BestLocationsBlog() {
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-xs mb-4">
                         <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-green-600 cursor-pointer" onClick={openLinkedin}><Linkedin className="w-3 h-3" aria-hidden="true" /> Connect on LinkedIn</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-1"><User className="w-3 h-3" /> {activePost.author}</span>
                     </div>
@@ -316,11 +316,14 @@ export default function BestLocationsBlog() {
                                 Tell us your goals. Tell us your target customer. We will recommend the best locations and create a flyer distribution strategy that works.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2">
-                                   <PhoneCall className="w-4 h-4" /> Consultation
+                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare className="w-4 h-4" /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-green-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-900 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <Linkedin size={16} aria-hidden="true" /> Max Lead LinkedIn
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -338,7 +341,7 @@ export default function BestLocationsBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-green-600">{tag}</span>
@@ -350,7 +353,7 @@ export default function BestLocationsBlog() {
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-green-600" />
+                                        <ArrowRight size={14} className="text-green-600" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>

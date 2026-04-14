@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, Search, CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare, ArrowRight, HelpCircle } from "lucide-react";
+import { Target, Search, CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare,HelpCircle, Linkedin } from "lucide-react"; 
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -86,6 +86,7 @@ export default function BestAgencyBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -102,7 +103,7 @@ export default function BestAgencyBlog() {
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
@@ -115,6 +116,8 @@ export default function BestAgencyBlog() {
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
                         <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin}><Linkedin className="w-4 h-4" /> Linkedin</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
                     </div>
@@ -188,15 +191,15 @@ export default function BestAgencyBlog() {
                     <p className="text-base mb-6">Before choosing an agency, ask the right questions to avoid confusion later and ensure you’re investing in measurable growth.</p>
                     <ul className="space-y-4 my-6 list-none p-0">
                         <li className="flex items-start gap-3 bg-blue-50/50 p-4 rounded-xl border border-blue-100/50">
-                            <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-1" />
+                            <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-1" aria-hidden="true" />
                             <span className="text-gray-700"><strong>What KPIs will you track?</strong> (Leads, sales, ROAS, traffic, conversions)</span>
                         </li>
                         <li className="flex items-start gap-3 bg-blue-50/50 p-4 rounded-xl border border-blue-100/50">
-                            <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-1" />
+                            <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-1" aria-hidden="true" />
                             <span className="text-gray-700"><strong>What results can you realistically deliver?</strong> (Based on your industry + budget)</span>
                         </li>
                         <li className="flex items-start gap-3 bg-blue-50/50 p-4 rounded-xl border border-blue-100/50">
-                            <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-1" />
+                            <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-1" aria-hidden="true" />
                             <span className="text-gray-700"><strong>Who will manage my account?</strong> (Dedicated manager or rotating team?)</span>
                         </li>
                     </ul>
@@ -232,6 +235,9 @@ export default function BestAgencyBlog() {
                                 <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
                                     <FileText className="w-4 h-4" /> Request a Free Audit
                                 </button>
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                                </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2">
                                     <MessageSquare className="w-4 h-4" /> WhatsApp Us Now
                                 </button>
@@ -251,7 +257,12 @@ export default function BestAgencyBlog() {
                         {blogs.map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img 
+                                      src={blog.image} 
+                                      alt={blog.title} 
+                                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                      loading="lazy"
+                                    />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -263,7 +274,7 @@ export default function BestAgencyBlog() {
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRightIcon size={12}/></span>
                                     </div>
                                 </div>
                             </a>
@@ -278,3 +289,7 @@ export default function BestAgencyBlog() {
     </>
   );
 }
+
+const ArrowRightIcon = ({ size }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+);

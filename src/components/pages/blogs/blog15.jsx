@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, Zap, FileText, MessageSquare, MousePointer2, Leaf, Globe,} from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, Zap, FileText, MessageSquare, MousePointer2, Leaf, Globe, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -85,6 +85,7 @@ export default function LeafletDistributionBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -101,7 +102,7 @@ export default function LeafletDistributionBlog() {
         
         {/* --- HERO SECTION (H1) --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
@@ -112,9 +113,11 @@ export default function LeafletDistributionBlog() {
                         Best leaflet distribution companies in <span className="text-blue-600">Dubai for 2026</span>
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit our LinkedIn Profile"><Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -129,7 +132,7 @@ export default function LeafletDistributionBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
+                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -176,23 +179,23 @@ export default function LeafletDistributionBlog() {
                     
                     <div className="space-y-6 mt-8">
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><MapPin className="text-blue-600" size={18} /> 1. Advanced Targeting Techniques</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><MapPin className="text-blue-600" size={18} aria-hidden="true" /> 1. Advanced Targeting Techniques</h4>
                             <p className="text-sm text-gray-600">A good leaflet distribution company focuses on delivering flyers to the right audience. They select specific locations, communities, and customer groups to make sure your marketing reaches people who are more likely to be interested in your business.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Leaf className="text-green-600" size={18} /> 2. Eco-Friendly Practices</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Leaf className="text-green-600" size={18} aria-hidden="true" /> 2. Eco-Friendly Practices</h4>
                             <p className="text-sm text-gray-600">Many modern distribution companies now focus on eco-friendly practices. They use recycled paper and responsible printing materials to reduce waste and protect the environment, while still promoting your business effectively.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Globe className="text-blue-600" size={18} /> 3. Wide Area Coverage</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Globe className="text-blue-600" size={18} aria-hidden="true" /> 3. Wide Area Coverage</h4>
                             <p className="text-sm text-gray-600">A professional leaflet distribution company can distribute flyers across different areas, including residential communities, business districts, shopping areas, and busy public locations.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Zap className="text-blue-600" size={18} /> 4. Real-Time Tracking</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Zap className="text-blue-600" size={18} aria-hidden="true" /> 4. Real-Time Tracking</h4>
                             <p className="text-sm text-gray-600">Some companies provide tracking and reports during the campaign. This allows businesses to see where their flyers are being distributed and understand performance.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><BarChart3 className="text-blue-600" size={18} /> 5. Customised Distribution Plans</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2"><BarChart3 className="text-blue-600" size={18} aria-hidden="true" /> 5. Customised Distribution Plans</h4>
                             <p className="text-sm text-gray-600">Every business has different goals. A reliable company offers flexible plans, whether you need a short campaign for a promotion or long-term marketing support.</p>
                         </div>
                     </div>
@@ -208,7 +211,7 @@ export default function LeafletDistributionBlog() {
                             { t: "Digital Integration", d: "Combining offline distribution with digital links and social media guide-points." }
                         ].map((trend, i) => (
                             <div key={i} className="flex items-center gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
-                                <CheckCircle2 className="text-blue-600 shrink-0" size={18} />
+                                <CheckCircle2 className="text-blue-600 shrink-0" size={18} aria-hidden="true" />
                                 <div>
                                     <p className="text-sm font-bold text-gray-900 mb-0">{trend.t}</p>
                                     <p className="text-xs text-gray-600 mb-0">{trend.d}</p>
@@ -235,16 +238,19 @@ export default function LeafletDistributionBlog() {
 
                     <div className="bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-[3rem] mt-12 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
-                            <h3 className="text-2xl md:text-4xl font-black mb-4 uppercase">Grow your business with targeted leaflets</h3>
+                            <h3 className="text-2xl md:text-4xl font-black mb-4 uppercase text-white">Grow your business with targeted leaflets</h3>
                             <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto font-medium">
                                 If you want to grow your business with targeted leaflet marketing, contact our experts to discuss your campaign.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                                    <MousePointer2 size={16} /> Free Consultation
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MousePointer2 size={16} aria-hidden="true" /> Free Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -262,10 +268,10 @@ export default function LeafletDistributionBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-[2rem] overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-4 left-4 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
-                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/95 px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
+                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -273,8 +279,8 @@ export default function LeafletDistributionBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -290,5 +296,5 @@ export default function LeafletDistributionBlog() {
 }
 
 const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

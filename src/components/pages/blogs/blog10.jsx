@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, Zap, LayoutGrid, PhoneCall,ArrowRight} from "lucide-react";
+import { TrendingUp, Target, MapPin, BarChart3, MessageSquare, Clock, User, LayoutGrid, PhoneCall, Zap, ArrowRight, CheckCircle2, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -99,7 +99,7 @@ const blogs = [
   },
   {
     id: 9,
-    title: "How to Increase Sales with Flyer Distribution: 10 Proven Tips",
+    title: " How to Increase Sales with Flyer Distribution: 10 Proven Tips",
     description: "Unlock growth with these 10 proven tips. Learn how to craft irresistible offers and use timing to drive immediate revenue.",
     author: "Sales Head",
     date: "Feb 24, 2026",
@@ -177,6 +177,7 @@ export default function IntegratedStrategyBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -192,20 +193,22 @@ export default function IntegratedStrategyBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#f8fafc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
-                        <TrendingUp size={14} />
+                        <TrendingUp size={14} aria-hidden="true" />
                         <span>Integrated Marketing Strategy</span>
                     </div>
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
                         Integrating Online and Offline Strategies for Flyer Distribution
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-xs mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-1 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -217,7 +220,7 @@ export default function IntegratedStrategyBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-blue-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -302,14 +305,14 @@ export default function IntegratedStrategyBlog() {
                     <h3 className="text-2xl font-bold text-gray-900 pt-10">Common Mistakes to Avoid</h3>
                     <div className="grid md:grid-cols-2 gap-4 my-8">
                         <div className="p-5 bg-red-50 rounded-xl border border-red-100 flex items-start gap-3">
-                            <XCircle className="text-red-500 w-5 h-5 shrink-0 mt-0.5" />
+                            <XCircle className="text-red-500 w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
                             <div>
                                 <h4 className="font-bold text-gray-900 m-0 text-sm">Inconsistent Branding</h4>
                                 <p className="text-xs text-gray-600 m-0 leading-relaxed">Ensure flyers and digital ads look the same to build recognition.</p>
                             </div>
                         </div>
                         <div className="p-5 bg-red-50 rounded-xl border border-red-100 flex items-start gap-3">
-                            <XCircle className="text-red-500 w-5 h-5 shrink-0 mt-0.5" />
+                            <XCircle className="text-red-500 w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
                             <div>
                                 <h4 className="font-bold text-gray-900 m-0 text-sm">No Tracking</h4>
                                 <p className="text-xs text-gray-600 m-0 leading-relaxed">If you cannot measure it, you cannot improve it.</p>
@@ -329,11 +332,14 @@ export default function IntegratedStrategyBlog() {
                                 Turn interested readers into paying customers with a strategy that reaches them everywhere. Let’s build your integrated campaign today.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2">
-                                   <PhoneCall size={16} /> Consultation
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -349,9 +355,9 @@ export default function IntegratedStrategyBlog() {
                     <h2 className="text-2xl font-black text-gray-900 mb-8">Related Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
-                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
+                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -362,8 +368,8 @@ export default function IntegratedStrategyBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-blue-600" />
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <ArrowRight size={14} className="text-blue-600" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>
@@ -379,7 +385,7 @@ export default function IntegratedStrategyBlog() {
 }
 
 const XCircle = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
         <circle cx="12" cy="12" r="10" /><path d="m15 9-6 6" /><path d="m9 9 6 6" />
     </svg>
 );

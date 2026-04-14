@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, Printer, LayoutGrid, Zap, FileText, ArrowRight, PhoneCall,Calendar } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, Printer, LayoutGrid, Zap, FileText, ArrowRight, PhoneCall,Calendar, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 import { Helmet } from "react-helmet";
 
-/* --- FULL STRATEGIC BLOG DATA --- */
+/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
   {
     id: 1,
@@ -104,6 +104,7 @@ export default function FlyerStrategyBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -132,9 +133,11 @@ export default function FlyerStrategyBlog() {
                         Ultimate Guide to Flyer Distribution Strategies in Dubai: 10 Proven Ways to Get Results
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User className="w-3 h-3" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin} aria-label="Visit our LinkedIn"><Linkedin className="w-3 h-3" /> Connect on LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-3 h-3" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -207,14 +210,14 @@ export default function FlyerStrategyBlog() {
                     <p><strong>Why It Works:</strong> People in Dubai love value. A strong offer cuts through the noise and gives people a reason to call, visit, or buy.</p>
                     <div className="grid md:grid-cols-2 gap-4 my-6">
                         <div className="p-5 bg-white border-2 border-dashed border-blue-200 rounded-2xl">
-                           <h5 className="font-bold text-gray-900 m-0 mb-2">Examples of Strong Offers:</h5>
-                           <ul className="text-xs text-gray-600 m-0 p-0 list-none space-y-1">
+                            <h5 className="font-bold text-gray-900 m-0 mb-2">Examples of Strong Offers:</h5>
+                            <ul className="text-xs text-gray-600 m-0 p-0 list-none space-y-1">
                                 <li>• 50% off on first service</li>
                                 <li>• Buy one get one free</li>
                                 <li>• Free consultation worth AED 200</li>
                                 <li>• Complimentary drink with meal</li>
                                 <li>• Discount for first 50 customers</li>
-                           </ul>
+                            </ul>
                         </div>
                         <div className="flex flex-col justify-center">
                             <p><strong>How to Implement:</strong> Create an offer that feels valuable. Make it time-limited (creates urgency). Feature the offer prominently on your flyer. Track how many people mention the offer.</p>
@@ -274,7 +277,7 @@ export default function FlyerStrategyBlog() {
                     {/* --- STRATEGY 9 --- */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Strategy 9: The Quality Over Quantity Strategy</h2>
                     <p><strong>What Is It?</strong> Focusing on doing fewer distributions well, rather than many distributions poorly. 1,000 flyers delivered properly to the right homes will outperform 10,000 flyers thrown randomly.</p>
-                    <p><strong>What Quality Means:</strong> Professional distributors (trained, supervised), proper delivery (not damaged), right timing (when people are home), and proof of distribution. <strong>How to Implement:</strong> Choose a professional <strong>door to door leaflet distribution</strong> company that cares about quality.</p>
+                    <p><strong>Why It Works:</strong> Professional distributors (trained, supervised), proper delivery (not damaged), right timing (when people are home), and proof of distribution. <strong>How to Implement:</strong> Choose a professional <strong>door to door leaflet distribution</strong> company that cares about quality.</p>
 
                     {/* --- STRATEGY 10 --- */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Strategy 10: The Track and Improve Strategy</h2>
@@ -306,6 +309,9 @@ export default function FlyerStrategyBlog() {
                                 <button onClick={goToContact} className="bg-white text-blue-900 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
                                     <PhoneCall size={16}/> Call Max Lead
                                 </button>
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                    <Linkedin size={16}/> Max Lead LinkedIn
+                                </button>
                                 <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center gap-2 shadow-lg">
                                     <MessageSquare size={16}/> WhatsApp Now
                                 </button>
@@ -330,7 +336,7 @@ export default function FlyerStrategyBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 6).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -340,7 +346,7 @@ export default function FlyerStrategyBlog() {
                                 <div className="p-5 flex flex-col flex-grow">
                                     <h4 className="text-base font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">{blog.title}</h4>
                                     <p className="text-gray-500 text-[11px] line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
-                                    <div className="mt-auto flex items-center justify-between text-[9px] font-black uppercase text-gray-400">
+                                    <div className="mt-auto flex items-center justify-between text-[10px] font-black uppercase text-gray-400">
                                         <span>{blog.readTime}</span>
                                         <ArrowRight size={14} className="text-blue-600 group-hover:translate-x-1 transition-transform" />
                                     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, BarChart3, MessageSquare, Clock, User,FileText, LayoutGrid, PhoneCall, ShieldCheck, Globe, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
+import { TrendingUp, Target, MapPin, BarChart3, MessageSquare, Clock, User,FileText, LayoutGrid, PhoneCall, ShieldCheck, Globe, Zap, ArrowRight, CheckCircle2, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -178,6 +178,7 @@ export default function MarketingTransformationBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -194,20 +195,22 @@ export default function MarketingTransformationBlog() {
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
-                        <TrendingUp size={14} />
+                        <TrendingUp size={14} aria-hidden="true" />
                         <span>Marketing with Max Lead Advertising</span>
                     </div>
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
                         Transforming Marketing with Max Lead Advertising: Your Trusted Distribution Company
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-xs mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -219,7 +222,7 @@ export default function MarketingTransformationBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -253,22 +256,22 @@ export default function MarketingTransformationBlog() {
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">What Makes Us Different?</h3>
                     <div className="grid md:grid-cols-2 gap-4 my-8">
                         <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
-                            <ShieldCheck size={24} className="text-blue-500 mb-2" />
+                            <ShieldCheck size={24} className="text-blue-500 mb-2" aria-hidden="true" />
                             <h4 className="font-bold text-sm mb-1 uppercase tracking-wider text-gray-900">Experience You Can Trust</h4>
                             <p className="text-xs text-gray-500 m-0">Since 2015, we have helped businesses across all seven emirates. We've learned what makes the difference between success and failure.</p>
                         </div>
                         <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
-                            <Zap size={24} className="text-blue-500 mb-2" />
+                            <Zap size={24} className="text-blue-500 mb-2" aria-hidden="true" />
                             <h4 className="font-bold text-sm mb-1 uppercase tracking-wider text-gray-900">Complete Transparency</h4>
                             <p className="text-xs text-gray-500 m-0">We provide proof of delivery for every campaign: GPS tracking, time stamps, photos, and detailed reports.</p>
                         </div>
                         <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
-                            <BarChart3 size={24} className="text-blue-500 mb-2" />
+                            <BarChart3 size={24} className="text-blue-500 mb-2" aria-hidden="true" />
                             <h4 className="font-bold text-sm mb-1 uppercase tracking-wider text-gray-900">Data-Driven Approach</h4>
                             <p className="text-xs text-gray-500 m-0">We study locations and analyze demographics to put your message in front of the right people at the right time.</p>
                         </div>
                         <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
-                            <Globe size={24} className="text-blue-500 mb-2" />
+                            <Globe size={24} className="text-blue-500 mb-2" aria-hidden="true" />
                             <h4 className="font-bold text-sm mb-1 uppercase tracking-wider text-gray-900">Local Knowledge</h4>
                             <p className="text-xs text-gray-500 m-0">The UAE is our home. We know the rules and how to navigate challenges, saving you time and money.</p>
                         </div>
@@ -317,18 +320,23 @@ export default function MarketingTransformationBlog() {
                         The future does not belong to online only. It does not belong to offline only. The future belongs to businesses that use both together. Offline marketing builds trust and physical connection, while online marketing provides data and tracking. When you combine them, you get a complete marketing ecosystem.
                     </p>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-3xl mt-12 text-white text-center shadow-xl">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Marketing?</h3>
-                        <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto">
-                            Whether you need flyer distribution, professional printing, or a complete integrated campaign, we are ready to help.
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2">
-                               <PhoneCall size={16}/> Consultation
-                            </button>
-                            <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2">
-                                <MessageSquare size={16}/> WhatsApp
-                            </button>
+                    <div className="bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-3xl mt-12 text-white text-center shadow-xl relative overflow-hidden">
+                        <div className="relative z-10">
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Marketing?</h3>
+                            <p className="text-blue-100 text-base mb-8 max-w-2xl mx-auto">
+                                Whether you need flyer distribution, professional printing, or a complete integrated campaign, we are ready to help.
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
+                                </button>
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -344,7 +352,7 @@ export default function MarketingTransformationBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -356,7 +364,7 @@ export default function MarketingTransformationBlog() {
                                     <p className="text-gray-500 text-[11px] line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[9px] font-black uppercase text-gray-400">
                                         <span>{blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-blue-600" />
+                                        <ArrowRight size={14} className="text-blue-600 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>

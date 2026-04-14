@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, TrendingUp, LayoutGrid,ArrowRight, PhoneCall, DollarSign, MousePointer2, BrainCircuit } from "lucide-react";
+import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, TrendingUp, LayoutGrid,ArrowRight, PhoneCall, DollarSign, MousePointer2, BrainCircuit, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -86,6 +86,7 @@ export default function DoorHangerBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -101,7 +102,7 @@ export default function DoorHangerBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 text-green-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
@@ -112,9 +113,11 @@ export default function DoorHangerBlog() {
                         Unlock the Power of <span className="text-green-600">Local Advertising</span> with Door Hanger Marketing
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-1 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -126,7 +129,7 @@ export default function DoorHangerBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-green-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -177,7 +180,7 @@ export default function DoorHangerBlog() {
                             "Schools and Nurseries", "Car Wash and Auto Services"
                         ].map((item, idx) => (
                             <div key={idx} className="flex items-center gap-3 p-4 bg-green-50/50 rounded-xl">
-                                <CheckCircle2 size={16} className="text-green-600 shrink-0" />
+                                <CheckCircle2 size={16} className="text-green-600 shrink-0" aria-hidden="true" />
                                 <span className="text-sm font-bold text-gray-800">{item}</span>
                             </div>
                         ))}
@@ -197,7 +200,7 @@ export default function DoorHangerBlog() {
 
                     <div className="bg-gray-950 text-white rounded-[2rem] p-10 my-16 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl rounded-full" />
-                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3"><BrainCircuit className="text-green-500" /> The Psychology Behind Door Hanger Success</h2>
+                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3"><BrainCircuit className="text-green-500" aria-hidden="true" /> The Psychology Behind Door Hanger Success</h2>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
                                 <h4 className="text-green-500 font-bold mb-2">Territoriality</h4>
@@ -237,11 +240,11 @@ export default function DoorHangerBlog() {
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Measuring Door Hanger Success</h2>
                     <p className="text-base text-gray-600">How do you know if your campaign worked?</p>
                     <ul className="space-y-2 list-none p-0 text-gray-600">
-                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Trackable Offers (unique discount codes)</li>
-                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Dedicated Phone Numbers for the campaign</li>
-                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> QR Code Scan counts</li>
-                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Ask Customers: "How did you hear about us?"</li>
-                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" /> Compare sales periods (before vs after)</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" aria-hidden="true" /> Trackable Offers (unique discount codes)</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" aria-hidden="true" /> Dedicated Phone Numbers for the campaign</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" aria-hidden="true" /> QR Code Scan counts</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" aria-hidden="true" /> Ask Customers: "How did you hear about us?"</li>
+                        <li className="flex gap-3"><MousePointer2 size={18} className="text-green-600 shrink-0" aria-hidden="true" /> Compare sales periods (before vs after)</li>
                     </ul>
 
                     <div className="my-12 p-8 border-2 border-red-50 rounded-3xl bg-red-50/20">
@@ -252,7 +255,7 @@ export default function DoorHangerBlog() {
                                 "Bad Timing (Hangers sitting out too long)", "No Tracking", "Unprofessional Distribution"
                             ].map((m, i) => (
                                 <div key={i} className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-red-400" /> {m}
+                                    <span className="w-1.5 h-1.5 rounded-full bg-red-400" aria-hidden="true" /> {m}
                                 </div>
                             ))}
                         </div>
@@ -262,14 +265,14 @@ export default function DoorHangerBlog() {
                     <p className="text-base text-gray-600">Professional distribution makes a huge difference in ROI:</p>
                     <div className="space-y-4 my-8">
                         <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Proper Placement & Complete Coverage</h4>
                                 <p className="text-xs text-gray-500">Trained professionals ensure hangers stay on handles and cover every single door in the target area without skipping.</p>
                             </div>
                         </div>
                         <div className="flex gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" /></div>
+                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Legal Compliance & Proof</h4>
                                 <p className="text-xs text-gray-500">We follow community rules and provide full delivery reports with photos and GPS data.</p>
@@ -305,11 +308,14 @@ export default function DoorHangerBlog() {
                                 Whether you are a restaurant, home service provider, or any local business, door hangers can grow your revenue.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center justify-center gap-2">
-                                    <PhoneCall size={16} /> Free Consultation
+                                <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <PhoneCall size={16} aria-hidden="true" /> Free Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-green-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-400 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -327,7 +333,7 @@ export default function DoorHangerBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -338,8 +344,8 @@ export default function DoorHangerBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-green-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, Printer, Zap, LayoutGrid, FileText, ArrowRight, MessageSquare, XCircle, PhoneCall } from "lucide-react";
+import { Target,CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare, ArrowRight, MapPin,TrendingUp,Printer, XCircle, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
@@ -183,6 +183,7 @@ export default function FlyerDistributionBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -211,9 +212,11 @@ export default function FlyerDistributionBlog() {
                         Dos and Don'ts of Flyer Distribution in UAE: A Complete Guide for Business Owners
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User className="w-3 h-3" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin}><Linkedin className="w-3 h-3" /> Linkedin</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2"><User className="w-3 h-3" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -335,7 +338,7 @@ export default function FlyerDistributionBlog() {
                         Flyer distribution is not outdated. It has simply evolved. Today, successful businesses use door to door leaflet distribution as part of a complete marketing strategy. By following the dos and don'ts of flyer distribution in UAE, you can avoid common mistakes and get better results from every campaign.
                     </p>
 
-                    <div className="bg-gradient-to-br from-green-600 to-emerald-700 p-10 md:p-12 rounded-[2rem] mt-10 text-white relative overflow-hidden text-center">
+                    <div className="bg-gradient-to-br from-green-600 to-emerald-700 p-10 md:p-12 rounded-[2rem] mt-10 text-white relative overflow-hidden text-center shadow-2xl">
                         <div className="relative z-10">
                             <h3 className="text-2xl md:text-4xl font-bold mb-4">Ready to start your next campaign?</h3>
                             <p className="text-green-50 text-base mb-8 max-w-2xl mx-auto">
@@ -344,6 +347,9 @@ export default function FlyerDistributionBlog() {
                             <div className="flex flex-wrap justify-center gap-4">
                                 <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center gap-2">
                                     <PhoneCall className="w-4 h-4" /> Get a Free Consultation
+                                </button>
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center gap-2">
+                                    <Linkedin className="w-4 h-4" /> Connect on LinkedIn
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center gap-2">
                                     <MessageSquare className="w-4 h-4" /> WhatsApp Now
@@ -364,7 +370,7 @@ export default function FlyerDistributionBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-green-600">{tag}</span>

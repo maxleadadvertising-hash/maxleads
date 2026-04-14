@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, Zap, FileText, MessageSquare, PhoneCall, Building2, ShoppingCart, Activity } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, Zap, FileText, MessageSquare, PhoneCall, Building2, ShoppingCart, Activity, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -85,6 +85,7 @@ export default function BestFlyerDistributionBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -99,9 +100,9 @@ export default function BestFlyerDistributionBlog() {
 
       <main className="bg-white min-h-screen">
         
-        {/* --- HERO SECTION (H1) --- */}
+        {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100 text-center">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
@@ -114,6 +115,8 @@ export default function BestFlyerDistributionBlog() {
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
                         <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-2 transition-colors hover:text-blue-600 cursor-pointer" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin className="w-4 h-4" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-2"><User className="w-4 h-4" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
@@ -121,7 +124,7 @@ export default function BestFlyerDistributionBlog() {
         </section>
 
         {/* --- CATEGORY SELECTOR --- */}
-        <section className="py-8 px-6 bg-white">
+        <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
@@ -129,8 +132,8 @@ export default function BestFlyerDistributionBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
-                  <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
+                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
+                  <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
             ))}
@@ -155,26 +158,26 @@ export default function BestFlyerDistributionBlog() {
                     <p className="text-base text-gray-600">The UAE has a highly active consumer market with diverse communities living in residential towers, villas, and gated communities. Flyer distribution allows businesses to directly reach customers at their homes, offices, or high-footfall areas.</p>
                     <p className="font-bold text-gray-900 mb-4">Here’s why it works:</p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 list-none p-0">
-                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} /> Direct access to targeted residential areas</li>
-                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} /> Cost-effective compared to many digital campaigns</li>
-                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} /> Geo-targeted marketing for specific communities</li>
-                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} /> Immediate brand visibility</li>
-                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} /> Easy to track responses with offers & promo codes</li>
+                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} aria-hidden="true" /> Direct access to targeted residential areas</li>
+                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} aria-hidden="true" /> Cost-effective compared to many digital campaigns</li>
+                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} aria-hidden="true" /> Geo-targeted marketing for specific communities</li>
+                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} aria-hidden="true" /> Immediate brand visibility</li>
+                        <li className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm font-semibold text-gray-800"><CheckCircle2 className="text-blue-600" size={16} aria-hidden="true" /> Easy to track responses with offers & promo codes</li>
                     </ul>
 
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Professional Door-to-Door Flyer Distribution Services in UAE</h2>
                     <div className="my-10 rounded-[2rem] overflow-hidden shadow-lg">
-                        <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Professional Flyer Distribution UAE" className="w-full h-auto object-cover" />
+                        <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Professional Flyer Distribution UAE" className="w-full h-auto object-cover" loading="eager" fetchpriority="high" />
                     </div>
                     <p className="text-base text-gray-600">
                         Our door-to-door flyer distribution service delivers your flyers to villas, apartments, and residential communities, connecting your business directly with local households and families. This targeted approach is ideal for companies aiming to attract nearby customers and strengthen their presence within specific neighborhoods. Each campaign is strategically planned and organized area-wise to provide systematic coverage, maximum visibility, and effective reach across your selected locations.
                     </p>
                     <p className="font-bold text-gray-900 mt-6 mb-4">Flyer distribution works because:</p>
                     <ul className="space-y-4 list-none p-0">
-                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" /> Flyers are visible and tangible, creating a direct and lasting impression.</li>
-                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" /> Customers can read the information at their convenience.</li>
-                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" /> It builds strong local brand recognition within targeted communities.</li>
-                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" /> It is more cost-effective compared to mass media advertising.</li>
+                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" aria-hidden="true" /> Flyers are visible and tangible, creating a direct and lasting impression.</li>
+                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" aria-hidden="true" /> Customers can read the information at their convenience.</li>
+                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" aria-hidden="true" /> It builds strong local brand recognition within targeted communities.</li>
+                        <li className="flex gap-4 items-start text-base text-gray-600"><Zap className="text-blue-600 shrink-0" aria-hidden="true" /> It is more cost-effective compared to mass media advertising.</li>
                     </ul>
 
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">What Makes the Best Flyer Distribution Company in UAE?</h2>
@@ -184,19 +187,19 @@ export default function BestFlyerDistributionBlog() {
                     
                     <div className="grid md:grid-cols-2 gap-6 my-8">
                         <div className="p-6 border border-gray-100 rounded-2xl bg-blue-50/30">
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><MapPin className="text-blue-600" size={16} /> Targeted Area Selection</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><MapPin className="text-blue-600" size={16} aria-hidden="true" /> Targeted Area Selection</h4>
                             <p className="text-xs text-gray-600">Professional companies provide distribution in premium communities across Dubai, Abu Dhabi, Sharjah, and other emirates.</p>
                         </div>
                         <div className="p-6 border border-gray-100 rounded-2xl bg-blue-50/30">
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><BarChart3 className="text-blue-600" size={16} /> GPS Tracking & Proof</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><BarChart3 className="text-blue-600" size={16} aria-hidden="true" /> GPS Tracking & Proof</h4>
                             <p className="text-xs text-gray-600">Reliable agencies offer live tracking and reports for transparency.</p>
                         </div>
                         <div className="p-6 border border-gray-100 rounded-2xl bg-blue-50/30">
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><User className="text-blue-600" size={16} /> Experienced Team</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><User className="text-blue-600" size={16} aria-hidden="true" /> Experienced Team</h4>
                             <p className="text-xs text-gray-600">Well-trained promoters ensure flyers are delivered properly — not discarded.</p>
                         </div>
                         <div className="p-6 border border-gray-100 rounded-2xl bg-blue-50/30">
-                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><LayoutGrid className="text-blue-600" size={16} /> Flexible Packages</h4>
+                            <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm"><LayoutGrid className="text-blue-600" size={16} aria-hidden="true" /> Flexible Packages</h4>
                             <p className="text-xs text-gray-600">Whether you need 5,000 or 100,000 flyers distributed, the best companies offer scalable packages.</p>
                         </div>
                         <div className="p-6 border border-gray-100 rounded-2xl bg-gray-900 md:col-span-2">
@@ -219,7 +222,7 @@ export default function BestFlyerDistributionBlog() {
                           {name: "Hypermarket", icon: Building2}
                         ].map((item, idx) => (
                             <span key={idx} className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-100 text-xs font-bold text-gray-700 rounded-xl">
-                                <item.icon size={14} className="text-blue-600" /> {item.name}
+                                <item.icon size={14} className="text-blue-600" aria-hidden="true" /> {item.name}
                             </span>
                         ))}
                     </div>
@@ -229,7 +232,7 @@ export default function BestFlyerDistributionBlog() {
                     <div className="grid md:grid-cols-2 gap-3 my-6">
                         {["Proper coverage", "Time efficiency", "Organized area mapping", "Legal compliance", "Higher response rates"].map((item, idx) => (
                             <div key={idx} className="flex items-center gap-3 p-4 bg-blue-50/50 rounded-xl">
-                                <CheckCircle2 size={16} className="text-blue-600" />
+                                <CheckCircle2 size={16} className="text-blue-600" aria-hidden="true" />
                                 <span className="text-sm font-bold text-gray-800">{item}</span>
                             </div>
                         ))}
@@ -251,11 +254,14 @@ export default function BestFlyerDistributionBlog() {
                                 Contact Max Lead today and let your brand reach the right audience at the right place!
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-10 py-4 rounded-2xl hover:bg-blue-50 transition-all flex items-center justify-center gap-3">
-                                    <PhoneCall size={18} /> +971 55 722 2605
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-10 py-4 rounded-2xl hover:bg-blue-50 transition-all flex items-center justify-center gap-3 shadow-lg">
+                                    <PhoneCall size={18} aria-hidden="true" /> +971 55 722 2605
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-4 rounded-2xl hover:bg-blue-500/40 transition-all flex items-center justify-center gap-3">
-                                    <MessageSquare size={18} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-10 py-4 rounded-2xl hover:bg-blue-950 transition-all flex items-center justify-center gap-3 shadow-lg" aria-label="Connect with Max Lead on LinkedIn">
+                                    <Linkedin size={18} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-4 rounded-2xl hover:bg-blue-500/40 transition-all flex items-center justify-center gap-3 shadow-lg">
+                                    <MessageSquare size={18} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -264,16 +270,16 @@ export default function BestFlyerDistributionBlog() {
             </FadeIn>
         </section>
 
-        {/* --- RELATED BLOGS --- */}
+        {/* --- GRID FOR ALL BLOGS --- */}
         <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
-                    <h2 className="text-2xl font-black text-gray-900 mb-8 text-center uppercase tracking-tight">Strategy Intelligence Hub</h2>
+                    <h2 className="text-2xl font-black text-gray-900 mb-8 text-center uppercase tracking-tight">Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-[2rem] overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-4 left-4 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/95 px-2 py-0.5 rounded-full text-blue-600 shadow-sm">{tag}</span>
@@ -284,8 +290,8 @@ export default function BestFlyerDistributionBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12}/></span>
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -294,12 +300,13 @@ export default function BestFlyerDistributionBlog() {
                 </FadeIn>
             </div>
         </section>
+
       </main>
       <Footer />
     </>
   );
 }
 
-const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+const ArrowRight = ({ size, className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

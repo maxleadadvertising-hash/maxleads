@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User,Zap, LayoutGrid, PhoneCall, QrCode, Timer, Share2, SearchCheck, Rocket, ShieldCheck, ArrowRight, FileText } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User,Zap, LayoutGrid, PhoneCall, QrCode, Timer, Share2, SearchCheck, Rocket, ShieldCheck, ArrowRight, FileText, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -179,13 +179,14 @@ export default function SalesGrowthBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
       <Helmet>
         <title>Social Media Marketing Services Cost in UAE | Complete 2026 Guide</title>
         <meta name="description" content="Explore social media marketing services cost in the UAE, from Dubai to Sharjah and Ajman, and learn what factors influence pricing and growth strategy. Contact Us Today!" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/how-to-increase-sales-with-flyer-distribution/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />
@@ -194,7 +195,7 @@ export default function SalesGrowthBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#f8fafc] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
@@ -205,9 +206,11 @@ export default function SalesGrowthBlog() {
                         How to Increase Sales with Flyer Distribution: 10 Proven Tips
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-xs mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User size={14} /> {activePost.author}</span>
+                        <span className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -219,7 +222,7 @@ export default function SalesGrowthBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-blue-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -247,7 +250,7 @@ export default function SalesGrowthBlog() {
                     <div className="space-y-12 mt-12">
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <Target size={24} className="text-blue-600" /> Tip 1: Know Your Target Audience
+                                <Target size={24} className="text-blue-600" aria-hidden="true" /> Tip 1: Know Your Target Audience
                             </h2>
                             <p className="text-base text-gray-600">Before you print a single flyer, answer this question: Who is your ideal customer? Are they families living in villas? Young professionals in apartments? Business owners in commercial areas? Shoppers at the mall?</p>
                             <p className="text-base text-gray-600">When you know your audience, you can choose the right areas for <strong>door to door flyer distribution in Dubai</strong>. Without this knowledge, you are just guessing. And guesses waste money.</p>
@@ -258,7 +261,7 @@ export default function SalesGrowthBlog() {
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <MapPin size={24} className="text-blue-600" /> Tip 2: Choose the Right Locations
+                                <MapPin size={24} className="text-blue-600" aria-hidden="true" /> Tip 2: Choose the Right Locations
                             </h2>
                             <p className="text-base text-gray-600">Location is everything in flyer distribution. The best flyer in the world means nothing if it reaches the wrong people. Different areas have different audiences.</p>
                             <ul className="list-disc pl-10 space-y-1 text-sm text-gray-600 font-medium">
@@ -272,56 +275,56 @@ export default function SalesGrowthBlog() {
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <Rocket size={24} className="text-blue-600" /> Tip 3: Create an Irresistible Offer
+                                <Rocket size={24} className="text-blue-600" aria-hidden="true" /> Tip 3: Create an Irresistible Offer
                             </h2>
                             <p className="text-base text-gray-600">Your flyer needs a reason for people to act. Irresistible offers include clear discounts, freebies like consultations, or limited-time urgency (e.g., "First 50 customers"). The offer should be clear—if people have to think too hard, they will throw the flyer away.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <SearchCheck size={24} className="text-blue-600" /> Tip 4: Design for Attention
+                                <SearchCheck size={24} className="text-blue-600" aria-hidden="true" /> Tip 4: Design for Attention
                             </h2>
                             <p className="text-base text-gray-600">You have just a few seconds to grab attention. Use a strong, bold headline and high-quality images. Keep it simple—too much text confuses people. Stick to one main message and make your offer obvious. Include your contact information clearly.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <CheckCircle2 size={24} className="text-blue-600" /> Tip 5: Include a Clear Call to Action
+                                <CheckCircle2 size={24} className="text-blue-600" aria-hidden="true" /> Tip 5: Include a Clear Call to Action
                             </h2>
                             <p className="text-base text-gray-600">Tell them clearly what to do next: "Call now for a free quote," "Scan the QR code to order," or "Come visit us today." Make your CTA stand out using a different color or a box.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <QrCode size={24} className="text-blue-600" /> Tip 6: Use QR Codes for Instant Action
+                                <QrCode size={24} className="text-blue-600" aria-hidden="true" /> Tip 6: Use QR Codes for Instant Action
                             </h2>
                             <p className="text-base text-gray-600">QR codes turn flyers into interactive tools. Scanning can lead to your website, start a WhatsApp chat, or claim a discount instantly. Plus, QR codes let you track performance data accurately.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <Timer size={24} className="text-blue-600" /> Tip 7: Time Your Distribution Strategically
+                                <Timer size={24} className="text-blue-600" aria-hidden="true" /> Tip 7: Time Your Distribution Strategically
                             </h2>
                             <p className="text-base text-gray-600">Evenings and weekends work best for residential areas. Weekday lunch hours are ideal for business areas. Time your distribution to match seasonal needs, like AC companies distributing before the UAE summer starts.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <Share2 size={24} className="text-blue-600" /> Tip 8: Integrate with Digital Marketing
+                                <Share2 size={24} className="text-blue-600" aria-hidden="true" /> Tip 8: Integrate with Digital Marketing
                             </h2>
                             <p className="text-base text-gray-600">Offline and online work better together. Use <strong>door to door leaflet distribution</strong> to drive people to your social media handles or create a special landing page just for flyer respondents. Repetition builds trust.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <BarChart3 size={24} className="text-blue-600" /> Tip 9: Track Your Results
+                                <BarChart3 size={24} className="text-blue-600" aria-hidden="true" /> Tip 9: Track Your Results
                             </h2>
                             <p className="text-base text-gray-600">You cannot improve what you do not measure. Use unique discount codes, dedicated phone numbers, and track QR scans to discover which areas and offers work best.</p>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <ShieldCheck size={24} className="text-blue-600" /> Tip 10: Work with Professional Distributors
+                                <ShieldCheck size={24} className="text-blue-600" aria-hidden="true" /> Tip 10: Work with Professional Distributors
                             </h2>
                             <p className="text-base text-gray-600">Professional <strong>flyer distribution services in Dubai</strong> deliver better results. They provide proof of delivery (GPS, photos), represent your brand well, and follow legal rules. At Max Lead Advertising, we've provided this since 2015.</p>
                         </div>
@@ -339,11 +342,14 @@ export default function SalesGrowthBlog() {
                                 At Max Lead Advertising, we put these tips into action to increase your sales. Contact us for a free strategy consultation today.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2">
-                                   <PhoneCall size={16}/> Consultation
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2">
-                                    <MessageSquare size={16}/> WhatsApp
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp
                                 </button>
                             </div>
                         </div>
@@ -361,7 +367,7 @@ export default function SalesGrowthBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
@@ -372,8 +378,8 @@ export default function SalesGrowthBlog() {
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                        <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-blue-600" />
+                                        <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
+                                        <ArrowRight size={14} className="text-blue-600" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>

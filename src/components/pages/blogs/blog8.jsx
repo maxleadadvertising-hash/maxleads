@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, LayoutGrid, FileText, ArrowRight, PhoneCall, Smile, ShieldCheck, ClipboardCheck } from "lucide-react";
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, LayoutGrid, FileText, ArrowRight, PhoneCall, Smile, ShieldCheck, ClipboardCheck, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -178,6 +178,7 @@ export default function DistributorRoleBlog() {
   const handleCategoryClick = (path) => { window.location.href = path; };
   const openWhatsapp = () => { window.open("https://wa.me/+971557222605", "_blank"); };
   const goToContact = () => { window.location.href = "/contact/"; };
+  const openLinkedin = () => { window.open("https://www.linkedin.com/company/max-lead-advertising-distribution/", "_blank"); };
 
   return (
     <>
@@ -193,7 +194,7 @@ export default function DistributorRoleBlog() {
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-12 px-6 bg-[#fffbf9] border-b border-gray-100">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 text-orange-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
@@ -204,9 +205,11 @@ export default function DistributorRoleBlog() {
                         What is the Role of a Flyer Distributor? A Complete Guide
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1"><User className="w-3 h-3" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors" onClick={openLinkedin} aria-label="Visit our LinkedIn"><Linkedin className="w-3 h-3" aria-hidden="true" /> LinkedIn</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span className="flex items-center gap-1"><User className="w-3 h-3" aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
@@ -218,7 +221,7 @@ export default function DistributorRoleBlog() {
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-orange-600 hover:text-white transition-all group">
-                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" />
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
                   <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
@@ -316,7 +319,7 @@ export default function DistributorRoleBlog() {
                           { icon: Target, title: "Professionalism" }
                         ].map((skill, i) => (
                           <div key={i} className="flex flex-col items-center p-4 bg-gray-50 rounded-xl text-center">
-                            <skill.icon className="w-6 h-6 text-orange-500 mb-2" />
+                            <skill.icon className="w-6 h-6 text-orange-500 mb-2" aria-hidden="true" />
                             <span className="font-bold text-[10px] uppercase tracking-widest text-gray-800">{skill.title}</span>
                           </div>
                         ))}
@@ -332,11 +335,14 @@ export default function DistributorRoleBlog() {
                                 Contact Max Lead Advertising today. Let our professional team deliver your message to the right people in the right places.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-orange-600 font-bold px-8 py-3 rounded-xl hover:bg-orange-50 transition-all text-sm flex items-center gap-2">
-                                   <PhoneCall size={16} /> Consultation
+                                <button onClick={goToContact} className="bg-white text-orange-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center gap-2">
-                                    <MessageSquare size={16} /> WhatsApp Now
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                   <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                </button>
+                                <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -354,7 +360,7 @@ export default function DistributorRoleBlog() {
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
-                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
                                             <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-orange-600">{tag}</span>
@@ -366,7 +372,7 @@ export default function DistributorRoleBlog() {
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12}/> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-orange-600" />
+                                        <ArrowRight size={14} className="text-orange-600" aria-hidden="true" />
                                     </div>
                                 </div>
                             </a>
