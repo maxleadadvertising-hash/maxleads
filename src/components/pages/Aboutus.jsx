@@ -61,13 +61,34 @@ export default function Aboutus() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // ADDED: Meta Tags Logic
+    useEffect(() => {
+      document.title = "About US | Top Digital Advertising & Distribution Agency in UAE";
+      
+      // Description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute("content", "Partner with MaxLead Advertising for effective flyer and leaflet distribution, innovative digital marketing, and impactful outdoor advertising across UAE, Dubai.");
+
+      // Canonical URL
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.rel = "canonical";
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/about-maxlead/");
+    }, []);
+
   return (
     <>
       <Helmet>
-        <title>About MaxLead | Top Digital Advertising & Distribution Agency in UAE</title>
-        <meta name="description" content="Partner with MaxLead Advertising for effective flyer and leaflet distribution, innovative digital marketing, and impactful outdoor advertising across UAE, Dubai." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead/" />
-      </Helmet>
+        <meta name="keywords" content="Distribution Company in UAE" />
+          <link rel="canonical" href="https://www.maxleadadvertising.com/about-maxlead/" /></Helmet>
       
       <Whatsapp />
       <ScrollToTop />
