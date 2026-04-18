@@ -90,13 +90,33 @@ export default function Clients() {
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
+    // ADDED: Meta Tags Logic
+    useEffect(() => {
+      document.title = "MaxLead Advertising | Trusted by 500+ Companies in the UAE";
+      
+      // Description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute("content", "MaxLead serves 500+ UAE businesses in healthcare, jewelry, food, hospitality & education with expert digital advertising & distribution solutions.");
+
+      // Canonical URL
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.rel = "canonical";
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/work/");
+    }, []);
+
   return (
     <>
       <Helmet>
-      <title>MaxLead Advertising | Trusted by 500+ Companies in the UAE</title>
-      <meta name="description" content="MaxLead serves 500+ UAE businesses in healthcare, jewelry, food, hospitality & education with expert digital advertising & distribution solutions." />
-      <link rel="canonical" href="https://www.maxleadadvertising.com/work/" />
-      </Helmet>
+        <link rel="canonical" href="https://www.maxleadadvertising.com/work/" /></Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

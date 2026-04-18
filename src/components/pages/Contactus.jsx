@@ -131,13 +131,31 @@ export default function Contact() {
 
   const inputClasses = "w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 text-gray-900 font-medium placeholder:text-gray-400";
 
+    // ADDED: Meta Tags Logic
+    useEffect(() => {
+      document.title = "Contact Us | Advertising & Distribution Agency in UAE";
+      
+      // Description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute("content", "Looking for effective advertising solutions? Get in touch with MaxLead Advertising for flyer distribution, digital marketing, and outdoor advertising across the UAE.");
+
+      // Canonical URL
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.rel = "canonical";
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/contact/");
+    }, []);
+
   return (
     <>
-      <Helmet>
-      <title>Contact MaxLead | Advertising & Distribution Agency in UAE</title>
-      <meta name="description" content="Looking for effective advertising solutions? Get in touch with MaxLead Advertising for flyer distribution, digital marketing, and outdoor advertising across the UAE." />
-      <link rel="canonical" href="https://www.maxleadadvertising.com/contact/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

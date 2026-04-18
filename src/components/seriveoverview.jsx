@@ -95,14 +95,35 @@ const services = [
 export default function Services() {
   const [active, setActive] = useState(services[0]);
 
+  // ADDED: Meta Tags Logic
+      useEffect(() => {
+        document.title = "Leaflet Distribution Company, Digital Marketing Company | MaxLead";
+        
+        // Description
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+          metaDescription = document.createElement('meta');
+          metaDescription.name = "description";
+          document.head.appendChild(metaDescription);
+        }
+        metaDescription.setAttribute("content", "Grow your brand with Max Lead Advertising — the UAE’s trusted partner for flyer and leaflet distribution, digital marketing, high-quality printing, and impactful outdoor advertising.");
+  
+        // Canonical URL
+        let linkCanonical = document.querySelector('link[rel="canonical"]');
+        if (!linkCanonical) {
+          linkCanonical = document.createElement('link');
+          linkCanonical.rel = "canonical";
+          document.head.appendChild(linkCanonical);
+        }
+        linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/services/");
+      }, []);
+  
   return (
     <>
       <Helmet>
-      <title>Leaflet Distribution Company, Digital Marketing Company | MaxLead</title>
-      <meta name="description" content="Grow your brand with Max Lead Advertising — the UAE’s trusted partner for flyer and leaflet distribution, digital marketing, high-quality printing, and impactful outdoor advertising." />
-      <link rel="canonical" href="https://www.maxleadadvertising.com/services/" />
-      </Helmet>
-
+        <meta name="keywords" content="Leaflet Distribution Company, Digital Marketing Company" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/services/" /></Helmet>
+          
       <ScrollToTop />
       <Navigation />
       <Whatsapp />
