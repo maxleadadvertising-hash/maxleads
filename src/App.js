@@ -117,7 +117,9 @@ function App() {
           <Route path="/blog/best-digital-printing-company-dubai-2026/" element={<Blog24 />} />
           <Route path="/blog/future-offline-marketing-trends-uae-2026/" element={<Blog25 />} />
           <Route path="/blog/uae-flyer-distribution-strategies-for-business-growth/" element={<Blog26 />} />
+
           <Route path="/blog/Best-Digital-Printing-Services/" element={<Blog27 />} />
+
         </Routes>
       </Suspense>
     </Router>

@@ -36,7 +36,10 @@ const blogs = [
   
   { id: 25, title: "The Future of Offline Marketing in UAE: Trends for 2026", description: "Explore how hyper-local targeting and sensory branding are revolutionizing offline marketing. Stay ahead with the latest trends in flyer and pamphlet distribution.", author: "MaxLead Strategy Team", date: "April 14, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800", tags: ["Future Trends", "Innovation"], link: "/blog/future-offline-marketing-trends-uae-2026/" },
    { id: 26, title: "Effective Flyer Distribution Strategies UAE | Max Lead Advertising", description: "Boost your business in the UAE with effective flyer distribution strategies. Max Lead Advertising offers targeted campaigns to increase reach, leads, and sales.", author: "MaxLead Strategy Team", date: "April 14, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/7651801/pexels-photo-7651801.jpeg", tags: ["Future Trends", "Innovation"], link: "/blog/uae-flyer-distribution-strategies-for-business-growth/" },
-    { id: 27, title: "Best Digital Printing Services in UAE | Max Lead Ads", description: "Find the best digital printing services in the UAE. High-quality printing across all Emirates. Contact Max Lead Advertising for fast and reliable service.", author: "MaxLead Strategy Team", date: "April 14, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/7651739/pexels-photo-7651739.jpeg", tags: ["Future Trends", "Innovation"], link: "/blog/Best-Digital-Printing-Services/" }
+    { id: 27, title: "Best Digital Printing Services in UAE | Max Lead Ads", description: "Find the best digital printing services in the UAE. High-quality printing across all Emirates. Contact Max Lead Advertising for fast and reliable service.", author: "MaxLead Strategy Team", date: "April 14, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/7651739/pexels-photo-7651739.jpeg", tags: ["Future Trends", "Innovation"], link: "/blog/Best-Digital-Printing-Services/" },
+  { id: 25, title: "The Future of Offline Marketing in UAE: Trends for 2026", description: "Explore how hyper-local targeting and sensory branding are revolutionizing offline marketing. Stay ahead with the latest trends in flyer and pamphlet distribution.", author: "MaxLead Strategy Team", date: "April 14, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800", tags: ["Future Trends", "Innovation"], link: "/blog/future-offline-marketing-trends-uae-2026/" },
+  { id: 26, title: "Effective flyer distribution strategies for businesses in UAE", description: "Boost your business in the UAE with effective flyer distribution strategies. Max Lead Advertising offers targeted campaigns to increase reach, leads, and sales.", author: "MaxLead Strategy Team", date: "April 22, 2026", readTime: "10 min read", image: "https://www.freepik.com/free-photo/close-up-colleagues-shaking-hands_15479666.htm#fromView=search&page=1&position=2&uuid=65f2ecfd-f977-4645-b38c-371bd89f31f2&query=flyer+distribution+strategies+peoples+in+duabi", tags: ["Future Trends", "Innovation"], link: "/blog/uae-flyer-distribution-strategies-for-business-growth/" }
+
 ];
 
 const categories = [
@@ -65,6 +68,7 @@ const categories = [
   { name: "Flyer Distribution UAE", icon: MapPin, path: "/blog/7-tips-affordable-flyer-distribution-company/" },
   { name: "Flyers Distribution vs Digital Marketing?", icon: MapPin, path: "/blog/flyer-distribution-vs-digital-marketing-in-the-uae/" },
   { name: "Best Digital Printing Company in Dubai", icon: MapPin, path: "/blog/best-digital-printing-company-dubai-2026/" },
+  { name: "Effective Flyer Distribution Strategies UAE", icon: MapPin, path: "/blog/uae-flyer-distribution-strategies-for-business-growth/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
@@ -112,7 +116,30 @@ export default function BlogSectionModern() {
     return () => lenis.destroy();
   }, []);
 
-  return (
+    // ADDED: Meta Tags Logic
+    useEffect(() => {
+      document.title = "Blog | Digital Advertising & Distribution Tips in UAE";
+      
+      // Description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute("content", "Explore MaxLead's blog for expert tips on flyer distribution, leaflet distribution, digital marketing, printing & outdoor advertising in the UAE.");
+
+      // Canonical URL
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.rel = "canonical";
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/");
+    }, []);
+
+   return (
     <div className="bg-white min-h-screen">
       <Whatsapp />
       <ScrollToTop />
