@@ -28,6 +28,7 @@ const Clients = lazy(() => import('./components/pages/client'));
 const Industries = lazy(() => import('./components/pages/industries'));
 const ThankYou = lazy(() => import('./components/Thankyou'));
 const Serviceoverview = lazy(() => import('./components/seriveoverview'));
+const Delivery = lazy(() => import('./components/pages/delivery-services'));
 
 const Blog1 = lazy(() => import('./components/pages/blogs/blog1'));
 const Blog2 = lazy(() => import('./components/pages/blogs/blog2'));
@@ -92,6 +93,7 @@ function App() {
           <Route path="/industries/" element={<Industries/>} />
           <Route path="/services/" element={<Serviceoverview/>} />
           <Route path="/thank-you/" element={<ThankYou />} />
+           <Route path="/delivery-services/" element={<Delivery/>} />
 
           {/* Individual Blog Routes */}
           <Route path="/blog/why-uae-businesses-rely-on-flyer-distribution/" element={<Blog1 />} />
