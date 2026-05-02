@@ -119,29 +119,27 @@ export default function BlogSectionModern() {
     return () => lenis.destroy();
   }, []);
 
+ useEffect(() => {
     // ADDED: Meta Tags Logic
-    useEffect(() => {
-      document.title = "Blog | Digital Advertising & Distribution Tips in UAE";
-      
-      // Description
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.name = "description";
-        document.head.appendChild(metaDescription);
-      }
-      metaDescription.setAttribute("content", "Explore MaxLead's blog for expert tips on flyer distribution, leaflet distribution, digital marketing, printing & outdoor advertising in the UAE.");
+    document.title = "Blog | Digital Advertising & Distribution Tips in UAE";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Explore MaxLead's blog for expert tips on flyer distribution, leaflet distribution, digital marketing, printing & outdoor advertising in the UAE.");
 
-      // Canonical URL
-      let linkCanonical = document.querySelector('link[rel="canonical"]');
-      if (!linkCanonical) {
-        linkCanonical = document.createElement('link');
-        linkCanonical.rel = "canonical";
-        document.head.appendChild(linkCanonical);
-      }
-      linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/");
-    }, []);
-
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/");
+  }, []);
+  
    return (
     <div className="bg-white min-h-screen">
       <Whatsapp />
