@@ -63,7 +63,7 @@ export default function Aboutus() {
 
   // ADDED: Meta Tags Logic
     useEffect(() => {
-      document.title = "About US | Top Digital Advertising & Distribution Agency in UAE";
+      document.title = "About Max Lead Advertising | Advertising Company in UAE";
       
       // Description
       let metaDescription = document.querySelector('meta[name="description"]');
@@ -72,7 +72,7 @@ export default function Aboutus() {
         metaDescription.name = "description";
         document.head.appendChild(metaDescription);
       }
-      metaDescription.setAttribute("content", "Partner with MaxLead Advertising for effective flyer and leaflet distribution, innovative digital marketing, and impactful outdoor advertising across UAE, Dubai.");
+      metaDescription.setAttribute("content", "Learn about Max Lead Advertising, a trusted advertising and distribution company in UAE delivering flyer distribution, printing, & digital marketing solutions.");
 
       // Canonical URL
       let linkCanonical = document.querySelector('link[rel="canonical"]');

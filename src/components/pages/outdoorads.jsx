@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet"; 
+import { useEffect, useState, useRef } from "react"; 
 import { 
   Signpost, 
   Truck, 
@@ -57,18 +56,37 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function OutdoorAds() {
+ 
   const whatsappNumber = "971557222605"; 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in Outdoor Advertising services.`;
+
+  // ADDED: Meta Tags Logic via useEffect
+  useEffect(() => {
+    document.title = "Outdoor Advertising Company in Dubai, UAE | Max Lead";
+    
+    // Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE offering billboards, LED screens, vehicle branding and OOH media solutions.");
+
+  
+    // Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/outdoor-advertising-company/");
+  }, []);
   
   return (
     <>
-      <Helmet>
-        <title>Outdoor Advertising Company in Dubai, UAE | Max Lead</title>
-        <meta name="description" content="Max Lead Advertising is a leading outdoor advertising company in Dubai, UAE offering billboards, LED screens, vehicle branding and OOH media solutions." />
-        <meta name="keywords" content="Outdoor advertising agency in dubai, Outdoor advertising companies in dubai, Outdoor advertising services in UAE, Billboard advertising Dubai, OOH UAE" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/outdoor-advertising-company/" />
-      </Helmet>
-
+    
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -96,7 +114,7 @@ export default function OutdoorAds() {
 
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
                 Outdoor Advertising & Other Advertising Company in <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
                   Dubai, UAE
                 </span>
               </h1>
@@ -128,7 +146,6 @@ export default function OutdoorAds() {
             {/* Right Image */}
             <FadeIn delay={200} className="relative lg:h-[600px] flex items-center justify-center">
               <div className="relative w-full aspect-[4/5] lg:aspect-auto h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-all duration-700 hover:shadow-green-200">
-                {/* PERFORMANCE FIX: Fetchpriority high and explicit aspect ratio */}
                 <img 
                   src={outdoorHero} 
                   alt="Outdoor Advertising in Dubai UAE" 

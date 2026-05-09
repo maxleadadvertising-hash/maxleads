@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet"; 
+import { useEffect, useState, useRef } from "react"; 
 import { 
   MapPin, 
   Users, 
@@ -62,6 +61,29 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 export default function FlyerDistribution() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
+  // ADDED: Meta Tags Logic via useEffect
+  useEffect(() => {
+    document.title = "Flyer Distribution Services in Dubai, UAE | Max Lead";
+    
+    // Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising offers professional flyer distribution services in Dubai, UAE including door to door flyer and leaflet distribution with targeted reach.");
+
+    // Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/flyer-distribution-services/");
+  }, []);
 
   useEffect(() => {
     const move = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
@@ -133,12 +155,7 @@ export default function FlyerDistribution() {
 
   return (
     <>
-      <Helmet>
-        <title>Flyer Distribution Services in Dubai, UAE | Max Lead</title>
-        <meta name="description" content="Max Lead Advertising offers professional flyer distribution services in Dubai, UAE including door to door flyer and leaflet distribution with targeted reach." />
-        <meta name="keywords" content="Flyer distribution companies in Dubai, Flyer Distribution Services in Dubai, Door to door flyer distribution in Dubai, Flyer distribution company, Flyer distribution Dubai, Flyer distribution service, Leaflet distribution company, Leaflet distribution dubai, Leaflets abu dhabi" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/flyer-distribution-services/" />
-      </Helmet>
+    
       
       <Whatsapp />
       <ScrollToTop />

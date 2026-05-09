@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet"; // Added Helmet
+
 import { 
   ShoppingBag, 
   Utensils, 
@@ -112,7 +112,28 @@ const industries = [
 export default function Industries() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
+  // ADDED: Meta Tags Logic via useEffect
   useEffect(() => {
+    document.title = "Max Lead Advertising | Flyer Distribution, Printing & Digital Marketing in UAE";
+    
+    // Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Max Lead Advertising is a trusted advertising and distribution company in UAE offering door-to-door flyer distribution, printing services, digital advertising, and outdoor promotions across UAE.");
+
+    // Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/industries/");
+
     const move = (e) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
@@ -120,11 +141,7 @@ export default function Industries() {
 
   return (
     <>
-      <Helmet>
-      <title>Industries We Serve | MaxLead Advertising UAE</title>
-      <meta name="description" content="Explore industries served by MaxLead Advertising in the UAE, offering flyer & leaflet distribution, digital marketing, and outdoor advertising solutions." />
-      <link rel="canonical" href="https://www.maxleadadvertising.com/industries/" />
-      </Helmet>
+     
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
