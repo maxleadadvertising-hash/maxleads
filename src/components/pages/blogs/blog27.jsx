@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target,Clock, User, LayoutGrid,FileText, MessageSquare, MousePointer2,Globe,Linkedin, Zap, CheckCircle2 } from "lucide-react"; 
+import { TrendingUp, Target, CheckCircle2, Clock, User, PhoneCall, LayoutGrid, Zap, FileText, MessageSquare, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -47,7 +46,7 @@ const blogs = [
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Leaflet Distribution", icon: FileText, path: "/blog/best-leaflet-distribution-companies-in-uae/" },
-  { name: "Digital Strategy", icon: Globe, path: "/blog/best-digital-marketing-agency-uae/" },
+  { name: "Digital Strategy", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Psychology", icon: Target, path: "/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" }
 ];
 
@@ -72,8 +71,29 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-export default function LeafletDistributionBlog() {
+export default function DigitalPrintingUAEBlog() {
   const activePost = blogs[0];
+
+  useEffect(() => {
+    // SEO Meta Tags Logic
+    document.title = "Best Digital Printing Services in UAE | Max Lead Ads";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Find the best digital printing services in the UAE. High-quality printing across all Emirates. Contact Max Lead Advertising for fast and reliable service.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-digital-printing-services-uae/");
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
@@ -89,11 +109,6 @@ export default function LeafletDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Best Digital Printing Services in UAE | Max Lead Ads</title>
-        <meta name="description" content="Find the best digital printing services in the UAE. High-quality printing across all Emirates. Contact Max Lead Advertising for fast and reliable service." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-printing-services-uae/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -101,30 +116,30 @@ export default function LeafletDistributionBlog() {
       <main className="bg-white min-h-screen">
         
         {/* --- HERO SECTION --- */}
-        <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
+        <section className="relative pt-32 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
-                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
+                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-4 mt-8">
                         <TrendingUp className="w-3 h-3" />
                         <span>MaxLead UAE Marketing Guide 2026</span>
                     </div>
-                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-6 leading-tight text-center">
+                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight text-center">
                         What are the best <span className="text-blue-600">digital printing services</span> available in the UAE?
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
-                        <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-2"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
+                        <span className="flex items-center gap-2"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
                 </FadeIn>
             </div>
         </section>
 
         {/* --- CATEGORY SELECTOR --- */}
-        <section className="py-8 px-6 bg-white border-b border-gray-50">
+        <section className="py-6 px-6 bg-white border-b border-gray-50">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
@@ -132,8 +147,8 @@ export default function LeafletDistributionBlog() {
                   onClick={() => handleCategoryClick(cat.path)}
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
-                  <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
-                  <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
+                  <cat.icon size={14} className="text-gray-400 group-hover:text-white" aria-hidden="true" />
+                  <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
             ))}
@@ -209,11 +224,11 @@ export default function LeafletDistributionBlog() {
                         Choosing the right digital printing service in the UAE requires careful evaluation of quality, speed, and reliability. Look for a provider that serves all Emirates, including Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain. Check their portfolio, materials, and turnaround time. A good printing partner will offer consistent results, competitive pricing, and support your branding needs across different locations effectively.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Conclusion</h2>
-                    <p className="text-base text-gray-600">
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10 text-center">Conclusion</h2>
+                    <p className="text-base text-gray-600 text-center max-w-3xl mx-auto">
                         The best digital printing services in the UAE in 2026 combine advanced technology, experienced professionals, and complete in-house production to deliver high-quality results. Whether your business operates in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, or Umm Al Quwain, choosing the right printing partner plays a key role in building a strong and professional brand image.
                     </p>
-                    <p className="text-base text-gray-600">
+                    <p className="text-base text-gray-600 text-center max-w-3xl mx-auto mt-6 mb-10">
                         As competition continues to grow across all Emirates, investing in high-quality digital printing is no longer optional—it’s essential. It helps your business stand out, attract customers, and create a lasting impression. For reliable and professional printing solutions across the UAE, contact Max Lead Advertising to support your business growth with quality and consistency. We provide the best <a href="/blog/uae-flyer-distribution-strategies-for-business-growth/" className="text-blue-600 font-bold hover:underline">flyer distribution strategies</a> and premium <a href="/blog/best-flyer-distribution-services-uae/" className="text-blue-600 font-bold hover:underline">flyer distribution services</a>.
                     </p>
 
@@ -224,13 +239,13 @@ export default function LeafletDistributionBlog() {
                                 If you want to grow your business with high-impact printing and targeted distribution, contact our experts today.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
-                                    <MousePointer2 size={16} aria-hidden="true" /> Contact Experts
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                    <PhoneCall size={16} aria-hidden="true" /> Contact Experts
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
                                     <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>

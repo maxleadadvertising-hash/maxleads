@@ -125,8 +125,8 @@ function App() {
           <Route path="/blog/future-offline-marketing-trends-uae-2026/" element={<Blog25 />} />
           <Route path="/blog/uae-flyer-distribution-strategies-for-business-growth/" element={<Blog26 />} />
 
-          <Route path="/blog/Best-Digital-Printing-Services/" element={<Blog27 />} />
-           <Route path="/blog/Best-Printing-Services-NearMe/" element={<Blog28 />} />
+          <Route path="/blog/best-digital-printing-services/" element={<Blog27 />} />
+           <Route path="/blog/best-printing-services-nearme/" element={<Blog28 />} />
            <Route path="/blog/flyer-distribution-trends-uae-business-guide/" element={<Blog29 />} />
 <Route path="/blog/social-media-marketing-company-in-dubai-uae/" element={<Blog30 />} />
 <Route path="/blog/whatsapp-business-api-marketing-dubai-generate-more-leads/" element={<Blog31 />} />
