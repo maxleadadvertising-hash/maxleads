@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, BarChart3, MessageSquare, Clock, User, LayoutGrid, PhoneCall, Zap, ArrowRight, CheckCircle2, Linkedin } from "lucide-react"; // Added Linkedin
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User,Zap, LayoutGrid, PhoneCall, ArrowRight,Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
-/* --- FULL STRATEGIC BLOG DATA --- */
+
+/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
   {
     id: 1,
@@ -168,6 +168,27 @@ export default function IntegratedStrategyBlog() {
   const activePost = blogs[9];
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic via useEffect
+    document.title = "Integrating Online and Offline Flyer Strategies | Max Lead";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Learn how integrating online and offline strategies for flyer distribution can boost your marketing impact. Combine digital reach with targeted leaflet distribution.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/integrating-online-and-offline-strategies-for-flyer-distribution/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -181,11 +202,7 @@ export default function IntegratedStrategyBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Integrating Online and Offline Strategies for Flyer Success</title>
-        <meta name="description" content="Learn how integrating online and offline strategies for flyer distribution doubles your results. Expert door to door flyer distribution in Dubai with digital power." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/integrating-online-and-offline-strategies-for-flyer-distribution/" />
-      </Helmet>
+     
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -203,10 +220,10 @@ export default function IntegratedStrategyBlog() {
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
                         Integrating Online and Offline Strategies for Flyer Distribution
                     </h1>
-                    <div className="flex items-center justify-center gap-4 text-gray-400 text-xs mb-4">
+                    <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
                         <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-1 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-1"><User size={14} aria-hidden="true" /> {activePost.author}</span>
                     </div>
@@ -231,7 +248,7 @@ export default function IntegratedStrategyBlog() {
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
             <FadeIn className="max-w-4xl mx-auto">
-                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed">
+                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed pt-12">
                     <p className="text-lg text-gray-600 mb-6 font-medium">
                         For years, marketers argued about one question. Which is better? Online or offline? Digital experts said online was the future. Traditional marketers said offline built real connections. Both sides had good points. Both sides had proof.
                     </p>
@@ -336,7 +353,7 @@ export default function IntegratedStrategyBlog() {
                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
-                                   <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now

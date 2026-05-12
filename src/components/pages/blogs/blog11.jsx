@@ -5,7 +5,7 @@ import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, Tre
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
+
 
 /* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
@@ -77,6 +77,27 @@ export default function DoorHangerBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic via useEffect
+    document.title = "Local Advertising with Door Hangers | Strategy Guide 2026";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Unlock the power of local advertising with door hanger marketing. Reach your target audience directly at their doorstep with an affordable and effective strategy.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -90,11 +111,7 @@ export default function DoorHangerBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Unlock the Power of Local Advertising with Door Hangers | MaxLead</title>
-        <meta name="description" content="Unlock the power of local advertising with door hanger marketing. Expert door to door flyer distribution in Dubai that reaches customers at home." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" />
-      </Helmet>
+    
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -341,7 +358,7 @@ export default function DoorHangerBlog() {
                                     </div>
                                 </div>
                                 <div className="p-5 flex flex-col flex-grow">
-                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors leading-tight">{blog.title}</h4>
+                                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, LayoutGrid, FileText, ArrowRight, PhoneCall, Smile, ShieldCheck, ClipboardCheck, Linkedin } from "lucide-react"; // Added Linkedin
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, LayoutGrid, FileText, ArrowRight, PhoneCall, Smile, ShieldCheck, ClipboardCheck, Linkedin} from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -183,8 +183,8 @@ export default function DistributorRoleBlog() {
   return (
     <>
       <Helmet>
-        <title>What is the Role of a Flyer Distributor? Full Guide</title>
-        <meta name="description" content="Learn what is the role of a flyer distributor and how they help businesses grow. Expert door to door flyer distribution in Dubai by Max Lead Advertising." />
+        <title>Role of a Flyer Distributor Company in UAE: A Complete Guide</title>
+        <meta name="description" content="Understand the role of a flyer distributor in effective marketing. Explore how targeted leaflet distribution helps UAE businesses grow reach and drive real results." />
         <link rel="canonical" href="https://www.maxleadadvertising.com/blog/what-is-the-role-of-a-flyer-distributor/" />
       </Helmet>
       <Whatsapp />
@@ -232,7 +232,7 @@ export default function DistributorRoleBlog() {
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
             <FadeIn className="max-w-4xl mx-auto">
-                <div className="prose prose-lg prose-orange max-w-none text-gray-700 leading-relaxed">
+                <div className="prose prose-lg prose-orange max-w-none text-gray-700 leading-relaxed pt-12">
                     
                     <div className="mb-12">
                         <p className="text-lg text-gray-600 mb-6 font-medium">
@@ -339,7 +339,7 @@ export default function DistributorRoleBlog() {
                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
-                                   <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
+                                    <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now

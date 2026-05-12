@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, MessageSquare, Clock, User, CheckCircle2, LayoutGrid, PhoneCall, Zap, ArrowRight,BarChart3,TrendingUp,FileText, Linkedin } from "lucide-react"; // Added Linkedin
+import { Target, CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare, Linkedin,  PhoneCall, ArrowRight, MapPin, TrendingUp } from "lucide-react"; 
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
-import { Helmet } from "react-helmet";
 import Whatsapp from '../whatsapp';
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
@@ -172,6 +171,27 @@ export default function BestLocationsBlog() {
   const activePost = blogs[5]; // Index 5 is Best Locations guide
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic
+    document.title = "Best Locations for Flyer Distribution in UAE 2026 - Max Lead";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Find out where to distribute flyers in the UAE for maximum impact in 2026. Reach your ideal customers with strategic leaflet distribution across key locations");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-locations-for-flyer-distribution-in-the-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -185,11 +205,7 @@ export default function BestLocationsBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>UAE Flyer Distribution: Best Locations 2026</title>
-        <meta name="description" content="Discover the best UAE locations for flyer distribution. From villa communities to high-traffic zones, see where door-to-door distribution in Dubai works best" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-locations-for-flyer-distribution-in-the-uae/" />
-      </Helmet>
+     
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -220,7 +236,7 @@ export default function BestLocationsBlog() {
 
         {/* --- CATEGORY SELECTOR (WRAPPED / NO SCROLL) --- */}
         <section className="py-8 px-6 bg-white border-b border-gray-50">
-          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2">
+          <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
               <FadeIn key={idx} delay={idx * 30}>
                 <button onClick={() => handleCategoryClick(cat.path)} className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-lg hover:bg-green-600 hover:text-white transition-all group">
@@ -317,10 +333,10 @@ export default function BestLocationsBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
-                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
+                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-green-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-green-900 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
-                                   <Linkedin size={16} aria-hidden="true" /> Max Lead LinkedIn
+                                    <Linkedin size={16} aria-hidden="true" /> Max Lead LinkedIn
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now

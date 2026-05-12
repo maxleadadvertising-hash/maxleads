@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, Globe, BarChart3, CheckCircle2, TrendingUp, Zap, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
@@ -82,6 +81,27 @@ export default function FlyerVsPamphletBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // FIXED SEO: Meta title and description injected directly
+    document.title = "Flyer Distribution vs Digital Marketing in UAE 2026 | Max Lead Advertising";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Flyers Distribution vs Digital Marketing? Find the best strategy for your UAE business and boost results today with expert solutions from Max Lead Advertising.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/flyer-distribution-vs-digital-marketing-in-the-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -95,11 +115,6 @@ export default function FlyerVsPamphletBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Flyer Distribution vs Digital Marketing in UAE 2026 | Max Lead Advertising</title>
-        <meta name="description" content="Flyers Distribution vs Digital Marketing? Find the best strategy for your UAE business and boost results today with expert solutions from Max Lead Advertising." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/flyer-distribution-vs-digital-marketing-in-the-uae/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -121,7 +136,7 @@ export default function FlyerVsPamphletBlog() {
                     <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-gray-400 text-xs md:text-sm mb-4">
                         <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
+                        <span className="flex items-center gap-2 cursor-pointer transition-colors hover:text-blue-600" onClick={openLinkedin} aria-label="Visit our LinkedIn Profile"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
                         <span className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-1.5"><User className="w-4 h-4" aria-hidden="true" /> {activePost.author}</span>
                     </div>
@@ -291,7 +306,7 @@ export default function FlyerVsPamphletBlog() {
                                     <p className="text-gray-500 text-[11px] md:text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
-                                        <ArrowRight size={14} className="text-blue-600" aria-hidden="true" />
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all font-bold text-[10px]">Read Story <ArrowRight size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>

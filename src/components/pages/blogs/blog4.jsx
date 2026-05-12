@@ -5,7 +5,6 @@ import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clo
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
@@ -95,6 +94,27 @@ export default function FlyerStrategyBlog() {
   const activePost = blogs[3]; // Ultimate Guide
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic
+    document.title = "Ultimate Flyer Distribution Strategies in Dubai | Max Lead Guide";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Explore 10 proven flyer distribution strategies in Dubai to boost your business reach. Learn how targeted leaflet distribution delivers real, measurable results.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -108,11 +128,7 @@ export default function FlyerStrategyBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Ultimate Guide to Flyer Distribution Strategies in Dubai | Max Lead</title>
-        <meta name="description" content="Discover the ultimate guide to flyer distribution strategies in Dubai. Learn proven door to door flyer distribution in Dubai techniques that bring real results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" />
-      </Helmet>
+    
       
       <Whatsapp />
       <ScrollToTop />
@@ -125,7 +141,7 @@ export default function FlyerStrategyBlog() {
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
-                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 mt-8">
+                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold mb-4 mt-8">
                         <TrendingUp className="w-3 h-3" />
                         <span>MaxLead Ultimate Hub</span>
                     </div>
@@ -227,7 +243,7 @@ export default function FlyerStrategyBlog() {
 
                     {/* --- STRATEGY 4 --- */}
                     <h2 className="text-2xl font-bold text-gray-900 pt-10">Strategy 4: The Digital Bridge Strategy</h2>
-                    <p><strong>What Is It?</strong> This strategy uses flyers to drive people to your digital platforms. Your flyer becomes a bridge between offline and online.</p>
+                    <p><strong>What Is It?</strong> This strategy uses flyers to drive people to your digital platforms. Your flyer becomes a bridge between physical and digital marketing.</p>
                     <p><strong>Why It Works:</strong> Digital marketing alone is expensive. Offline marketing alone is hard to track. Together, they give you the best of both worlds.</p>
                     
                     <p><strong>How to Implement:</strong> Add QR codes linking to your website or WhatsApp, social media handles, and special offer codes that customers must use online. <strong>Example:</strong> A restaurant in JLT distributes flyers with a QR code. When people scan, they land on a special online menu with exclusive discounts. The restaurant tracks every scan and knows exactly how many people responded.</p>
@@ -334,7 +350,7 @@ export default function FlyerStrategyBlog() {
                     <h2 className="text-2xl font-black text-gray-900 mb-8">Related Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 6).map((blog) => (
-                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
+                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
                                     <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">

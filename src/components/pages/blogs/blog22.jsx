@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet"; // Added Helmet
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User,PhoneCall, LayoutGrid, Zap, FileText, MessageSquare, Linkedin } from "lucide-react"; // Added Linkedin
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User,FileText, LayoutGrid, Zap, ArrowRight, PhoneCall, MessageSquare, Linkedin } from "lucide-react"; 
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
 
-
-/* --- FULL STRATEGIC BLOG DATA --- */
+/* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
   {
     id: 1,
@@ -170,6 +168,27 @@ export default function DigitalMarketingBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Injecting SEO Meta Tags manually since Helmet is removed
+    document.title = "Affordable Flyer Distribution | Boost Sales with Cost-Effective Marketing";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Drive more traffic & sales with affordable flyer distribution services. Targeted door-to-door delivery, competitive pricing & proven results. Get started with a free quote!");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/7-tips-affordable-flyer-distribution-company/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -183,11 +202,6 @@ export default function DigitalMarketingBlog() {
 
   return (
     <>
-     <Helmet>
-  <title>Affordable Flyer Distribution – Boost Sales with Cost-Effective Marketing</title>
-  <meta name="description" content="Drive more traffic & sales with affordable flyer distribution services. Targeted door-to-door delivery, competitive pricing & proven results. Get started with a free quote!" />
-  <link rel="canonical" href="https://www.maxleadadvertising.com/blog/7-tips-affordable-flyer-distribution-company/" />
-</Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -228,7 +242,7 @@ export default function DigitalMarketingBlog() {
                   className="flex items-center gap-2 bg-gray-50 border border-gray-100 px-4 py-2 rounded-xl hover:bg-blue-600 hover:text-white transition-all group"
                 >
                   <cat.icon className="w-4 h-4 text-gray-400 group-hover:text-white" aria-hidden="true" />
-                  <span className="font-bold text-[11px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
+                  <span className="font-bold text-[10px] uppercase tracking-wider text-gray-600 group-hover:text-white">{cat.name}</span>
                 </button>
               </FadeIn>
             ))}
@@ -340,7 +354,7 @@ export default function DigitalMarketingBlog() {
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Connect with Max Lead on LinkedIn">
                                     <Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn Profile
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare className="w-4 h-4" aria-hidden="true" /> WhatsApp Specialist
                                 </button>
                             </div>
@@ -354,7 +368,7 @@ export default function DigitalMarketingBlog() {
         <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
-                    <h2 className="text-3xl font-black text-gray-900 mb-10">Strategic Intelligence Hub</h2>
+                    <h2 className="text-3xl font-black text-gray-900 mb-10 text-center">Strategic Intelligence Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
@@ -386,7 +400,3 @@ export default function DigitalMarketingBlog() {
     </>
   );
 }
-
-const ArrowRight = ({ size, className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-);

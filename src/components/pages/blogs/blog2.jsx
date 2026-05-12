@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { Target, Search, CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare,HelpCircle, Linkedin } from "lucide-react"; 
@@ -77,6 +76,27 @@ export default function BestAgencyBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic
+    document.title = "Best Digital Marketing Agency in UAE | 2026 Hiring Guide";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Before you hire a digital marketing agency in UAE, read this 2026 guide. Discover key factors, red flags, and how to choose an agency that delivers results. Contact us today!.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -90,11 +110,7 @@ export default function BestAgencyBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Hiring a Digital Marketing Agency in UAE? Read This 2026 Guide First</title>
-        <meta name="description" content="Before you hire a digital marketing agency in UAE, read this 2026 guide. Discover key factors, red flags, and how to choose an agency that delivers results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/" />
-      </Helmet>
+     
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

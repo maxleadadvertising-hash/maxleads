@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Search, BarChart3, Users,Printer, PenTool, Lightbulb, Linkedin } from "lucide-react"; // Added Linkedin
+import { Target, MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Search, BarChart3, Users,Printer, PenTool, Lightbulb, Linkedin} from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -69,6 +68,27 @@ export default function FlyerDistributionBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Meta Tags Logic - Manual injection for SEO as Helmet is removed
+    document.title = "Best Flyer Distribution Company Near You | Max Lead UAE";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Reach your local audience faster with Max Lead Advertising. Expert flyer distribution services designed to increase visibility, generate leads, and grow sales.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/flyer-distribution-company-near-me/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -82,11 +102,6 @@ export default function FlyerDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Best Flyer Distribution Company Near You | Max Lead UAE</title>
-        <meta name="description" content="Reach your local audience faster with Max Lead Advertising. Expert flyer distribution services designed to increase visibility, generate leads, and grow sales." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/flyer-distribution-company-near-me/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -303,7 +318,7 @@ export default function FlyerDistributionBlog() {
                                     <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
-                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read More <ArrowRight size={12} aria-hidden="true" /></span>
+                                        <span className="text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read More <ArrowRightIcon size={12} aria-hidden="true" /></span>
                                     </div>
                                 </div>
                             </a>
@@ -318,6 +333,6 @@ export default function FlyerDistributionBlog() {
   );
 }
 
-const ArrowRight = ({ size }) => (
+const ArrowRightIcon = ({ size }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

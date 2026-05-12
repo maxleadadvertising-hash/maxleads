@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { Target,CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare, ArrowRight, MapPin,TrendingUp,Printer, XCircle, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
@@ -174,6 +173,27 @@ export default function FlyerDistributionBlog() {
   const activePost = blogs[2]; // Dos and Don'ts
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic
+    document.title = "Dos and Don'ts of Flyer Distribution in UAE | Max Lead Advertising";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Learn the key dos and don'ts of flyer distribution in UAE. A complete guide to help business owners maximize reach and avoid common leaflet distribution mistakes.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/dos-and-donts-of-flyer-distribution-in-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -187,11 +207,7 @@ export default function FlyerDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Dos and Don'ts of Flyer Distribution in UAE | Max Lead Advertising</title>
-        <meta name="description" content="Learn the dos and don'ts of flyer distribution in UAE. Expert tips on door to door flyer distribution in Dubai to get better results and avoid common mistakes." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/dos-and-donts-of-flyer-distribution-in-uae/" />
-      </Helmet>
+      
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -348,7 +364,7 @@ export default function FlyerDistributionBlog() {
                                 <button onClick={goToContact} className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-all text-sm flex items-center gap-2">
                                     <PhoneCall className="w-4 h-4" /> Get a Free Consultation
                                 </button>
-                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center gap-2">
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center gap-2 shadow-lg">
                                     <Linkedin className="w-4 h-4" /> Connect on LinkedIn
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-emerald-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-emerald-950 transition-all text-sm flex items-center gap-2">
@@ -366,7 +382,7 @@ export default function FlyerDistributionBlog() {
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
                     <h2 className="text-2xl font-black text-gray-900 mb-8">Strategic Intelligence Hub</h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">

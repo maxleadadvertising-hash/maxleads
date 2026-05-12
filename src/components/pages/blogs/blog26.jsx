@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, Search, Clock, User, LayoutGrid, FileText, MessageSquare,Leaf, Globe, Linkedin, PhoneCall } from "lucide-react";
+import { TrendingUp, Target, MapPin, Search, Clock, User, LayoutGrid, FileText, MessageSquare, Leaf, Globe, Linkedin, PhoneCall } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -82,6 +81,27 @@ export default function FlyerStrategiesBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Inject SEO Meta Tags manually
+    document.title = "Effective Flyer Distribution Strategies UAE | Max Lead Advertising";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Boost your business in the UAE with effective flyer distribution strategies. Max Lead Advertising offers targeted campaigns to increase reach, leads, and sales.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/uae-flyer-distribution-strategies-for-business-growth/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -95,11 +115,6 @@ export default function FlyerStrategiesBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Effective Flyer Distribution Strategies UAE | Max Lead Advertising</title>
-        <meta name="description" content="Boost your business in the UAE with effective flyer distribution strategies. Max Lead Advertising offers targeted campaigns to increase reach, leads, and sales." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/uae-flyer-distribution-strategies-for-business-growth/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -249,7 +264,7 @@ export default function FlyerStrategiesBlog() {
 
                     <div className="bg-gradient-to-br from-blue-700 to-blue-900 p-8 md:p-12 rounded-[2.5rem] mt-10 text-white text-center shadow-2xl">
                         <div className="relative z-10">
-                            <h3 className="text-xl md:text-3xl lg:text-4xl font-black mb-4 uppercase tracking-tighter">Ready to attract more customers?</h3>
+                            <h3 className="text-xl md:text-3xl lg:text-4xl font-black mb-4 uppercase tracking-tighter text-white">Ready to attract more customers?</h3>
                             <p className="text-blue-100 text-xs md:text-base mb-6 md:mb-8 max-w-2xl mx-auto font-medium">
                                 Contact Max Lead Advertising today and reach the right audience at the right place!
                             </p>
@@ -257,7 +272,7 @@ export default function FlyerStrategiesBlog() {
                                 <button onClick={goToContact} className="bg-white text-blue-900 font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-xs md:text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <PhoneCall size={16} aria-hidden="true" /> +971 55 722 2605
                                 </button>
-                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
                                     <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-6 md:px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-xs md:text-sm flex items-center justify-center gap-2">

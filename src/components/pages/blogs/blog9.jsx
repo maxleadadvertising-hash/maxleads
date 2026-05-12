@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User,Zap, LayoutGrid, PhoneCall, QrCode, Timer, Share2, SearchCheck, Rocket, ShieldCheck, ArrowRight, FileText, Linkedin } from "lucide-react"; // Added Linkedin
+import { Target, MapPin, MessageSquare, Clock, User, CheckCircle2, LayoutGrid, PhoneCall, Zap, ArrowRight,BarChart3,TrendingUp,FileText, Linkedin, Rocket, SearchCheck, QrCode, Timer, Share2, ShieldCheck } from "lucide-react"; // Added Missing Imports
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
@@ -66,7 +65,7 @@ const blogs = [
   },
   {
     id: 6,
-    title: "Best Locations for Flyer Distribution in the UAE",
+    title: "Best Locations for Flyer Distribution in the UAE: A Complete Guide for 2026",
     description: "Identify high-ROI zones from villa communities like Arabian Ranches to high-density apartment clusters in Dubai Marina.",
     author: "Market Researcher",
     date: "Feb 24, 2026",
@@ -135,14 +134,14 @@ const blogs = [
 /* --- UPDATED CATEGORIES --- */
 const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
-  { name: "Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
+  { name: "Why UAE Flyer Distribution", icon: MapPin, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
   { name: "Digital Agency Guide", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" },
   { name: "Dos and Don'ts", icon: CheckCircle2, path: "/blog/dos-and-donts-of-flyer-distribution-in-uae/" },
   { name: "Strategy Guide", icon: BarChart3, path: "/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/" },
-  { name: "Future Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
+  { name: "Future Marketing Trends", icon: Zap, path: "/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" },
   { name: "Best UAE Locations", icon: MapPin, path: "/blog/best-locations-for-flyer-distribution-in-the-uae/" },
   { name: "MaxLead Story", icon: TrendingUp, path: "/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" },
-  { name: "Sales Growth", icon: FileText, path: "/blog/how-to-increase-sales-with-flyer-distribution/" }
+  { name: "Increase Sales", icon: FileText, path: "/blog/how-to-increase-sales-with-flyer-distribution/" }
 ];
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -170,6 +169,27 @@ export default function SalesGrowthBlog() {
   const activePost = blogs[8]; 
 
   useEffect(() => {
+    // ADDED: Meta Tags Logic
+    document.title = "Increase Sales with Flyer Distribution: 10 Proven Tips";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Learn 10 proven tips to boost sales with flyer distribution company in the UAE. Use targeted leaflet distribution to attract more customers and grow your business faster.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/how-to-increase-sales-with-flyer-distribution/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -183,11 +203,7 @@ export default function SalesGrowthBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Social Media Marketing Services Cost in UAE | Complete 2026 Guide</title>
-        <meta name="description" content="Explore social media marketing services cost in the UAE, from Dubai to Sharjah and Ajman, and learn what factors influence pricing and growth strategy. Contact Us Today!" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/how-to-increase-sales-with-flyer-distribution/" />
-      </Helmet>
+     
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -206,7 +222,7 @@ export default function SalesGrowthBlog() {
                         How to Increase Sales with Flyer Distribution: 10 Proven Tips
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-xs mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14} aria-hidden="true" /> {activePost.readTime}</span>
+                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" aria-hidden="true" /> {activePost.readTime}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                         <span className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors" onClick={openLinkedin} aria-label="Visit Max Lead LinkedIn"><Linkedin size={14} aria-hidden="true" /> LinkedIn</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
@@ -342,14 +358,14 @@ export default function SalesGrowthBlog() {
                                 At Max Lead Advertising, we put these tips into action to increase your sales. Contact us for a free strategy consultation today.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
-                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp
+                                    <MessageSquare size={16} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>
                         </div>
@@ -365,18 +381,18 @@ export default function SalesGrowthBlog() {
                     <h2 className="text-2xl font-black text-gray-900 mb-8">Related Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
-                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
+                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
                                     <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                                         {blog.tags.map(tag => (
-                                            <span key={tag} className="text-[9px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
+                                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider bg-white/90 backdrop-blur px-2 py-0.5 rounded text-blue-600">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="p-6 flex flex-col flex-grow">
                                     <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">{blog.title}</h4>
-                                    <p className="text-gray-500 text-xs line-clamp-2 mb-6 leading-relaxed">{blog.description}</p>
+                                    <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">{blog.description}</p>
                                     <div className="mt-auto flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400">
                                         <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" /> {blog.readTime}</span>
                                         <ArrowRight size={14} className="text-blue-600" aria-hidden="true" />

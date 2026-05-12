@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, Globe, BarChart3, CheckCircle2, TrendingUp, Zap, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
@@ -82,6 +81,27 @@ export default function FlyerVsPamphletBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Meta Tags Logic - Manual injection for SEO
+    document.title = "Pamphlets vs Flyers UAE: Which One Brings More Customers?";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Struggling to choose between flyers and pamphlets? Discover which marketing strategy works best in the UAE to attract more customers, increase reach, and boost ROI.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -95,11 +115,6 @@ export default function FlyerVsPamphletBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Pamphlets vs Flyers UAE: Which One Brings More Customers?</title>
-        <meta name="description" content="Struggling to choose between flyers and pamphlets? Discover which marketing strategy works best in the UAE to attract more customers, increase reach, and boost ROI." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -320,5 +335,5 @@ export default function FlyerVsPamphletBlog() {
 }
 
 const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

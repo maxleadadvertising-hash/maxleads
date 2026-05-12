@@ -5,7 +5,6 @@ import { TrendingUp, Target, MapPin, BarChart3, MessageSquare, Clock, User,FileT
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
@@ -168,6 +167,28 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 export default function MarketingTransformationBlog() {
   const activePost = blogs[6];
+
+  useEffect(() => {
+    // ADDED: Meta Tags Logic via useEffect
+    document.title = "Max Lead: Your Trusted Flyer Distribution Company in the UAE";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Transform your marketing with Max Lead Advertising, the UAE's trusted leaflet distribution company. Reach every doorstep with targeted, results-driven campaigns.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/");
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
@@ -182,11 +203,7 @@ export default function MarketingTransformationBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Transforming Marketing with Max Lead Advertising</title>
-        <meta name="description" content="Discover how Max Lead Advertising is transforming marketing in UAE. Trusted flyer distribution services in Dubai for real results. Call us today." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/" />
-      </Helmet>
+    
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -216,7 +233,7 @@ export default function MarketingTransformationBlog() {
             </div>
         </section>
 
-        {/* --- CATEGORY SELECTOR (WRAPPED NO SCROLL) --- */}
+        {/* --- CATEGORY SELECTOR --- */}
         <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
@@ -282,25 +299,25 @@ export default function MarketingTransformationBlog() {
                         This is where we began. This is what we do best. Our <strong>flyer distribution services in Dubai</strong> cover every community, every building, and every neighborhood. From the luxury villas of Emirates Hills to the busy apartments of Dubai Marina.
                     </p>
                     
-                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-base">Door to Door Flyer Distribution in Dubai</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2">Door to Door Flyer Distribution in Dubai</h4>
                     <p className="text-base text-gray-600">Our team delivers your flyers directly to homes and apartments. Every mailbox. Every door. Every unit. No shortcuts. No skipping. Just complete coverage.</p>
                     
-                    <h4 className="text-xl font-bold text-gray-900 mt-4 mb-2 text-base">Door to Door Leaflet Distribution</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-4 mb-2">Door to Door Leaflet Distribution</h4>
                     <p className="text-base text-gray-600">For businesses that prefer leaflets over flyers, we provide the same professional service. Hand-delivered to homes across the UAE.</p>
                     
-                    <h4 className="text-xl font-bold text-gray-900 mt-4 mb-2 text-base">Hand-to-Hand Distribution</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-4 mb-2">Hand-to-Hand Distribution</h4>
                     <p className="text-base text-gray-600">Sometimes you want to reach people where they walk and shop. Our hand-to-hand teams distribute in malls, metro stations, events, and high-traffic areas.</p>
                     
-                    <h4 className="text-xl font-bold text-gray-900 mt-4 mb-2 text-base">Newspaper Insertion</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-4 mb-2">Newspaper Insertion</h4>
                     <p className="text-base text-gray-600">For villa communities, newspaper inserts work best. We partner with leading publications to place your flyer inside the newspapers that residents trust and read every day.</p>
 
-                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-base">Digital Printing Services</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2">Digital Printing Services</h4>
                     <p className="text-base text-gray-600">A great flyer starts with great design and great printing. Our digital printing services deliver both. Whether you need 500 flyers or 50,000, we produce work that represents your brand with pride.</p>
 
-                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-base">Digital Marketing Services</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2">Digital Marketing Services</h4>
                     <p className="text-base text-gray-600">Offline marketing works. But when you combine it with online marketing, magic happens. Our digital marketing team helps you create integrated campaigns across social media, SEO, and Google Ads.</p>
 
-                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2 text-base">Outdoor Advertising</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-2">Outdoor Advertising</h4>
                     <p className="text-base text-gray-600">Sometimes you need to think bigger. Billboards. Hoardings. Street furniture. Our outdoor advertising services put your brand where thousands of eyes can see it every day.</p>
 
                     <h3 className="text-2xl font-bold text-gray-900 pt-8">How We Transform Marketing for Businesses</h3>
@@ -327,7 +344,7 @@ export default function MarketingTransformationBlog() {
                                 Whether you need flyer distribution, professional printing, or a complete integrated campaign, we are ready to help.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
@@ -350,7 +367,7 @@ export default function MarketingTransformationBlog() {
                     <h2 className="text-2xl font-black text-gray-900 mb-8">Related Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.filter(b => b.id !== activePost.id).slice(0, 3).map((blog) => (
-                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
+                            <a key={blog.id} href={blog.link} className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-40 overflow-hidden relative">
                                     <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                                     <div className="absolute top-3 left-3 flex flex-wrap gap-1">

@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2, MessageSquare, Clock, User, FileText, TrendingUp, LayoutGrid,PhoneCall, DollarSign, Linkedin } from "lucide-react"; // Added Linkedin, kept ArrowRight
+import { TrendingUp, Target, MapPin, CheckCircle2, Clock, User, PhoneCall, LayoutGrid, FileText, MessageSquare, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
@@ -48,7 +47,7 @@ const categories = [
   { name: "All Blogs", icon: LayoutGrid, path: "/blog/" },
   { name: "Door Hangers", icon: MapPin, path: "/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/" },
   { name: "Flyer Distribution", icon: FileText, path: "/blog/why-uae-businesses-rely-on-flyer-distribution/" },
-  { name: "SMM Cost Guide", icon: DollarSign, path: "/blog/social-media-marketing-services-cost-uae/" },
+  { name: "SMM Cost Guide", icon: LayoutGrid, path: "/blog/social-media-marketing-services-cost-uae/" },
   { name: "Digital Strategy", icon: Target, path: "/blog/best-digital-marketing-agency-uae/" }
 ];
 
@@ -73,8 +72,29 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-export default function DoorHangerBlog() {
+export default function DigitalPrintingBlog() {
   const activePost = blogs[0];
+
+  useEffect(() => {
+    // Injecting SEO Meta Tags manually
+    document.title = "Best Digital Printing Company in Dubai (2026) | Ultimate Guide";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Stand out in Dubai’s competitive market in 2026. Find the best digital printing company with expert tips, high-quality solutions, and reliable printing partners.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-digital-printing-company-dubai-2026/");
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
@@ -90,18 +110,13 @@ export default function DoorHangerBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Best Digital Printing Company in Dubai (2026) | Ultimate Guide</title>
-        <meta name="description" content="Stand out in Dubai’s competitive market in 2026. Find the best digital printing company with expert tips, high-quality solutions, and reliable printing partners." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-printing-company-dubai-2026/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
 
       <main className="bg-white min-h-screen">
         {/* --- HERO SECTION --- */}
-        <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
+        <section className="relative pt-32 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10 text-center">
                 <FadeIn>
@@ -171,16 +186,16 @@ export default function DoorHangerBlog() {
                     <p className="text-base text-gray-600">Having clear answers helps you narrow down companies that specialize in exactly what you need—saving both time and cost.</p> 
                     
                     <h3 className="text-2xl font-bold text-gray-900 pt-6">Why Choosing the Right Printing Partner Matters in 2026</h3>
-                                        <p className="text-base">Dubai is a competitive market, and the same goes for other emirates. Your printed materials are often the first impression of your brand compared to your competitors.</p>
-                                        <ul className="space-y-2 text-base text-gray-600">
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Consistent quality across all printing materials, ensuring a uniform and professional brand image, Maintains high standards across every print run, regardless of volume or format.</li>
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Fast delivery to meet tight deadlines, helping you stay on schedule, Supports time-sensitive campaigns and last-minute business requirements.</li>
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Professional finishing that enhances brand perception and visual appeal, Adds a polished look that strengthens credibility and customer trust.</li>
-                                            <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Cost efficiency through optimized production, reducing unnecessary expenses, Maximizes value while maintaining quality and minimizing waste.</li>
-                                        </ul>
-                                        <p className="text-base">In 2026, businesses are focusing more on personalization and premium finishes. A reliable printing company doesn’t just print—they contribute to your branding and marketing success.</p>
+                    <p className="text-base">Dubai is a competitive market, and the same goes for other emirates. Your printed materials are often the first impression of your brand compared to your competitors.</p>
+                    <ul className="space-y-2 text-base text-gray-600">
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Consistent quality across all printing materials, ensuring a uniform and professional brand image, Maintains high standards across every print run, regardless of volume or format.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Fast delivery to meet tight deadlines, helping you stay on schedule, Supports time-sensitive campaigns and last-minute business requirements.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Professional finishing that enhances brand perception and visual appeal, Adds a polished look that strengthens credibility and customer trust.</li>
+                        <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" aria-hidden="true" /> Cost efficiency through optimized production, reducing unnecessary expenses, Maximizes value while maintaining quality and minimizing waste.</li>
+                    </ul>
+                    <p className="text-base">In 2026, businesses are focusing more on personalization and premium finishes. A reliable printing company doesn’t just print—they contribute to your branding and marketing success.</p>
                     
-                   <h2 className="text-2xl font-bold text-gray-900 pt-10">Key Features of the Best Digital Printing Companies in Dubai</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 pt-10">Key Features of the Best Digital Printing Companies in Dubai</h2>
                     <p className="text-base">Not all printing companies are the same. The best digital printing services in Dubai in 2026 stand out through the following features, combining advanced technology, skilled expertise, and a strong commitment to quality. These factors ensure businesses receive reliable, high-impact printing solutions that meet both creative and operational needs.</p>
                     <ul className="space-y-4 list-none p-0 text-gray-600">
                         <li><strong>Advanced Printing Technology:</strong> Top companies use high-resolution digital printers that deliver sharp colors, precise details, and consistent results.</li>
@@ -226,12 +241,12 @@ export default function DoorHangerBlog() {
                             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><CheckCircle2 className="text-green-600" aria-hidden="true" /></div>
                             <div>
                                 <h4 className="font-bold text-sm">Look for Added Value</h4>
-                                <p className="text-xs text-gray-500">  Some companies provide design, installation, or delivery services, making your process easier and more efficient by reducing the need for multiple vendors.</p>
+                                <p className="text-xs text-gray-500"> Some companies provide design, installation, or delivery services, making your process easier and more efficient by reducing the need for multiple vendors.</p>
                             </div>
                         </div>
                     </div>
 
-                   <h2 className="text-2xl font-bold text-gray-900">Final Thoughts</h2>
+                    <h2 className="text-2xl font-bold text-gray-900">Final Thoughts</h2>
                     <p className="text-base text-gray-600">
                         Choosing the best digital printing company in Dubai in 2026 is not just about price—it’s about quality, reliability, and building a long-term partnership. Whether you need Flyer printing in Dubai or large-scale marketing materials, selecting the right partner ensures your brand stands out with consistency and professionalism. By understanding your requirements and evaluating key factors, you can work with a printing provider that truly supports your business growth. For expert guidance and tailored printing solutions, connect with the Max Lead Advertising team today and take your brand visibility to the next level.
                     </p>

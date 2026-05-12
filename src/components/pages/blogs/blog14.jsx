@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, Zap, FileText, MessageSquare, PhoneCall, Building2, ShoppingCart, Activity, Linkedin } from "lucide-react"; // Added Linkedin
@@ -76,6 +75,27 @@ export default function BestFlyerDistributionBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Meta Tags Logic - Injected via useEffect as Helmet is removed
+    document.title = "Best Flyer Distribution Services in UAE 2026 | Max Lead";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Find the best flyer distribution services in UAE to boost your brand. Reach your target audience with affordable, targeted leaflet distribution that gets results.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-flyer-distribution-services-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -89,11 +109,6 @@ export default function BestFlyerDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Best Flyer Distribution Services in UAE 2026 | Max Lead</title>
-        <meta name="description" content="Looking for top flyer distribution services in UAE 2026? Reach the right audience with strategic area targeting and professional delivery solutions." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-flyer-distribution-services-uae/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -105,11 +120,11 @@ export default function BestFlyerDistributionBlog() {
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="max-w-6xl mx-auto relative z-10">
                 <FadeIn>
-                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
+                    <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-4 mt-16">
                         <TrendingUp className="w-3 h-3" />
                         <span>MaxLead Performance Marketing 2026</span>
                     </div>
-                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-4 leading-tight">
                         Best Flyer Distribution Services in UAE: <span className="text-blue-600">Boost Your Brand</span> with Targeted Marketing
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4">
@@ -260,7 +275,7 @@ export default function BestFlyerDistributionBlog() {
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-10 py-4 rounded-2xl hover:bg-blue-950 transition-all flex items-center justify-center gap-3 shadow-lg" aria-label="Connect with Max Lead on LinkedIn">
                                     <Linkedin size={18} aria-hidden="true" /> LinkedIn Profile
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-4 rounded-2xl hover:bg-blue-500/40 transition-all flex items-center justify-center gap-3 shadow-lg">
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-10 py-4 rounded-2xl hover:bg-blue-500/40 transition-all flex items-center justify-center gap-3 shadow-lg">
                                     <MessageSquare size={18} aria-hidden="true" /> WhatsApp Now
                                 </button>
                             </div>

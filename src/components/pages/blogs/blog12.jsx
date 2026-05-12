@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User,FileText, LayoutGrid, Zap, ArrowRight, PhoneCall, DollarSign, Linkedin } from "lucide-react"; // Added Linkedin
+import { Target, CheckCircle2, BarChart3, Clock, User,LayoutGrid, Zap, FileText, MessageSquare, Linkedin, PhoneCall, ArrowRight, MapPin, TrendingUp, DollarSign } from "lucide-react"; 
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
 const blogs = [
@@ -99,7 +98,7 @@ const blogs = [
   },
   {
     id: 9,
-    title: "How to Increase Sales with Flyer Distribution: 10 Proven Tips",
+    title: " How to Increase Sales with Flyer Distribution: 10 Proven Tips",
     description: "Unlock growth with these 10 proven tips. Learn how to craft irresistible offers and use timing to drive immediate revenue.",
     author: "Sales Head",
     date: "Feb 24, 2026",
@@ -172,6 +171,27 @@ export default function SocialMediaCostBlog() {
   const activePost = blogs[10];
 
   useEffect(() => {
+    // Meta Tags Logic - Injected via useEffect since Helmet was removed per request
+    document.title = "Social Media Marketing Services Cost in UAE | Complete 2026 Guide";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Find out how much social media marketing services cost in the UAE. Explore pricing packages and choose the right plan to grow your business online effectively.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/social-media-marketing-services-cost-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -185,12 +205,6 @@ export default function SocialMediaCostBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Social Media Marketing Services Cost in UAE | Complete 2026 Guide</title>
-        <meta name="description" content="Explore social media marketing services cost in the UAE, from Dubai to Sharjah and Ajman, and learn what factors influence pricing and growth strategy. Contact Us Today!" />
-        <meta name="keywords" content="social media marketing services cost" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/social-media-marketing-services-cost-uae/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -236,7 +250,7 @@ export default function SocialMediaCostBlog() {
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
             <FadeIn className="max-w-4xl mx-auto">
-                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed">
+                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed pt-12">
                     
                     <div className="mb-12">
                         <p className="text-base text-gray-600">
@@ -369,7 +383,7 @@ export default function SocialMediaCostBlog() {
                                 Max Lead Advertising helps businesses align their social media investment with clear performance goals and measurable ROI.
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">

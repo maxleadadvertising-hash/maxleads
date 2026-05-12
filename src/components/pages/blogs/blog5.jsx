@@ -4,7 +4,6 @@ import Footer from "../../Footer";
 import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, Printer, LayoutGrid, Zap, FileText, ArrowRight, PhoneCall, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
-import { Helmet } from "react-helmet";
 import Whatsapp from '../whatsapp';
 
 /* --- FULL STRATEGIC BLOG DATA (11 POSTS) --- */
@@ -173,6 +172,28 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 export default function FutureTrendsBlog() {
   const activePost = blogs[4]; // Future Trends
+
+  useEffect(() => {
+    // ADDED: Meta Tags Logic
+    document.title = "Future of Flyer Distribution in UAE: Trends to Watch";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Explore the future trends in flyer distribution across the UAE market. Discover how leaflet distribution is evolving to deliver smarter, more targeted results.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/");
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
@@ -187,18 +208,14 @@ export default function FutureTrendsBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Future Trends in Flyer Distribution: that Expect in UAE</title>
-        <meta name="description" content="Discover future trends in flyer distribution in UAE. See how technology and innovation are shaping door to door flyer distribution in Dubai for better results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/future-trends-in-flyer-distribution-what-to-expect-in-the-uae-market/" />
-      </Helmet>
+    
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
 
       <main className="bg-white min-h-screen">
         
-        {/* --- HERO SECTION (REDUCED SIZES) --- */}
+        {/* --- HERO SECTION --- */}
         <section className="relative pt-28 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             
@@ -222,7 +239,7 @@ export default function FutureTrendsBlog() {
             </div>
         </section>
 
-        {/* --- CATEGORY SELECTOR (WRAPPED / NO SCROLL) --- */}
+        {/* --- CATEGORY SELECTOR --- */}
         <section className="py-8 px-6 bg-white border-b border-gray-50">
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat, idx) => (
@@ -242,7 +259,7 @@ export default function FutureTrendsBlog() {
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
             <FadeIn className="max-w-4xl mx-auto">
-                <div className="prose prose-lg prose-indigo max-w-none text-gray-700 leading-relaxed">
+                <div className="prose prose-lg prose-indigo max-w-none text-gray-700 leading-relaxed pt-12">
                     
                     <div className="mb-12">
                         <p className="text-lg text-gray-600 mb-6 font-medium">
@@ -301,9 +318,9 @@ export default function FutureTrendsBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <button onClick={goToContact} className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
-                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
+                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
-                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-indigo-500 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-400 transition-all text-sm flex items-center gap-2 shadow-lg">
@@ -317,7 +334,7 @@ export default function FutureTrendsBlog() {
         </section>
 
         {/* --- DYNAMIC RELATED BLOGS GRID --- */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100 px-6">
+        <section className="py-20 bg-gray-50 border-t border-gray-100 px-4 md:px-6">
             <div className="max-w-7xl mx-auto">
                 <FadeIn>
                     <h2 className="text-2xl font-black text-gray-900 mb-8">Related Strategy Hub</h2>

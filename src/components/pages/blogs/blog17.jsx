@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, Clock, User, LayoutGrid, FileText, MessageSquare, Lightbulb, Map, Gift, Search, Repeat, Users, Calendar, Linkedin } from "lucide-react"; // Added Linkedin
+import { TrendingUp, Target, MapPin, CheckCircle2, Clock, User, LayoutGrid, FileText, MessageSquare, Lightbulb, Map, Gift, Search, Repeat, Users, Calendar, Linkedin} from "lucide-react"; 
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -77,6 +76,27 @@ export default function CreativeFlyerDistributionBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Meta Tags Logic - Manual injection for SEO
+    document.title = "7 Creative Flyer Distribution Ideas That Work in Dubai - Max Lead";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Tired of flyers being ignored? Discover 7 creative flyer distribution company ideas that actually work in Dubai and help your business stand out from the competition.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/creative-flyer-distribution-ideas-that-work-in-dubai/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -90,11 +110,6 @@ export default function CreativeFlyerDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>7 Creative Flyer Distribution Ideas That Actually Work in Dubai | Max Lead</title>
-        <meta name="description" content="Looking for creative flyer distribution ideas in Dubai? Discover unique strategies used by top flyer distribution companies in Dubai UAE to get real results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/creative-flyer-distribution-ideas-that-work-in-dubai/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -102,13 +117,13 @@ export default function CreativeFlyerDistributionBlog() {
       <main className="bg-white min-h-screen">
         
         {/* --- HERO SECTION (H1) --- */}
-        <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
+        <section className="relative pt-32 pb-12 px-6 bg-[#fcfcfc] border-b border-gray-100 text-center">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             
-            <div className="max-w-6xl mx-auto relative z-10 text-center">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
-                        <TrendingUp className="w-3 h-3" />
+                        <TrendingUp className="w-3 h-3" aria-hidden="true" />
                         <span>MaxLead Innovation Guide 2026</span>
                     </div>
                     <h1 className="text-3xl md:text-6xl font-black text-gray-900 tracking-tight mb-6 leading-tight">
@@ -145,10 +160,10 @@ export default function CreativeFlyerDistributionBlog() {
         {/* --- MAIN CONTENT SECTION --- */}
         <section className="pb-24 bg-white px-6">
             <FadeIn className="max-w-4xl mx-auto">
-                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed">
+                <div className="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed pt-12">
                     
                     <div className="mb-12">
-                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-blue-500 pl-6 mb-8 pt-12">
+                        <p className="text-xl font-medium text-gray-900 leading-normal border-l-4 border-blue-500 pl-6 mb-8">
                             Let me ask you something. When was the last time you received a flyer that made you stop and actually pay attention? If you're like most people in Dubai, probably not recently.
                         </p>
                         <p className="text-base text-gray-600">
@@ -262,7 +277,7 @@ export default function CreativeFlyerDistributionBlog() {
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <Linkedin className="w-4 h-4" aria-hidden="true" /> Max Lead LinkedIn
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare className="w-4 h-4" aria-hidden="true" /> WhatsApp Specialist
                                 </button>
                             </div>
@@ -278,7 +293,7 @@ export default function CreativeFlyerDistributionBlog() {
                 <FadeIn>
                     <h2 className="text-3xl font-black text-gray-900 mb-10 text-center uppercase tracking-tight">Strategy Hub</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {blogs.map((blog) => (
+                        {blogs.filter(b => b.id !== activePost.id).map((blog) => (
                             <a key={blog.id} href={blog.link} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full">
                                 <div className="h-48 overflow-hidden relative">
                                     <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -310,5 +325,5 @@ export default function CreativeFlyerDistributionBlog() {
 }
 
 const ArrowRight = ({ size }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 );

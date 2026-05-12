@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, CheckCircle2,  Clock, User, LayoutGrid, Zap,  MessageSquare, Brain, MousePointer2, ShieldCheck, Footprints, Linkedin } from "lucide-react"; // Added Linkedin
+import { Target, MapPin, CheckCircle2, Clock, User, LayoutGrid, Zap, MessageSquare, Brain, MousePointer2, ShieldCheck, Footprints, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -77,6 +76,27 @@ export default function FlyerPsychologyBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Meta Tags Logic - Injected via useEffect as Helmet is removed
+    document.title = "The Psychology Behind Flyers: Why Physical Marketing Still Works in Dubai";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Think print marketing is dead? Think again. Uncover the psychology behind flyers and why physical leaflet distribution continues to outperform in a digital age");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -90,11 +110,6 @@ export default function FlyerPsychologyBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>The Psychology Behind Flyers: Why Physical Marketing Still Works in Dubai</title>
-        <meta name="description" content="Discover the psychology behind flyers and why physical marketing still works. Learn how door to door flyer distribution in Dubai triggers emotional responses that digital ads can't match." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -102,9 +117,9 @@ export default function FlyerPsychologyBlog() {
       <main className="bg-white min-h-screen">
         
         {/* --- HERO SECTION (H1) --- */}
-        <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100">
+        <section className="relative pt-32 pb-16 px-6 bg-[#fcfcfc] border-b border-gray-100 text-center">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-            <div className="max-w-6xl mx-auto relative z-10 text-center">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <FadeIn>
                     <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold mb-6 mt-16">
                         <Brain className="w-3 h-3" />
@@ -246,10 +261,10 @@ export default function FlyerPsychologyBlog() {
                                 <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2 shadow-lg">
                                     <MousePointer2 size={16} aria-hidden="true" /> Free Consultation
                                 </button>
-                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all text-sm flex items-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition-all text-sm flex items-center justify-center gap-2 shadow-lg" aria-label="Visit Max Lead LinkedIn Profile">
                                     <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile
                                 </button>
-                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <MessageSquare size={16} aria-hidden="true" /> WhatsApp Us
                                 </button>
                             </div>
