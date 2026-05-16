@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, MessageSquare, Clock, User, LayoutGrid, FileText, ArrowRight, PhoneCall, Smile, ShieldCheck, ClipboardCheck, Linkedin} from "lucide-react"; // Added Linkedin
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, LayoutGrid, FileText, ArrowRight, PhoneCall, Smile, ShieldCheck, ClipboardCheck, Linkedin,MessageSquare} from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-import { Helmet } from "react-helmet";
 
 /* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
@@ -169,6 +168,27 @@ export default function DistributorRoleBlog() {
   const activePost = blogs[7]; // Distributor Role
 
   useEffect(() => {
+    // FIXED SEO: Meta title and description manually injected
+    document.title = "Role of a Flyer Distributor Company in UAE: A Complete Guide";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Understand the role of a flyer distributor in effective marketing. Explore how targeted leaflet distribution helps UAE businesses grow reach and drive real results.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/what-is-the-role-of-a-flyer-distributor/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -182,11 +202,7 @@ export default function DistributorRoleBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Role of a Flyer Distributor Company in UAE: A Complete Guide</title>
-        <meta name="description" content="Understand the role of a flyer distributor in effective marketing. Explore how targeted leaflet distribution helps UAE businesses grow reach and drive real results." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/what-is-the-role-of-a-flyer-distributor/" />
-      </Helmet>
+      
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -336,7 +352,7 @@ export default function DistributorRoleBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <button onClick={goToContact} className="bg-white text-orange-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
-                                   <PhoneCall size={16} aria-hidden="true" /> Consultation
+                                    <PhoneCall size={16} aria-hidden="true" /> Consultation
                                 </button>
                                 <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-950 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <Linkedin size={16} aria-hidden="true" /> LinkedIn Profile

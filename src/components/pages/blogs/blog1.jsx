@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet"; // Added Helmet
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, PhoneCall, LayoutGrid, Zap, FileText, MessageSquare, Linkedin } from "lucide-react"; // Added Linkedin icon
+import { TrendingUp, Target, MapPin, CheckCircle2, BarChart3, Clock, User, FileText, MessageSquare, Zap, PhoneCall, Linkedin,LayoutGrid } from "lucide-react"; // Added Linkedin icon
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
-
 
 /* --- FULL STRATEGIC BLOG DATA --- */
 const blogs = [
@@ -170,6 +168,27 @@ export default function DigitalMarketingBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Inject SEO Meta Tags manually
+    document.title = "Flyer Distribution in UAE: Why It Still Works in 2026";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Discover why UAE businesses still rely on flyer distribution in the digital age. Reach your local audience effectively with targeted, affordable leaflet distribution.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -183,11 +202,6 @@ export default function DigitalMarketingBlog() {
 
   return (
     <>
-     <Helmet>
-  <title>Why UAE Businesses Rely on Flyer Distribution | Max Lead Blog</title>
-  <meta name="description" content="In an era of digital noise, physical flyers cut through the clutter. Learn why door-to-door distribution remains a top ROI channel in Dubai." />
-  <link rel="canonical" href="https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/" />
-</Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
@@ -367,7 +381,7 @@ export default function DigitalMarketingBlog() {
                                 <button onClick={goToContact} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
                                     <PhoneCall className="w-4 h-4" /> Go to Contact Page
                                 </button>
-                                <button onClick={openLinkedin} className="bg-blue-800 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-900 transition-all text-sm flex items-center gap-2 shadow-lg">
+                                <button onClick={openLinkedin} className="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-sm flex items-center justify-center gap-2 shadow-lg">
                                     <Linkedin className="w-4 h-4" /> Max Lead LinkedIn
                                 </button>
                                 <button onClick={openWhatsapp} className="bg-blue-500/20 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-500/40 transition-all text-sm">

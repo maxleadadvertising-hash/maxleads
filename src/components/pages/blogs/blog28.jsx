@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { TrendingUp, Target, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2,  Globe, Linkedin, Zap, CheckCircle2} from "lucide-react"; 
+import { TrendingUp, Target, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Linkedin, Zap, CheckCircle2} from "lucide-react"; 
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
@@ -76,6 +75,27 @@ export default function LeafletDistributionBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+    // Injecting SEO Meta Tags manually since Helmet was removed per previous guidelines
+    document.title = "Best Printing Services Near Me | Max Lead Advertising";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute("content", "Searching for printing services near me in Dubai? Get affordable, high-quality prints with fast turnaround from trusted local experts today.");
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-digital-printing-services-uae/");
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -89,11 +109,6 @@ export default function LeafletDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Best Printing Services Near Me | Max Lead Advertising</title>
-        <meta name="description" content="Searching for printing services near me in Dubai? Get affordable, high-quality prints with fast turnaround from trusted local experts today." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-printing-services-uae/" />
-      </Helmet>
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

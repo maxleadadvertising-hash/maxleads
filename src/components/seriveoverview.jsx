@@ -106,7 +106,7 @@ export default function Services() {
           metaDescription.name = "description";
           document.head.appendChild(metaDescription);
         }
-        metaDescription.setAttribute("content", "Max Lead Advertising is a full-service advertising and distribution company in UAE offer flyer distribution, digital marketing, printing, & outdoor advertising.");
+        metaDescription.setAttribute("content", "Grow your brand with Max Lead Advertising — the UAE’s trusted partner for flyer and leaflet distribution, digital marketing, high-quality printing, and impactful outdoor advertising.");
   
         // Canonical URL
         let linkCanonical = document.querySelector('link[rel="canonical"]');
