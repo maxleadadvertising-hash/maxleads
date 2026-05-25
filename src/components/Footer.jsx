@@ -1,0 +1,249 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Send,
+  Loader2,
+  CheckCircle2,
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin
+} from "lucide-react";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  // --- NEWSLETTER LOGIC ---
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle, sending, success, error
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if(!email) return;
+
+    setStatus("sending");
+    setMessage("");
+
+    const formData = new FormData();
+    formData.append("email", email);
+    // ⚠️ REPLACE WITH YOUR ACTUAL ACCESS KEY ⚠️
+    formData.append("access_key", "b01ff128-6e76-499a-be3f-5e88f30b2405"); 
+    formData.append("subject", "New Footer Newsletter Subscriber");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setEmail("");
+        setMessage("Subscribed successfully!");
+        // Reset after 3 seconds
+        setTimeout(() => {
+            setStatus("idle");
+            setMessage("");
+        }, 3000);
+      } else {
+        setStatus("error");
+        setMessage("Error. Please try again.");
+      }
+    } catch (error) {
+      setStatus("error");
+      setMessage("Connection failed.");
+    }
+  };
+
+  return (
+    <footer className="relative bg-gray-950 text-white pt-20 pb-10 overflow-hidden">
+      
+      {/* --- STATIC BACKGROUND GLOW --- */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6">
+        
+        {/* --- TOP SECTION (CTA & BRAND) --- */}
+        <div className="grid lg:grid-cols-2 gap-12 border-b border-white/10 pb-16 mb-16">
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Ready to scale your business?
+            </h2>
+            <p className="text-gray-400 max-w-md">
+              Join 500+ businesses across UAE who trust MaxLead for their advertising needs.
+            </p>
+          </div>
+
+          {/* Newsletter Form */}
+          <div className="lg:flex lg:justify-end items-center">
+            <div className="w-full max-w-md bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 className="font-semibold mb-2">Subscribe to our newsletter</h3>
+              
+              <form onSubmit={handleSubscribe} className="relative">
+                <input 
+                  type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email" 
+                  disabled={status === 'sending' || status === 'success'}
+                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 pr-12 focus:outline-none focus:border-green-500 text-sm transition-colors"
+                />
+                
+                <button 
+                  type="submit"
+                  disabled={status === 'sending' || status === 'success'}
+                  className={`absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-colors ${
+                    status === 'success' ? 'bg-green-600 text-white' : 'bg-green-500 hover:bg-green-600'
+                  }`}
+                >
+                  {status === 'sending' ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : status === 'success' ? (
+                    <CheckCircle2 className="w-4 h-4" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                </button>
+              </form>
+
+              {/* Feedback Message */}
+              {message && (
+                <p className={`text-xs mt-2 ${status === 'error' ? 'text-red-400' : 'text-green-400'}`}>
+                  {message}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* --- MAIN LINKS GRID --- */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+          
+          {/* Company Info & Social Media */}
+          <div className="col-span-2 md:col-span-1 space-y-6">
+            <div>
+              <h4 className="text-xl font-bold text-green-500">MaxLead.</h4>
+              <p className="text-sm text-gray-400 leading-relaxed mt-2">
+                Your premier partner for digital printing, flyer distribution, and integrated marketing solutions across the UAE.
+              </p>
+            </div>
+            
+            {/* SOCIAL MEDIA ICONS */}
+            <div className="flex gap-4">
+              <a 
+                href="https://www.facebook.com/maxleadadvertising" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 group"
+              >
+                <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+              <a 
+                href="https://www.instagram.com/maxleadadvertising/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-all duration-300 group"
+              >
+                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@maxleadadvertising" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-600 hover:border-red-600 transition-all duration-300 group"
+              >
+                <Youtube className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/max-lead-advertising-distribution/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-700 hover:border-blue-700 transition-all duration-300 group"
+              >
+                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-bold mb-6 text-white">Company</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              {[
+                { name: 'Home', link: '/' },
+                { name: 'About Us', link: '/about-maxlead/' },
+                { name: 'Services', link: '/services/' },
+                { name: 'Clients', link: '/work/' },
+                { name: 'Contact', link: '/contact/' }
+              ].map((item, idx) => (
+                <li key={idx}>
+                  <Link to={item.link} className="hover:text-green-500 flex items-center gap-1 transition-colors">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services Links - Mapped to Specific Routes */}
+          <div>
+            <h4 className="font-bold mb-6 text-white">Services</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li>
+                <Link to="/digital-printing-services/" className="hover:text-green-500 transition-colors">Printing Services</Link>
+              </li>
+              <li>
+                <Link to="/flyer-distribution-services/" className="hover:text-green-500 transition-colors">Flyer Distribution</Link>
+              </li>
+              <li>
+                <Link to="/digital-marketing-agency/" className="hover:text-green-500 transition-colors">Digital Ads</Link>
+              </li>
+              <li>
+                <Link to="/outdoor-advertising-company/" className="hover:text-green-500 transition-colors">Outdoor Media</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h4 className="font-bold mb-6 text-white">Get in Touch</h4>
+            <ul className="space-y-4 text-sm text-gray-400">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-green-500 shrink-0" />
+                <span>Dubai, UAE</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-green-500 shrink-0" />
+                <a href="mailto:maxleadadvertising@gmail.com" className="hover:text-white transition-colors">info@maxleadadvertising.com</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-green-500 shrink-0" />
+                <a href="tel:+971557222605" className="hover:text-white transition-colors">+971557222605</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* --- BOTTOM BAR --- */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <p>© {currentYear} MaxLead Advertising. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link to="/contact/" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/contact/" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/contact/" className="hover:text-white transition-colors">Contact</Link>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
