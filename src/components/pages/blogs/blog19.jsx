@@ -94,9 +94,9 @@ export default function DigitalMarketingAgencyBlog() {
   return (
     <>
       <Helmet>
-        <title>How to Choose the Right Digital Marketing Agency for Your Business</title>
-        <meta name="description" content="Find the best digital marketing agency for your business with simple and effective tips. Learn how to evaluate services, budget, performance, and choose the right partner for long-term success." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/" />
+        <title>Complete Guide to Digital Marketing Agencies for Small Business</title>
+        <meta name="description" content="Learn how small businesses can evaluate services, pricing, experience, and results to confidently choose a reliable digital marketing agency. Contact Us Today!" />
+        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/choosing-a-reliable-digital-marketing-agency-for-small-businesses/" />
       </Helmet>
       <Whatsapp />
       <ScrollToTop />
