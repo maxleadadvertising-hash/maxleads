@@ -92,7 +92,7 @@ export default function LeafletDistributionBlog() {
       linkCanonical.rel = "canonical";
       document.head.appendChild(linkCanonical);
     }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-digital-printing-services-uae/");
+    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-printing-services-nearme/");
   }, []);
 
   useEffect(() => {

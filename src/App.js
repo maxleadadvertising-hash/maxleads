@@ -57,11 +57,13 @@ const Blog24 = lazy(() => import('./components/pages/blogs/blog24'));
 const Blog25 = lazy(() => import('./components/pages/blogs/blog25'));
 const Blog26 = lazy(() => import('./components/pages/blogs/blog26'));
 const Blog27 = lazy(() => import('./components/pages/blogs/blog27'));
-const Blog28 = lazy(() => import('./components/pages/blogs/blog28'))
-const Blog29 = lazy(() => import('./components/pages/blogs/blog29'))
-const Blog30 = lazy(() => import('./components/pages/blogs/blog30'))
-const Blog31 = lazy(() => import('./components/pages/blogs/blog31'))
-const Blog32 = lazy(() => import('./components/pages/blogs/blog32'))
+const Blog28 = lazy(() => import('./components/pages/blogs/blog28'));
+const Blog29 = lazy(() => import('./components/pages/blogs/blog29'));
+const Blog30 = lazy(() => import('./components/pages/blogs/blog30'));
+const Blog31 = lazy(() => import('./components/pages/blogs/blog31'));
+const Blog32 = lazy(() => import('./components/pages/blogs/blog32'));
+const Blog33 = lazy(() => import('./components/pages/blogs/blog33'));
+const Blog34 = lazy(() => import('./components/pages/blogs/blog34'));
 /**
  * LOADING FALLBACK: 
  * Using a simple div instead of a heavy spinner reduces initial TBT.
@@ -116,7 +118,7 @@ function App() {
           <Route path="/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/" element={<Blog16 />} />
           <Route path="/blog/creative-flyer-distribution-ideas-that-work-in-dubai/" element={<Blog17 />} />
           <Route path="/blog/measuring-roi-on-physical-marketing-campaigns/" element={<Blog18 />} />
-          <Route path="/blog/best-digital-marketing-agency-uae/" element={<Blog19 />} />
+          <Route path="/blog/choosing-a-reliable-digital-marketing-agency-for-small-businesses/" element={<Blog19 />} />
           <Route path="/blog/flyer-distribution-company-near-me/" element={<Blog20 />} />
           <Route path="/blog/flyer-vs-pamphlet-distribution-marketing-which-strategy-brings-more-customers/" element={<Blog21 />} />
           <Route path="/blog/7-tips-affordable-flyer-distribution-company/" element={<Blog22 />} />
@@ -124,14 +126,14 @@ function App() {
           <Route path="/blog/best-digital-printing-company-dubai-2026/" element={<Blog24 />} />
           <Route path="/blog/future-offline-marketing-trends-uae-2026/" element={<Blog25 />} />
           <Route path="/blog/uae-flyer-distribution-strategies-for-business-growth/" element={<Blog26 />} />
-
           <Route path="/blog/best-digital-printing-services/" element={<Blog27 />} />
-           <Route path="/blog/best-printing-services-nearme/" element={<Blog28 />} />
-           <Route path="/blog/flyer-distribution-trends-uae-business-guide/" element={<Blog29 />} />
-<Route path="/blog/social-media-marketing-company-in-dubai-uae/" element={<Blog30 />} />
-<Route path="/blog/whatsapp-business-api-marketing-dubai-generate-more-leads/" element={<Blog31 />} />
-<Route path="/blog/healthcare-flyer-distribution-dubai/" element={<Blog32 />} />
-
+          <Route path="/blog/best-printing-services-nearme/" element={<Blog28 />} />
+          <Route path="/blog/flyer-distribution-trends-uae-business-guide/" element={<Blog29 />} />
+          <Route path="/blog/social-media-marketing-company-in-dubai-uae/" element={<Blog30 />} />
+          <Route path="/blog/whatsapp-business-api-marketing-dubai-generate-more-leads/" element={<Blog31 />} />
+          <Route path="/blog/healthcare-flyer-distribution-dubai/" element={<Blog32 />} />
+          <Route path="/blog/top-digital-marketing-strategies-for-real-estate-companies-in-dubai/" element={<Blog33 />} />
+          <Route path="/blog/ai-marketing-dubai-smart-businesses-2026/" element={<Blog34 />} />
         </Routes>
       </Suspense>
     </Router>
