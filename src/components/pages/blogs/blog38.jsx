@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Search, BarChart3, Users,Printer, PenTool, Lightbulb, Linkedin} from "lucide-react"; // Added Linkedin
+import { Target, MapPin, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Search, BarChart3, Users, Linkedin} from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
