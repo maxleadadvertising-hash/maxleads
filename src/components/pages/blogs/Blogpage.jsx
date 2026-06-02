@@ -48,6 +48,7 @@ const blogs = [
   { id: 37, title: "Pamphlet Distribution Services Dubai for Local Business Growth", description: "Discover how pamphlet distribution services Dubai help businesses attract nearby customers and improve local brand visibility. Contact Us Today!", author: "MaxLead Strategy Team", date: "May 18, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/5225278/pexels-photo-5225278.jpeg", tags: ["Restaurant Marketing", "Digital Markerting"], link: "/blog/pamphlet-distribution-services-dubai-for-business-growth/" },
   { id: 38, title: "Google Ads vs SEO: Best ROI Strategy Dubai 2026 | Max Lead", description: "Compare Google Ads and SEO for Dubai businesses in 2026. Discover which digital marketing strategy delivers better ROI and long-term growth. Contact Us Today!", author: "MaxLead Strategy Team", date: "May 19, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/6476260/pexels-photo-6476260.jpeg", tags: ["Google Ads vs SEO", "Digital Markerting"], link: "/blog/google-ads-vs-seo-dubai-businesses-2026/" },
   { id: 39, title: "Video Marketing Dubai: Grow Your Business on a Small Budget | Max Lead", description: "Learn how Dubai businesses can use affordable video marketing strategies to attract customers, build trust, and increase sales without overspending. Contact Us Today!", author: "MaxLead Strategy Team", date: "May 20, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/8117901/pexels-photo-8117901.jpeg", tags: ["Video Marketing", "Digital Markerting"], link: "/blog/budget-friendly-video-marketing-dubai-businesses/" },
+  { id: 40, title: "Local SEO for Dubai Businesses: Improve Google Rankings | Max Lead", description: "Discover the best local SEO strategies for Dubai businesses to improve rankings, attract local customers, and grow your online visibility!", author: "MaxLead Strategy Team", date: "June 2, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/5077049/pexels-photo-5077049.jpeg", tags: ["Local SEO", "Digital Markerting"], link: "/blog/better-local-seo-rankings-dubai-businesses/" },
  
 ];
 
@@ -87,6 +88,7 @@ const categories = [
   { name: "Pamphlet Distribution Services Dubai", icon: MapPin, path: "/blog/pamphlet-distribution-services-dubai-for-business-growth/" },
   { name: "Google Ads vs SEO: Best ROI Strategy Dubai 2026", icon: MapPin, path: "/blog/google-ads-vs-seo-dubai-businesses-2026/" },
   { name: "Video Marketing Dubai", icon: MapPin, path: "/blog/budget-friendly-video-marketing-dubai-businesses/" },
+  { name: "Local SEO Dubai", icon: MapPin, path: "/blog/better-local-seo-rankings-dubai-businesses/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */

@@ -69,6 +69,7 @@ const Blog36 = lazy(() => import('./components/pages/blogs/blog36'));
 const Blog37 = lazy(() => import('./components/pages/blogs/blog37'));
 const Blog38 = lazy(() => import('./components/pages/blogs/blog38'));
 const Blog39 = lazy(() => import('./components/pages/blogs/blog39'));
+const Blog40 = lazy(() => import('./components/pages/blogs/blog40'));
 /**
  * LOADING FALLBACK: 
  * Using a simple div instead of a heavy spinner reduces initial TBT.
@@ -136,7 +137,7 @@ function App() {
           <Route path="/blog/flyer-distribution-trends-uae-business-guide/" element={<Blog29 />} />
           <Route path="/blog/social-media-marketing-company-in-dubai-uae/" element={<Blog30 />} />
           <Route path="/blog/whatsapp-business-api-marketing-dubai-generate-more-leads/" element={<Blog31 />} />
-          <Route path="/blog/healthcare-flyer-distribution-dubai/" element={<Blog32 />} />
+          <Route path="/blog/healthcare-flyer-distribution-dubai/"npm start element={<Blog32 />} />
           <Route path="/blog/top-digital-marketing-strategies-for-real-estate-companies-in-dubai/" element={<Blog33 />} />
           <Route path="/blog/ai-marketing-dubai-smart-businesses-2026/" element={<Blog34 />} />
           <Route path="/blog/why-uae-restaurants-losing-customers-and-increase-profits-with-digital-marketing/" element={<Blog35 />} />
@@ -144,6 +145,7 @@ function App() {
           <Route path="/blog/pamphlet-distribution-services-dubai-for-business-growth/" element={<Blog37 />} />
           <Route path="/blog/google-ads-vs-seo-dubai-businesses-2026/" element={<Blog38 />} />
           <Route path="/blog/budget-friendly-video-marketing-dubai-businesses/" element={<Blog39 />} />
+          <Route path="/blog/better-local-seo-rankings-dubai-businesses/" element={<Blog40 />} />
         </Routes>
       </Suspense>
     </Router>
