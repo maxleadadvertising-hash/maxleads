@@ -139,7 +139,7 @@ function App() {
           <Route path="/blog/flyer-distribution-trends-uae-business-guide/" element={<Blog29 />} />
           <Route path="/blog/social-media-marketing-company-in-dubai-uae/" element={<Blog30 />} />
           <Route path="/blog/whatsapp-business-api-marketing-dubai-generate-more-leads/" element={<Blog31 />} />
-          <Route path="/blog/healthcare-flyer-distribution-dubai/"npm start element={<Blog32 />} />
+          <Route path="/blog/healthcare-flyer-distribution-dubai/" element={<Blog32 />} />
           <Route path="/blog/top-digital-marketing-strategies-for-real-estate-companies-in-dubai/" element={<Blog33 />} />
           <Route path="/blog/ai-marketing-dubai-smart-businesses-2026/" element={<Blog34 />} />
           <Route path="/blog/why-uae-restaurants-losing-customers-and-increase-profits-with-digital-marketing/" element={<Blog35 />} />

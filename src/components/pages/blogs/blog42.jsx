@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
-import { Target, Clock, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Users, Linkedin } from "lucide-react"; // Added Linkedin
+import { Target, Clock, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, User, Linkedin } from "lucide-react"; // Added Linkedin
 import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "../../ScrollToTop";
 import Whatsapp from '../whatsapp';
