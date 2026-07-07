@@ -51,6 +51,7 @@ const blogs = [
   { id: 40, title: "Local SEO for Dubai Businesses: Improve Google Rankings | Max Lead", description: "Discover the best local SEO strategies for Dubai businesses to improve rankings, attract local customers, and grow your online visibility!", author: "MaxLead Strategy Team", date: "June 2, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/5077049/pexels-photo-5077049.jpeg", tags: ["Local SEO", "Digital Markerting"], link: "/blog/better-local-seo-rankings-dubai-businesses/" },
   { id: 41, title: "Leaflet Distribution Services in Dubai for Business Growth | Max Lead", description: "How leaflet distribution services in Dubai help businesses increase visibility, attract local customers, and grow brand awareness. Contact Us Today!", author: "MaxLead Strategy Team", date: "June 3, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/3769744/pexels-photo-3769744.jpeg", tags: ["Leaflet Distribution", "Distribution"], link: "/blog/professional-leaflet-distribution-services-dubai/" },
   { id: 42, title: "Hand-to-Hand Flyer Distribution Dubai for Brand Awareness | MaxLead", description: "Boost brand awareness with hand-to-hand flyer distribution Dubai services and reach targeted local customers effectively. Contact Us Today!", author: "MaxLead Strategy Team", date: "June 4, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/24424044/pexels-photo-24424044.jpeg", tags: ["Hand-to-Hand Flyer", "Distribution"], link: "/blog/hand-to-hand-flyer-distribution-dubai-brand-awareness/" },
+  { id: 43, title: "Door-to-Door Booklet Distribution for Local Promotions | Max Lead", description: "Boost your local marketing with Door-to-Door Booklet Distribution and connect directly with potential customers effectively. Contact Us Today!", author: "MaxLead Strategy Team", date: "July 6, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/129063/pexels-photo-129063.jpeg", tags: ["Booklet Distribution", "Distribution"], link: "/blog/door-to-door-booklet-distribution-local-promotions/" },
  
 ];
 
@@ -93,6 +94,7 @@ const categories = [
   { name: "Local SEO Dubai", icon: MapPin, path: "/blog/better-local-seo-rankings-dubai-businesses/" },
   { name: "Leaflet Distribution", icon: MapPin, path: "/blog/professional-leaflet-distribution-services-dubai/" },
   { name: "Hand-to-Hand Flyer", icon: MapPin, path: "/blog/hand-to-hand-flyer-distribution-dubai-brand-awareness/ " },
+  { name: "Door-to-Door Booklet", icon: MapPin, path: "/blog/door-to-door-booklet-distribution-local-promotions/ " },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */

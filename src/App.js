@@ -72,6 +72,7 @@ const Blog39 = lazy(() => import('./components/pages/blogs/blog39'));
 const Blog40 = lazy(() => import('./components/pages/blogs/blog40'));
 const Blog41 = lazy(() => import('./components/pages/blogs/blog41'));
 const Blog42 = lazy(() => import('./components/pages/blogs/blog42'));
+const Blog43 = lazy(() => import('./components/pages/blogs/blog43'));
 /**
  * LOADING FALLBACK: 
  * Using a simple div instead of a heavy spinner reduces initial TBT.
@@ -150,6 +151,7 @@ function App() {
           <Route path="/blog/better-local-seo-rankings-dubai-businesses/" element={<Blog40 />} />
           <Route path="/blog/professional-leaflet-distribution-services-dubai/" element={<Blog41 />} />
           <Route path="/blog/hand-to-hand-flyer-distribution-dubai-brand-awareness/" element={<Blog42 />} />
+          <Route path="/blog/door-to-door-booklet-distribution-local-promotions/" element={<Blog43 />} />
         </Routes>
       </Suspense>
     </Router>
