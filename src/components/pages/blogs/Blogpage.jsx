@@ -52,7 +52,7 @@ const blogs = [
   { id: 41, title: "Leaflet Distribution Services in Dubai for Business Growth | Max Lead", description: "How leaflet distribution services in Dubai help businesses increase visibility, attract local customers, and grow brand awareness. Contact Us Today!", author: "MaxLead Strategy Team", date: "June 3, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/3769744/pexels-photo-3769744.jpeg", tags: ["Leaflet Distribution", "Distribution"], link: "/blog/professional-leaflet-distribution-services-dubai/" },
   { id: 42, title: "Hand-to-Hand Flyer Distribution Dubai for Brand Awareness | MaxLead", description: "Boost brand awareness with hand-to-hand flyer distribution Dubai services and reach targeted local customers effectively. Contact Us Today!", author: "MaxLead Strategy Team", date: "June 4, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/24424044/pexels-photo-24424044.jpeg", tags: ["Hand-to-Hand Flyer", "Distribution"], link: "/blog/hand-to-hand-flyer-distribution-dubai-brand-awareness/" },
   { id: 43, title: "Door-to-Door Booklet Distribution for Local Promotions | Max Lead", description: "Boost your local marketing with Door-to-Door Booklet Distribution and connect directly with potential customers effectively. Contact Us Today!", author: "MaxLead Strategy Team", date: "July 6, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/129063/pexels-photo-129063.jpeg", tags: ["Booklet Distribution", "Distribution"], link: "/blog/door-to-door-booklet-distribution-local-promotions/" },
-  { id: 44, title: "Benefits of Community & Gated Area Flyer Distribution in Dubai", description: "Boost your local marketing with Door-to-Door Booklet Distribution and connect directly with potential customers effectively. Contact Us Today!", author: "MaxLead Strategy Team", date: "July 6, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/129063/pexels-photo-129063.jpeg", tags: ["Booklet Distribution", "Distribution"], link: "/blog/door-to-door-booklet-distribution-local-promotions/" },
+  { id: 44, title: "Benefits of Community & Gated Area Flyer Distribution in Dubai", description: "Maximize local marketing success with Community & Gated Area Distribution in Dubai, reaching targeted residents and generating quality leads. Contact Us Today!", author: "MaxLead Strategy Team", date: "July 10, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/3787839/pexels-photo-3787839.jpeg", tags: [" Community & Gated Area", "Distribution"], link: "/blog/benefits-of-community-gated-area-flyer-distribution-dubai/" },
   { id: 45, title: "Door-to-Door Flyer Distribution for Gyms in Dubai | Max Lead", description: "Generate more gym and fitness leads in Dubai with targeted door-to-door flyer distribution and performance marketing. Increase memberships and ROI today.", author: "MaxLead Strategy Team", date: "July 22, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/5225278/pexels-photo-5225278.jpeg", tags: ["Flyers Distribution", "Distribution"], link: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" },
  
 ];
@@ -95,10 +95,10 @@ const categories = [
   { name: "Video Marketing Dubai", icon: MapPin, path: "/blog/budget-friendly-video-marketing-dubai-businesses/" },
   { name: "Local SEO Dubai", icon: MapPin, path: "/blog/better-local-seo-rankings-dubai-businesses/" },
   { name: "Leaflet Distribution", icon: MapPin, path: "/blog/professional-leaflet-distribution-services-dubai/" },
-  { name: "Hand-to-Hand Flyer", icon: MapPin, path: "/blog/hand-to-hand-flyer-distribution-dubai-brand-awareness/ " },
-  { name: "Door-to-Door Booklet", icon: MapPin, path: "/blog/door-to-door-booklet-distribution-local-promotions/ " },
-  { name: "Community & Gated Area Distribution", icon: MapPin, path: "/blog/benefits-of-community-gated-area-flyer-distribution-dubai/ " },
-  { name: "Flyer Distribution for Gyms", icon: MapPin, path: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/ " },
+  { name: "Hand-to-Hand Flyer", icon: MapPin, path: "/blog/hand-to-hand-flyer-distribution-dubai-brand-awareness/" },
+  { name: "Door-to-Door Booklet", icon: MapPin, path: "/blog/door-to-door-booklet-distribution-local-promotions/" },
+  { name: "Community & Gated Area Distribution", icon: MapPin, path: "/blog/benefits-of-community-gated-area-flyer-distribution-dubai/" },
+  { name: "Flyer Distribution for Gyms", icon: Zap, path: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" },  
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
