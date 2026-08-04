@@ -156,6 +156,7 @@ function App() {
           <Route path="/blog/door-to-door-booklet-distribution-local-promotions/" element={<Blog43 />} />
           <Route path="/blog/benefits-of-community-gated-area-flyer-distribution-dubai/" element={<Blog44 />} />
           <Route path="/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" element={<Blog45 />} />
+          <Route path="/blog/ecommerce-marketing-uae/" element={<Blog46 />} />
         </Routes>
       </Suspense>
     </Router>
