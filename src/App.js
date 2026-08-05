@@ -75,6 +75,7 @@ const Blog42 = lazy(() => import('./components/pages/blogs/blog42'));
 const Blog43 = lazy(() => import('./components/pages/blogs/blog43'));
 const Blog44 = lazy(() => import('./components/pages/blogs/blog44'));
 const Blog45 = lazy(() => import('./components/pages/blogs/blog45'));
+const Blog46 = lazy(() => import('./components/pages/blogs/blog46'));
 /**
  * LOADING FALLBACK: 
  * Using a simple div instead of a heavy spinner reduces initial TBT.
