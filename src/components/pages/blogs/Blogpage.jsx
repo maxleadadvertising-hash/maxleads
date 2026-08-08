@@ -55,6 +55,7 @@ const blogs = [
   { id: 44, title: "Benefits of Community & Gated Area Flyer Distribution in Dubai", description: "Maximize local marketing success with Community & Gated Area Distribution in Dubai, reaching targeted residents and generating quality leads. Contact Us Today!", author: "MaxLead Strategy Team", date: "July 10, 2026", readTime: "11 min read", image: "https://images.pexels.com/photos/3787839/pexels-photo-3787839.jpeg", tags: [" Community & Gated Area", "Distribution"], link: "/blog/benefits-of-community-gated-area-flyer-distribution-dubai/" },
   { id: 45, title: "Door-to-Door Flyer Distribution for Gyms in Dubai | Max Lead", description: "Generate more gym and fitness leads in Dubai with targeted door-to-door flyer distribution and performance marketing. Increase memberships and ROI today.", author: "MaxLead Strategy Team", date: "July 22, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/5225278/pexels-photo-5225278.jpeg", tags: ["Flyers Distribution", "Distribution"], link: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" },
   { id: 46, title: "Ecommerce Marketing UAE: Beyond Website Design | Max Lead Advertising", description: "Ecommerce marketing in UAE takes more than a fast website. See how flyer distribution, SMS and digital ads bring real buyers to your online store. Contact Us!", author: "MaxLead Strategy Team", date: "August 04, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/33349191/pexels-photo-33349191.jpeg", tags: ["Ecommerce Marketing", "Digital Marketing"], link: "/blog/ecommerce-marketing-uae/" },
+  { id: 47, title: "Verify Flyer Distribution in Dubai | Max Lead Advertising", description: "Ensure the effectiveness of your flyer distribution campaigns in Dubai with our verification services. Contact Us Today!", author: "MaxLead Strategy Team", date: "August 08, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/6565749/pexels-photo-6565749.jpeg", tags: ["Flyer Distribution", "Distribution"], link: "/blog/verify-flyer-distribution-dubai/" },
 ];
 
 const categories = [
@@ -100,6 +101,7 @@ const categories = [
   { name: "Community & Gated Area Distribution", icon: MapPin, path: "/blog/benefits-of-community-gated-area-flyer-distribution-dubai/" },
   { name: "Flyer Distribution for Gyms", icon: Zap, path: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" },  
   { name: "Ecommerce Marketing UAE", icon: Zap, path: "/blog/ecommerce-marketing-uae" },
+  { name: "Verify Flyer Distribution", icon: Zap, path: "/blog/verify-flyer-distribution-dubai/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
