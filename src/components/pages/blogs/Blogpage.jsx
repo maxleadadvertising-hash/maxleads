@@ -56,6 +56,7 @@ const blogs = [
   { id: 45, title: "Door-to-Door Flyer Distribution for Gyms in Dubai | Max Lead", description: "Generate more gym and fitness leads in Dubai with targeted door-to-door flyer distribution and performance marketing. Increase memberships and ROI today.", author: "MaxLead Strategy Team", date: "July 22, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/5225278/pexels-photo-5225278.jpeg", tags: ["Flyers Distribution", "Distribution"], link: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" },
   { id: 46, title: "Ecommerce Marketing UAE: Beyond Website Design | Max Lead Advertising", description: "Ecommerce marketing in UAE takes more than a fast website. See how flyer distribution, SMS and digital ads bring real buyers to your online store. Contact Us!", author: "MaxLead Strategy Team", date: "August 04, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/33349191/pexels-photo-33349191.jpeg", tags: ["Ecommerce Marketing", "Digital Marketing"], link: "/blog/ecommerce-marketing-uae/" },
   { id: 47, title: "Verify Flyer Distribution in Dubai | Max Lead Advertising", description: "Ensure the effectiveness of your flyer distribution campaigns in Dubai with our verification services. Contact Us Today!", author: "MaxLead Strategy Team", date: "August 08, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/6565749/pexels-photo-6565749.jpeg", tags: ["Flyer Distribution", "Distribution"], link: "/blog/verify-flyer-distribution-dubai/" },
+  { id: 48, title: "Nursery & School Admission Flyer Campaigns in UAE | Max Lead", description: "Fill seats faster this admission season. A practical guide to nursery and school flyer distribution in Dubai, Sharjah and Ajman — timing, areas and offers. Contact Us Today!", author: "MaxLead Strategy Team", date: "August 12, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/8500353/pexels-photo-8500353.jpeg", tags: ["Flyer Distribution", "Distribution"], link: "/blog/nursery-school-admission-season-flyer-campaigns-uae/" },
 ];
 
 const categories = [
@@ -102,6 +103,7 @@ const categories = [
   { name: "Flyer Distribution for Gyms", icon: Zap, path: "/blog/fitness-lead-generation-dubai-door-to-door-flyer-distribution/" },  
   { name: "Ecommerce Marketing UAE", icon: Zap, path: "/blog/ecommerce-marketing-uae" },
   { name: "Verify Flyer Distribution", icon: Zap, path: "/blog/verify-flyer-distribution-dubai/" },
+  { name: "Nursery & School Admission Flyer Campaigns", icon: Zap, path: "/blog/nursery-school-admission-season-flyer-campaigns-uae/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
