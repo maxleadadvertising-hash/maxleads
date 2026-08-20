@@ -57,6 +57,8 @@ const blogs = [
   { id: 46, title: "Ecommerce Marketing UAE: Beyond Website Design | Max Lead Advertising", description: "Ecommerce marketing in UAE takes more than a fast website. See how flyer distribution, SMS and digital ads bring real buyers to your online store. Contact Us!", author: "MaxLead Strategy Team", date: "August 04, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/33349191/pexels-photo-33349191.jpeg", tags: ["Ecommerce Marketing", "Digital Marketing"], link: "/blog/ecommerce-marketing-uae/" },
   { id: 47, title: "Verify Flyer Distribution in Dubai | Max Lead Advertising", description: "Ensure the effectiveness of your flyer distribution campaigns in Dubai with our verification services. Contact Us Today!", author: "MaxLead Strategy Team", date: "August 08, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/6565749/pexels-photo-6565749.jpeg", tags: ["Flyer Distribution", "Distribution"], link: "/blog/verify-flyer-distribution-dubai/" },
   { id: 48, title: "Nursery & School Admission Flyer Campaigns in UAE | Max Lead", description: "Fill seats faster this admission season. A practical guide to nursery and school flyer distribution in Dubai, Sharjah and Ajman — timing, areas and offers. Contact Us Today!", author: "MaxLead Strategy Team", date: "August 12, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/8500353/pexels-photo-8500353.jpeg", tags: ["Flyer Distribution", "Distribution"], link: "/blog/nursery-school-admission-season-flyer-campaigns-uae/" },
+  { id: 49, title: "Leaflet Distribution Company Dubai for Restaurants, Salons & Clinics", description: "Find the best Dubai areas for leaflet distribution by business type. Compare response rates for restaurants, salons and clinics across JVC, Marina, Al Nahda, Mirdif and more.", author: "MaxLead Strategy Team", date: "August 20, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/13485217/pexels-photo-13485217.jpeg", tags: ["Leaflet Distribution", "Distribution"], link: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
+  { id: 50, title: "Flyer Distribution UAE: Areas, Costs & Strategy | Max Lead Advertising", description: "Where to distribute flyers in Dubai, Sharjah, Abu Dhabi & Ajman, which strategies work, permit rules, and what it actually costs per flyer in the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "August 21, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/16204528/pexels-photo-16204528.jpeg", tags: ["Flyers Distribution", "Distribution"], link: "/blog/flyer-distribution-uae-cost-guide/" },
 ];
 
 const categories = [
@@ -104,6 +106,8 @@ const categories = [
   { name: "Ecommerce Marketing UAE", icon: Zap, path: "/blog/ecommerce-marketing-uae" },
   { name: "Verify Flyer Distribution", icon: Zap, path: "/blog/verify-flyer-distribution-dubai/" },
   { name: "Nursery & School Admission Flyer Campaigns", icon: Zap, path: "/blog/nursery-school-admission-season-flyer-campaigns-uae/" },
+  { name: "Leaflet Distribution Company Dubai for Restaurants, Salons & Clinics", icon: Zap, path: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
+  { name: "Flyer Distribution UAE: Areas, Costs & Strategy | Max Lead Advertising", icon: Zap, path: "/blog/flyer-distribution-uae-cost-guide/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
