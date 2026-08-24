@@ -59,6 +59,7 @@ const blogs = [
   { id: 48, title: "Nursery & School Admission Flyer Campaigns in UAE | Max Lead", description: "Fill seats faster this admission season. A practical guide to nursery and school flyer distribution in Dubai, Sharjah and Ajman — timing, areas and offers. Contact Us Today!", author: "MaxLead Strategy Team", date: "August 12, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/8500353/pexels-photo-8500353.jpeg", tags: ["Flyer Distribution", "Distribution"], link: "/blog/nursery-school-admission-season-flyer-campaigns-uae/" },
   { id: 49, title: "Leaflet Distribution Company Dubai for Restaurants, Salons & Clinics", description: "Find the best Dubai areas for leaflet distribution by business type. Compare response rates for restaurants, salons and clinics across JVC, Marina, Al Nahda, Mirdif and more.", author: "MaxLead Strategy Team", date: "August 20, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/13485217/pexels-photo-13485217.jpeg", tags: ["Leaflet Distribution", "Distribution"], link: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
   { id: 50, title: "Flyer Distribution UAE: Areas, Costs & Strategy | Max Lead Advertising", description: "Where to distribute flyers in Dubai, Sharjah, Abu Dhabi & Ajman, which strategies work, permit rules, and what it actually costs per flyer in the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "August 21, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/16204528/pexels-photo-16204528.jpeg", tags: ["Flyers Distribution", "Distribution"], link: "/blog/flyer-distribution-uae-cost-guide/" },
+  { id: 51, title: "How AI Search Is Changing Digital Marketing in 2026", description: "AI search has moved the goalposts from rankings to citations. Here's what changed in 2026 and how to build AI visibility for your brand. Contact Us!", author: "MaxLead Strategy Team", date: "August 24, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/20870795/pexels-photo-20870795.jpeg", tags: ["Digital Marketing", "Marketing"], link: "/blog/ai-search-digital-marketing-in-dubai-2026/" },
 ];
 
 const categories = [
@@ -106,8 +107,9 @@ const categories = [
   { name: "Ecommerce Marketing UAE", icon: Zap, path: "/blog/ecommerce-marketing-uae" },
   { name: "Verify Flyer Distribution", icon: Zap, path: "/blog/verify-flyer-distribution-dubai/" },
   { name: "Nursery & School Admission Flyer Campaigns", icon: Zap, path: "/blog/nursery-school-admission-season-flyer-campaigns-uae/" },
-  { name: "Leaflet Distribution Company Dubai for Restaurants, Salons & Clinics", icon: Zap, path: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
-  { name: "Flyer Distribution UAE: Areas, Costs & Strategy | Max Lead Advertising", icon: Zap, path: "/blog/flyer-distribution-uae-cost-guide/" },
+  { name: "Restaurants, Salons & Clinics", icon: Zap, path: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
+  { name: "Areas, Costs & Strategy", icon: Zap, path: "/blog/flyer-distribution-uae-cost-guide/" },
+  { name: "AI Search in Digital Marketing", icon: Zap, path: "/blog/ai-search-digital-marketing-in-dubai-2026/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
