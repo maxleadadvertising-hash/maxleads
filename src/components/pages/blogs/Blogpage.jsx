@@ -60,6 +60,7 @@ const blogs = [
   { id: 49, title: "Leaflet Distribution Company Dubai for Restaurants, Salons & Clinics", description: "Find the best Dubai areas for leaflet distribution by business type. Compare response rates for restaurants, salons and clinics across JVC, Marina, Al Nahda, Mirdif and more.", author: "MaxLead Strategy Team", date: "August 20, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/13485217/pexels-photo-13485217.jpeg", tags: ["Leaflet Distribution", "Distribution"], link: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
   { id: 50, title: "Flyer Distribution UAE: Areas, Costs & Strategy | Max Lead Advertising", description: "Where to distribute flyers in Dubai, Sharjah, Abu Dhabi & Ajman, which strategies work, permit rules, and what it actually costs per flyer in the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "August 21, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/16204528/pexels-photo-16204528.jpeg", tags: ["Flyers Distribution", "Distribution"], link: "/blog/flyer-distribution-uae-cost-guide/" },
   { id: 51, title: "How AI Search Is Changing Digital Marketing in 2026", description: "AI search has moved the goalposts from rankings to citations. Here's what changed in 2026 and how to build AI visibility for your brand. Contact Us!", author: "MaxLead Strategy Team", date: "August 24, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/20870795/pexels-photo-20870795.jpeg", tags: ["Digital Marketing", "Marketing"], link: "/blog/ai-search-digital-marketing-in-dubai-2026/" },
+  { id: 52, title: "Best Flyer Distribution Company in Dubai | Max Lead", description: "Choosing the best flyer distribution company in Dubai? Use this 8-point checklist to compare permits, GPS proof, pricing and coverage before you hire. Contact Us!", author: "MaxLead Strategy Team", date: "August 26, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/35336015/pexels-photo-35336015.jpeg", tags: ["Flyer Distribution","Marketing"], link: "/blog/best-flyer-distribution-company-in-dubai/" },
 ];
 
 const categories = [
@@ -110,6 +111,7 @@ const categories = [
   { name: "Restaurants, Salons & Clinics", icon: Zap, path: "/blog/leaflet-distribution-restaurants-salons-clinics-dubai/" },
   { name: "Areas, Costs & Strategy", icon: Zap, path: "/blog/flyer-distribution-uae-cost-guide/" },
   { name: "AI Search in Digital Marketing", icon: Zap, path: "/blog/ai-search-digital-marketing-in-dubai-2026/" },
+  { name: "Best Flyer Distribution Company in Dubai", icon: Zap, path: "/blog/best-flyer-distribution-company-in-dubai/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
