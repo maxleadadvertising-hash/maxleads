@@ -9,7 +9,6 @@ import {
   User,
   PhoneCall,
   LayoutGrid,
-  Zap,
   FileText,
   MessageSquare,
   Linkedin

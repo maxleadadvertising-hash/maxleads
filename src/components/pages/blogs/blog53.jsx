@@ -148,35 +148,6 @@ const stats = [
   }
 ];
 
-/* --- FIVE TACTICS --- */
-const tactics = [
-  {
-    title: "1. Target the right locations",
-    body:
-      "Select residential communities, commercial areas, retail locations, or other places where your ideal customers are most likely to be."
-  },
-  {
-    title: "2. Make the message easy to act on",
-    body:
-      "Use a clear offer, strong call to action, contact details, website, or QR code so recipients know exactly what to do next."
-  },
-  {
-    title: "3. Use digital advertising for precision",
-    body:
-      "Digital campaigns can support local promotion with audience targeting, flexible messaging, and measurable results such as clicks, leads, and conversions."
-  },
-  {
-    title: "4. Connect offline and online",
-    body:
-      "A pamphlet can direct customers to a website, landing page, WhatsApp conversation, or social media account, turning physical exposure into digital engagement."
-  },
-  {
-    title: "5. Measure and improve",
-    body:
-      "Track enquiries, campaign codes, QR scans, landing-page visits, and lead quality to understand which locations and messages perform best."
-  }
-];
-
 /* --- MEASUREMENT CHECKLIST --- */
 const measurement = [
   {
