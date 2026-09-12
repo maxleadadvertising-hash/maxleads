@@ -84,6 +84,7 @@ const Blog51 = lazy(() => import('./components/pages/blogs/blog51'));
 const Blog52 = lazy(() => import('./components/pages/blogs/blog52'));
 const Blog53 = lazy(() => import('./components/pages/blogs/blog53'));
 const Blog54 = lazy(() => import('./components/pages/blogs/blog54'));
+const Blog55 = lazy(() => import('./components/pages/blogs/blog55'));
 
 
 /**
@@ -176,6 +177,7 @@ function App() {
           <Route path="/blog/best-flyer-distribution-company-in-dubai/" element={<Blog52 />} />
           <Route path="/blog/pamphlet-distribution-services-dubai-vs-digital-advertising-in-uae/" element={<Blog53 />} />
           <Route path="/blog/commercial-flyer-distribution-dubai/" element={<Blog54 />} />
+          <Route path="/blog/brochure-distribution-in-dubai/" element={<Blog55 />} />
         </Routes>
       </Suspense>
     </Router>

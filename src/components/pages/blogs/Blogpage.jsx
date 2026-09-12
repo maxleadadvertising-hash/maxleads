@@ -63,6 +63,7 @@ const blogs = [
   { id: 52, title: "Best Flyer Distribution Company in Dubai | Max Lead", description: "Choosing the best flyer distribution company in Dubai? Use this 8-point checklist to compare permits, GPS proof, pricing and coverage before you hire. Contact Us!", author: "MaxLead Strategy Team", date: "August 26, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/35336015/pexels-photo-35336015.jpeg", tags: ["Flyer Distribution","Marketing"], link: "/blog/best-flyer-distribution-company-in-dubai/" },
   { id: 53, title: "Pamphlet Distribution Services in Dubai vs Digital Advertising | Max Lead", description: "Compare pamphlet distribution services in Dubai with digital advertising and discover which marketing approach is better for reaching local customers. Contact Us!", author: "MaxLead Strategy Team", date: "September 05, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/1645603/pexels-photo-1645603.jpeg", tags: ["Pamphlet Distribution","Marketing"], link: "/pamphlet-distribution-services-dubai-vs-digital-advertising-in-uae/" },
   { id: 54, title: "Commercial Flyer Distribution Dubai | Max Lead Advertising", description: "Boost your local reach with professional commercial flyer distribution in Dubai. Reach targeted customers, promote your business, and generate more leads. Contact Us!", author: "MaxLead Strategy Team", date: "September 08, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/20438629/pexels-photo-20438629.jpeg", tags: ["Commercial Flyer Distribution","Marketing"], link: "/commercial-flyer-distribution-dubai/" },
+  { id: 55, title: "Brochure Distribution in Dubai | Max Lead Advertising", description: "Reach targeted customers with professional brochure distribution in Dubai. Promote your products, services and offers directly to local audiences. Contact Us!", author: "MaxLead Strategy Team", date: "September 11, 2026", readTime: "12 min read", image: "https://images.pexels.com/photos/5075320/pexels-photo-5075320.jpeg", tags: ["Brochure Distribution","Marketing"], link: "/brochure-distribution-in-dubai/" },
 ];
 
 const categories = [
@@ -116,6 +117,7 @@ const categories = [
   { name: "Best Flyer Distribution Company in Dubai", icon: Zap, path: "/blog/best-flyer-distribution-company-in-dubai/" },
   { name: "Pamphlet Distribution Services in Dubai vs Digital Advertising", icon: Zap, path: "/blog/pamphlet-distribution-services-dubai-vs-digital-advertising-in-uae/" },
   { name: "Commercial Flyer Distribution Dubai | Max Lead Advertising", icon: Zap, path: "/blog/commercial-flyer-distribution-dubai/" },
+  { name: "Brochure Distribution in Dubai | Max Lead Advertising", icon: Zap, path: "/blog/brochure-distribution-in-dubai/" }
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
