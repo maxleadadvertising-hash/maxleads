@@ -5,16 +5,13 @@ import Footer from "../../Footer";
 import {
   TrendingUp,
   Target,
-  MapPin,
   Clock,
   User,
   LayoutGrid,
   FileText,
   MessageSquare,
   MousePointer2,
-  Leaf,
   Globe,
-  Search,
   Linkedin
 } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
