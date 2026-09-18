@@ -86,6 +86,10 @@ const Blog53 = lazy(() => import('./components/pages/blogs/blog53'));
 const Blog54 = lazy(() => import('./components/pages/blogs/blog54'));
 const Blog55 = lazy(() => import('./components/pages/blogs/blog55'));
 const Blog56 = lazy(() => import('./components/pages/blogs/blog56'));
+const Blog57 = lazy(() => import('./components/pages/blogs/blog57'));
+const Blog58 = lazy(() => import('./components/pages/blogs/blog58'));
+const Blog59 = lazy(() => import('./components/pages/blogs/blog59'));
+const Blog60 = lazy(() => import('./components/pages/blogs/blog60'));
 
 
 /**
@@ -180,6 +184,10 @@ function App() {
           <Route path="/blog/commercial-flyer-distribution-dubai/" element={<Blog54 />} />
           <Route path="/blog/brochure-distribution-in-dubai/" element={<Blog55 />} />
           <Route path="/blog/booklet-distribution-dubai/" element={<Blog56 />} />
+          <Route path="/blog/hand-to-hand-flyer-distribution-dubai-local-leads/" element={<Blog57 />} />
+          <Route path="/blog/street-level-marketing-dubai-local-customers/" element={<Blog58 />} />
+          <Route path="/blog/printed-marketing-materials-dubai-customer-enquiries/" element={<Blog59 />} />
+          <Route path="/blog/hand-to-hand-leaflet-distribution-dubai/" element={<Blog60 />} />    
         </Routes>
       </Suspense>
     </Router>
