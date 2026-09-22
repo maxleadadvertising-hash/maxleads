@@ -69,6 +69,7 @@ const blogs = [
   { id: 58, title: "Street-Level Marketing in Dubai | Reach Local Customers", description: "Learn how local businesses in Dubai can use street-level marketing, flyer distribution, targeted locations, and local offers to reach nearby customers. Contact Us!", author: "MaxLead Strategy Team", date: "September 14, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/12999167/pexels-photo-12999167.jpeg", tags: ["Street-Level Marketing in Dubai","Marketing"], link: "/blog/street-level-marketing-dubai-local-customers/" },
   { id: 59, title: "Printed Marketing Materials in Dubai | Get Best Price", description: "Learn how printed marketing materials, flyers, brochures and leaflets can help Dubai businesses increase local awareness, attract customers and generate enquiries. Contact Us!", author: "MaxLead Strategy Team", date: "September 15, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/818775/pexels-photo-818775.jpeg", tags: ["Printed Marketing Materials in Dubai","Marketing"], link: "/blog/printed-marketing-materials-dubai-customer-enquiries/" },
   { id: 60, title: "Hand-to-Hand Leaflet Distribution in Dubai | Local Marketing", description: "Discover how hand-to-hand leaflet distribution in Dubai can help businesses reach targeted local customers, increase brand awareness and generate enquiries. Contact Us!", author: "MaxLead Strategy Team", date: "September 16, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/28125196/pexels-photo-28125196.jpeg", tags: ["Hand-to-Hand Leaflet Distribution in Dubai","Marketing"], link: "/blog/hand-to-hand-leaflet-distribution-dubai/" },
+  { id: 61, title: "Restaurant Launch Marketing Strategies in Dubai | Max Lead Advertising", description: "Discover effective restaurant launch marketing strategies in Dubai, including social media, influencer marketing, flyer distribution, Google Ads, and local SEO.", author: "MaxLead Strategy Team", date: "September 22, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/9034719/pexels-photo-9034719.jpeg", tags: ["Restaurant Launch Marketing Strategies in Dubai","Marketing"], link: "/blog/restaurant-launch-marketing-strategies-dubai/" },
 ];
 
 const categories = [
@@ -128,6 +129,7 @@ const categories = [
   { name: "Street-Level Marketing in Dubai | Reach Local Customers", icon: Zap, path: "/blog/street-level-marketing-dubai-local-customers/" },
   { name: "Printed Marketing Materials in Dubai | Get Best Price", icon: Zap, path: "/blog/printed-marketing-materials-dubai-customer-enquiries/" },
   { name: "Hand-to-Hand Leaflet Distribution in Dubai | Local Marketing", icon: Zap, path: "/blog/hand-to-hand-leaflet-distribution-dubai/" },
+  { name: "Restaurant Launch Marketing Strategies in Dubai", icon: Zap, path: "/blog/restaurant-launch-marketing-strategies-dubai/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
