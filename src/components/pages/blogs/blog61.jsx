@@ -4,7 +4,6 @@ import Footer from "../../Footer";
 import {
   TrendingUp,
   Target,
-  CheckCircle2,
   Clock,
   User,
   PhoneCall,
