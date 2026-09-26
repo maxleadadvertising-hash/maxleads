@@ -70,6 +70,7 @@ const blogs = [
   { id: 59, title: "Printed Marketing Materials in Dubai | Get Best Price", description: "Learn how printed marketing materials, flyers, brochures and leaflets can help Dubai businesses increase local awareness, attract customers and generate enquiries. Contact Us!", author: "MaxLead Strategy Team", date: "September 15, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/818775/pexels-photo-818775.jpeg", tags: ["Printed Marketing Materials in Dubai","Marketing"], link: "/blog/printed-marketing-materials-dubai-customer-enquiries/" },
   { id: 60, title: "Hand-to-Hand Leaflet Distribution in Dubai | Local Marketing", description: "Discover how hand-to-hand leaflet distribution in Dubai can help businesses reach targeted local customers, increase brand awareness and generate enquiries. Contact Us!", author: "MaxLead Strategy Team", date: "September 16, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/28125196/pexels-photo-28125196.jpeg", tags: ["Hand-to-Hand Leaflet Distribution in Dubai","Marketing"], link: "/blog/hand-to-hand-leaflet-distribution-dubai/" },
   { id: 61, title: "Restaurant Launch Marketing Strategies in Dubai | Max Lead Advertising", description: "Discover effective restaurant launch marketing strategies in Dubai, including social media, influencer marketing, flyer distribution, Google Ads, and local SEO.", author: "MaxLead Strategy Team", date: "September 22, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/9034719/pexels-photo-9034719.jpeg", tags: ["Restaurant Launch Marketing Strategies in Dubai","Marketing"], link: "/blog/restaurant-launch-marketing-strategies-dubai/" },
+  { id: 62, title: "Supermarket Flyer Distribution Advertising in the UAE | Max Lead", description: "Promote weekly supermarket offers with professional Flyer Distribution in the UAE. Reach nearby customers, increase brand awareness, and encourage store visits. Contact Us!", author: "MaxLead Strategy Team", date: "September 26, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/3985094/pexels-photo-3985094.jpeg", tags: ["Supermarket Flyer Distribution","Marketing"], link: "/blog/supermarket-advertising-uae-weekly-promotions/" },
 ];
 
 const categories = [
@@ -130,6 +131,7 @@ const categories = [
   { name: "Printed Marketing Materials in Dubai | Get Best Price", icon: Zap, path: "/blog/printed-marketing-materials-dubai-customer-enquiries/" },
   { name: "Hand-to-Hand Leaflet Distribution in Dubai | Local Marketing", icon: Zap, path: "/blog/hand-to-hand-leaflet-distribution-dubai/" },
   { name: "Restaurant Launch Marketing Strategies in Dubai", icon: Zap, path: "/blog/restaurant-launch-marketing-strategies-dubai/" },
+  { name: "Supermarket Flyer Distribution Advertising in the UAE", icon: Zap, path: "/blog/supermarket-advertising-uae-weekly-promotions/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
