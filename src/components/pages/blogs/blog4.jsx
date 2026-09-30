@@ -94,25 +94,66 @@ export default function FlyerStrategyBlog() {
   const activePost = blogs[3]; // Ultimate Guide
 
   useEffect(() => {
-    // ADDED: Meta Tags Logic
-    document.title = "Ultimate Flyer Distribution Strategies in Dubai | Max Lead Guide";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Explore 10 proven flyer distribution strategies in Dubai to boost your business reach. Learn how targeted leaflet distribution delivers real, measurable results.");
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Ultimate Flyer Distribution Strategies in Dubai | Max Lead Guide";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/ultimate-guide-to-flyer-distribution-strategies-in-dubai/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Explore 10 proven flyer distribution strategies in Dubai to boost your business reach. Learn how targeted leaflet distribution delivers real, measurable results."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "flyer distribution strategies Dubai, leaflet distribution tips UAE, door to door flyer distribution Dubai, flyer marketing techniques UAE, effective flyer campaigns Dubai"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/ultimate-flyer-distribution-strategies-in-dubai/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

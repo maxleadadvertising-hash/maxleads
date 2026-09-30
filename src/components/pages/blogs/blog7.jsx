@@ -169,25 +169,66 @@ export default function MarketingTransformationBlog() {
   const activePost = blogs[6];
 
   useEffect(() => {
-    // ADDED: Meta Tags Logic via useEffect
-    document.title = "Max Lead: Your Trusted Flyer Distribution Company in the UAE";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Transform your marketing with Max Lead Advertising, the UAE's trusted leaflet distribution company. Reach every doorstep with targeted, results-driven campaigns.");
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Max Lead: Your Trusted Flyer Distribution Company in the UAE";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Transform your marketing with Max Lead Advertising, the UAE's trusted leaflet distribution company. Reach every doorstep with targeted, results-driven campaigns."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "flyer distribution UAE, leaflet distribution company, door to door flyer distribution, marketing with Max Lead Advertising, trusted distribution company in UAE"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/transforming-marketing-with-max-lead-advertising-your-trusted-distribution-company/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

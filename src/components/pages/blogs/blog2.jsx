@@ -133,7 +133,7 @@ export default function BestAgencyBlog() {
 
   linkCanonical.setAttribute(
     "href",
-    "https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/"
+    "https://www.maxleadadvertising.com/blog/best-digital-marketing-agency-uae/"
   );
 }, []);
 

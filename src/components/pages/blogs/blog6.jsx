@@ -171,25 +171,66 @@ export default function BestLocationsBlog() {
   const activePost = blogs[5]; // Index 5 is Best Locations guide
 
   useEffect(() => {
-    // ADDED: Meta Tags Logic
-    document.title = "Best Locations for Flyer Distribution in UAE 2026 - Max Lead";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Find out where to distribute flyers in the UAE for maximum impact in 2026. Reach your ideal customers with strategic leaflet distribution across key locations");
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Best Locations for Flyer Distribution in UAE 2026 - Max Lead";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-locations-for-flyer-distribution-in-the-uae/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Find out where to distribute flyers in the UAE for maximum impact in 2026. Reach your ideal customers with strategic leaflet distribution across key locations."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "best locations for flyer distribution in UAE, flyer distribution guide 2026, leaflet distribution Dubai, flyer marketing strategies UAE"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/best-locations-for-flyer-distribution-in-the-uae/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

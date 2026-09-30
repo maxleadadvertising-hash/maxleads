@@ -169,25 +169,66 @@ export default function SalesGrowthBlog() {
   const activePost = blogs[8]; 
 
   useEffect(() => {
-    // ADDED: Meta Tags Logic
-    document.title = "Increase Sales with Flyer Distribution: 10 Proven Tips";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Learn 10 proven tips to boost sales with flyer distribution company in the UAE. Use targeted leaflet distribution to attract more customers and grow your business faster.");
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Increase Sales with Flyer Distribution: 10 Proven Tips";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/how-to-increase-sales-with-flyer-distribution/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Learn 10 proven tips to boost sales with flyer distribution company in the UAE. Use targeted leaflet distribution to attract more customers and grow your business faster."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "flyer distribution UAE, leaflet distribution Dubai, door to door flyer distribution, flyer marketing strategies, increase sales with flyers, flyer distribution tips"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/how-to-increase-sales-with-flyer-distribution/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

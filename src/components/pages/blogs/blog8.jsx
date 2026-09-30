@@ -168,25 +168,66 @@ export default function DistributorRoleBlog() {
   const activePost = blogs[7]; // Distributor Role
 
   useEffect(() => {
-    // FIXED SEO: Meta title and description manually injected
-    document.title = "Role of a Flyer Distributor Company in UAE: A Complete Guide";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Understand the role of a flyer distributor in effective marketing. Explore how targeted leaflet distribution helps UAE businesses grow reach and drive real results.");
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Role of a Flyer Distributor Company in UAE: A Complete Guide";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/what-is-the-role-of-a-flyer-distributor/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Understand the role of a flyer distributor in effective marketing. Explore how targeted leaflet distribution helps UAE businesses grow reach and drive real results."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "flyer distribution in UAE, flyer distribution Dubai, door to door flyer distribution, leaflet distribution UAE, flyer distribution company Dubai, flyer distribution services UAE, leaflet distribution company Dubai"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/what-is-the-role-of-a-flyer-distributor/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

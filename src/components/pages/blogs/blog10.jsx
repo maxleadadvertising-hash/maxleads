@@ -167,26 +167,67 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 export default function IntegratedStrategyBlog() {
   const activePost = blogs[9];
 
-  useEffect(() => {
-    // ADDED: Meta Tags Logic via useEffect
-    document.title = "Integrating Online and Offline Flyer Strategies | Max Lead";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Learn how integrating online and offline strategies for flyer distribution can boost your marketing impact. Combine digital reach with targeted leaflet distribution.");
+useEffect(() => {
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Integrating Online and Offline Flyer Strategies | Max Lead";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/integrating-online-and-offline-strategies-for-flyer-distribution/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Learn how integrating online and offline strategies for flyer distribution can boost your marketing impact. Combine digital reach with targeted leaflet distribution."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "flyer distribution in UAE, flyer distribution Dubai, door to door flyer distribution, leaflet distribution UAE, flyer distribution company Dubai, flyer distribution services UAE, leaflet distribution company Dubai"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/integrating-online-and-offline-strategies-for-flyer-distribution/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

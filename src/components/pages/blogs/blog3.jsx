@@ -173,25 +173,66 @@ export default function FlyerDistributionBlog() {
   const activePost = blogs[2]; // Dos and Don'ts
 
   useEffect(() => {
-    // ADDED: Meta Tags Logic
-    document.title = "Dos and Don'ts of Flyer Distribution in UAE | Max Lead Advertising";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Learn the key dos and don'ts of flyer distribution in UAE. A complete guide to help business owners maximize reach and avoid common leaflet distribution mistakes.");
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Dos and Don'ts of Flyer Distribution in UAE | Max Lead Advertising";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/dos-and-donts-of-flyer-distribution-in-uae/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Learn the key dos and don'ts of flyer distribution in UAE. A complete guide to help business owners maximize reach and avoid common leaflet distribution mistakes."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "dos and donts of flyer distribution in UAE, flyer distribution tips UAE, flyer distribution guidelines UAE"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/dos-and-donts-of-flyer-distribution-in-uae/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
