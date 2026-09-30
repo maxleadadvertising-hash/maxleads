@@ -167,26 +167,67 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 export default function DigitalMarketingBlog() {
   const activePost = blogs[0];
 
-  useEffect(() => {
-    // Inject SEO Meta Tags manually
-    document.title = "Flyer Distribution in UAE: Why It Still Works in 2026";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Discover why UAE businesses still rely on flyer distribution in the digital age. Reach your local audience effectively with targeted, affordable leaflet distribution.");
+useEffect(() => {
+  // ================================
+  // SEO META TITLE
+  // ================================
+  document.title =
+    "Flyer Distribution in UAE: Why It Still Works in 2026 | Max Lead";
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/");
-  }, []);
+  // ================================
+  // SEO META DESCRIPTION
+  // ================================
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    "Discover why UAE businesses still rely on flyer distribution in the digital age. Reach your local audience effectively with targeted, affordable leaflet distribution."
+  );
+
+  // ================================
+  // SEO META KEYWORDS
+  // ================================
+  let metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+
+  metaKeywords.setAttribute(
+    "content",
+    "flyer distribution in UAE, flyer distribution Dubai, door to door flyer distribution, leaflet distribution UAE, flyer distribution company Dubai, flyer distribution services UAE, leaflet distribution company Dubai"
+  );
+
+  // ================================
+  // CANONICAL URL
+  // ================================
+  let linkCanonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (!linkCanonical) {
+    linkCanonical = document.createElement("link");
+    linkCanonical.rel = "canonical";
+    document.head.appendChild(linkCanonical);
+  }
+
+  linkCanonical.setAttribute(
+    "href",
+    "https://www.maxleadadvertising.com/blog/why-uae-businesses-rely-on-flyer-distribution/"
+  );
+}, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
