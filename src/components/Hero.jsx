@@ -124,15 +124,15 @@ useEffect(() => {
 
           {/* Heading with fixed typo: lg:text-6xl */}
           <h1 className="text-5xl sm:text-6xl lg:text-6xl font-black text-gray-900 leading-[1.1] mb-8 drop-shadow-sm">
-            Advertising and Distribution <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-800">
-              Experts in UAE.
-            </span>
+           Door-to-Door Flyer Distribution Company
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-800">
+          in Dubai, Sharjah, Ajman & Across the UAE
+          </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-            At <strong>Max Lead Advertising</strong>, we help businesses grow by connecting them directly with their customers. 
-            We specialize in Flyer Distribution, Digital Printing, Outdoor Ads, and Performance Marketing across the UAE.
+            At <strong>Max Lead Advertising</strong>, provides professional door-to-door flyer distribution across Dubai, Sharjah, Ajman, Abu Dhabi, RAK, Fujairah, Al Ain & Umm Al Quwain. We offer leaflet, brochure, door hanger, event, booklet, menu, pamphlet, and magazine distribution, plus printing and digital marketing services. 
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10 text-sm font-semibold text-gray-500">

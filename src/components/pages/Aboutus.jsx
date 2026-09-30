@@ -124,12 +124,12 @@ export default function Aboutus() {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-8 leading-tight">
               A Leading Advertising & <br/>
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                  Distribution Company in UAE
+                 Door-to-Door Flyer Distribution Company in UAE
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-6xl mx-auto leading-relaxed text-justify md:text-center">
-              Max Lead Advertising is a trusted advertising and distribution company in UAE that helps businesses connect with the right audience through powerful offline and online marketing. From door-to-door flyer distribution and digital printing to SMS marketing and digital marketing services, we provide everything businesses need to increase visibility, generate leads, and grow revenue.
+              Max Lead Advertising is a trusted advertising and leaflet distribution company in the UAE, helping businesses connect with the right audience through effective offline and online marketing. Our distribution services include door-to-door flyer distribution, hand-to-hand leaflet distribution, brochure distribution, door hanger distribution, event material distribution, booklet distribution, menu card distribution, pamphlet distribution, and magazine distribution. Along with digital printing, SMS marketing, and digital marketing services, we provide businesses with complete solutions to increase brand visibility, reach targeted customers, generate leads, and support business growth.
               <br /><br />
               Since our establishment in 2015, we have supported hundreds of businesses across Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah with reliable, cost-effective, and result-driven advertising solutions. We don’t believe in guesswork or generic campaigns. Every strategy we create is based on data, location targeting, and audience behavior.
             </p>
@@ -162,14 +162,14 @@ export default function Aboutus() {
             <div className="xl:w-1/2">
                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Who We Are</h2>
                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                 We are more than just a printing or flyer distribution company. Max Lead Advertising is a complete marketing, advertising, and distribution agency in UAE designed to help brands reach people at the right place and at the right time.
+                 We are more than just a printing or flyer distribution company. Max Lead Advertising is a complete marketing, advertising, and p  amphlet distribution agency in UAE designed to help brands reach people at the right place and at the right time.
                </p>
                <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg">
                   <h4 className="font-bold text-gray-800 mb-4 text-lg">Our core strength lies in combining:</h4>
                   <ul className="space-y-4 mb-6">
                     <li className="flex items-start gap-3">
                       <div className="bg-green-100 p-2 rounded-full mt-1" aria-hidden="true"><MapPin className="w-5 h-5 text-green-600"/></div>
-                      <span className="text-gray-700 text-lg">Physical advertising like door-to-door leaflet distribution, outdoor advertising, and printed marketing materials.</span>
+                      <span className="text-gray-700 text-lg">Physical advertising like door hangers distribution, outdoor advertising, and printed marketing materials.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="bg-green-100 p-2 rounded-full mt-1" aria-hidden="true"><Globe className="w-5 h-5 text-green-600"/></div>

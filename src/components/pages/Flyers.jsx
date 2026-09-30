@@ -64,7 +64,7 @@ export default function FlyerDistribution() {
 
   // ADDED: Meta Tags Logic via useEffect
   useEffect(() => {
-    document.title = "Flyer Distribution Services in Dubai, UAE | Max Lead";
+    document.title = "Best Flyer & Leaflet Distribution Company in Dubai, Sharjah, Ajman | Max Lead";
     
     // Description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -73,7 +73,7 @@ export default function FlyerDistribution() {
       metaDescription.name = "description";
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute("content", "Max Lead Advertising offers professional flyer distribution services in Dubai, UAE including door to door flyer and leaflet distribution with targeted reach.");
+    metaDescription.setAttribute("content", "Reach more local customers with flyer distribution across Dubai, Sharjah, Ajman & UAE. Door-to-door, leaflet, brochure, door hanger, event & booklet distribution for results. Contact Us Today!");
 
     // Canonical URL
     let linkCanonical = document.querySelector('link[rel="canonical"]');
@@ -92,60 +92,60 @@ export default function FlyerDistribution() {
   }, []);
 
   const whatsappNumber = "971557222605";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Flyer Distribution services.`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Max Lead, I'm interested in your Door-to-Door Flyer Distribution services.`;
 
   const services = [
     {
-      title: "Door-to-Door Flyer Distribution",
-      desc: "Our door to door flyer distribution service involves delivering flyers directly to homes in villas, apartments, and residential communities. This method is ideal for businesses targeting local customers, families, and neighborhood audiences. Every distribution is planned area-wise to ensure proper coverage.",
+      title: "Door-to-Door Flyer Distribution in Dubai, UAE",
+      desc: "Our door-to-door flyer distribution company delivers flyers directly to homes, villas, apartments, and residential communities across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. This method is ideal for businesses targeting local customers, families, and neighborhood audiences. Every distribution campaign is planned area-wise and location-wise to ensure proper coverage and help your brand reach the right audience across the UAE.",
       icon: Home,
       img: flyerService3,
       color: "text-green-600",
       bg: "bg-green-100"
     },
     {
-      title: "Hand-to-Hand flyer Distribution",
-      desc: "Hand-to-hand distribution allows direct interaction with potential customers. Flyers are distributed personally in busy streets, malls, metro stations, and commercial zones. This method works well for promotions, events, and time-sensitive campaigns.",
+      title: "Leaflet Distribution Company in Dubai, UAE",
+      desc: "As a trusted Leaflet Distribution Company in Dubai, UAE, we provide professional hand-to-hand flyer and leaflet distribution across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. Our team distributes marketing materials directly to customers in busy streets, malls, metro stations, commercial areas, and events, making this service ideal for promotions, launches, offers, and time-sensitive campaigns for better local customer reach.",
       icon: Users,
       img: flyerService1,
       color: "text-blue-600",
       bg: "bg-blue-100"
     },
     {
-      title: "Retail and In-Store Distribution",
-      desc: "We place flyers inside supermarkets, retail outlets, shopping malls, and stores where customers are already in a buying mindset. This increases the chances of response and engagement, especially for FMCG brands, restaurants, and service providers.",
+      title: "Brochures Distribution in Dubai, UAE",
+      desc: "As a trusted Brochures Distribution Company in Dubai, UAE, we place brochures directly where customers shop and engage, including supermarkets, retail outlets, shopping malls, stores, and commercial locations. Our targeted distribution helps businesses reach potential customers across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain, making it ideal for FMCG brands, restaurants, retailers, and service providers.",
       icon: ShoppingBag,
       img: Retail1,
       color: "text-purple-600",
       bg: "bg-purple-100"
     },
     {
-      title: "Residential Area Distribution",
-      desc: "Residential area distribution focuses on specific communities based on demographics, income groups, and lifestyle. We distribute flyers in apartments, villas, gated communities, and housing societies to ensure precise targeting.",
+      title: "Door Hangers Distribution in Dubai, UAE",
+      desc: "Our Door Hangers Distribution in Dubai, UAE helps businesses reach customers directly at homes, villas, apartments, and residential communities. We provide targeted distribution for promotions, events, offers, restaurants, real estate, and local businesses, ensuring effective coverage and brand visibili",
       icon: MapPin,
       img: Res1,
       color: "text-teal-600",
       bg: "bg-teal-100"
     },
     {
-      title: "Commercial Area Distribution",
-      desc: "For B2B and service-based businesses, commercial area distribution is highly effective. Flyers are distributed in offices, business centers, and corporate locations across Dubai and UAE.",
+      title: "Pamphlet Distribution in Dubai, UAE",
+      desc: "Our Pamphlet Distribution in Dubai, UAE helps businesses reach targeted customers across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. We distribute pamphlets in residential areas, commercial zones, malls, and high-footfall locations for effective brand awareness.",
       icon: Building2,
       img: Flyer1,
       color: "text-indigo-600",
       bg: "bg-indigo-100"
     },
     {
-      title: "Targeted Area Distribution",
-      desc: "Targeted flyer distribution helps businesses reach customers based on location, area type, and audience behavior. This approach improves conversion and avoids unnecessary distribution in irrelevant zones.",
+      title: "Booklets Distribution in Dubai, UAE",
+      desc: "Our Booklets Distribution in Dubai, UAE helps businesses reach targeted customers across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. We distribute booklets across residential, commercial, retail, and high-footfall areas to increase brand awareness and customer engagement.",
       icon: Target,
       img: Tar1,
       color: "text-red-600",
       bg: "bg-red-100"
     },
     {
-      title: "Event / Promotion Distribution",
-      desc: "We support exhibitions, events, roadshows, and promotional campaigns with on-ground flyer distribution. This service is ideal for increasing footfall and immediate visibility during events.",
+      title: "Menu Cards distribution in Dubai, UAE",
+      desc: "Our Menu Cards Distribution in Dubai, UAE helps restaurants, cafés, and food businesses reach targeted customers across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain through strategic distribution in residential and commercial areas.",
       icon: Calendar,
       img: Eve1,
       color: "text-orange-600",
@@ -183,18 +183,18 @@ export default function FlyerDistribution() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-                  Flyer Distribution Services in <br />
+                  Door-to-Door Flyer Distribution Company in <br />
                   <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
-                    Dubai, UAE
+                    Dubai, Sharjah, Ajman & UAE
                   </span>
                 </h1>
 
                 <div className="text-lg text-gray-600 leading-relaxed space-y-4">
                   <p>
-                    In a competitive market like the UAE, visibility plays a major role in business growth. At Max Lead Advertising, we provide professional flyer distribution services in Dubai, UAE that help businesses connect directly with their target audience. From residential communities to commercial hubs, our structured and strategic distribution approach ensures your message reaches the right people at the right location.
+                    In a competitive market like the UAE, visibility plays a major role in business growth. At Max Lead Advertising, we provide professional door to door flyer distribution in Dubai, Sharjah, Ajman, Abu Dhabi, RAK, Fujairah, Al Ain & Umm Al Quwain that helps businesses connect directly with their target audience. From residential communities to commercial hubs, our structured and strategic distribution approach ensures your message reaches the right people at the right location.
                   </p>
                   <p>
-                    As one of the trusted flyer distribution companies in Dubai UAE, we specialize in door to door flyer distribution, leaflet distribution, and targeted offline marketing campaigns designed to create real awareness and response.
+                    As one of the trusted flyer distribution companies in Dubai UAE, we specialize in door to door flyer distribution, leaflet distribution, brochures distribution, door hangers, event, booklets, menu cards, pamphlet, and magazines distribution, along with targeted offline marketing campaigns designed to create real awareness and response.
                   </p>
                 </div>
 
@@ -235,14 +235,14 @@ export default function FlyerDistribution() {
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <FadeIn>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                Professional Door to Door Flyer Distribution in Dubai, UAE
+                Professional Leaflet Distribution Company in Dubai, Sharjah, Ajman, Abu Dhabi, RAK & UAE
               </h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                 <p>
-                  Flyer distribution remains one of the most effective offline marketing methods when executed correctly. Unlike digital ads that can be skipped or ignored, physical flyers are tangible, visible, and memorable. Our door to door leaflet distribution services are designed to maximize reach while maintaining accuracy and compliance.
+                  Flyer distribution remains an effective offline marketing method for businesses looking to reach customers directly. At Max Lead Advertising, our targeted Pamphlet Distribution, Brochures Distribution, and Door Hangers Distribution services help brands connect with customers across Dubai, Sharjah, Ajman, and Abu Dhabi, including residential communities, commercial areas, retail locations, and high-footfall zones. Each campaign is planned around your target audience and location to maximize coverage, visibility, and customer response.
                 </p>
                 <p>
-                  Whether you are a small business or an established brand, our flyer distribution solutions are customized to your goals and audience.
+                  Whether you are a small business, local service provider, restaurant, retailer, or established brand, our distribution solutions are customized to your marketing goals and audience.
                 </p>
               </div>
             </FadeIn>
@@ -438,23 +438,23 @@ export default function FlyerDistribution() {
               {[
                 {
                   q: "What is door to door flyer distribution in Dubai?",
-                  a: "Door to door flyer distribution involves delivering flyers directly to homes in selected residential areas. It helps businesses reach local customers effectively.",
+                  a: "Door-to-door flyer distribution involves delivering flyers directly to homes in selected residential areas across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al Khaimah (RAK), Fujairah, Al Ain, and Umm Al Quwain. It helps businesses reach local customers, families, and communities effectively with targeted area-wise distribution.",
                 },
                 {
                   q: "Is flyer distribution legal in UAE?",
                   a: "Yes, flyer distribution is allowed when conducted responsibly and in compliance with local guidelines. We ensure ethical and professional execution.",
                 },
                 {
-                  q: "Which businesses benefit from flyer distribution?",
-                  a: "Retail stores, restaurants, real estate, clinics, events, education institutes, and service providers benefit greatly from flyer distribution.",
+                  q: "Which businesses benefit from door-to-door flyer distribution?",
+                  a: "Retail stores, restaurants, real estate, clinics, events, education institutes, and service providers benefit greatly from door-to-door flyer distribution.",
                 },
                 {
                   q: "How do you choose distribution areas?",
-                  a: "Areas are selected based on your target audience, business type, and campaign objective.",
+                  a: "Areas are selected based on your target audience, business type, and campaign objective across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al Khaimah (RAK), Fujairah, Al Ain, and Umm Al Quwain.",
                 },
                 {
-                  q: "Do you offer targeted flyer distribution?",
-                  a: "Yes, we provide targeted area distribution based on location, audience type, and campaign goals.",
+                  q: "Do you offer targeted leaflet distribution in Dubai?",
+                  a: "Yes, we provide targeted leaflet distribution in Dubai based on your business location, target audience, residential and commercial areas, and campaign goals to ensure effective reach and coverage.",
                 },
               ].map((item, i) => (
                 <FadeIn key={i} delay={i * 50}>
@@ -486,11 +486,11 @@ export default function FlyerDistribution() {
 
               <div className="relative z-10 max-w-3xl mx-auto space-y-8">
                 <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                  Start Your Flyer Distribution Campaign in Dubai Today
+                  Start Your Door-to-Door Flyer Distribution Campaign in Dubai Today
                 </h2>
 
                 <p className="text-lg text-gray-300">
-                  If you are looking for reliable flyer distribution services in Dubai, UAE, Max Lead Advertising is here to help. As a trusted flyer distribution company in Dubai UAE, we ensure your brand message reaches the right audience with precision and professionalism.
+                  If you are looking for reliable door-to-door flyer distribution services in Dubai, UAE, Max Lead Advertising is here to help. As a trusted door-to-door flyer distribution company in Dubai UAE, we ensure your brand message reaches the right audience with precision and professionalism.
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
