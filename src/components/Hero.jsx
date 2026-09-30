@@ -59,6 +59,46 @@ export default function Hero() {
     }, 6000);
     return () => clearInterval(timer);
   }, []);
+  
+  // Homepage SEO Meta Title, Description & Keywords
+useEffect(() => {
+  document.title =
+    "Door to Door Flyer Distribution Company Dubai, Sharjah & Ajman | Max Lead";
+
+  const metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (metaDescription) {
+    metaDescription.setAttribute(
+      "content",
+      "Max Lead offers door-to-door flyer distribution across Dubai, Sharjah, Ajman, Abu Dhabi, RAK, Fujairah, Al Ain & UAQ, including leaflets, brochures, pamphlets, door hangers, printing services & more. Contact us today!"
+    );
+  } else {
+    const description = document.createElement("meta");
+    description.name = "description";
+    description.content =
+      "Max Lead offers door-to-door flyer distribution across Dubai, Sharjah, Ajman, Abu Dhabi, RAK, Fujairah, Al Ain & UAQ, including leaflets, brochures, pamphlets, door hangers, printing services & more. Contact us today!";
+    document.head.appendChild(description);
+  }
+
+  const metaKeywords = document.querySelector(
+    'meta[name="keywords"]'
+  );
+
+  if (metaKeywords) {
+    metaKeywords.setAttribute(
+      "content",
+      "Door to door flyer distribution, Flyer distribution company, Flyer distribution service, Flyer distribution companies, Flyer distribution agency, Flyer distribution in Dubai, Flyer distribution in Sharjah, Flyer distribution in Ajman, Flyer distribution in Abu Dhabi, Flyer distribution in RAK, Flyer distribution in Al Ain, Flyer distribution in Fujairah, Flyer distribution in Umm Al Quwain, Leaflet distribution company, Leaflet distribution services, Brochures Distribution, Door Hangers Distribution, Direct Distribution, Hand-to-Hand Distribution, Event Distribution, Booklets Distribution, Menu Cards Distribution, Pamphlet Distribution, Magazines Distribution, Printing Services in Dubai"
+    );
+  } else {
+    const keywords = document.createElement("meta");
+    keywords.name = "keywords";
+    keywords.content =
+      "Door to door flyer distribution, Flyer distribution company, Flyer distribution service, Flyer distribution companies, Flyer distribution agency, Flyer distribution in Dubai, Flyer distribution in Sharjah, Flyer distribution in Ajman, Flyer distribution in Abu Dhabi, Flyer distribution in RAK, Flyer distribution in Al Ain, Flyer distribution in Fujairah, Flyer distribution in Umm Al Quwain, Leaflet distribution company, Leaflet distribution services, Brochures Distribution, Door Hangers Distribution, Direct Distribution, Hand-to-Hand Distribution, Event Distribution, Booklets Distribution, Menu Cards Distribution, Pamphlet Distribution, Magazines Distribution, Printing Services in Dubai";
+    document.head.appendChild(keywords);
+  }
+}, []);
 
   return (
     <section id="hero" className="relative w-full min-h-[90vh] flex flex-col justify-center bg-gradient-to-br from-gray-50 via-white to-green-50/20 overflow-hidden pt-32 pb-16">

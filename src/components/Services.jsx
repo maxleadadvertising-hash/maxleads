@@ -12,19 +12,25 @@ import {
 const services = [
   {
     id: "distribution",
-    label: "Flyer Distribution Services",
+    label: "Door-to-Door Flyer Distribution Company in Dubai",
     icon: MapPin,
     gradient: "from-green-400 to-emerald-500",
     description:
-      "Our door to door leaflet distribution and door to door flyer distribution services help brands reach customers directly at their homes, workplaces, and shopping locations across the UAE. We ensure precise targeting, proper coverage, and professional execution.",
+      "Our door-to-door flyer and leaflet distribution services help brands connect directly with customers at homes, workplaces, residential communities, and high-footfall locations across the UAE. We provide leaflet, flyer, brochure, door hanger, event material, booklet, menu card, pamphlet, and magazine distribution with precise targeting, wide coverage, and professional execution across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al Khaimah (RAK), Fujairah, Al Ain, and Umm Al Quwain.",
     features: [
-      "Door-to-Door Distribution",
-      "Hand-to-Hand Distribution",
-      "Retail & In-Store Distribution",
-      "Residential Area Distribution",
+      "Door-to-Door Flyer Distribution",
+      "Leaflet Distribution",
+      "Brochures Distribution",
+      "Door Hangers Distribution",
       "Commercial Area Distribution",
-      "Targeted Area Distribution",
-      "Event & Promotion Distribution",
+      "Direct Distribution",
+      "Hand-to-Hand Distribution",
+      "Residential Area Distribution",
+      "Event Distribution",
+      "Booklets Distribution",
+      "Menu Cards Distribution",
+      "Pamphlets Distribution",
+      "Magazines Distribution",
     ],
     cta: "Explore Flyer Distribution Services",
     path: "/flyer-distribution-services/"
@@ -118,14 +124,36 @@ export default function Services() {
       <div className="max-w-screen-xl mx-auto px-4 mb-24 text-center">
         <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
           <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
-            Your One-Stop Advertising, Distribution & Digital Marketing Company
+            Your One-Stop Door Hangers Distribution Company in Dubai and UAE
           </span>
         </h2>
-        <p className="text-xl text-gray-600 max-w-7xl mx-auto leading-relaxed">
-          Max Lead Advertising was built with one clear mission — to help businesses reach real customers, not just impressions. 
-          We understand that even the best product or service cannot succeed if people don’t know about it. From physical flyer distribution 
-          to digital platforms, we create marketing systems that work together as a full-service digital marketing and printing company.
-        </p>
+        <div className="text-xl text-gray-600 max-w-7xl mx-auto leading-relaxed">
+  <p className="mb-6">
+    Max Lead Advertising was built with one clear mission — to help businesses
+    reach real customers, not just generate impressions. We understand that even
+    the best product or service cannot grow if the right people don’t know about
+    it. That’s why we combine offline and digital marketing solutions to create
+    effective campaigns that connect brands with customers across the UAE.
+  </p>
+
+  <p className="mb-6">
+    As a professional leaflet distribution company, we provide targeted flyer,
+    leaflet, brochure, pamphlet, menu card, door hanger, booklet, magazine, and
+    event material distribution across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al
+    Khaimah, Fujairah, Al Ain, and Umm Al Quwain.
+  </p>
+
+  <p className="mb-6">
+    From menu cards distribution and pamphlet distribution to digital marketing,
+    printing, SEO, Google Ads, social media marketing, and lead generation, we
+    bring multiple marketing channels together to help businesses reach more
+    customers, build brand awareness, and generate real business opportunities.
+  </p>
+
+  <p className="font-semibold text-gray-900">
+    Your brand. Your audience. Our reach.
+  </p>
+  </div>
       </div>
 
       {/* Header 2 */}
@@ -136,7 +164,7 @@ export default function Services() {
           </span>
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          We offer complete advertising and promotional solutions under one roof. Click on any service to explore detailed solutions.
+          We offer complete advertising, marketing, and promotional solutions under one roof. Explore flyer, leaflet, printing, digital marketing, and more services.
         </p>
       </div>
 

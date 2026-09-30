@@ -6,7 +6,7 @@ const testimonials = [
     company: "Urban Mart",
     role: "Business Owner",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
-    content: "MaxLead Advertising handled our flyer printing and door-to-door distribution perfectly. We saw a noticeable increase in walk-in customers within just a week.",
+    content: "Max Lead Advertising handled our flyer printing and Door to Door Flyer Distribution in Dubai perfectly. Their team was professional, the distribution was well targeted, and we noticed a clear increase in walk-in customers within just a week.",
     rating: 5,
   },
   {
@@ -14,7 +14,7 @@ const testimonials = [
     company: "GreenLeaf Clinic",
     role: "Marketing Manager",
     image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300",
-    content: "Their SMS marketing campaign delivered excellent results. Open rates were very high, and appointment bookings increased significantly.",
+    content: "Max Lead Advertising, a trusted Leaflet Distribution Company, delivered excellent results for our campaign across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. Their targeted distribution helped us reach the right customers, resulting in more enquiries and appointment bookings.",
     rating: 5,
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     company: "Prime Real Estate",
     role: "Founder",
     image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300",
-    content: "MaxLead helped us run targeted digital ads and flyer distribution for our property launch. The campaign generated quality leads and great local visibility.",
+    content: "Max Lead Advertising, a trusted Brochures Distribution Company in Dubai, Sharjah, and Ajman, helped us promote our property launch with targeted brochure distribution and digital advertising. The campaign generated quality leads, increased local visibility, and helped us reach the right audience.",
     rating: 5,
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
     company: "StyleStreet Boutique",
     role: "Store Owner",
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300",
-    content: "From printing banners to outdoor promotions, MaxLead delivered everything on time with excellent quality. Our store opening was a big success.",
+    content: "From printing banners to Door Hangers Distribution and outdoor promotions, Max Lead Advertising delivered everything on time with excellent quality. Their professional service across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain helped make our store opening a great success.",
     rating: 5,
   },
   {
@@ -38,7 +38,7 @@ const testimonials = [
     company: "EduGrow Academy",
     role: "Director",
     image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=300",
-    content: "The combination of SMS campaigns and digital ads helped us fill multiple batches quickly. Their reporting and communication were very clear.",
+    content: "Max Lead Advertising’s Door to Door Flyer Distribution Services, combined with targeted digital advertising, helped us reach more customers across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. The campaign increased enquiries, improved local visibility, and helped us generate more qualified leads. Their reporting and communication were clear and professional throughout.",
     rating: 5,
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     company: "HealthPlus Pharmacy",
     role: "Operations Head",
     image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
-    content: "We partnered with MaxLead for flyer distribution and local promotions. The reach and response exceeded our expectations. Highly recommended.",
+    content: "We partnered with Max Lead Advertising, a trusted Pamphlet Distribution Company, for targeted flyer distribution and local promotions across Dubai, Sharjah, Ajman, Abu Dhabi, Ras Al Khaimah, Fujairah, Al Ain, and Umm Al Quwain. The campaign increased our local reach, generated more customer enquiries, and improved our response rate. Their team delivered excellent coverage and professional service throughout the campaign.",
     rating: 5,
   },
 ];
