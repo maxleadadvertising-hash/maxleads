@@ -75,26 +75,67 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 export default function CreativeFlyerDistributionBlog() {
   const activePost = blogs[0];
 
-  useEffect(() => {
-    // Meta Tags Logic - Manual injection for SEO
-    document.title = "7 Creative Flyer Distribution Ideas That Work in Dubai - Max Lead";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Tired of flyers being ignored? Discover 7 creative flyer distribution company ideas that actually work in Dubai and help your business stand out from the competition.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/creative-flyer-distribution-ideas-that-work-in-dubai/");
-  }, []);
+useEffect(() => {
+            // ================================
+            // SEO META TITLE
+            // ================================
+            document.title =
+              "7 Creative Flyer Distribution Ideas That Work in Dubai - Max Lead";
+          
+            // ================================
+            // SEO META DESCRIPTION
+            // ================================
+            let metaDescription = document.querySelector(
+              'meta[name="description"]'
+            );
+          
+            if (!metaDescription) {
+              metaDescription = document.createElement("meta");
+              metaDescription.name = "description";
+              document.head.appendChild(metaDescription);
+            }
+          
+            metaDescription.setAttribute(
+              "content",
+              "Tired of flyers being ignored? Discover 7 creative flyer distribution company ideas that actually work in Dubai and help your business stand out from the competition."
+            );
+          
+            // ================================
+            // SEO META KEYWORDS
+            // ================================
+            let metaKeywords = document.querySelector(
+              'meta[name="keywords"]'
+            );
+          
+            if (!metaKeywords) {
+              metaKeywords = document.createElement("meta");
+              metaKeywords.name = "keywords";
+              document.head.appendChild(metaKeywords);
+            }
+          
+            metaKeywords.setAttribute(
+              "content",
+              "Flyer Distribution Ideas, Creative Flyer Marketing, Dubai Flyer Campaigns"
+            );
+        
+            // ================================
+            // CANONICAL URL
+            // ================================
+            let linkCanonical = document.querySelector(
+              'link[rel="canonical"]'
+            );
+          
+            if (!linkCanonical) {
+              linkCanonical = document.createElement("link");
+              linkCanonical.rel = "canonical";
+              document.head.appendChild(linkCanonical);
+            }
+          
+            linkCanonical.setAttribute(
+              "href",
+              "https://www.maxleadadvertising.com/blog/creative-flyer-distribution-ideas-that-work-in-dubai/"
+            );
+          }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

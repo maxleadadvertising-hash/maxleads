@@ -67,26 +67,67 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 export default function FlyerDistributionBlog() {
   const activePost = blogs[0];
 
-  useEffect(() => {
-    // Meta Tags Logic - Manual injection for SEO as Helmet is removed
-    document.title = "Best Flyer Distribution Company Near You | Max Lead UAE";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Reach your local audience faster with Max Lead Advertising. Expert flyer distribution services designed to increase visibility, generate leads, and grow sales.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/flyer-distribution-company-near-me/");
-  }, []);
+ useEffect(() => {
+                // ================================
+                // SEO META TITLE
+                // ================================
+                document.title =
+                  "Best Flyer Distribution Company Near You | Max Lead UAE";
+              
+                // ================================
+                // SEO META DESCRIPTION
+                // ================================
+                let metaDescription = document.querySelector(
+                  'meta[name="description"]'
+                );
+              
+                if (!metaDescription) {
+                  metaDescription = document.createElement("meta");
+                  metaDescription.name = "description";
+                  document.head.appendChild(metaDescription);
+                }
+              
+                metaDescription.setAttribute(
+                  "content",
+                  "Reach your local audience faster with Max Lead Advertising. Expert flyer distribution services designed to increase visibility, generate leads, and grow sales."
+                );
+              
+                // ================================
+                // SEO META KEYWORDS
+                // ================================
+                let metaKeywords = document.querySelector(
+                  'meta[name="keywords"]'
+                );
+              
+                if (!metaKeywords) {
+                  metaKeywords = document.createElement("meta");
+                  metaKeywords.name = "keywords";
+                  document.head.appendChild(metaKeywords);
+                }
+              
+                metaKeywords.setAttribute(
+                  "content",
+                  "flyer distribution company near me"
+                );
+            
+                // ================================
+                // CANONICAL URL
+                // ================================
+                let linkCanonical = document.querySelector(
+                  'link[rel="canonical"]'
+                );
+              
+                if (!linkCanonical) {
+                  linkCanonical = document.createElement("link");
+                  linkCanonical.rel = "canonical";
+                  document.head.appendChild(linkCanonical);
+                }
+              
+                linkCanonical.setAttribute(
+                  "href",
+                  "https://www.maxleadadvertising.com/blog/flyer-distribution-company-near-me/"
+                );
+              }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

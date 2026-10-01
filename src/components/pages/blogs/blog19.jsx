@@ -80,6 +80,68 @@ export default function DigitalMarketingAgencyBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+                // ================================
+                // SEO META TITLE
+                // ================================
+                document.title =
+                  "Complete Guide to Digital Marketing Agencies for Small Business";
+              
+                // ================================
+                // SEO META DESCRIPTION
+                // ================================
+                let metaDescription = document.querySelector(
+                  'meta[name="description"]'
+                );
+              
+                if (!metaDescription) {
+                  metaDescription = document.createElement("meta");
+                  metaDescription.name = "description";
+                  document.head.appendChild(metaDescription);
+                }
+              
+                metaDescription.setAttribute(
+                  "content",
+                  "Find the right digital marketing agency for your small business with tips to evaluate experience, services, pricing, communication, and proven results. Contact Us Today!"
+                );
+              
+                // ================================
+                // SEO META KEYWORDS
+                // ================================
+                let metaKeywords = document.querySelector(
+                  'meta[name="keywords"]'
+                );
+              
+                if (!metaKeywords) {
+                  metaKeywords = document.createElement("meta");
+                  metaKeywords.name = "keywords";
+                  document.head.appendChild(metaKeywords);
+                }
+              
+                metaKeywords.setAttribute(
+                  "content",
+                  "digital marketing agency"
+                );
+            
+                // ================================
+                // CANONICAL URL
+                // ================================
+                let linkCanonical = document.querySelector(
+                  'link[rel="canonical"]'
+                );
+              
+                if (!linkCanonical) {
+                  linkCanonical = document.createElement("link");
+                  linkCanonical.rel = "canonical";
+                  document.head.appendChild(linkCanonical);
+                }
+              
+                linkCanonical.setAttribute(
+                  "href",
+                  "https://www.maxleadadvertising.com/blog/choosing-a-reliable-digital-marketing-agency-for-small-businesses/"
+                );
+              }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -93,11 +155,7 @@ export default function DigitalMarketingAgencyBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Complete Guide to Digital Marketing Agencies for Small Business</title>
-        <meta name="description" content="Learn how small businesses can evaluate services, pricing, experience, and results to confidently choose a reliable digital marketing agency. Contact Us Today!" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/choosing-a-reliable-digital-marketing-agency-for-small-businesses/" />
-      </Helmet>
+      
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

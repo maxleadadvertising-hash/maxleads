@@ -86,25 +86,66 @@ export default function AffordableMarketingBlog() {
   const activePost = blogs[3] || blogs[blogs.length - 1];
 
   useEffect(() => {
-    // FIXED SEO: Meta title and description injected directly
-    document.title = "Affordable Digital Marketing Packages for Startups in UAE | ROI-Focused Agency";
+        // ================================
+        // SEO META TITLE
+        // ================================
+        document.title =
+          "Affordable Digital Marketing Packages for Startups in UAE | ROI-Focused Agency";
+      
+        // ================================
+        // SEO META DESCRIPTION
+        // ================================
+        let metaDescription = document.querySelector(
+          'meta[name="description"]'
+        );
+      
+        if (!metaDescription) {
+          metaDescription = document.createElement("meta");
+          metaDescription.name = "description";
+          document.head.appendChild(metaDescription);
+        }
+      
+        metaDescription.setAttribute(
+          "content",
+          "Explore affordable digital marketing packages for startups in UAE. Get customized strategies to grow your brand online and reach your target audience on any budget."
+        );
+      
+        // ================================
+        // SEO META KEYWORDS
+        // ================================
+        let metaKeywords = document.querySelector(
+          'meta[name="keywords"]'
+        );
+      
+        if (!metaKeywords) {
+          metaKeywords = document.createElement("meta");
+          metaKeywords.name = "keywords";
+          document.head.appendChild(metaKeywords);
+        }
+      
+        metaKeywords.setAttribute(
+          "content",
+          "Affordable Digital Marketing Packages"
+        );
     
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Explore affordable digital marketing packages for startups in UAE. Get customized strategies to grow your brand online and reach your target audience on any budget.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/affordable-digital-marketing-packages-uae/");
-  }, []);
+        // ================================
+        // CANONICAL URL
+        // ================================
+        let linkCanonical = document.querySelector(
+          'link[rel="canonical"]'
+        );
+      
+        if (!linkCanonical) {
+          linkCanonical = document.createElement("link");
+          linkCanonical.rel = "canonical";
+          document.head.appendChild(linkCanonical);
+        }
+      
+        linkCanonical.setAttribute(
+          "href",
+          "https://www.maxleadadvertising.com/blog/affordable-digital-marketing-packages-uae/"
+        );
+      }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

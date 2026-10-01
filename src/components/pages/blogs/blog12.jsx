@@ -171,25 +171,66 @@ export default function SocialMediaCostBlog() {
   const activePost = blogs[10];
 
   useEffect(() => {
-    // Meta Tags Logic - Injected via useEffect since Helmet was removed per request
-    document.title = "Social Media Marketing Services Cost in UAE | Complete 2026 Guide";
+      // ================================
+      // SEO META TITLE
+      // ================================
+      document.title =
+        "Social Media Marketing Services Cost in UAE | Complete 2026 Guide";
     
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Find out how much social media marketing services cost in the UAE. Explore pricing packages and choose the right plan to grow your business online effectively.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/social-media-marketing-services-cost-uae/");
-  }, []);
+      // ================================
+      // SEO META DESCRIPTION
+      // ================================
+      let metaDescription = document.querySelector(
+        'meta[name="description"]'
+      );
+    
+      if (!metaDescription) {
+        metaDescription = document.createElement("meta");
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+    
+      metaDescription.setAttribute(
+        "content",
+        "Find out how much social media marketing services cost in the UAE. Explore pricing packages and choose the right plan to grow your business online effectively."
+      );
+    
+      // ================================
+      // SEO META KEYWORDS
+      // ================================
+      let metaKeywords = document.querySelector(
+        'meta[name="keywords"]'
+      );
+    
+      if (!metaKeywords) {
+        metaKeywords = document.createElement("meta");
+        metaKeywords.name = "keywords";
+        document.head.appendChild(metaKeywords);
+      }
+    
+      metaKeywords.setAttribute(
+        "content",
+        "social media marketing services cost"
+      );
+    
+      // ================================
+      // CANONICAL URL
+      // ================================
+      let linkCanonical = document.querySelector(
+        'link[rel="canonical"]'
+      );
+    
+      if (!linkCanonical) {
+        linkCanonical = document.createElement("link");
+        linkCanonical.rel = "canonical";
+        document.head.appendChild(linkCanonical);
+      }
+    
+      linkCanonical.setAttribute(
+        "href",
+        "https://www.maxleadadvertising.com/blog/social-media-marketing-services-cost-uae/"
+      );
+    }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

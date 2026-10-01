@@ -76,6 +76,68 @@ export default function LeafletDistributionBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
+              // ================================
+              // SEO META TITLE
+              // ================================
+              document.title =
+                "Measuring ROI on Physical Marketing Campaigns Dubai 2026";
+            
+              // ================================
+              // SEO META DESCRIPTION
+              // ================================
+              let metaDescription = document.querySelector(
+                'meta[name="description"]'
+              );
+            
+              if (!metaDescription) {
+                metaDescription = document.createElement("meta");
+                metaDescription.name = "description";
+                document.head.appendChild(metaDescription);
+              }
+            
+              metaDescription.setAttribute(
+                "content",
+                "Learn how to measure ROI on physical marketing campaigns in Dubai in 2026 using tracking methods, response rates, leads, conversions, and campaign data."
+              );
+            
+              // ================================
+              // SEO META KEYWORDS
+              // ================================
+              let metaKeywords = document.querySelector(
+                'meta[name="keywords"]'
+              );
+            
+              if (!metaKeywords) {
+                metaKeywords = document.createElement("meta");
+                metaKeywords.name = "keywords";
+                document.head.appendChild(metaKeywords);
+              }
+            
+              metaKeywords.setAttribute(
+                "content",
+                "Offline Marketing ROI, Physical Marketing Campaigns, Dubai Marketing 2026, Tracking Methods, Response Rates, Leads, Conversions, Campaign Data"
+              );
+          
+              // ================================
+              // CANONICAL URL
+              // ================================
+              let linkCanonical = document.querySelector(
+                'link[rel="canonical"]'
+              );
+            
+              if (!linkCanonical) {
+                linkCanonical = document.createElement("link");
+                linkCanonical.rel = "canonical";
+                document.head.appendChild(linkCanonical);
+              }
+            
+              linkCanonical.setAttribute(
+                "href",
+                "https://www.maxleadadvertising.com/blog/measuring-roi-on-physical-marketing-campaigns/"
+              );
+            }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -89,11 +151,7 @@ export default function LeafletDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>Measuring ROI on Physical Marketing Campaigns Dubai 2026</title>
-        <meta name="description" content="Learn how to measure ROI on physical marketing campaigns in Dubai 2026. Track billboards, events & activations with proven methods that justify every dirham spent. Contact Us Today!" />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/measuring-roi-on-physical-marketing-campaigns/" />
-      </Helmet>
+      
       <Whatsapp />
       <ScrollToTop />
       <Navigation />

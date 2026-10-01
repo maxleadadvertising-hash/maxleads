@@ -75,25 +75,66 @@ export default function BestFlyerDistributionBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
-    // Meta Tags Logic - Injected via useEffect as Helmet is removed
-    document.title = "Best Flyer Distribution Services in UAE 2026 | Max Lead";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Find the best flyer distribution services in UAE to boost your brand. Reach your target audience with affordable, targeted leaflet distribution that gets results.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/best-flyer-distribution-services-uae/");
-  }, []);
+          // ================================
+          // SEO META TITLE
+          // ================================
+          document.title =
+            "Best Flyer Distribution Services in UAE 2026 | Max Lead";
+        
+          // ================================
+          // SEO META DESCRIPTION
+          // ================================
+          let metaDescription = document.querySelector(
+            'meta[name="description"]'
+          );
+        
+          if (!metaDescription) {
+            metaDescription = document.createElement("meta");
+            metaDescription.name = "description";
+            document.head.appendChild(metaDescription);
+          }
+        
+          metaDescription.setAttribute(
+            "content",
+            "Find the best flyer distribution services in UAE to boost your brand. Reach your target audience with affordable, targeted leaflet distribution that gets results."
+          );
+        
+          // ================================
+          // SEO META KEYWORDS
+          // ================================
+          let metaKeywords = document.querySelector(
+            'meta[name="keywords"]'
+          );
+        
+          if (!metaKeywords) {
+            metaKeywords = document.createElement("meta");
+            metaKeywords.name = "keywords";
+            document.head.appendChild(metaKeywords);
+          }
+        
+          metaKeywords.setAttribute(
+            "content",
+            "Best Flyer Distribution Services in UAE"
+          );
+      
+          // ================================
+          // CANONICAL URL
+          // ================================
+          let linkCanonical = document.querySelector(
+            'link[rel="canonical"]'
+          );
+        
+          if (!linkCanonical) {
+            linkCanonical = document.createElement("link");
+            linkCanonical.rel = "canonical";
+            document.head.appendChild(linkCanonical);
+          }
+        
+          linkCanonical.setAttribute(
+            "href",
+            "https://www.maxleadadvertising.com/blog/best-flyer-distribution-services-uae/"
+          );
+        }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

@@ -77,24 +77,65 @@ export default function DoorHangerBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
-    // ADDED: Meta Tags Logic via useEffect
-    document.title = "Local Advertising with Door Hangers | Strategy Guide 2026";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
+    // ================================
+    // SEO META TITLE
+    // ================================
+    document.title =
+      "Local Advertising with Door Hangers | Strategy Guide 2026";
+  
+    // ================================
+    // SEO META DESCRIPTION
+    // ================================
+    let metaDescription = document.querySelector(
+      'meta[name="description"]'
+    );
+  
     if (!metaDescription) {
-      metaDescription = document.createElement('meta');
+      metaDescription = document.createElement("meta");
       metaDescription.name = "description";
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute("content", "Unlock the power of local advertising with door hanger marketing. Reach your target audience directly at their doorstep with an affordable and effective strategy.");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
+  
+    metaDescription.setAttribute(
+      "content",
+      "Unlock the power of local advertising with door hanger marketing. Reach your target audience directly at their doorstep with an affordable and effective strategy."
+    );
+  
+    // ================================
+    // SEO META KEYWORDS
+    // ================================
+    let metaKeywords = document.querySelector(
+      'meta[name="keywords"]'
+    );
+  
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.name = "keywords";
+      document.head.appendChild(metaKeywords);
+    }
+  
+    metaKeywords.setAttribute(
+      "content",
+      "door hanger marketing, local advertising, flyer distribution, UAE businesses, marketing strategy, neighborhood marketing, direct mail, MaxLead Advertising"
+    );
+  
+    // ================================
+    // CANONICAL URL
+    // ================================
+    let linkCanonical = document.querySelector(
+      'link[rel="canonical"]'
+    );
+  
     if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
+      linkCanonical = document.createElement("link");
       linkCanonical.rel = "canonical";
       document.head.appendChild(linkCanonical);
     }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/");
+  
+    linkCanonical.setAttribute(
+      "href",
+      "https://www.maxleadadvertising.com/blog/unlock-the-power-of-local-advertising-with-door-hanger-marketing/"
+    );
   }, []);
 
   useEffect(() => {

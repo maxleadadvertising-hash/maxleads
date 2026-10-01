@@ -76,25 +76,66 @@ export default function FlyerPsychologyBlog() {
   const activePost = blogs[0];
 
   useEffect(() => {
-    // Meta Tags Logic - Injected via useEffect as Helmet is removed
-    document.title = "The Psychology Behind Flyers: Why Physical Marketing Still Works in Dubai";
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = "description";
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", "Think print marketing is dead? Think again. Uncover the psychology behind flyers and why physical leaflet distribution continues to outperform in a digital age");
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = "canonical";
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", "https://www.maxleadadvertising.com/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/");
-  }, []);
+            // ================================
+            // SEO META TITLE
+            // ================================
+            document.title =
+              "The Psychology Behind Flyers: Why Physical Marketing Still Works in Dubai";
+          
+            // ================================
+            // SEO META DESCRIPTION
+            // ================================
+            let metaDescription = document.querySelector(
+              'meta[name="description"]'
+            );
+          
+            if (!metaDescription) {
+              metaDescription = document.createElement("meta");
+              metaDescription.name = "description";
+              document.head.appendChild(metaDescription);
+            }
+          
+            metaDescription.setAttribute(
+              "content",
+              "Think print marketing is dead? Think again. Uncover the psychology behind flyers and why physical leaflet distribution continues to outperform in a digital age"
+            );
+          
+            // ================================
+            // SEO META KEYWORDS
+            // ================================
+            let metaKeywords = document.querySelector(
+              'meta[name="keywords"]'
+            );
+          
+            if (!metaKeywords) {
+              metaKeywords = document.createElement("meta");
+              metaKeywords.name = "keywords";
+              document.head.appendChild(metaKeywords);
+            }
+          
+            metaKeywords.setAttribute(
+              "content",
+              "Psychology Behind Flyers, Physical Marketing Still Works"
+            );
+        
+            // ================================
+            // CANONICAL URL
+            // ================================
+            let linkCanonical = document.querySelector(
+              'link[rel="canonical"]'
+            );
+          
+            if (!linkCanonical) {
+              linkCanonical = document.createElement("link");
+              linkCanonical.rel = "canonical";
+              document.head.appendChild(linkCanonical);
+            }
+          
+            linkCanonical.setAttribute(
+              "href",
+              "https://www.maxleadadvertising.com/blog/the-psychology-behind-flyers-why-physical-marketing-still-works/"
+            );
+          }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });

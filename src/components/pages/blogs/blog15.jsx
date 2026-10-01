@@ -75,6 +75,68 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 export default function LeafletDistributionBlog() {
   const activePost = blogs[0];
 
+useEffect(() => {
+          // ================================
+          // SEO META TITLE
+          // ================================
+          document.title =
+            "2026 Guide to Leaflet Distribution Companies in Dubai | Max Lead";
+        
+          // ================================
+          // SEO META DESCRIPTION
+          // ================================
+          let metaDescription = document.querySelector(
+            'meta[name="description"]'
+          );
+        
+          if (!metaDescription) {
+            metaDescription = document.createElement("meta");
+            metaDescription.name = "description";
+            document.head.appendChild(metaDescription);
+          }
+        
+          metaDescription.setAttribute(
+            "content",
+            "Explore MaxLead's blog for expert tips on flyer distribution, leaflet distribution, digital marketing, printing & outdoor advertising in the UAE."
+          );
+        
+          // ================================
+          // SEO META KEYWORDS
+          // ================================
+          let metaKeywords = document.querySelector(
+            'meta[name="keywords"]'
+          );
+        
+          if (!metaKeywords) {
+            metaKeywords = document.createElement("meta");
+            metaKeywords.name = "keywords";
+            document.head.appendChild(metaKeywords);
+          }
+        
+          metaKeywords.setAttribute(
+            "content",
+            "Leaflet Distribution Companies in Dubai"
+          );
+      
+          // ================================
+          // CANONICAL URL
+          // ================================
+          let linkCanonical = document.querySelector(
+            'link[rel="canonical"]'
+          );
+        
+          if (!linkCanonical) {
+            linkCanonical = document.createElement("link");
+            linkCanonical.rel = "canonical";
+            document.head.appendChild(linkCanonical);
+          }
+        
+          linkCanonical.setAttribute(
+            "href",
+            "https://www.maxleadadvertising.com/blog/best-leaflet-distribution-companies-in-uae/"
+          );
+        }, []);
+
   useEffect(() => {
     const lenis = new Lenis({ smooth: true, lerp: 0.1 });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
@@ -89,11 +151,7 @@ export default function LeafletDistributionBlog() {
 
   return (
     <>
-      <Helmet>
-        <title>2026 Guide to Leaflet Distribution Companies in Dubai | Max Lead</title>
-        <meta name="description" content="Find the best leaflet distribution companies in Dubai for 2026. Reach your target audience, increase brand awareness, and grow your business with targeted flyer campaigns." />
-        <link rel="canonical" href="https://www.maxleadadvertising.com/blog/best-leaflet-distribution-companies-in-uae/" />
-      </Helmet>
+    
       <Whatsapp />
       <ScrollToTop />
       <Navigation />
