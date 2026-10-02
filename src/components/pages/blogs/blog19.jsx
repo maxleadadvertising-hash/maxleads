@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 import Navigation from "../../Navigation";
 import Footer from "../../Footer";
 import { Target, Clock, User, LayoutGrid, FileText, MessageSquare, MousePointer2, Globe, Users, Zap, Linkedin } from "lucide-react"; // Added Linkedin
