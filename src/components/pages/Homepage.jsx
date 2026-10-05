@@ -19,7 +19,7 @@ import Clientlogo from "../pages/clientlogo";
 export default function Home() {
   return (
     <div className="bg-slate-900 text-white">
-      <Helmet><title>Advertising & Distribution Company in UAE | Max Lead</title><meta name="description" content="Max Lead Advertising is a trusted advertising and distribution company in UAE offering flyer distribution, printing, SMS and digital marketing solutions." /><link rel="canonical" href="https://www.maxleadadvertising.com/" /></Helmet>
+      <Helmet><title>Door to Door Flyer Distribution Company Dubai, Sharjah & Ajman | Max Lead</title><meta name="description" content="Max Lead offers door-to-door flyer distribution across Dubai, Sharjah, Ajman, Abu Dhabi, RAK, Fujairah, Al Ain & UAQ, including leaflets, brochures, pamphlets, door hangers, printing services & more. Contact us today!" /><link rel="canonical" href="https://www.maxleadadvertising.com/" /></Helmet>
       <ScrollToTop />
       <Navigation />
       <main>

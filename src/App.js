@@ -93,6 +93,7 @@ const Blog60 = lazy(() => import('./components/pages/blogs/blog60'));
 const Blog61 = lazy(() => import('./components/pages/blogs/blog61'));
 const Blog62 = lazy(() => import('./components/pages/blogs/blog62'));
 const Blog63 = lazy(() => import('./components/pages/blogs/blog63'));
+const Blog64 = lazy(() => import('./components/pages/blogs/blog64'));
 
 /**
  * LOADING FALLBACK: 
@@ -193,6 +194,7 @@ function App() {
           <Route path="/blog/restaurant-launch-marketing-strategies-dubai/" element={<Blog61 />} />
           <Route path="/blog/supermarket-advertising-uae-weekly-promotions/" element={<Blog62 />} />
           <Route path="/blog/grand-opening-advertising-dubai/" element={<Blog63 />} />
+          <Route path="/blog/school-nursery-marketing-dubai-admission-enquiries/" element={<Blog64 />} />
         </Routes>
       </Suspense>
     </Router>
