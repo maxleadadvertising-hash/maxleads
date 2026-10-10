@@ -73,6 +73,7 @@ const blogs = [
   { id: 62, title: "Supermarket Flyer Distribution Advertising in the UAE | Max Lead", description: "Promote weekly supermarket offers with professional Flyer Distribution in the UAE. Reach nearby customers, increase brand awareness, and encourage store visits. Contact Us!", author: "MaxLead Strategy Team", date: "September 26, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/3985094/pexels-photo-3985094.jpeg", tags: ["Supermarket Flyer Distribution","Marketing"], link: "/blog/supermarket-advertising-uae-weekly-promotions/" },
   { id: 63, title: "Grand Opening Advertising in Dubai | Max Lead Advertising", description: "Build awareness before your Dubai business launch with flyer distribution, digital marketing, Google Ads, social media and outdoor advertising from Max Lead Advertising. Contact Us!", author: "MaxLead Strategy Team", date: "September 28, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/36348232/pexels-photo-36348232.jpeg", tags: ["Grand Opening Advertising","Marketing"], link: "/blog/grand-opening-advertising-dubai/" },
   { id: 64, title: "School & Nursery Flyer Marketing in Dubai | Reach Parents | Max Lead", description: "Discover effective flyer marketing strategies for schools and nurseries in Dubai to reach local parents, promote admissions and generate more enquiries. Contact Us!", author: "MaxLead Strategy Team", date: "October 05, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/8617765/pexels-photo-8617765.jpeg", tags: ["School & Nursery","Marketing"], link: "/blog/school-nursery-marketing-dubai-admission-enquiries/" },
+  { id: 65, title: "Exhibition Marketing & Flyer Distribution Dubai | UAE Max Lead", description: "Boost brand visibility with exhibition marketing, flyer distribution Dubai, and leaflet distribution Dubai. Reach customers across all 7 UAE emirates. Contact Us!", author: "MaxLead Strategy Team", date: "October 10, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/11243793/pexels-photo-11243793.jpeg", tags: ["Exhibition Marketing","Flyer Distribution"], link: "/blog/exhibition-marketing-flyer-leaflet-distribution-uae/" },
 ];
 
 const categories = [
@@ -136,6 +137,7 @@ const categories = [
   { name: "Supermarket Flyer Distribution Advertising in the UAE", icon: Zap, path: "/blog/supermarket-advertising-uae-weekly-promotions/" },
   { name: "Grand Opening Advertising in Dubai", icon: Zap, path: "/blog/grand-opening-advertising-dubai/" },
   { name: "School & Nursery Flyer Marketing in Dubai", icon: Zap, path: "/blog/school-nursery-marketing-dubai-admission-enquiries/" },
+  { name: "Exhibition Marketing & Flyer Distribution Dubai", icon: Zap, path: "/blog/exhibition-marketing-flyer-leaflet-distribution-uae/" }
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
