@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 import {
   MapPin,
   Target,
-  Shield,
-  Search,
   Megaphone,
-  Users,
   TrendingUp,
   ArrowRight,
   Check,
