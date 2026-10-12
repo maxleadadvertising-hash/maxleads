@@ -74,6 +74,8 @@ const blogs = [
   { id: 63, title: "Grand Opening Advertising in Dubai | Max Lead Advertising", description: "Build awareness before your Dubai business launch with flyer distribution, digital marketing, Google Ads, social media and outdoor advertising from Max Lead Advertising. Contact Us!", author: "MaxLead Strategy Team", date: "September 28, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/36348232/pexels-photo-36348232.jpeg", tags: ["Grand Opening Advertising","Marketing"], link: "/blog/grand-opening-advertising-dubai/" },
   { id: 64, title: "School & Nursery Flyer Marketing in Dubai | Reach Parents | Max Lead", description: "Discover effective flyer marketing strategies for schools and nurseries in Dubai to reach local parents, promote admissions and generate more enquiries. Contact Us!", author: "MaxLead Strategy Team", date: "October 05, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/8617765/pexels-photo-8617765.jpeg", tags: ["School & Nursery","Marketing"], link: "/blog/school-nursery-marketing-dubai-admission-enquiries/" },
   { id: 65, title: "Exhibition Marketing & Flyer Distribution Dubai | UAE Max Lead", description: "Boost brand visibility with exhibition marketing, flyer distribution Dubai, and leaflet distribution Dubai. Reach customers across all 7 UAE emirates. Contact Us!", author: "MaxLead Strategy Team", date: "October 10, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/11243793/pexels-photo-11243793.jpeg", tags: ["Exhibition Marketing","Flyer Distribution"], link: "/blog/exhibition-marketing-flyer-leaflet-distribution-uae/" },
+  { id: 66, title: "Real Estate Lead Generation Dubai | Digital Marketing | Max Lead", description: "Generate quality real estate leads in Dubai with SEO, Google Ads, social media marketing, content marketing, and targeted flyer distribution across the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "October 11, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/5717724/pexels-photo-5717724.jpeg", tags: ["Real Estate","Digital Marketing"], link: "/blog/real-estate-lead-generation-dubai/" },
+  { id: 67, title: "Dental Clinic Marketing Dubai | Leaflet Distribution UAE | Max Lead", description: "Attract more patients with dental clinic marketing in Dubai, local advertising, SEO, Google Ads, social media, and targeted leaflet distribution across the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "October 12, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/32260064/pexels-photo-32260064.jpeg", tags: ["Dental Clinic","Leaflet Distribution"], link: "/blog/dental-clinic-marketing-dubai-leaflet-distribution/" },
 ];
 
 const categories = [
@@ -137,7 +139,9 @@ const categories = [
   { name: "Supermarket Flyer Distribution Advertising in the UAE", icon: Zap, path: "/blog/supermarket-advertising-uae-weekly-promotions/" },
   { name: "Grand Opening Advertising in Dubai", icon: Zap, path: "/blog/grand-opening-advertising-dubai/" },
   { name: "School & Nursery Flyer Marketing in Dubai", icon: Zap, path: "/blog/school-nursery-marketing-dubai-admission-enquiries/" },
-  { name: "Exhibition Marketing & Flyer Distribution Dubai", icon: Zap, path: "/blog/exhibition-marketing-flyer-leaflet-distribution-uae/" }
+  { name: "Exhibition Marketing & Flyer Distribution Dubai", icon: Zap, path: "/blog/exhibition-marketing-flyer-leaflet-distribution-uae/" },
+  { name: "Real Estate Lead Generation Dubai | Digital Marketing | Max Lead", icon: Zap, path: "/blog/real-estate-lead-generation-dubai/" },
+  { name: "Dental Clinic Marketing Dubai | Leaflet Distribution UAE | Max Lead", icon: Zap, path: "/blog/dental-clinic-marketing-dubai-leaflet-distribution/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
