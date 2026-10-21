@@ -77,6 +77,7 @@ const blogs = [
   { id: 66, title: "Real Estate Lead Generation Dubai | Digital Marketing | Max Lead", description: "Generate quality real estate leads in Dubai with SEO, Google Ads, social media marketing, content marketing, and targeted flyer distribution across the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "October 11, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/5717724/pexels-photo-5717724.jpeg", tags: ["Real Estate","Digital Marketing"], link: "/blog/real-estate-lead-generation-dubai/" },
   { id: 67, title: "Dental Clinic Marketing Dubai | Leaflet Distribution UAE | Max Lead", description: "Attract more patients with dental clinic marketing in Dubai, local advertising, SEO, Google Ads, social media, and targeted leaflet distribution across the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "October 12, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/32260064/pexels-photo-32260064.jpeg", tags: ["Dental Clinic","Leaflet Distribution"], link: "/blog/dental-clinic-marketing-dubai-leaflet-distribution/" },
   { id: 68, title: "Booklet Distribution Dubai, Sharjah, Ajman & Abu Dhabi", description: "Boost seasonal retail sales with creative promotions, local advertising, and professional booklet distribution in Dubai, Sharjah, Ajman, and Abu Dhabi. Contact Us!", author: "MaxLead Strategy Team", date: "October 17, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg", tags: ["Retail Sales","Booklet Distribution"], link: "/blog/seasonal-retail-marketing-booklet-distribution-uae/" },
+  { id: 69, title: "Pamphlet Distribution Company in Dubai, Sharjah, Ajman & Abu Dhabi", description: "Boost residential community awareness and generate property enquiries with a professional pamphlet distribution company in Dubai, Sharjah, Ajman, and Abu Dhabi. Contact Us!", author: "MaxLead Strategy Team", date: "October 21, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/34420846/pexels-photo-34420846.jpeg", tags: ["Residential Community","Pamphlet Distribution"], link: "/blog/residential-community-marketing-pamphlet-distribution-uae/" },
 ];
 
 const categories = [
@@ -143,6 +144,8 @@ const categories = [
   { name: "Exhibition Marketing & Flyer Distribution Dubai", icon: Zap, path: "/blog/exhibition-marketing-flyer-leaflet-distribution-uae/" },
   { name: "Real Estate Lead Generation Dubai | Digital Marketing | Max Lead", icon: Zap, path: "/blog/real-estate-lead-generation-dubai/" },
   { name: "Dental Clinic Marketing Dubai | Leaflet Distribution UAE | Max Lead", icon: Zap, path: "/blog/dental-clinic-marketing-dubai-leaflet-distribution/" },
+  { name: "Seasonal Retail Marketing: Booklet Distribution in the UAE", icon: Zap, path: "/blog/seasonal-retail-marketing-booklet-distribution-uae/" },
+  { name: "Pamphlet Distribution Company in Dubai, Sharjah, Ajman & Abu Dhabi", icon: Zap, path: "/blog/residential-community-marketing-pamphlet-distribution-uae/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
