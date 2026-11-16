@@ -78,6 +78,7 @@ const blogs = [
   { id: 67, title: "Dental Clinic Marketing Dubai | Leaflet Distribution UAE | Max Lead", description: "Attract more patients with dental clinic marketing in Dubai, local advertising, SEO, Google Ads, social media, and targeted leaflet distribution across the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "October 12, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/32260064/pexels-photo-32260064.jpeg", tags: ["Dental Clinic","Leaflet Distribution"], link: "/blog/dental-clinic-marketing-dubai-leaflet-distribution/" },
   { id: 68, title: "Booklet Distribution Dubai, Sharjah, Ajman & Abu Dhabi", description: "Boost seasonal retail sales with creative promotions, local advertising, and professional booklet distribution in Dubai, Sharjah, Ajman, and Abu Dhabi. Contact Us!", author: "MaxLead Strategy Team", date: "October 17, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg", tags: ["Retail Sales","Booklet Distribution"], link: "/blog/seasonal-retail-marketing-booklet-distribution-uae/" },
   { id: 69, title: "Pamphlet Distribution Company in Dubai, Sharjah, Ajman & Abu Dhabi", description: "Boost residential community awareness and generate property enquiries with a professional pamphlet distribution company in Dubai, Sharjah, Ajman, and Abu Dhabi. Contact Us!", author: "MaxLead Strategy Team", date: "October 21, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/34420846/pexels-photo-34420846.jpeg", tags: ["Residential Community","Pamphlet Distribution"], link: "/blog/residential-community-marketing-pamphlet-distribution-uae/" },
+  { id: 70, title: "Ladies Salon Marketing: 7 Effective Flyer Distribution Tips UAE", description: "Discover 7 effective ways to promote your ladies salon through door-to-door leaflet distribution in Dubai, Sharjah and across the UAE. Contact Us!", author: "MaxLead Strategy Team", date: "November 16, 2026", readTime: "13 min read", image: "https://images.pexels.com/photos/7755207/pexels-photo-7755207.jpeg", tags: ["Ladies Salon Marketing","Leaflet Distribution"], link: "/blog/promote-ladies-salon-door-to-door-leaflet-distribution/" },
 ];
 
 const categories = [
@@ -146,6 +147,7 @@ const categories = [
   { name: "Dental Clinic Marketing Dubai | Leaflet Distribution UAE | Max Lead", icon: Zap, path: "/blog/dental-clinic-marketing-dubai-leaflet-distribution/" },
   { name: "Seasonal Retail Marketing: Booklet Distribution in the UAE", icon: Zap, path: "/blog/seasonal-retail-marketing-booklet-distribution-uae/" },
   { name: "Pamphlet Distribution Company in Dubai, Sharjah, Ajman & Abu Dhabi", icon: Zap, path: "/blog/residential-community-marketing-pamphlet-distribution-uae/" },
+  { name: "Ladies Salon Marketing: 7 Effective Flyer Distribution Tips UAE", icon: Zap, path: "/blog/ladies-salon-marketing-flyer-distribution-uae/" },
 ];
 
 /* --- HARD FIX: REMOVED ALL COMPLICATED ANIMATIONS --- */
